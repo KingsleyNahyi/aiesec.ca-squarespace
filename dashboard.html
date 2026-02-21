@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIESEC Canada</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero-section">
+  <div class="gradient-overlay"></div>
+
+  <header>
+    <div class="container">
+      <div class="logo"><img src="aiesec logo.png" alt="AIESEC Logo"></div>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="#">About us</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">This is AIESEC</a></li>
+              <li><a href="#">Our Mission</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Meet Our Partners</a></li>
+              <li><a href="#">For Alumni</a></li>
+              <li><a href="#">Support Us</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">For Youth</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Learn about Exchange</a></li>
+              <li><a href="#">Go on Exchange</a></li>
+              <li><a href="#">Learn about Membership</a></li>
+              <li><a href="#">Become a member</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">For Companies</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Why Partner with AIESEC</a></li>
+              <li><a href="#">Youth-2-Business Series</a></li>
+              <li><a href="#">Hire through AIESEC</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">English</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Français</a></li>
+              <li><a href="#">Spanish</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <button class="cta-button">Sign Up for Exchange</button>
+    </div>
+  </header>
+
+  <div class="hero-content">
+    <div class="moving-text">travel &nbsp;&nbsp; volunteer &nbsp;&nbsp; lead &nbsp;&nbsp; intern &nbsp;&nbsp; travel &nbsp;&nbsp; volunteer &nbsp;&nbsp; lead &nbsp;&nbsp; intern</div>
+    <div class="static">with aiesec.</div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE CARDS ── -->
+<section class="cards-section">
+  <h2>Choose Your Experience</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="card 1.webp" alt="Become a Member">
+      <div class="card-label">
+        <p>Leadership &amp; Growth</p>
+        <h3>Become a Member</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="card 2.webp" alt="Go on Exchange">
+      <div class="card-label">
+        <p>Travel &amp; Volunteer</p>
+        <h3>Go on Exchange</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="card 3.webp" alt="Connect with Youth">
+      <div class="card-label">
+        <p>Partner with Us</p>
+        <h3>Connect with Youth</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS SLIDER ── -->
+<section class="testimonials-section">
+  <h2 class="testimonials-title">so what kind of leader will you choose to be today?</h2>
+  <div class="slider-wrapper">
+    <button class="slider-btn prev" onclick="slide(-1)">&#8249;</button>
+    <div class="slider-viewport">
+      <div class="slider-track" id="sliderTrack">
+        <div class="t-card">
+          <img src="person1.jpg" alt="Alice Shi">
+          <h3>Alice Shi</h3>
+          <p>AIESEC makes me a better team player, a better employee, and a self-motivated person who always drives for a bigger purpose.</p>
+        </div>
+        <div class="t-card tall">
+          <img src="person2.jpg" alt="Chris Greenough">
+          <h3>Chris Greenough</h3>
+          <p>AIESEC connected me with my future. The people who hired me for my exchange ultimately became my partners and I entered an industry I hadn't even considered in university.</p>
+        </div>
+        <div class="t-card">
+          <img src="person3.jpg" alt="Katharine Sliwinski">
+          <h3>Katharine Sliwinski</h3>
+          <p>My exchange to Belgium gave me a real chance to work in an international environment and improve my French, opening many job opportunities.</p>
+        </div>
+        <div class="t-card tall">
+          <img src="person4.jpg" alt="Olivia Mullins">
+          <h3>Olivia Mullins</h3>
+          <p>My time in AIESEC has shaped my path to consider the impact I leave on the world. I want to choose a career that creates positive change.</p>
+        </div>
+        <div class="t-card">
+          <img src="person5.jpg" alt="James Osei">
+          <h3>James Osei</h3>
+          <p>Going on exchange through AIESEC was the best decision of my life. I gained international work experience and lifelong friendships across three continents.</p>
+        </div>
+        <div class="t-card tall">
+          <img src="person6.jpg" alt="Sofia Reyes">
+          <h3>Sofia Reyes</h3>
+          <p>Being an AIESEC member taught me how to lead teams, manage projects, and think globally — skills I use every single day in my career now.</p>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn next" onclick="slide(1)">&#8250;</button>
+  </div>
+</section>
+
+<!-- ── PARTNERS BANNER ── -->
+<section class="partners-section">
+  <div class="partners-banner">
+    <h2 class="partners-heading">
+      <span class="white">meet our </span><span class="black">corporate<br>partners</span>
+    </h2>
+    <a href="#" class="partners-cta">Let's Go!</a>
+  </div>
+</section>
+
+<!-- ── FOLLOW US + MEDIA ── -->
+<section class="media-section">
+  <h2 class="follow-title">Follow Us!</h2>
+
+  <!-- Social icons -->
+  <div class="social-icons">
+    <a href="#" class="social-icon" aria-label="Instagram">
+      <!-- Instagram SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a9de0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="Facebook">
+      <!-- Facebook SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#1a9de0">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="LinkedIn">
+      <!-- LinkedIn SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#1a9de0">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Media grid — replace placeholders with your files -->
+  <div class="media-grid">
+    <div class="media-placeholder">
+      <span>📸</span>
+      <p>Video / Photo 1<br><small>Replace with your file</small></p>
+    </div>
+    <div class="media-placeholder">
+      <span>📸</span>
+      <p>Video / Photo 2<br><small>Replace with your file</small></p>
+    </div>
+    <div class="media-placeholder">
+      <span>📸</span>
+      <p>Video / Photo 3<br><small>Replace with your file</small></p>
+    </div>
+    <div class="media-placeholder">
+      <span>📸</span>
+      <p>Video / Photo 4<br><small>Replace with your file</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+
+  <!-- 6 link columns -->
+  <div class="footer-links">
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="#">About AIESEC</a>
+      <a href="#">Our Mission</a>
+      <a href="#">Meet the Team</a>
+      <a href="#">Support Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Exchange</h4>
+      <a href="#">Learn about Exchange</a>
+      <a href="#">Global Volunteer</a>
+      <a href="#">Global Teacher</a>
+      <a href="#">Global Talent</a>
+      <a href="#">Go on Exchange</a>
+    </div>
+    <div class="footer-col">
+      <h4>Membership</h4>
+      <a href="#">Learn about Membership</a>
+      <a href="#">Join AIESEC</a>
+    </div>
+    <div class="footer-col">
+      <h4>Partners</h4>
+      <a href="#">Learn about Partnerships</a>
+      <a href="#">Youth 2 Business</a>
+      <a href="#">Exchange for Companies</a>
+    </div>
+    <div class="footer-col">
+      <h4>Alumni</h4>
+      <a href="#">For Alumni</a>
+    </div>
+    <div class="footer-col">
+      <h4>General</h4>
+      <a href="#">Annual Reports</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Safety Policy</a>
+    </div>
+  </div>
+
+  <!-- Legal + copyright -->
+  <div class="footer-bottom">
+    <p>AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.</p>
+    <p>© 2020 AIESEC Canada Inc. All rights reserved.</p>
+    <p>For general inquiries: <a href="mailto:info@aiesec.ca">info@aiesec.ca</a></p>
+  </div>
+
+</footer>
+
+<script>
+  let position = 0;
+  const track = document.getElementById('sliderTrack');
+
+  function slide(dir) {
+    const cards = track.querySelectorAll('.t-card');
+    const cardWidth = cards[0].offsetWidth + 24;
+    const maxPosition = -(cards.length - 3) * cardWidth;
+    position += dir * -cardWidth;
+    if (position > 0) position = 0;
+    if (position < maxPosition) position = maxPosition;
+    track.style.transform = `translateX(${position}px)`;
+  }
+</script>
+
+</body>
+</html>
