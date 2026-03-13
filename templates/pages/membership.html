@@ -1,0 +1,185 @@
+{{define "content"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    :root {
+        --aiesec-purple: #7754B6;
+        --aiesec-blue: #2d66b8;
+        --white: #ffffff;
+        --black: #000000;
+    }
+
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+
+    /* --- HERO --- */
+    .hero {
+        height: 90vh;
+        background: linear-gradient(rgba(45, 102, 184, 0.4), rgba(119, 84, 182, 0.4)), url('/static/images/joinus.webp');
+        background-size: cover; background-position: center;
+        display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+        flex-direction: column;
+    }
+    .hero p { font-size: 2rem; font-weight: 700; margin: 0; text-transform: lowercase; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 1000; margin: 0 0 30px 0; line-height: 1; }
+    
+    .hero-btn {
+        padding: 12px 35px; border: 2px solid var(--white); border-radius: 50px;
+        color: var(--white); text-decoration: none; font-weight: 800; font-size: 1.1rem; transition: 0.3s;
+    }
+    .hero-btn:hover { background: var(--white); color: var(--aiesec-purple); }
+
+    /* --- WHY JOIN --- */
+    .why-join { padding: 100px 8%; display: flex; align-items: flex-start; gap: 60px; background: var(--white); }
+    .why-join-left { flex: 0.8; }
+    .why-join-title { font-size: 3.8rem; font-weight: 1000; line-height: 0.9; color: var(--aiesec-purple); letter-spacing: -2px; margin: 0; }
+    .why-join-right { flex: 2.2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 20px; }
+    .benefit-circle { width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin-bottom: 12px; }
+    .benefit-circle img { width: 100%; height: 100%; object-fit: cover; }
+    .benefit-text { font-size: 1.1rem; font-weight: 900; text-align: center; color: var(--black); line-height: 1.1; }
+
+    /* --- SLIDER SHARED STYLES --- */
+    .slider-viewport { max-width: 1300px; margin: 0 auto 40px auto; overflow: hidden; position: relative; padding: 20px 0; }
+    .slider-track { display: flex; gap: 30px; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+    
+    /* --- TEAM SECTION --- */
+    .team-section {
+        padding: 100px 5%;
+        background: linear-gradient(rgba(119, 84, 182, 0.7), rgba(45, 102, 184, 0.7)), url('/static/images/chooseyourteambackground.webp');
+        background-size: cover; background-position: center; background-attachment: fixed;
+        text-align: center;
+    }
+    .team-header { font-size: 3.5rem; font-weight: 1000; color: var(--white); margin-bottom: 50px; text-transform: lowercase; }
+    
+    .team-card {
+        min-width: calc((100% - 60px) / 3);
+        aspect-ratio: 1 / 1.1;
+        background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px);
+        padding: 40px 30px; border-radius: 0px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;
+    }
+    .team-card h3 { font-size: 1.4rem; font-weight: 900; color: var(--black); margin-bottom: 15px; }
+    .team-card p { font-size: 0.95rem; color: var(--black); line-height: 1.5; }
+
+    /* --- TESTIMONIALS (MATCHING REFERENCE) --- */
+    .testimonials { 
+        padding: 120px 5%; 
+        /* Darker, more saturated overlay per image_e3b21f */
+        background: linear-gradient(rgba(45, 102, 184, 0.6), rgba(119, 84, 182, 0.6)), url('/static/images/anothertestimonial.webp'); 
+        background-size: cover; background-position: center;
+        text-align: center;
+    }
+    .testimonial-card { 
+        min-width: calc((100% - 60px) / 3); 
+        background: rgba(255, 255, 255, 0.25); /* Glassmorphism look */
+        backdrop-filter: blur(8px);
+        padding: 60px 40px; /* Increased padding for length */
+        min-height: 500px; /* Forces longer cards like image_e3b21f */
+        border-radius: 0px; 
+        text-align: center; 
+        display: flex; flex-direction: column; justify-content: space-between;
+        box-sizing: border-box;
+        color: var(--white);
+    }
+    .testimonial-img { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 25px auto; object-fit: cover; border: 3px solid var(--white); }
+    .testimonial-card p { font-size: 1.05rem; line-height: 1.6; font-weight: 400; margin-bottom: 30px; color: black}
+    .author-name { font-weight: 900; font-size: 1.4rem; text-transform: capitalize; margin-top: auto; color: black}
+
+    /* Arrows */
+    .arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); border: none; color: var(--white); width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 10; font-size: 1.2rem; }
+    .prev { left: 10px; } .next { right: 10px; }
+
+    @media (max-width: 1024px) {
+        .team-card, .testimonial-card { min-width: calc((100% - 30px) / 2); }
+    }
+    @media (max-width: 768px) {
+        .team-card, .testimonial-card { min-width: 100%; }
+    }
+</style>
+
+<section class="hero">
+    <p>we are</p>
+    <h1>AIESEC in canada.</h1>
+    <a href="#teams" class="hero-btn">Join us</a>
+</section>
+
+<section class="why-join">
+    <div class="why-join-left">
+        <h2 class="why-join-title">why<br>you<br>should<br>join</h2>
+    </div>
+    <div class="why-join-right">
+        <div class="benefit-item"><div class="benefit-circle"><img src="/static/images/findyourcommunity.webp"></div><p class="benefit-text">find your community.</p></div>
+        <div class="benefit-item"><div class="benefit-circle"><img src="/static/images/gainworkexperience.webp"></div><p class="benefit-text">gain work experience.</p></div>
+        <div class="benefit-item"><div class="benefit-circle"><img src="/static/images/developyourskills.webp"></div><p class="benefit-text">develop your skills.</p></div>
+        <div class="benefit-item"><div class="benefit-circle"><img src="/static/images/attendconferences.webp"></div><p class="benefit-text">attend conferences.</p></div>
+        <div class="benefit-item"><div class="benefit-circle"><img src="/static/images/makeanimpact.webp"></div><p class="benefit-text">make an impact.</p></div>
+        <div class="benefit-item"><div class="benefit-circle"><img src="/static/images/developyourleadership.webp"></div><p class="benefit-text">develop your leadership.</p></div>
+    </div>
+</section>
+
+<section id="teams" class="team-section">
+    <h2 class="team-header">choose your team</h2>
+    <div class="slider-viewport">
+        <button class="arrow prev" onclick="shiftSlider('teamTrack', -1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow next" onclick="shiftSlider('teamTrack', 1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-track" id="teamTrack">
+            <div class="team-card"><h3>Exchange Experience</h3><p>Gain sales and client service experience while contributing to connecting young people in your community with global internship and volunteer opportunities.</p></div>
+            <div class="team-card"><h3>Corporate Relations</h3><p>Gain sales and networking experience by connecting with industry professionals and organizations to build local exchange opportunities for interns from abroad. </p></div>
+            <div class="team-card"><h3>Talent Management</h3><p>Gain HR and people management skills through membership experience strategies to engage and motivate performance within local team cultures.</p></div>
+            <div class="team-card"><h3>Marketing</h3><p>Gain experience through various activites such as market research campaigns, content creation/management, event organization and many other projects to help amplify our brand and introduce new people to AIESEC.</p></div>
+            <div class="team-card"><h3>Finance</h3><p>Manage local budgets, track financial reporting, and ensure the sustainability of the chapter.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2 class="team-header">what our members say</h2>
+    <div class="slider-viewport">
+        <button class="arrow prev" onclick="shiftSlider('testTrack', -1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow next" onclick="shiftSlider('testTrack', 1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-track" id="testTrack">
+            <div class="testimonial-card">
+                <img src="/static/images/Wardah.webp" class="testimonial-img">
+                 <h4 class="author-name">Wardah Tariq</h4>
+                <p>AIESEC has given me a family in the hardest times and has taught me more than I could imagine. AIESEC has changed me as a person and given me countless opportunities to grow and develop not only as a leader but as a person. I think when I first heard of AIESEC and developed cross cultural understanding it flew over my head. Two years later I see not only within membership but in all AIESEC does that we develop empathy and communication like no other organization. Truly I am grateful for all that AIESEC has given me and hope I can give a portion of it back!</p>
+               
+            </div>
+            <div class="testimonial-card">
+                <img src="/static/images/placeholderforimage.webp" class="testimonial-img">
+                <h4 class="author-name">Maysan Adad</h4>
+                <p>I am and have been for the past 5 months, VP iGT in McGill. I first joined 9 months ago to develop my skills, have a first hand experience in HR or management, and broaden my network. And now that I finished my first academic year at AIESEC, I can tell that I achieved my goals and a lot more! My favorite part of the whole experience was, however unexpectedly, the numerous new friendships that were created within and outside our committee. I am thankful for the support and the community that I now belong to. 
+
+                </p>
+                
+            </div>
+            <div class="testimonial-card">
+                <img src="/static/images/placeholderforimage.webp" class="testimonial-img">
+                <h4 class="author-name">Vatsal Maheshwari</h4>
+                <p>Joining AIESEC is one of the best decisions I made in my University life. I look back at myself in my First year and I see myself now, and I see my skills are greatly developed. Whether it is team management, client advisor, or innovating for my portfolio, I have learned quite a lot. Ont op of that, I have made lifelong memories and friends after being in AIESEC. The culture here is one of the best work cultures I have ever experienced.</p>
+                
+            </div>
+            <div class="testimonial-card">
+              <img src="/static/images/placeholderforimage.webp" class="testimonial-img">
+                  <h4 class="author-name">sophia</h4>
+              <p>"Nothing I have ever participated has developed my leadership skills more than joining AIESEC. It was the best decision I made in university. As a VP, I have had the chance to develop so many new skills like running a team, conducting interviews, conducting professional sales meetings, etc. Not only have I had the chance to learn so many things, but I have also been able to meet amazing people from all over the world. I would recommend AIESEC to everyone looking to meet new people and for personal development. AIESEC has given me the confidence to enter the professional world after graduation."</p>
+
+</div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const indices = { teamTrack: 0, testTrack: 0 };
+
+    function shiftSlider(trackId, dir) {
+        const track = document.getElementById(trackId);
+        const cards = track.children;
+        const total = cards.length;
+        let visible = window.innerWidth > 1024 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+        
+        indices[trackId] = Math.max(0, Math.min(indices[trackId] + dir, total - visible));
+        
+        const gap = 30;
+        const width = cards[0].offsetWidth + gap;
+        track.style.transform = `translateX(-${indices[trackId] * width}px)`;
+    }
+</script>
+{{end}}

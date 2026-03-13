@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youth to Business — AIESEC in Canada | AIESEC in Canada</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="site-wrapper">
+  
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/aiesec-logo.png" alt="AIESEC in Canada">
+    </a>
+
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">About Us</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/this-is-aiesec.html">This is AIESEC</a></li>
+            <li><a href="/our-mission.html">Our Mission</a></li>
+            <li><a href="/meet-the-team.html">Our Team</a></li>
+            <li><a href="/our-partners.html">Meet Our Partners</a></li>
+            <li><a href="/alumni.html">For Alumni</a></li>
+            <li><a href="/support-us.html">Support Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Youth</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/exchange.html">Learn about Exchange</a></li>
+            <li><a href="/exchange-signup.html">Go on Exchange</a></li>
+            <li><a href="/membership.html">Learn about Membership</a></li>
+            <li><a href="/join-us.html">Become a Member</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Companies</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/about-partnerships.html">Why Partner with AIESEC</a></li>
+            <li><a href="/y2b.html">Youth-2-Business Series</a></li>
+            <li><a href="/exchange-for-organizations.html">Hire through AIESEC</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">English</a>
+        <div class="dropdown-content mini">
+          <ul class="dropdown-menu">
+            <li><a href="#">Français</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/exchange-signup.html" class="nav-cta">Sign Up for Exchange</a></li>
+    </ul>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-section-title">About Us</div>
+    <a href="/this-is-aiesec.html">This is AIESEC</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/meet-the-team.html">Our Team</a>
+    <a href="/our-partners.html">Meet Our Partners</a>
+    <a href="/alumni.html">For Alumni</a>
+    <a href="/support-us.html">Support Us</a>
+    
+    <div class="mobile-section-title">For Youth</div>
+    <a href="/exchange.html">Learn about Exchange</a>
+    <a href="/exchange-signup.html">Go on Exchange</a>
+    <a href="/membership.html">Learn about Membership</a>
+    <a href="/join-us.html">Become a Member</a>
+    
+    <div class="mobile-section-title">For Companies</div>
+    <a href="/about-partnerships.html">Why Partner with AIESEC</a>
+    <a href="/y2b.html">Youth-2-Business Series</a>
+    <a href="/exchange-for-organizations.html">Hire through AIESEC</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+
+  <main class="main-content">
+    
+
+<style>
+  .y2b-program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .y2b-program-card {
+    background: white;
+    border-radius: 12px;
+    padding: 36px 32px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  }
+  .y2b-program-card .logo-placeholder {
+    background: var(--blue);
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .y2b-program-card h2 {
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+  .y2b-program-card .bullet {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+  .y2b-program-card .bullet:first-of-type {
+    border-top: none;
+  }
+  .partners-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .partner-logo-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .partner-logo-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .partner-logo-card p {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+</style>
+
+
+<section style="background:var(--blue);padding:80px 40px;">
+  
+  <div style="max-width:800px;margin:0 auto;color:white;text-align:center;">
+    <h1 style="font-size:clamp(40px,6vw,72px);font-weight:900;margin-bottom:32px;">Youth to Business</h1>
+    <p style="font-size:17px;line-height:1.9;">
+      Here in AIESEC, we aim to empower every <strong>young person</strong> in Canada and around the world to achieve their <strong>leadership potential</strong>. In order to accomplish this, one of our missions is to bridge the gap between <strong>young people and businesses</strong> so that they can learn from each other, grow together, and create <strong>lasting positive changes</strong> on our communities and industries.<br><br>
+      <strong>We do this with our Youth to Business series.</strong>
+    </p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner text-center">
+    
+    <div style="background:var(--off-white);border-radius:12px;padding:60px 40px;">
+      <p style="color:var(--text-light);font-size:14px;font-weight:600;">TODO: Insert Y2B infographic image — Website Elements (6) (1).png from Squarespace CDN</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-off">
+  <div class="section-inner">
+    <div class="y2b-program-grid">
+
+      
+      <div class="y2b-program-card">
+        
+        <div class="logo-placeholder">Y2B Forum</div>
+        <h2>Connect with hundreds of students and youth across Canada for the largest youth-led leadership event of the year!</h2>
+        <div class="bullet">Tackle and dive deep into important topics surrounding leadership and the future of work at our theme panels.</div>
+        <div class="bullet">Build meaningful brand connections and promote your business to new audiences.</div>
+        <div class="bullet">Gain insight into youth thought leadership and takeaway many new ideas surrounding your organizational practices and strategies.</div>
+      </div>
+
+      
+      <div class="y2b-program-card">
+        
+        <div class="logo-placeholder">Y2B Summit</div>
+        <h2>Meet the leading bodies of AIESEC in Canada and join us for one of our seasonal summits to help ignite the leadership across Canada!</h2>
+        <div class="bullet">Connect with the Local Presidents of AIESEC in Canada whom are each running their own chapters across Canada.</div>
+        <div class="bullet">Gain feedback and insight into industry topics from our value-driven leadership.</div>
+        <div class="bullet">Network with promising young leaders entering the workforce.</div>
+      </div>
+
+      
+      <div class="y2b-program-card">
+        
+        <div class="logo-placeholder">Y2B Survey</div>
+        <h2>Gain insight on the youth perspective on different industries, employer practices, and a variety of other relevant topics to employment and business.</h2>
+        <div class="bullet">Learn more about the 18-29 range market and their key market traits.</div>
+        <div class="bullet">Gain valuable insight and data on the youth market to strengthen your reach and target key audiences.</div>
+        <div class="bullet">Discover turnkey solutions to your business operations through fresh new insight.</div>
+      </div>
+
+    </div>
+
+    <div class="text-center" style="margin-top:48px;">
+      <a href="#y2b-contact" class="btn btn-primary">Get Involved!</a>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:var(--blue);padding:80px 24px;text-align:center;">
+  <div style="max-width:700px;margin:0 auto;color:white;">
+    <p style="font-size:16px;opacity:0.85;margin-bottom:12px;">Check out our</p>
+    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:32px;">2022 Youth to Business Report</h2>
+    <a href="https://issuu.com/aieseccanada/docs/y2b_2022_report" target="_blank" style="display:inline-block;border:2px solid white;color:white;padding:14px 40px;border-radius:40px;font-weight:700;font-size:16px;text-decoration:none;">Let's Go!</a>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title text-center" style="margin-bottom:0;">Meet our 2024 Y2B Partners</h2>
+    <div class="partners-logos">
+
+      <div class="partner-logo-card">
+        
+        <div style="background:var(--off-white);height:80px;border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-light);">TODO: RBC Logo</div>
+        <h3>RBC Future Launch</h3>
+        <p>Title Partner</p>
+      </div>
+
+      <div class="partner-logo-card">
+        <div style="background:var(--off-white);height:80px;border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-light);">TODO: Logo</div>
+        <h3>Cenovus Energy</h3>
+        <p>Presenting Partner</p>
+      </div>
+
+      <div class="partner-logo-card">
+        
+        <div style="background:var(--off-white);height:80px;border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-light);">TODO: Telfer Logo</div>
+        <h3>Telfer School of Management</h3>
+        <p>Theme Partner</p>
+      </div>
+
+      <div class="partner-logo-card">
+        
+        <div style="background:var(--off-white);height:80px;border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-light);">TODO: EDC Logo</div>
+        <h3>Export Development Canada</h3>
+        <p>Panel Partner</p>
+      </div>
+
+      <div class="partner-logo-card">
+        <div style="background:var(--off-white);height:80px;border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-light);">TODO: Logo</div>
+        <h3>MNP</h3>
+        <p>Workshop Partner</p>
+      </div>
+
+      <div class="partner-logo-card">
+        <div style="background:var(--off-white);height:80px;border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-light);">TODO: Logo</div>
+        <h3>The Fraser Institute</h3>
+        <p>Supporting Partner</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="y2b-contact" style="background:var(--blue);padding:80px 24px;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;color:white;">
+    <h2 style="font-size:clamp(32px,4vw,52px);font-weight:900;margin-bottom:32px;">get involved.</h2>
+    <p style="font-size:18px;margin-bottom:8px;"><a href="mailto:info@aiesec.ca" style="color:white;">info@aiesec.ca</a></p>
+    <p style="font-size:18px;margin-bottom:8px;">(416) 368-1001</p>
+    <p style="font-size:13px;opacity:0.75;margin-bottom:20px;">**We are in the office Monday & Wednesday — we may not always answer the phone immediately.</p>
+    <p style="font-size:15px;opacity:0.9;">164 Eglinton Ave E suite 102, Toronto, ON M4P 1G4</p>
+  </div>
+</section>
+
+
+  </main>
+
+  
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/this-is-aiesec.html">About AIESEC</a>
+        <a href="/our-mission.html">Our Mission</a>
+        <a href="/meet-the-team.html">Meet the Team</a>
+        <a href="/support-us.html">Support Us</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Exchange</h4>
+        <a href="/exchange.html">Learn about Exchange</a>
+        <a href="/global-volunteer.html">Global Volunteer</a>
+        <a href="/global-teacher.html">Global Teacher</a>
+        <a href="/global-talent.html">Global Talent</a>
+        <a href="/exchange-signup.html">Go on Exchange</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <a href="/membership.html">Learn about Membership</a>
+        <a href="/join-us.html">Join AIESEC</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="/about-partnerships.html">Learn about Partnerships</a>
+        <a href="/y2b.html">Youth 2 Business</a>
+        <a href="/exchange-for-organizations.html">Exchange for Companies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alumni</h4>
+        <a href="/alumni.html">For Alumni</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>General</h4>
+        <a href="/annual-reports.html">Annual Reports</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/safety-policy.html">Safety Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer">
+        AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.
+      </p>
+      
+      <div class="footer-copyright">
+        <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
+        <div class="footer-socials">
+             </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

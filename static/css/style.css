@@ -1,0 +1,322 @@
+/* =============================================
+   AIESEC Canada - Global Stylesheet
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* This is the likely culprit—Go templates often wrap content in a container */
+main {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+main, .main-content, #content{
+  display: block !important; 
+  height: auto !important; 
+  min-height: 100% !important; 
+  padding: 0 !important; 
+  margin: 0 !important; 
+  max-width: 100% !important; 
+
+}
+:root {
+  --blue: #037EF3;
+  --light-blue: #00C1FF;
+  --dark: #0a0a1a;
+  --white: #ffffff;
+  --off-white: #f5f6fa;
+  --text: #1a1a2e;
+  --text-light: #555;
+  --border: #e0e4ef;
+  --accent: #00C6FF;
+  --font-main: 'Lato', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  /* FIXED: Changed from -80px to 0 so content doesn't hide behind navbar */
+  margin-top: 0; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =============================================
+    NAVBAR (Refurbished)
+   ============================================= */
+.navbar {
+  /* Increased height to make it feel less "small" */
+  height: 100px !important; 
+  background: linear-gradient(
+    180deg,
+    rgba(3, 126, 243, 0.4) 0%, 
+    rgba(0, 0, 0, 0) 100% 
+  ) !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  /* Official look: Thin weight and slightly larger font */
+  font-weight: 400 !important; 
+  font-size: 16px;
+  letter-spacing: 0.5px; 
+}
+
+
+/* Add this to shrink the logo and its container */
+.navbar img {
+  height: 40px; /* Much smaller, like the target */
+  width: auto;
+  object-fit: contain;
+}
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  /* FIXED: Force bullets to stay hidden */
+  list-style: none !important;
+  gap: 40px;
+  align-items: center;
+}
+
+
+
+/* --- THE DROPDOWN (Blue Box / White Text) --- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--blue); /* Solid Blue Box */
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 15px 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* FIXED: Target the inner list to kill ghost bullets */
+.dropdown-menu, .dropdown-menu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  color: white !important; /* Forced White Text */
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- NAV SIGNUP PILL BUTTON --- */
+.nav-cta {
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white !important;
+  background-color: transparent;
+  padding: 10px 25px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.nav-cta:hover {
+  background: white;
+  color: var(--blue) !important;
+}
+
+/* --- MOBILE & GHOST TEXT FIX --- */
+
+/* FIXED: This hides the extra text that was showing up on the right side */
+
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.nav-hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+  .nav-hamburger { display: flex; }
+  .nav-links { display: none; }
+}   
+/* This kills the extra text on the far right of your screenshot */
+.mobile-menu {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* This ensures the desktop links have enough room to spread out */
+.nav-links {
+    display: flex !important;
+    list-style: none !important;
+}
+/* =============================================
+   FOOTER
+   ============================================= */
+/* =============================================
+    FOOTER (Refurbished)
+   ============================================= */
+
+.main-footer {
+  background: var(--white); /* Solid white background as per screenshot */
+  padding: 80px 0 40px 0;
+  border-top: 1px solid #eee;
+  color: var(--text);
+  margin-top: 50px; /* Space between content and footer */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  /* Forces the 6-column layout from your screenshot */
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+/* Column Headers */
+.footer-col h4 {
+  color: var(--blue); /* AIESEC Blue headers */
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-transform: none; /* Matches the "About", "Exchange" look */
+}
+
+/* Underlined Links */
+.footer-col a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 12px;
+  text-decoration: underline; /* Matches the AIESEC Canada screenshot exactly */
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* --- Bottom Disclaimer Area --- */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+.disclaimer {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-socials svg {
+  transition: transform 0.2s;
+}
+
+.footer-socials svg:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Footer for Mobile */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 40px;
+  }
+}
+main{
+  padding-top: 0 !important; 
+}
+/* =============================================
+   HERO BANNER
+   ============================================= */
+
+/* =============================================
+   HERO BANNER
+   ============================================= */
+

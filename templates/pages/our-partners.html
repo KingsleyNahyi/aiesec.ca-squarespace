@@ -1,0 +1,278 @@
+{{define "content"}}
+<style>
+  /* --- RESPONSIVE HERO SECTION --- */
+  .partners-hero-banner h1,
+.partners-hero-banner h2,
+.partners-hero-banner h3,
+.partners-hero-banner p,
+.partners-hero-banner a {
+    text-shadow: none !important;
+    filter: none !important;
+}
+.partners-hero-content,
+.hero-text-wrapper {
+    box-shadow: none !important;
+    background: none !important;
+    border: none !important;
+}
+.partners-hero-banner {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+.hero-overlay-center,
+.partners-hero-content,
+.hero-text-wrapper {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+}
+.partners-hero-banner{
+  position: relative; 
+}
+
+.partners-hero-banner::before{
+  content: ''; 
+  position: absolute; 
+  inset: 0; 
+  background: rgba(0,0,0,0.3);
+  z-index: 0; 
+}
+.hero-overlay-center {
+    width: 100%;
+    min-height: 100vh;
+    background: transparent !important; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+    z-index: 1; 
+    position: relative; 
+    
+}
+
+.partners-hero-title {
+    font-size: clamp(2.5rem, 8vw, 5.5rem); 
+    font-weight: 900; 
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    /* REMOVE ALL SHADOWS */
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.partners-hero-description {
+    font-size: clamp(1rem, 2vw, 1.5rem); 
+    color: white;
+    max-width: 900px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: center;
+    /* REMOVE ALL SHADOWS */
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.hero-button-container {
+    margin-top: 20px;
+}
+
+.partners-get-involved-btn {
+    display: inline-block;
+    padding: 14px 50px;
+    border: 3px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 50px;
+    background: transparent;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* REMOVE ALL SHADOWS */
+    text-shadow: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+.partners-get-involved-btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/* --- TITLES & CHAMPION --- */
+.partners-intro-block {
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.meet-partners-title, 
+.aiesec-champion-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900; 
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: none !important;
+}
+
+.aiesec-champion-title {
+    color: #037EF3; 
+}
+
+.stat-number {
+    display: block;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    margin: 30px 0;
+}
+
+/* --- TIER HEADERS --- */
+.tier-header-blue {
+    color: #037EF3; 
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900; 
+    margin-bottom: 10px;
+    text-shadow: none !important;
+}
+
+.tier-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.tier-separator {
+    border: 0;
+    height: 2px;
+    background: black;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* --- GRIDS & LOGOS --- */
+.gold-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 40px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.silver-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 80px;
+    margin-top: 50px;
+}
+
+.partner-card img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.partner-label-bold {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-top: 10px;
+}
+</style>
+<section class="partners-hero-banner" style="background-image: url('/static/images/meetourpartners.webp');">
+    <div class="hero-overlay-center">
+        <div class="partners-hero-content">
+            <h1 class="partners-hero-title">OUR PARTNERS</h1>
+            <div class="hero-text-wrapper">
+                <p class="partners-hero-description">
+                    Here in AIESEC, we are always looking for ways to enhance our opportunities to develop stronger leadership in young people and bridge the gap between generations of leadership, but we can't do it without the help and support of all our amazing partners making their own commitment to developing the future and current leadership of Canada.
+                </p>
+                <p class="partners-hero-description">
+                    Connect with us and learn more on how you and your organization can make your own impact and commitment to developing leadership in Canada and across the world.
+                </p>
+            </div>
+            <div class="hero-button-container">
+                <a href="#contact" class="partners-get-involved-btn">Get Involved</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-intro-block">
+    <h2 class="meet-partners-title">Meet our Partners</h2>
+    <h3 class="aiesec-champion-title">AIESEC Champion</h3>
+    
+    <div class="champion-stat-box">
+        <span class="stat-number">$60,000 +</span>
+        <a href="https://www.rbcroyalbank.com" target="_blank">
+            <img src="/static/images/RBC.webp" alt="RBC" class="champion-logo">
+        </a>
+    </div>
+</section>
+
+<hr class="tier-separator">
+
+<section class="tier-section">
+    <h3 class="tier-header-blue">Platinum Partners</h3>
+    <p class="tier-value">$30,000 - $59,999</p>
+    <div class="partner-card">
+        <a href="https://www.edc.ca" target="_blank">
+            <img src="/static/images/EDC.webp" alt="EDC" class="tier-logo-plt">
+        </a>
+        <h4 class="partner-label-bold">Export Development Canada</h4>
+    </div>
+</section>
+
+<hr class="tier-separator">
+
+<section class="tier-section">
+    <h3 class="tier-header-blue">Gold Partners</h3>
+    <p class="tier-value">$15,000 - $29,999</p>
+    <div class="gold-grid">
+        <div class="partner-card">
+            <a href="https://www.cenovus.com" target="_blank"><img src="/static/images/cenovus.webp"></a>
+            <h4 class="partner-label-bold">Cenovus Energy</h4>
+        </div>
+        <div class="partner-card">
+            <a href="https://www.capp.ca" target="_blank"><img src="/static/images/capp.webp"></a>
+            <h4 class="partner-label-bold">Canadian Association of Petroleum Producers</h4>
+        </div>
+        <div class="partner-card">
+            <a href="https://telfer.uottawa.ca" target="_blank"><img src="/static/images/tele.webp"></a>
+            <h4 class="partner-label-bold">Telfer School of Management</h4>
+        </div>
+        <div class="partner-card">
+            <a href="https://www.bmo.com" target="_blank"><img src="/static/images/bmo.webp"></a>
+            <h4 class="partner-label-bold">BMO Canada</h4>
+        </div>
+    </div>
+</section>
+
+<hr class="tier-separator">
+
+<section class="tier-section">
+    <h3 class="tier-header-blue">Silver Partners</h3>
+    <p class="tier-value">$5,000 - $14,999</p>
+    <div class="silver-grid">
+        <div class="partner-card">
+            <a href="https://www.economist.com" target="_blank"><img src="/static/images/economist.webp"></a>
+            <h4 class="partner-label-bold">The Economist</h4>
+        </div>
+        <div class="partner-card">
+            <a href="https://www.agf.com" target="_blank"><img src="/static/images/AGF.webp"></a>
+            <h4 class="partner-label-bold">AGF</h4>
+        </div>
+    </div>
+</section>
+
+{{end}}

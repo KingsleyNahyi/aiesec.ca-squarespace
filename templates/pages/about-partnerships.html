@@ -1,0 +1,257 @@
+{{define "content"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* --- BRANDING & CORE --- */
+:root {
+    --aiesec-blue: #037EF3;
+    --aiesec-teal: #00D1FF; 
+    --aiesec-exchange-green: #27d896;
+    --text-dark: #222;
+}
+
+body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text-dark); }
+
+/* --- 1. HERO --- */
+.hero-wrapper {
+    width: 100%;
+    height: 100vh;
+    background: url('/static/images/partnerwithaiesec.webp') no-repeat center center;
+    background-size: cover;
+}
+
+/* --- 2. HEADER --- */
+.why-header {
+    padding: 60px 10%;
+    background: #fff;
+    text-align: center;
+}
+.why-header h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+/* --- 3. NATIONAL PARTNERS --- */
+.national-section {
+    background-color: var(--aiesec-blue);
+    padding: 100px 12% 40px 12%;
+    color: #fff;
+    text-align: center;
+}
+.section-tag-centered {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: lowercase;
+    margin-bottom: 50px;
+    display: block;
+}
+.perks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+.perk-item h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; text-transform: lowercase; }
+
+/* --- 4. BUTTONS & BRIDGES --- */
+.bridge-blue { background-color: var(--aiesec-blue); padding-bottom: 80px; text-align: center; }
+.bridge-green { background-color: var(--aiesec-exchange-green); padding-bottom: 80px; text-align: center; }
+.bridge-gradient {
+    background: linear-gradient(to bottom, var(--aiesec-blue) 0%, var(--aiesec-exchange-green) 100%);
+    padding: 80px 12%;
+    text-align: center;
+}
+.btn-round-white {
+    display: inline-block;
+    padding: 15px 45px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.bridge-blue .btn-round-white:hover { background: #fff; color: var(--aiesec-blue); }
+.bridge-green .btn-round-white:hover { background: #fff; color: var(--aiesec-exchange-green); }
+.bridge-gradient .btn-round-white:hover { background: #fff; color: var(--aiesec-blue); }
+
+/* --- 5. EXCHANGE PARTNERS --- */
+.exchange-section {
+    background-color: var(--aiesec-exchange-green);
+    padding: 100px 12% 40px 12%;
+    color: #fff;
+    text-align: center;
+}
+
+/* --- 6. CORPORATE STRIP --- */
+.corporate-strip {
+    padding: 80px 12%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.corporate-strip h2 { font-size: 2.5rem; font-weight: 800; margin: 0; }
+.teal-text { color: var(--aiesec-teal); }
+.btn-black-outline {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.btn-black-outline:hover { background: #000; color: #fff; }
+
+/* --- 7. Y2B SECTION --- */
+.y2b-wrap {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('/static/images/y2bbackground.webp') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 15%;
+    color: #fff;
+    text-align: center;
+}
+.y2b-wrap p { font-size: 1.8rem; margin-bottom: 30px; font-weight: 500; }
+.y2b-wrap h2 { font-size: 4.5rem; font-weight: 900; margin-bottom: 60px; }
+.btn-y2b {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 15px 55px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.btn-y2b:hover { background: #fff; color: #000; }
+
+/* --- 8. TESTIMONIAL CARDS (RE-FIXED) --- */
+.testimonial-section {
+    padding: 120px 8%;
+    background: url('/static/images/testimonialbackground.webp') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.card-box {
+    background: #fff;
+    width: 500px; /* Slightly wider for the full text */
+    min-height: 400px;
+    padding: 60px 50px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-logo { 
+    height: 80px; 
+    width: auto;
+    max-width: 280px;
+    margin-bottom: 40px;
+    object-fit: contain; 
+}
+.card-box h4 { 
+    font-size: 1.4rem; 
+    font-weight: 800; 
+    margin-bottom: 25px; 
+    line-height: 1.3;
+}
+.card-box p { 
+    font-size: 1.05rem; 
+    line-height: 1.7; 
+    color: #333; 
+    margin: 0;
+    font-style: normal; /* Straight text */
+}
+
+/* --- 9. FOOTER --- */
+.questions-footer {
+    background: var(--aiesec-blue);
+    padding: 100px 12%;
+    color: #fff;
+}
+.footer-content-left { max-width: 500px; text-align: left; }
+.footer-content-left h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 25px; }
+.footer-info { font-size: 1rem; line-height: 1.8; text-align: justify; }
+.q-socials-left { margin-top: 35px; display: flex; gap: 25px; font-size: 2rem; }
+
+@media (max-width: 1100px) {
+    .testimonial-section { flex-direction: column; align-items: center; }
+    .card-box { width: 90%; max-width: 500px; }
+}
+</style>
+
+<div class="hero-wrapper"></div>
+<section class="why-header"><h1>So Why AIESEC?</h1></section>
+
+<section class="national-section">
+    <span class="section-tag-centered">for national partners</span>
+    <div class="perks-grid">
+        <div class="perk-item"><h3>access to young value-driven leaders</h3><p>We aim to create passionate and driven young people instilled with the leadership skills and values.</p></div>
+        <div class="perk-item"><h3>gain insight and solutions into organizational bottlenecks</h3><p>We aim to connect our partners with our youth audience so that we can bridge the understanding.</p></div>
+        <div class="perk-item"><h3>fullfill organizational CSR commitments</h3><p>We believe in empowering young people to achieve their full potential and give back to the community.</p></div>
+    </div>
+</section>
+
+<section class="bridge-gradient"><a href="#" class="btn-round-white">Partner With Us</a></section>
+
+<section class="exchange-section">
+    <span class="section-tag-centered">for exchange partners</span>
+    <div class="perks-grid">
+        <div class="perk-item"><h3>work permit and visa guidance</h3><p>AIESEC supports your international interns throughout their pre-arrival process.</p></div>
+        <div class="perk-item"><h3>you choose. we take care of the rest.</h3><p>We promote your opportunity, screen candidates, and handle all communication.</p></div>
+        <div class="perk-item"><h3>global talent pipeline from 100+ countries.</h3><p>Tap into a diverse pool of motivated international talent who bring global perspectives.</p></div>
+    </div>
+</section>
+<div class="bridge-green"><a href="#" class="btn-round-white">Learn more</a></div>
+
+<section class="corporate-strip">
+    <h2>check out our <span class="teal-text">corporate partners</span></h2>
+    <a href="#" class="btn-black-outline">Let’s Go!</a>
+</section>
+
+<section class="y2b-wrap">
+    <p>What do you get when you put a group of passionate value-driven young people in a room with the brightest industry minds in Canada?</p>
+    <h2>potential, but we call it Y2B.</h2>
+    <a href="#" class="btn-y2b">Learn more</a>
+</section>
+
+<section class="testimonial-section">
+    <div class="card-box">
+        <img src="/static/images/capp.webp" class="card-logo" alt="CAPP">
+        <h4>Canadian Association of Petroleum Producers</h4>
+        <p>Partnering with AIESEC is not only an enjoyable and fulfilling experience, but it enables industry representatives to improve on the work that they do. When you engage with students in meaningful conversations, you are engaging with the future leadership.</p>
+    </div>
+    <div class="card-box">
+        <img src="/static/images/incite.webp" class="card-logo" alt="Incite">
+        <h4>Incite</h4>
+        <p>AIESEC is a dynamic organization led by emerging youth leaders. Their passion and drive is contagious, and they always see opportunities that in turn help our organization explore new possibilities.</p>
+    </div>
+</section>
+
+<footer class="questions-footer">
+    <div class="footer-content-left">
+        <h2>partner with us.</h2>
+        <div class="footer-info">
+            <p>info@aiesec.ca</p>
+            <p>(416) 368-1001</p>
+            <p>164 Eglinton Ave E suite 102, Toronto, ON M4P 1G4</p>
+        </div>
+        <div class="q-socials-left"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-linkedin"></i></div>
+    </div>
+</footer>
+
+{{end}}

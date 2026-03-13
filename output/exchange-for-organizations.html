@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exchange for Organizations — AIESEC in Canada | AIESEC in Canada</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="site-wrapper">
+  
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/aiesec-logo.png" alt="AIESEC in Canada">
+    </a>
+
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">About Us</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/this-is-aiesec.html">This is AIESEC</a></li>
+            <li><a href="/our-mission.html">Our Mission</a></li>
+            <li><a href="/meet-the-team.html">Our Team</a></li>
+            <li><a href="/our-partners.html">Meet Our Partners</a></li>
+            <li><a href="/alumni.html">For Alumni</a></li>
+            <li><a href="/support-us.html">Support Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Youth</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/exchange.html">Learn about Exchange</a></li>
+            <li><a href="/exchange-signup.html">Go on Exchange</a></li>
+            <li><a href="/membership.html">Learn about Membership</a></li>
+            <li><a href="/join-us.html">Become a Member</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Companies</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/about-partnerships.html">Why Partner with AIESEC</a></li>
+            <li><a href="/y2b.html">Youth-2-Business Series</a></li>
+            <li><a href="/exchange-for-organizations.html">Hire through AIESEC</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">English</a>
+        <div class="dropdown-content mini">
+          <ul class="dropdown-menu">
+            <li><a href="#">Français</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/exchange-signup.html" class="nav-cta">Sign Up for Exchange</a></li>
+    </ul>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-section-title">About Us</div>
+    <a href="/this-is-aiesec.html">This is AIESEC</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/meet-the-team.html">Our Team</a>
+    <a href="/our-partners.html">Meet Our Partners</a>
+    <a href="/alumni.html">For Alumni</a>
+    <a href="/support-us.html">Support Us</a>
+    
+    <div class="mobile-section-title">For Youth</div>
+    <a href="/exchange.html">Learn about Exchange</a>
+    <a href="/exchange-signup.html">Go on Exchange</a>
+    <a href="/membership.html">Learn about Membership</a>
+    <a href="/join-us.html">Become a Member</a>
+    
+    <div class="mobile-section-title">For Companies</div>
+    <a href="/about-partnerships.html">Why Partner with AIESEC</a>
+    <a href="/y2b.html">Youth-2-Business Series</a>
+    <a href="/exchange-for-organizations.html">Hire through AIESEC</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+
+  <main class="main-content">
+    
+
+<style>
+  .eft-hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .eft-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+     
+    background: linear-gradient(135deg, #0a2a6b, var(--blue));
+  }
+  .eft-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  .eft-hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 60px 80px;
+  }
+  .eft-hero-content p {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 8px;
+  }
+  .eft-hero-content h1 {
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 32px;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 48px;
+  }
+  .benefits-list {
+    display: grid;
+    gap: 28px;
+  }
+  .benefit-item h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .benefit-item p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  .how-it-works-steps {
+    display: grid;
+    gap: 0;
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hiw-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .hiw-step:last-child { border-bottom: none; }
+  .hiw-step-num {
+    width: 60px;
+    height: 60px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .hiw-step-content h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .hiw-step-content p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .hiw-step-content .time {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .country-region {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .country-region h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  .country-region p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  @media (max-width: 768px) {
+    .eft-hero-content { padding: 40px 24px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .hiw-step { grid-template-columns: 60px 1fr; }
+  }
+</style>
+
+
+<section class="eft-hero">
+  <div class="eft-hero-bg">
+    
+  </div>
+  <div class="eft-hero-content">
+    <p>partner</p>
+    <h1>with aiesec.</h1>
+    <a href="#gt-exchange-contact" class="btn btn-white">Let's Go!</a>
+  </div>
+</section>
+
+
+<section style="background:var(--blue);padding:60px 24px;text-align:center;">
+  <div style="max-width:700px;margin:0 auto;color:white;">
+    <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.2;">the world is full of talent<br>we'll find the best for you</h2>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner">
+    <div class="benefits-grid">
+
+      
+      <div>
+        
+        <div style="background:var(--off-white);border-radius:12px;padding:60px 40px;text-align:center;">
+          <p style="color:var(--text-light);font-size:14px;">TODO: Insert benefits infographic image here</p>
+        </div>
+      </div>
+
+      
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <h3>Cost Savings</h3>
+          <p>Competitive pricing<br>Access to international talent<br>Labour Market Impact Assessment (LMIA) exemption</p>
+        </div>
+        <div class="benefit-item">
+          <h3>Contract Flexibility</h3>
+          <p>Choose your project dates any time of the year<br>Up to 78-week projects</p>
+        </div>
+        <div class="benefit-item">
+          <h3>Service Delivery</h3>
+          <p>Work Permit process support<br>Accommodation and arrival logistics support<br>Regular intern and company servicing</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-off">
+  <div class="section-inner">
+    <h2 class="section-title text-center">How it Works</h2>
+    <div class="how-it-works-steps">
+
+      <div class="hiw-step">
+        <div class="hiw-step-num">1</div>
+        <div class="hiw-step-content">
+          
+          <h3>Contact Us</h3>
+          <p>Meet with one of our exchange representatives to guide your team on the AIESEC exchange process.</p>
+          <span class="time">Time: 1 week</span>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-step-num">2</div>
+        <div class="hiw-step-content">
+          
+          <h3>Sign Contract</h3>
+          <p>Open one or more opportunities within your company to be posted on our international job posting platform.</p>
+          <span class="time">Time: 2 weeks</span>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-step-num">3</div>
+        <div class="hiw-step-content">
+          
+          <h3>Hire Talent</h3>
+          <p>AIESEC will provide you with a shortlist of candidates to choose from for each position after 2 weeks and the interview process begins.</p>
+          <span class="time">Time: 2–4 weeks</span>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-step-num">4</div>
+        <div class="hiw-step-content">
+          
+          <h3>Processing & Preparation</h3>
+          <p>Once selected, AIESEC will support the exchange participant through their work permit application process and our logistics debrief.</p>
+          <span class="time">Time: 5–8 weeks <em>(after submitting application to IEC)</em></span>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-step-num">5</div>
+        <div class="hiw-step-content">
+          
+          <h3>Project Begins</h3>
+          <p>After confirming project timeline and dates, your exchange participant has arrived and is ready to start their first day on the job!</p>
+          <span class="time">Time: 13–78 weeks</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center" style="margin-top:48px;">
+      <a href="#gt-exchange-contact" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:var(--blue);padding:80px 40px;">
+  <div style="max-width:1100px;margin:0 auto;color:white;text-align:center;">
+    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:16px;">a peek into our projects</h2>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title text-center" style="margin-bottom:0;">Where will your future talent come from?</h2>
+    <div class="countries-grid">
+
+      <div class="country-region">
+        <h3>Americas</h3>
+        <p>Chile / Costa Rica</p>
+      </div>
+
+      <div class="country-region">
+        <h3>Asia</h3>
+        <p>Hong Kong / Japan / South Korea / Taiwan</p>
+      </div>
+
+      <div class="country-region">
+        <h3>Europe</h3>
+        <p>Austria / Belgium / Croatia / Czech Republic / Denmark / Estonia / Finland / France / Germany / Greece / Iceland / Ireland / Italy / Latvia / Lithuania / Norway / Poland / Portugal / San Marino / Slovakia / Slovenia / Spain / Sweden / Switzerland / United Kingdom</p>
+      </div>
+
+      <div class="country-region">
+        <h3>Oceania</h3>
+        <p>Australia / New Zealand</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="gt-exchange-contact" style="background:var(--blue);padding:80px 24px;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;color:white;">
+    <h2 style="font-size:clamp(32px,4vw,52px);font-weight:900;margin-bottom:32px;">find talent now.</h2>
+    <p style="font-size:18px;margin-bottom:8px;"><a href="mailto:info@aiesec.ca" style="color:white;">info@aiesec.ca</a></p>
+    <p style="font-size:18px;margin-bottom:8px;">(416) 368-1001</p>
+    <p style="font-size:13px;opacity:0.75;margin-bottom:20px;">**We are in the office Monday & Wednesday — we may not always answer the phone immediately.</p>
+    <p style="font-size:15px;opacity:0.9;">164 Eglinton Ave E suite 102, Toronto, ON M4P 1G4</p>
+  </div>
+</section>
+
+
+  </main>
+
+  
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/this-is-aiesec.html">About AIESEC</a>
+        <a href="/our-mission.html">Our Mission</a>
+        <a href="/meet-the-team.html">Meet the Team</a>
+        <a href="/support-us.html">Support Us</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Exchange</h4>
+        <a href="/exchange.html">Learn about Exchange</a>
+        <a href="/global-volunteer.html">Global Volunteer</a>
+        <a href="/global-teacher.html">Global Teacher</a>
+        <a href="/global-talent.html">Global Talent</a>
+        <a href="/exchange-signup.html">Go on Exchange</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <a href="/membership.html">Learn about Membership</a>
+        <a href="/join-us.html">Join AIESEC</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="/about-partnerships.html">Learn about Partnerships</a>
+        <a href="/y2b.html">Youth 2 Business</a>
+        <a href="/exchange-for-organizations.html">Exchange for Companies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alumni</h4>
+        <a href="/alumni.html">For Alumni</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>General</h4>
+        <a href="/annual-reports.html">Annual Reports</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/safety-policy.html">Safety Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer">
+        AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.
+      </p>
+      
+      <div class="footer-copyright">
+        <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
+        <div class="footer-socials">
+             </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

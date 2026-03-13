@@ -1,0 +1,335 @@
+{{define "content"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* --- HERO --- */
+.gv-hero {
+    width: 100%;
+    min-height: 100vh;
+    background: url('/static/images/global-volunteer.webp') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 6% 8%;
+}
+
+.gv-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+}
+.gv-hero-content h1 {
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+    paint-order: stroke fill;
+}
+
+.gv-hero-content h1 span {
+    display: block;
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    text-transform: lowercase;
+    font-weight: 900;
+    color: white;
+    -webkit-text-stroke: 0;
+}
+
+.gv-hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+
+
+/* --- WHAT IS GLOBAL VOLUNTEER --- */
+.gv-intro {
+    padding: 80px 8%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.gv-intro-title {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    color: #F15A29;
+    line-height: 1.05;
+    margin: 0;
+}
+
+.gv-intro-text {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 2.2;
+    margin: 0;
+}
+
+/* --- FEATURES (orange section) --- */
+.gv-orange {
+    background: #F15A29;
+    padding: 60px 6% 0;
+}
+
+.gv-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gv-feature-card img.gv-card-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.gv-feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 16px;
+    text-decoration: underline;
+    line-height: 1.2;
+}
+
+.gv-feature-card p {
+    font-size: 0.95rem;
+    color: white;
+    line-height: 1.8;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* --- DIVIDER LINE --- */
+.gv-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    max-width: 1300px;
+    margin: 50px auto 0;
+}
+
+/* --- DETAILS STRIP (still orange) --- */
+.gv-details {
+    background: #F15A29;
+    padding: 60px 6%;
+}
+
+.gv-details-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gv-detail-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.gv-detail-item h4 {
+    font-size: 1rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.gv-detail-item p {
+    font-size: 0.88rem;
+    color: white;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- CTA (orange bg, outline button) --- */
+.gv-cta {
+    background: #F15A29;
+    padding: 60px 10% 80px;
+    text-align: center;
+}
+
+.gv-cta-btn {
+    display: inline-block;
+    padding: 16px 60px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.gv-cta-btn:hover {
+    background: white;
+    color: #F15A29;
+}
+
+/* --- FOOTER --- */
+.gv-footer {
+    background: #037EF3;
+    padding: 100px 10%;
+    color: white;
+}
+
+.gv-footer h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 40px;
+    letter-spacing: -2px;
+}
+
+.gv-footer p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.gv-footer-socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.gv-footer-socials a {
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.gv-footer-socials a:hover {
+    opacity: 0.7;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .gv-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .gv-features-grid {
+        grid-template-columns: 1fr;
+    }
+    .gv-details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gv-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- HERO -->
+<section class="gv-hero">
+    <div class="gv-hero-content">
+        <h1>VOLUNTEER<span>with aiesec</span></h1>
+    </div>
+</section>
+
+<!-- WHAT IS GLOBAL VOLUNTEER -->
+<section class="gv-intro">
+    <div>
+        <h2 class="gv-intro-title">What is<br>Global<br>Volunteer<br>?</h2>
+    </div>
+    <div>
+        <p class="gv-intro-text">
+            Develop your leadership by contributing to one of our many volunteer opportunities abroad where you can work alongside International NGOs and make an impact in their communities.
+        </p>
+    </div>
+</section>
+
+<!-- FEATURES (3-col grid, orange bg) -->
+<section class="gv-orange">
+    <div class="gv-features-grid">
+        <div class="gv-feature-card">
+            <img class="gv-card-photo" src="/static/images/make-an-impact.webp" alt="Make an Impact">
+            <h3>Make an Impact to Develop Communities</h3>
+            <p>All our project aim to contribute to one of the UN Sustainable Development Goals</p>
+        </div>
+        <div class="gv-feature-card">
+            <img class="gv-card-photo" src="/static/images/gain-understanding.webp" alt="Cross-Cultural Understanding">
+            <h3>Gain Cross-Cultural Understanding</h3>
+            <p>Develop your practical skills as you are immersed in new cultures and introduced to new concepts.</p>
+        </div>
+        <div class="gv-feature-card">
+            <img class="gv-card-photo" src="/static/images/network.webp" alt="Build Your Global Network">
+            <h3>Build Your Global Network</h3>
+            <p>Meet other volunteers from around the world and build connections to last a lifetime.</p>
+        </div>
+    </div>
+    <hr class="gv-divider">
+</section>
+
+<!-- DETAILS STRIP -->
+<section class="gv-details">
+    <div class="gv-details-grid">
+        <div class="gv-detail-item">
+            <img src="/static/images/fast-food.webp" alt="Food">
+            <h4>Food</h4>
+            <p>Provided depending on project</p>
+        </div>
+        <div class="gv-detail-item">
+            <img src="/static/images/home.webp" alt="Accommodation">
+            <h4>Accommodation</h4>
+            <p>Provided with a host family</p>
+        </div>
+        <div class="gv-detail-item">
+            <img src="/static/images/salary.webp" alt="Stipend">
+            <h4>Stipend</h4>
+            <p>Projects are all volunteer based</p>
+        </div>
+        <div class="gv-detail-item">
+            <img src="/static/images/timetable.webp" alt="Duration">
+            <h4>Duration</h4>
+            <p>6-8 Weeks</p>
+        </div>
+        <div class="gv-detail-item">
+            <img src="/static/images/passport.webp" alt="Visa/Travel">
+            <h4>Visa/Travel</h4>
+            <p>Not provided but will give support</p>
+        </div>
+    </div>
+</section>
+
+<!-- GET STARTED CTA -->
+<section class="gv-cta">
+    <a href="/exchange-signup.html" class="gv-cta-btn">Get Started!</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="gv-footer">
+    <h2>get involved.</h2>
+    <p>info@aiesec.ca</p>
+    <p>(416) 368-1001</p>
+    <p>164 Eglinton Ave E suite 102 &nbsp;&nbsp;&nbsp; Toronto, ON M4P 1G4.</p>
+    <div class="gv-footer-socials">
+        <a href="https://www.instagram.com/aieseccanada"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/AIESECCanada"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/aiesec-in-canada"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+{{end}}

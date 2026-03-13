@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIESEC in Canada | AIESEC in Canada</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="site-wrapper">
+  
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/aiesec-logo.png" alt="AIESEC in Canada">
+    </a>
+
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">About Us</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/this-is-aiesec.html">This is AIESEC</a></li>
+            <li><a href="/our-mission.html">Our Mission</a></li>
+            <li><a href="/meet-the-team.html">Our Team</a></li>
+            <li><a href="/our-partners.html">Meet Our Partners</a></li>
+            <li><a href="/alumni.html">For Alumni</a></li>
+            <li><a href="/support-us.html">Support Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Youth</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/exchange.html">Learn about Exchange</a></li>
+            <li><a href="/exchange-signup.html">Go on Exchange</a></li>
+            <li><a href="/membership.html">Learn about Membership</a></li>
+            <li><a href="/join-us.html">Become a Member</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Companies</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/about-partnerships.html">Why Partner with AIESEC</a></li>
+            <li><a href="/y2b.html">Youth-2-Business Series</a></li>
+            <li><a href="/exchange-for-organizations.html">Hire through AIESEC</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">English</a>
+        <div class="dropdown-content mini">
+          <ul class="dropdown-menu">
+            <li><a href="#">Français</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/exchange-signup.html" class="nav-cta">Sign Up for Exchange</a></li>
+    </ul>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-section-title">About Us</div>
+    <a href="/this-is-aiesec.html">This is AIESEC</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/meet-the-team.html">Our Team</a>
+    <a href="/our-partners.html">Meet Our Partners</a>
+    <a href="/alumni.html">For Alumni</a>
+    <a href="/support-us.html">Support Us</a>
+    
+    <div class="mobile-section-title">For Youth</div>
+    <a href="/exchange.html">Learn about Exchange</a>
+    <a href="/exchange-signup.html">Go on Exchange</a>
+    <a href="/membership.html">Learn about Membership</a>
+    <a href="/join-us.html">Become a Member</a>
+    
+    <div class="mobile-section-title">For Companies</div>
+    <a href="/about-partnerships.html">Why Partner with AIESEC</a>
+    <a href="/y2b.html">Youth-2-Business Series</a>
+    <a href="/exchange-for-organizations.html">Hire through AIESEC</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+
+  <main class="main-content">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+   
+  .hero-viewport {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: url('/static/images/background-for-AIESEC.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: -80px;  
+  }
+
+  .hero-viewport::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+   
+  .marquee-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    white-space: nowrap;
+  }
+
+  .moving-track {
+    display: flex;
+    animation: scroll-text 25s linear infinite;
+  }
+
+  .hero-moving-text {
+    font-size: clamp(60px, 10vw, 120px);
+    font-weight: 900;
+    color: var(--white);
+    text-transform: lowercase;
+    padding-right: 50px;
+    font-family: var(--font-main);
+  }
+
+  @keyframes scroll-text {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .hero-static-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: -20px;
+  }
+
+  .hero-static-text {
+    font-size: clamp(50px, 8vw, 100px);
+    font-weight: 900;
+    color: var(--blue);
+    letter-spacing: -2px;
+  }
+
+   
+  .experience-section {
+    padding: 80px 5%;
+    text-align: center;
+    background: var(--white);
+  }
+
+  .arch-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto 0;
+  }
+
+  .arch-card {
+    flex: 1;
+    min-width: 300px;
+    height: 480px;
+    position: relative;
+    border-radius: 180px 180px 20px 20px;  
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .arch-card:hover { transform: translateY(-10px); }
+
+  .arch-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .arch-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 60px 20px 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+    color: var(--white);
+  }
+
+   
+  .partners-banner {
+    background: var(--blue);
+    padding: 60px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+  }
+
+  .partners-banner h2 { font-size: 40px; font-weight: 900; line-height: 1.1; }
+  .partners-banner span { color: var(--dark); }
+
+  .btn-outline-white {
+    border: 3px solid var(--white);
+    padding: 12px 35px;
+    border-radius: 50px;
+    color: var(--white);
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .btn-outline-white:hover {
+    background: var(--white);
+    color: var(--blue);
+  }
+
+   
+  .testimonial-section {
+    padding: 100px 5%;
+    background: url('/static/images/background.webp') no-repeat center center/cover;
+    text-align: center;
+  }
+
+  .t-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 40px 0;
+    scrollbar-width: none;  
+  }
+
+  .t-grid::-webkit-scrollbar { display: none; }
+
+  .t-card {
+    background: rgba(255, 255, 255, 0.95);
+    min-width: 320px;
+    padding: 40px 25px;
+    border-radius: 20px;
+    flex: 0 0 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .t-card img {
+    width: 100px; height: 100px; border-radius: 50%;
+    margin-bottom: 20px; border: 4px solid var(--blue); object-fit: cover;
+  }
+
+  .t-card.tall { padding-top: 70px; padding-bottom: 70px; border: 2px solid var(--blue); }
+
+   
+  .social-section { padding: 80px 5%; text-align: center; }
+  
+  .social-icons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 25px; 
+    margin: 20px 0 40px; 
+  }
+
+  .social-icons a { font-size: 30px; color: var(--blue); transition: 0.3s; }
+  .social-icons a:hover { transform: scale(1.2); color: var(--dark); }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .social-post {
+    aspect-ratio: 1/1; border-radius: 10px; overflow: hidden;
+    position: relative; display: block;
+  }
+
+  .social-post img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+  
+  .play-overlay {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.1); color: white; font-size: 40px;
+  }
+</style>
+
+<section class="hero-viewport">
+  <div class="marquee-container">
+    <div class="moving-track">
+      <h1 class="hero-moving-text">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
+      <h1 class="hero-moving-text">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
+    </div>
+  </div>
+  <div class="hero-static-container">
+    <h2 class="hero-static-text">with aiesec.</h2>
+  </div>
+</section>
+
+<section class="experience-section">
+  <h1>Choose Your Experience</h1>
+  <div class="arch-grid">
+    <div class="arch-card">
+      <img src="/static/images/card 3.jpg" alt="Become a Member">
+      <div class="arch-label"><h3>Become a Member</h3></div>
+    </div>
+    <div class="arch-card">
+      <img src="/static/images/card 1.jpg" alt="Go on Exchange">
+      <div class="arch-label"><h3>Go on Exchange</h3></div>
+    </div>
+    <div class="arch-card">
+      <img src="/static/images/card 2.jpg" alt="Partner with Us">
+      <div class="arch-label"><h3>Connect with Youth</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="partners-banner">
+  <h2>meet our <br><span>corporate partners</span></h2>
+  <a href="#" class="btn-outline-white">Let's Go!</a>
+</section>
+
+<section class="testimonial-section">
+  <h2 style="font-size:36px; font-weight:800; margin-bottom: 20px;">so what kind of leader will you choose to be <span style="color:var(--blue)">today?</span></h2>
+  <div class="t-grid">
+    <div class="t-card tall">
+      <img src="/static/images/alice shi.webp">
+      <h3>Alice Shi</h3>
+      <p>"AIESEC makes me a better team player, a better employee, and a self-motivated person who always drives for a bigger purpose."</p>
+    </div>
+    <div class="t-card">
+      <img src="/static/images/ChrisGreenough.jpg">
+      <h3>Chris Greenough</h3>
+      <p>"AIESEC connected me with my future. The people who hired me for my exchange ultimately became my partners."</p>
+    </div>
+    <div class="t-card tall">
+      <img src="/static/images/Katherine.webp">
+      <h3>Katharine Sliwinski</h3>
+      <p>"My exchange to Belgium gave me a real chance to work in an international environment and improve my French."</p>
+    </div>
+    <div class="t-card">
+      <img src="/static/images/OliviaMullins.webp">
+      <h3>Olivia Mullins</h3>
+      <p>"AIESEC has shaped my path to consider the impact that I leave on the world. I want to choose a career that creates positive things."</p>
+    </div>
+  </div>
+</section>
+
+<section class="social-section">
+  <h2>Follow Us!</h2>
+  <div class="social-icons">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+  <div class="social-grid">
+    <a href="https://www.instagram.com/p/DVHvNbREdNC/" target="_blank" class="social-post"><img src="/static/images/sixthone.jpg"></a>
+    <a href="https://www.instagram.com/reel/DQpuqNfEps3/" target="_blank" class="social-post">
+      <img src="/static/images/sixthone.jpg"><div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+    </a>
+    <a href="https://www.instagram.com/reel/DQaKvS0kgDW/" target="_blank" class="social-post">
+      <img src="/static/images/sixthone.jpg"><div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+    </a>
+    <a href="https://www.instagram.com/p/DQR1pKXjKlF/" target="_blank" class="social-post"><img src="/static/images/sixthone.jpg"></a>
+  </div>
+</section>
+
+  </main>
+
+  
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/this-is-aiesec.html">About AIESEC</a>
+        <a href="/our-mission.html">Our Mission</a>
+        <a href="/meet-the-team.html">Meet the Team</a>
+        <a href="/support-us.html">Support Us</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Exchange</h4>
+        <a href="/exchange.html">Learn about Exchange</a>
+        <a href="/global-volunteer.html">Global Volunteer</a>
+        <a href="/global-teacher.html">Global Teacher</a>
+        <a href="/global-talent.html">Global Talent</a>
+        <a href="/exchange-signup.html">Go on Exchange</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <a href="/membership.html">Learn about Membership</a>
+        <a href="/join-us.html">Join AIESEC</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="/about-partnerships.html">Learn about Partnerships</a>
+        <a href="/y2b.html">Youth 2 Business</a>
+        <a href="/exchange-for-organizations.html">Exchange for Companies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alumni</h4>
+        <a href="/alumni.html">For Alumni</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>General</h4>
+        <a href="/annual-reports.html">Annual Reports</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/safety-policy.html">Safety Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer">
+        AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.
+      </p>
+      
+      <div class="footer-copyright">
+        <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
+        <div class="footer-socials">
+             </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

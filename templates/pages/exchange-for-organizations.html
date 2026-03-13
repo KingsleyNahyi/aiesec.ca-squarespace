@@ -1,0 +1,501 @@
+{{define "content"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* --- HERO --- */
+.efo-hero {
+    width: 100%;
+    min-height: 100vh;
+    background: url('/static/images/partner-with-aiesec.webp') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.efo-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.efo-hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.efo-hero-content span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.efo-hero-content h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 40px;
+    text-transform: lowercase;
+}
+
+.efo-hero-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.efo-hero-btn:hover {
+    background: white;
+    color: #000;
+}
+
+/* --- TAGLINE --- */
+.efo-tagline {
+    padding: 80px 10%;
+    background: #fff;
+    text-align: center;
+}
+
+.efo-tagline h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: #000;
+}
+
+/* --- INFOGRAPHIC --- */
+.efo-infographic {
+    background: #fff;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.efo-infographic img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- BENEFITS (teal 3-col) --- */
+.efo-benefits {
+    padding: 80px 10%;
+    background: #00BCD4;
+}
+
+.efo-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.efo-benefit-item h3 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.efo-benefit-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.efo-benefit-item ul li {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+/* --- HOW IT WORKS --- */
+.efo-how {
+    padding: 80px 10%;
+    background: #fff;
+    text-align: center;
+}
+
+.efo-how h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.efo-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto 60px;
+}
+
+.efo-step {
+    background: #00BCD4;
+    border-radius: 8px;
+    padding: 40px 20px 30px;
+    text-align: center;
+    color: white;
+}
+
+.efo-step img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+}
+
+.efo-step h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.efo-step p {
+    font-size: 0.88rem;
+    color: white;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.efo-step .time {
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 700;
+}
+
+.efo-get-started-btn {
+    display: inline-block;
+    padding: 14px 50px;
+    background: #00BCD4;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.efo-get-started-btn:hover {
+    background: #0097a7;
+}
+
+/* --- VIDEO SECTION --- */
+.efo-video {
+    padding: 80px 10%;
+    background: #f5f6fa;
+    text-align: center;
+}
+
+.efo-video h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 900;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.efo-video iframe {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 12px;
+}
+
+/* --- WHERE IN THE WORLD --- */
+.efo-world {
+    padding: 80px 10%;
+    background: #fff;
+}
+
+.efo-world-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.efo-world-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: #00BCD4;
+    line-height: 1.1;
+}
+
+.efo-accordion {
+    width: 100%;
+}
+
+.efo-accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.efo-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.efo-accordion-header span {
+    color: #00BCD4;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.efo-accordion-body {
+    display: none;
+    padding: 0 0 20px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.efo-accordion-item.open .efo-accordion-body {
+    display: block;
+}
+
+.efo-accordion-item.open .efo-accordion-header span {
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+/* --- CONTACT FOOTER --- */
+.efo-contact {
+    background: #00BCD4;
+    padding: 100px 10%;
+    color: white;
+}
+
+.efo-contact h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 40px;
+    letter-spacing: -2px;
+}
+
+.efo-contact p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.efo-contact-socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.efo-contact-socials a {
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.efo-contact-socials a:hover {
+    opacity: 0.7;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .efo-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    .efo-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .efo-world-split {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .efo-steps {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- HERO -->
+<section class="efo-hero">
+    <div class="efo-hero-content">
+        <span>partner</span>
+        <h1>with aiesec.</h1>
+        <a href="#efo-contact" class="efo-hero-btn">Let's Go!</a>
+    </div>
+</section>
+
+<!-- TAGLINE -->
+<section class="efo-tagline">
+    <h2>the world is full of talent</h2>
+    <h2>we'll find the best for you</h2>
+</section>
+
+<!-- INFOGRAPHIC -->
+<section class="efo-infographic">
+    <img src="/static/images/globaltalentimage.webp" alt="Benefits Infographic">
+</section>
+
+<!-- BENEFITS -->
+<section class="efo-benefits">
+    <div class="efo-benefits-grid">
+        <div class="efo-benefit-item">
+            <h3>Cost Savings</h3>
+            <ul>
+                <li>Competitive pricing</li>
+                <li>Access to international talent</li>
+                <li>Labour Market Impact Assessment (LMIA) exemption</li>
+            </ul>
+        </div>
+        <div class="efo-benefit-item">
+            <h3>Contract Flexibility</h3>
+            <ul>
+                <li>Choose your project dates any time of the year</li>
+                <li>Up to 78-week projects</li>
+            </ul>
+        </div>
+        <div class="efo-benefit-item">
+            <h3>Service Delivery</h3>
+            <ul>
+                <li>Work Permit process support</li>
+                <li>Accommodation and arrival logistics support</li>
+                <li>Regular intern and company servicing</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="efo-how">
+    <h2>How it Works</h2>
+    <div class="efo-steps">
+        <div class="efo-step">
+            <img src="/static/images/1(2).webp" alt="Step 1">
+            <h3>Contact Us</h3>
+            <p>Meet with one of our exchange representatives to guide your team on the AIESEC exchange process</p>
+            <span class="time">Time: <strong>1 week</strong></span>
+        </div>
+        <div class="efo-step">
+            <img src="/static/images/2(2).webp" alt="Step 2">
+            <h3>Sign Contract</h3>
+            <p>Open one or more opportunities within your company to be posted on our international job posting platform</p>
+            <span class="time">Time: <strong>2 weeks</strong></span>
+        </div>
+        <div class="efo-step">
+            <img src="/static/images/3(3).webp" alt="Step 3">
+            <h3>Hire Talent</h3>
+            <p>AIESEC will provide you with a shortlist of candidates to choose from for each position after 2 weeks and the interview process begins</p>
+            <span class="time">Time: <strong>2-4 weeks</strong></span>
+        </div>
+        <div class="efo-step">
+            <img src="/static/images/4(4).webp" alt="Step 4">
+            <h3>Processing & Preparation</h3>
+            <p>Once selected, AIESEC will support the exchange participant through their work permit application process and our logistics debrief</p>
+            <span class="time">Time: <strong>5-8 weeks</strong> <em>(after submitting application to IEC)</em></span>
+        </div>
+        <div class="efo-step">
+            <img src="/static/images/5(5).webp" alt="Step 5">
+            <h3>Project Begins</h3>
+            <p>After confirming project timeline and dates, your exchange participant has arrived and is ready to start their first day on the job!</p>
+            <span class="time">Time: <strong>13-78 weeks</strong></span>
+        </div>
+    </div>
+    <a href="#efo-contact" class="efo-get-started-btn">Get Started</a>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="efo-video">
+    <h2>a peek into our projects</h2>
+    <iframe
+        src="https://www.youtube.com/embed/-tV6xnDKyy8"
+        allowfullscreen>
+    </iframe>
+</section>
+
+<!-- WHERE IN THE WORLD -->
+<section class="efo-world">
+    <div class="efo-world-split">
+        <div>
+            <h2 class="efo-world-title">Where will your future talent come from?</h2>
+        </div>
+        <div class="efo-accordion">
+            <div class="efo-accordion-item">
+                <div class="efo-accordion-header" onclick="toggleAccordion(this)">
+                    Americas <span>+</span>
+                </div>
+                <div class="efo-accordion-body">
+                    Chile / Costa Rica
+                </div>
+            </div>
+            <div class="efo-accordion-item">
+                <div class="efo-accordion-header" onclick="toggleAccordion(this)">
+                    Asia <span>+</span>
+                </div>
+                <div class="efo-accordion-body">
+                    Hong Kong / Japan / South Korea / Taiwan
+                </div>
+            </div>
+            <div class="efo-accordion-item">
+                <div class="efo-accordion-header" onclick="toggleAccordion(this)">
+                    Europe <span>+</span>
+                </div>
+                <div class="efo-accordion-body">
+                    Austria / Belgium / Croatia / Czech Republic / Denmark / Estonia / Finland / France / Germany / Greece / Iceland / Ireland / Italy / Latvia / Lithuania / Norway / Poland / Portugal / San Marino / Slovakia / Slovenia / Spain / Sweden / Switzerland / United Kingdom
+                </div>
+            </div>
+            <div class="efo-accordion-item">
+                <div class="efo-accordion-header" onclick="toggleAccordion(this)">
+                    Oceania <span>+</span>
+                </div>
+                <div class="efo-accordion-body">
+                    Australia / New Zealand
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FOOTER -->
+<footer class="efo-contact" id="efo-contact">
+    <h2>find talent now.</h2>
+    <p>info@aiesec.ca</p>
+    <p>(416) 368-1001</p>
+    <p>**We are in the office Monday & Wednesday — we may not always answer the phone immediately.</p>
+    <p style="margin-top:16px;">164 Eglinton Ave E suite 102 &nbsp;&nbsp;&nbsp; Toronto, ON M4P 1G4.</p>
+    <div class="efo-contact-socials">
+        <a href="https://www.instagram.com/aieseccanada"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/AIESECCanada"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/aiesec-in-canada"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+<script>
+function toggleAccordion(header) {
+    const item = header.parentElement;
+    item.classList.toggle('open');
+}
+</script>
+
+{{end}}

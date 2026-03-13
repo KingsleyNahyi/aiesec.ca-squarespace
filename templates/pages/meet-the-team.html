@@ -1,0 +1,278 @@
+{{define "content"}}
+<style>
+/* --- GLOBAL TEAM STYLES --- */
+.team-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.team-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #1a1a1a;
+}
+
+/* --- SECTION 1: NATIONAL TEAM (WHITE) --- */
+.national-team {
+    background-color: #ffffff;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    align-items: start;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portrait-rect {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    object-fit: cover;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.member-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 10px 0 5px;
+}
+
+.role {
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    min-height: 2.5em;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 10px 35px;
+    border: 2px solid #000;
+    border-radius: 50px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* --- SECTION 2: BOARD OF DIRECTORS (BLUE) --- */
+.board-directors {
+    background-color: #037EF3;
+    color: white;
+    text-align: left;
+}
+
+.board-header {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 40px 30px;
+}
+
+.board-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.circle-wrap {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: transparent;
+}
+
+.circle-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.board-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.board-role {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.bio {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .board-header {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .board-grid {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        text-align: center;
+    }
+    .circle-wrap {
+        width: 130px;
+        height: 130px;
+    }
+    .board-header {
+        text-align: center;
+    }
+}
+</style>
+
+<!-- NATIONAL TEAM -->
+<section class="team-section national-team">
+    <div class="container">
+        <h1 class="team-title">Meet the Team</h1>
+        <div class="team-grid">
+            <div class="member-card">
+                <img src="/static/images/Mina.webp" alt="Mina Nepali" class="portrait-rect">
+                <h2>Mina Nepali</h2>
+                <p class="role">NATIONAL PRESIDENT</p>
+                <a href="mailto:president@aiesec.ca" class="contact-btn">Contact</a>
+            </div>
+            <div class="member-card">
+                <img src="/static/images/Joaquim.webp" alt="Joaquin Calderon" class="portrait-rect">
+                <h2>Joaquin Calderon</h2>
+                <p class="role">VP OPERATIONS</p>
+                <a href="mailto:exchange@aiesec.ca" class="contact-btn">Contact</a>
+            </div>
+            <div class="member-card">
+                <img src="/static/images/Greiven.webp" alt="Greivin Chen" class="portrait-rect">
+                <h2>Greivin Chen</h2>
+                <p class="role">VP MEMBERSHIP EXPERIENCE</p>
+                <a href="mailto:membership@aiesec.ca" class="contact-btn">Contact</a>
+            </div>
+            <div class="member-card">
+                <img src="/static/images/Portia.webp" alt="Portia Torigoe" class="portrait-rect">
+                <h2>Portia Torigoe</h2>
+                <p class="role">VP BUSINESS DEVELOPMENT</p>
+                <a href="mailto:partnership@aiesec.ca" class="contact-btn">Contact</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOARD OF DIRECTORS -->
+<section class="team-section board-directors">
+    <div class="container">
+        <h2 class="board-header">Our Board of Directors</h2>
+        <div class="board-grid">
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Sarah.webp" alt="Sarah Sun"></div>
+                <h3>Sarah Sun</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Senior Director, Risk Modelling, RBC</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Vinod.webp" alt="Vinod Viswalingam"></div>
+                <h3>Vinod Viswalingam</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Workforce Optimization Manager, Vancouver Convention Centre</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Kurt.webp" alt="Kurt Hamilton"></div>
+                <h3>Kurt Hamilton</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Senior Manager, Provision Accounting Group, CPA</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Eadit.webp" alt="Eadit Rokach"></div>
+                <h3>Eadit Rokach</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio"><em>Deputy Crown Attorney</em></p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Aviel.webp" alt="Aviel Chow"></div>
+                <h3>Aviel Chow</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Senior Specialist Pricing and Profitability Optimization, ATB Financial</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Ivan.webp" alt="Ivan Fedortsov"></div>
+                <h3>Ivan Fedortsov</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Associate, Customer Experience<br>CMLS Financial, Nesto Group</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Marie.webp" alt="Marie-France Sanschagrin"></div>
+                <h3>Marie-France Sanschagrin</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio"><em>Quebec Regional Director / Regional Operations and Compliance, Labour Program / Employment and Social Development Canada</em></p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Mark.webp" alt="Mark Zanewick"></div>
+                <h3>Mark Zanewick</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Lead, External Affairs & Policy at PETRONAS Canada</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Vitor.webp" alt="Vitor de Avelar"></div>
+                <h3>Vitor de Avelar</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Senior HR Business Partner, TD Bank</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Victoria.webp" alt="Victoria Gordiano"></div>
+                <h3>Victoria Gordiano</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Manager, Corporate Donor Relations, United Way Greater Toronto</p>
+            </div>
+            <div class="board-card">
+                <div class="circle-wrap"><img src="/static/images/Christina.webp" alt="Christina Wang"></div>
+                <h3>Christina Wang</h3>
+                <p class="board-role">DIRECTOR</p>
+                <p class="bio">Volunteer Stewardship Manager, Girl Guides of Canada</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{end}}

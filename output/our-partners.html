@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Partners — AIESEC in Canada | AIESEC in Canada</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="site-wrapper">
+  
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/aiesec-logo.png" alt="AIESEC in Canada">
+    </a>
+
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">About Us</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/this-is-aiesec.html">This is AIESEC</a></li>
+            <li><a href="/our-mission.html">Our Mission</a></li>
+            <li><a href="/meet-the-team.html">Our Team</a></li>
+            <li><a href="/our-partners.html">Meet Our Partners</a></li>
+            <li><a href="/alumni.html">For Alumni</a></li>
+            <li><a href="/support-us.html">Support Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Youth</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/exchange.html">Learn about Exchange</a></li>
+            <li><a href="/exchange-signup.html">Go on Exchange</a></li>
+            <li><a href="/membership.html">Learn about Membership</a></li>
+            <li><a href="/join-us.html">Become a Member</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Companies</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/about-partnerships.html">Why Partner with AIESEC</a></li>
+            <li><a href="/y2b.html">Youth-2-Business Series</a></li>
+            <li><a href="/exchange-for-organizations.html">Hire through AIESEC</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">English</a>
+        <div class="dropdown-content mini">
+          <ul class="dropdown-menu">
+            <li><a href="#">Français</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/exchange-signup.html" class="nav-cta">Sign Up for Exchange</a></li>
+    </ul>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-section-title">About Us</div>
+    <a href="/this-is-aiesec.html">This is AIESEC</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/meet-the-team.html">Our Team</a>
+    <a href="/our-partners.html">Meet Our Partners</a>
+    <a href="/alumni.html">For Alumni</a>
+    <a href="/support-us.html">Support Us</a>
+    
+    <div class="mobile-section-title">For Youth</div>
+    <a href="/exchange.html">Learn about Exchange</a>
+    <a href="/exchange-signup.html">Go on Exchange</a>
+    <a href="/membership.html">Learn about Membership</a>
+    <a href="/join-us.html">Become a Member</a>
+    
+    <div class="mobile-section-title">For Companies</div>
+    <a href="/about-partnerships.html">Why Partner with AIESEC</a>
+    <a href="/y2b.html">Youth-2-Business Series</a>
+    <a href="/exchange-for-organizations.html">Hire through AIESEC</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+
+  <main class="main-content">
+    
+
+<style>
+  .partners-hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .partners-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+     
+    background: linear-gradient(135deg, #0a2a6b, var(--blue));
+  }
+  .partners-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+  }
+  .partners-hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 80px 40px;
+    max-width: 900px;
+  }
+  .partners-hero-content h1 {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 900;
+    margin-bottom: 32px;
+  }
+  .partners-hero-content p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    opacity: 0.95;
+  }
+  .get-involved-btn {
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    padding: 16px 48px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: all 0.2s;
+  }
+  .get-involved-btn:hover { background: white; color: var(--text); }
+
+  .partner-tier {
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .partner-tier:last-child { border-bottom: none; }
+  .partner-tier h2 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 900;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+  .partner-tier .price-range {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+  }
+  .partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+  }
+  .partner-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .partner-logo-item img {
+    height: 80px;
+    max-width: 200px;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: filter 0.2s;
+  }
+  .partner-logo-item:hover img { filter: grayscale(0%); }
+  .partner-logo-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .partner-logo-placeholder {
+    height: 80px;
+    width: 180px;
+    background: var(--off-white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-light);
+  }
+  @media (max-width: 768px) {
+    .partners-hero-content { padding: 60px 24px; }
+    .partner-tier { padding: 40px 24px; }
+  }
+</style>
+
+
+<section class="partners-hero">
+  <div class="partners-hero-bg">
+    
+  </div>
+  <div class="partners-hero-content">
+    <h1>OUR PARTNERS</h1>
+    <p>Here in AIESEC, we are always looking for ways to enhance our opportunities to develop stronger leadership in young people and bridge the gap between generations of leadership, but we can't do it without the help and support of all our amazing partners making their own commitment to developing the future and current leadership of Canada.</p>
+    <p>Connect with us and learn more on how you and your organization can make your own impact and commitment to developing leadership in Canada and across the world.</p>
+    <a href="about-partnerships.html" class="get-involved-btn">Get Involved</a>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title text-center" style="margin-bottom:60px;">Meet Our Partners</h2>
+
+    
+    <div class="partner-tier">
+      <h2>AIESEC Champion</h2>
+      <p class="price-range">$60,000+</p>
+      <div class="partner-logos">
+        <a href="https://www.rbc.com/dms/enterprise/futurelaunch/" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: RBC Logo</div>
+          <span>RBC</span>
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="partner-tier">
+      <h2>Platinum Partners</h2>
+      <p class="price-range">$30,000 - $59,999</p>
+      <div class="partner-logos">
+        <a href="https://www.edc.ca" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: EDC Logo</div>
+          <span>Export Development Canada</span>
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="partner-tier">
+      <h2>Gold Partners</h2>
+      <p class="price-range">$15,000 - $29,999</p>
+      <div class="partner-logos">
+        <a href="https://www.cenovus.com/Sustainability" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: Cenovus Logo</div>
+          <span>Cenovus Energy</span>
+        </a>
+        <a href="https://www.capp.ca" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: CAPP Logo</div>
+          <span>Canadian Association of Petroleum Producers</span>
+        </a>
+        <a href="https://www.bmo.com/en-ca/main/personal/" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: BMO Logo</div>
+          <span>BMO Canada</span>
+        </a>
+        <a href="https://telfer.uottawa.ca/en/mba/" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: Telfer Logo</div>
+          <span>Telfer School of Management</span>
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="partner-tier">
+      <h2>Silver Partners</h2>
+      <p class="price-range">$5,000 - $14,999</p>
+      <div class="partner-logos">
+        <a href="https://www.agf.com/ca/en/index.jsp" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: AGF Logo</div>
+          <span>AGF Management</span>
+        </a>
+        <a href="https://www.economist.com" target="_blank" class="partner-logo-item">
+          
+          <div class="partner-logo-placeholder">TODO: Economist Logo</div>
+          <span>The Economist</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  </main>
+
+  
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/this-is-aiesec.html">About AIESEC</a>
+        <a href="/our-mission.html">Our Mission</a>
+        <a href="/meet-the-team.html">Meet the Team</a>
+        <a href="/support-us.html">Support Us</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Exchange</h4>
+        <a href="/exchange.html">Learn about Exchange</a>
+        <a href="/global-volunteer.html">Global Volunteer</a>
+        <a href="/global-teacher.html">Global Teacher</a>
+        <a href="/global-talent.html">Global Talent</a>
+        <a href="/exchange-signup.html">Go on Exchange</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <a href="/membership.html">Learn about Membership</a>
+        <a href="/join-us.html">Join AIESEC</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="/about-partnerships.html">Learn about Partnerships</a>
+        <a href="/y2b.html">Youth 2 Business</a>
+        <a href="/exchange-for-organizations.html">Exchange for Companies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alumni</h4>
+        <a href="/alumni.html">For Alumni</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>General</h4>
+        <a href="/annual-reports.html">Annual Reports</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/safety-policy.html">Safety Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer">
+        AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.
+      </p>
+      
+      <div class="footer-copyright">
+        <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
+        <div class="footer-socials">
+             </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership — AIESEC in Canada | AIESEC in Canada</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="site-wrapper">
+  
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/aiesec-logo.png" alt="AIESEC in Canada">
+    </a>
+
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">About Us</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/this-is-aiesec.html">This is AIESEC</a></li>
+            <li><a href="/our-mission.html">Our Mission</a></li>
+            <li><a href="/meet-the-team.html">Our Team</a></li>
+            <li><a href="/our-partners.html">Meet Our Partners</a></li>
+            <li><a href="/alumni.html">For Alumni</a></li>
+            <li><a href="/support-us.html">Support Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Youth</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/exchange.html">Learn about Exchange</a></li>
+            <li><a href="/exchange-signup.html">Go on Exchange</a></li>
+            <li><a href="/membership.html">Learn about Membership</a></li>
+            <li><a href="/join-us.html">Become a Member</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Companies</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/about-partnerships.html">Why Partner with AIESEC</a></li>
+            <li><a href="/y2b.html">Youth-2-Business Series</a></li>
+            <li><a href="/exchange-for-organizations.html">Hire through AIESEC</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">English</a>
+        <div class="dropdown-content mini">
+          <ul class="dropdown-menu">
+            <li><a href="#">Français</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/exchange-signup.html" class="nav-cta">Sign Up for Exchange</a></li>
+    </ul>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-section-title">About Us</div>
+    <a href="/this-is-aiesec.html">This is AIESEC</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/meet-the-team.html">Our Team</a>
+    <a href="/our-partners.html">Meet Our Partners</a>
+    <a href="/alumni.html">For Alumni</a>
+    <a href="/support-us.html">Support Us</a>
+    
+    <div class="mobile-section-title">For Youth</div>
+    <a href="/exchange.html">Learn about Exchange</a>
+    <a href="/exchange-signup.html">Go on Exchange</a>
+    <a href="/membership.html">Learn about Membership</a>
+    <a href="/join-us.html">Become a Member</a>
+    
+    <div class="mobile-section-title">For Companies</div>
+    <a href="/about-partnerships.html">Why Partner with AIESEC</a>
+    <a href="/y2b.html">Youth-2-Business Series</a>
+    <a href="/exchange-for-organizations.html">Hire through AIESEC</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+
+  <main class="main-content">
+    
+
+<style>
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .why-item {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .why-item-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--blue), #0a2a6b);
+     
+  }
+  .why-item-label {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 24px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .team-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .team-option {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    border-left: 4px solid var(--blue);
+  }
+  .team-option h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--blue);
+  }
+  .team-option p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+</style>
+
+
+<section class="hero">
+  <div class="hero-bg" style="background:var(--blue);">
+    
+  </div>
+  <div class="hero-content">
+    <h1>we are AIESEC in canada.</h1>
+    <a href="join-us.html" class="btn btn-white" style="margin-top:24px;">Join Us</a>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title text-center" style="margin-bottom:0;">why you should join</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-item-bg">
+          
+        </div>
+        <div class="why-item-label">find your community.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-bg">
+          
+        </div>
+        <div class="why-item-label">attend conferences.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-bg">
+          
+        </div>
+        <div class="why-item-label">gain work experience.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-bg">
+          
+        </div>
+        <div class="why-item-label">make an impact.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-bg">
+          
+        </div>
+        <div class="why-item-label">develop your skills.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-bg">
+          
+        </div>
+        <div class="why-item-label">develop your leadership.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-blue section text-center">
+  <div class="section-inner">
+    <h2 class="section-title">find your local chapter!</h2>
+    <a href="join-us.html" class="btn btn-white" style="margin-top:24px;">Let's Go!</a>
+  </div>
+</section>
+
+
+<section class="section section-off">
+  <div class="section-inner">
+    <h2 class="section-title text-center" style="margin-bottom:0;">choose your team</h2>
+    <div class="team-options">
+      <div class="team-option">
+        <h3>Exchange Experience</h3>
+        <p>Gain sales and client service experience while contributing to connecting young people in your community with global internship and volunteer opportunities.</p>
+      </div>
+      <div class="team-option">
+        <h3>Corporate Relations</h3>
+        <p>Gain sales and networking experience by connecting with industry professionals and organizations to build local exchange opportunities for interns from abroad.</p>
+      </div>
+      <div class="team-option">
+        <h3>Talent Management</h3>
+        <p>Gain HR and people management skills through the creation of membership experience strategies to engage and motivate performance within local team cultures.</p>
+      </div>
+      <div class="team-option">
+        <h3>Marketing</h3>
+        <p>Gain experience through market research campaigns, content creation/management, event organization and many other projects to amplify our brand.</p>
+      </div>
+      <div class="team-option">
+        <h3>Finance</h3>
+        <p>Gain experience with financial management as you monitor and invest in your chapter's financial health through risk mitigation, making investments, and creating financial sustainability systems.</p>
+      </div>
+      <div class="team-option">
+        <h3>and many more</h3>
+        <p>Once you're in AIESEC there are so many more positions you can try out even at the national and international level such as conference teams, governance committees, and more!</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="join-us.html" class="btn btn-primary">Join Now!</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="testimonial-slide">
+      <p class="testimonial-text">"AIESEC has given me a family in the hardest times and has taught me more than I could imagine. Two years later I see not only within membership but in all AIESEC does that we develop empathy and communication like no other organization."</p>
+      <div class="testimonial-name">Wardah Tariq</div>
+    </div>
+    <div class="testimonial-slide">
+      <p class="testimonial-text">"I first joined 9 months ago to develop my skills, have a first hand experience in HR or management, and broaden my network. I achieved my goals and a lot more! My favourite part was the numerous new friendships that were created."</p>
+      <div class="testimonial-name">Maysan Adad</div>
+    </div>
+    <div class="testimonial-slide">
+      <p class="testimonial-text">"Joining AIESEC is one of the best decisions I made in my University life. I look back at myself in my First year and I see myself now, and I see my skills are greatly developed."</p>
+      <div class="testimonial-name">Vatsal Maheshwari</div>
+    </div>
+    <div class="testimonial-slide">
+      <p class="testimonial-text">"Nothing I have ever participated has developed my leadership skills more than joining AIESEC. It was the best decision I made in university. I would recommend AIESEC to everyone looking to meet new people and for personal development."</p>
+      <div class="testimonial-name">Sophia</div>
+    </div>
+    <div class="testimonial-dots">
+      <span class="active"></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title text-center" style="margin-bottom:48px;">FAQs</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Are these paid positions?</div>
+        <div class="faq-answer">AIESEC is a non-for-profit international organization that relies on the support and commitment of all our amazing <strong>volunteers</strong>. That being said, there are many opportunities in AIESEC for full time positions at the national and international level that can offer stipends and salaries.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Are there any requirements to joining AIESEC?</div>
+        <div class="faq-answer">Leadership can be developed in anyone, anywhere, meaning we take everyone with a passion for leadership and contributing to making an impact on our world. The only requirement is that all our volunteers need to be between <strong>18–30 years old</strong>.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I join an international chapter?</div>
+        <div class="faq-answer">At the local level, members should be living in the same region as their chapter. However, as you grow in AIESEC, <strong>you have the opportunity to apply</strong> for national and international roles in other entities!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the selection process like?</div>
+        <div class="faq-answer">After signing up on aiesec.ca you should receive an email from the local chapter you choose with next steps. During recruitment season (typically January, April, and September), <strong>you will be prompted to fill out an application depending on the local chapter.</strong></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need to pay to be a member?</div>
+        <div class="faq-answer"><strong>Not at all!</strong> We don't believe leadership should have a price tag so we want to make sure our programs are available and accessible to as many young individuals as possible.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the time commitment like?</div>
+        <div class="faq-answer">This depends on the role and time of the term, but we aim to keep our members working <strong>5–10h per week</strong> so they can balance with school, work, or any other personal commitments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/this-is-aiesec.html">About AIESEC</a>
+        <a href="/our-mission.html">Our Mission</a>
+        <a href="/meet-the-team.html">Meet the Team</a>
+        <a href="/support-us.html">Support Us</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Exchange</h4>
+        <a href="/exchange.html">Learn about Exchange</a>
+        <a href="/global-volunteer.html">Global Volunteer</a>
+        <a href="/global-teacher.html">Global Teacher</a>
+        <a href="/global-talent.html">Global Talent</a>
+        <a href="/exchange-signup.html">Go on Exchange</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <a href="/membership.html">Learn about Membership</a>
+        <a href="/join-us.html">Join AIESEC</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="/about-partnerships.html">Learn about Partnerships</a>
+        <a href="/y2b.html">Youth 2 Business</a>
+        <a href="/exchange-for-organizations.html">Exchange for Companies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alumni</h4>
+        <a href="/alumni.html">For Alumni</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>General</h4>
+        <a href="/annual-reports.html">Annual Reports</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/safety-policy.html">Safety Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer">
+        AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.
+      </p>
+      
+      <div class="footer-copyright">
+        <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
+        <div class="footer-socials">
+             </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

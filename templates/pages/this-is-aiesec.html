@@ -1,0 +1,362 @@
+{{define "content"}}
+<style>
+  /* 1. Global Page Reset & Hero Section */
+.about-hero-blue {
+    background-color: #037EF3;
+    color: white;
+    width: 100%;
+    min-height: 75vh;
+    /* 180px padding ensures the 'we are leadership' text clears your navbar */
+    padding: 180px 8% 80px 8%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-hero-wrapper {
+    display: flex;
+    gap: 60px;
+    max-width: 1400px;
+    width: 100%;
+    align-items: center;
+}
+
+.video-container {
+    flex: 1.2;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.mission-statement {
+    flex: 1;
+}
+
+.mission-statement h1 {
+    font-size: clamp(40px, 5vw, 75px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.mission-statement p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* 2. Impact Stats & GIF Taming */
+.stats-section {
+    background: white;
+    padding: 80px 5%;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-icon {
+    width: 100px;  /* Fixes the 'giant school' issue */
+    height: 100px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* 3. Belief & Philosophy Typography */
+.belief-headline {
+    padding: 100px 10% 40px 10%;
+    background: white;
+}
+
+.upper-label {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.main-belief {
+    font-size: clamp(40px, 6vw, 70px);
+    font-weight: 800;
+    color: #000;
+    line-height: 1.1;
+}
+
+.highlight-blue {
+    color: #037EF3;
+}
+
+.philosophy-text {
+    padding: 0 20% 100px 20%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* 4. Contact Section (Split Layout) */
+.contact-footer-blue {
+    background-color: #037EF3;
+    color: white;
+    padding: 100px 8%;
+}
+
+.contact-split-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.map-container-gray {
+    background-color: #e0e0e0;
+    width: 100%;
+    height: 380px;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+
+/* Form Styles */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.flex-row {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-row .input-group {
+    flex: 1;
+}
+
+.submit-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 60px;
+    border-radius: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-button:hover {
+    background: white;
+    color: #037EF3;
+}
+/* 5. Discover More Section Fix */
+
+.discover-more-section {
+    padding: 80px 8%;
+    background-color: white;
+    text-align: center;
+}
+
+.discover-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.video-grid {
+    display: grid;
+    /* This creates 3 equal columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+</style>
+<section class="about-hero-blue">
+    <div class="about-hero-wrapper">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/1u-74sc4IIs" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="mission-statement">
+            <h1>we are leadership.</h1>
+            <p>It’s a concept that has been taken and transformed into a meaning bigger than what it truly is, because at the end of the day, leadership is everywhere and in everyone. We just want to be the ones to ignite it.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-box">
+            <div class="stat-icon">
+                <img src="/static/images/school.gif" alt="Universities Icon">
+            </div>
+            <h2 class="stat-value">24+</h2>
+            <p class="stat-label">Universities & <br>Colleges</p>
+        </div>
+        <div class="stat-box">
+            <div class="stat-icon">
+                <img src="/static/images/people.gif" alt="Members Icon">
+            </div>
+            <h2 class="stat-value">650+</h2>
+            <p class="stat-label">Members <br>across Canada</p>
+        </div>
+        <div class="stat-box">
+            <div class="stat-icon">
+                <img src="/static/images/globe.gif" alt="Countries Icon">
+            </div>
+            <h2 class="stat-value">146+</h2>
+            <p class="stat-label">Countries running <br>AIESEC experiences</p>
+        </div>
+        <div class="stat-box">
+            <div class="stat-icon">
+                <img src="/static/images/confetti.gif" alt="Opportunities Icon">
+            </div>
+            <h2 class="stat-value">2000+</h2>
+            <p class="stat-label">Exchange <br>Opportunities fulfilled</p>
+        </div>
+    </div>
+</section>
+
+<section class="belief-headline">
+    <p class="upper-label">IN AIESEC, WE BELIEVE THAT</p>
+    <h2 class="main-belief">leadership can be developed in<br><span class="highlight-blue">anyone, anywhere</span></h2>
+</section>
+
+<section class="philosophy-text">
+    <p>
+        We aim to engage and develop every <strong>young person</strong> in Canada through a <strong>leadership experience</strong>, regardless of background, identity, and ability. This means ensuring that every young person can <strong>fulfill their potential</strong>, become a <strong>value-driven</strong> leader, and find <strong>community</strong> within AIESEC.
+    </p>
+</section>
+
+<section class="discover-more-section">
+    <h3 class="discover-title">Discover more AIESEC</h3>
+    <div class="video-grid">
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/JtfpuAmgSy8" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/cNV-ddCP-WY" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/mYQBUFx3V2Q" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="contact-footer-blue">
+    <div class="contact-split-wrapper">
+        <div class="info-column">
+            <h2 class="contact-header">contact us.</h2>
+            <div class="contact-methods">
+                <p>info@aiesec.ca</p>
+                <p>(416) 368-1001</p>
+                <p class="pandemic-note">Please note that due to changes from the pandemic, we are not always in the office to answer the phone.</p>
+            </div>
+            <div class="social-row">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">LinkedIn</a>
+            </div>
+            <div class="map-container-gray">
+                </div>
+        </div>
+
+        <div class="form-column">
+            <form class="contact-form-layout">
+                <div class="flex-row">
+                    <div class="input-group">
+                        <label>First Name <span>(required)</span></label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Last Name <span>(required)</span></label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Email <span>(required)</span></label>
+                    <input type="email" required>
+                </div>
+                <div class="input-group">
+                    <label>How did you hear about us? <span>(required)</span></label>
+                    <select required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="social">Social Media</option>
+                        <option value="campus">Campus Presentation</option>
+                        <option value="friend">Friend/Word of Mouth</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Message <span>(required)</span></label>
+                    <textarea rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
+{{end}}

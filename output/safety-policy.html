@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety Policy — AIESEC in Canada | AIESEC in Canada</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="site-wrapper">
+  
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/aiesec-logo.png" alt="AIESEC in Canada">
+    </a>
+
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">About Us</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/this-is-aiesec.html">This is AIESEC</a></li>
+            <li><a href="/our-mission.html">Our Mission</a></li>
+            <li><a href="/meet-the-team.html">Our Team</a></li>
+            <li><a href="/our-partners.html">Meet Our Partners</a></li>
+            <li><a href="/alumni.html">For Alumni</a></li>
+            <li><a href="/support-us.html">Support Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Youth</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/exchange.html">Learn about Exchange</a></li>
+            <li><a href="/exchange-signup.html">Go on Exchange</a></li>
+            <li><a href="/membership.html">Learn about Membership</a></li>
+            <li><a href="/join-us.html">Become a Member</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Companies</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/about-partnerships.html">Why Partner with AIESEC</a></li>
+            <li><a href="/y2b.html">Youth-2-Business Series</a></li>
+            <li><a href="/exchange-for-organizations.html">Hire through AIESEC</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">English</a>
+        <div class="dropdown-content mini">
+          <ul class="dropdown-menu">
+            <li><a href="#">Français</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/exchange-signup.html" class="nav-cta">Sign Up for Exchange</a></li>
+    </ul>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-section-title">About Us</div>
+    <a href="/this-is-aiesec.html">This is AIESEC</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/meet-the-team.html">Our Team</a>
+    <a href="/our-partners.html">Meet Our Partners</a>
+    <a href="/alumni.html">For Alumni</a>
+    <a href="/support-us.html">Support Us</a>
+    
+    <div class="mobile-section-title">For Youth</div>
+    <a href="/exchange.html">Learn about Exchange</a>
+    <a href="/exchange-signup.html">Go on Exchange</a>
+    <a href="/membership.html">Learn about Membership</a>
+    <a href="/join-us.html">Become a Member</a>
+    
+    <div class="mobile-section-title">For Companies</div>
+    <a href="/about-partnerships.html">Why Partner with AIESEC</a>
+    <a href="/y2b.html">Youth-2-Business Series</a>
+    <a href="/exchange-for-organizations.html">Hire through AIESEC</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+
+  <main class="main-content">
+    
+
+<style>
+  .safety-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+    background: #f0f4f8;
+  }
+  .safety-section.reverse { direction: rtl; }
+  .safety-section.reverse > * { direction: ltr; }
+  .safety-img {
+    background-size: cover;
+    background-position: center;
+    min-height: 420px;
+    background-color: #ccc;
+  }
+  .safety-text {
+    padding: 60px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f0f4f8;
+  }
+  .safety-text h2 {
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 900;
+    color: var(--blue);
+    margin-bottom: 24px;
+    line-height: 1.15;
+  }
+  .safety-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .safety-text a {
+    color: var(--blue);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: underline;
+  }
+  .safety-text ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+  .safety-text ul li {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+  @media (max-width: 768px) {
+    .safety-section, .safety-section.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+    .safety-img { min-height: 280px; }
+    .safety-text { padding: 40px 24px; }
+  }
+</style>
+
+
+<section style="background:var(--blue);padding:60px 24px;text-align:center;">
+  <h1 style="font-size:clamp(36px,6vw,72px);font-weight:900;color:white;">Safety and Covid Policies</h1>
+</section>
+
+
+<div class="safety-section">
+  <div class="safety-img" style="background-image:url('images/pexels-cottonbro-3585031.jpg');">
+    
+  </div>
+  <div class="safety-text">
+    <h2>Plan Your Future</h2>
+    <p>We believe that youth are the key to unlocking a better future. As we continue to adapt to this new normal, we need a strong community of young leaders more than ever. Our organization will always strive to provide youth with the opportunities they need to develop their leadership skills. We hope to be accessible to you as you make plans to shape your future and the world around you.</p>
+    <p>Learn more about our adaptation to keep you safe on your journey with AIESEC.</p>
+  </div>
+</div>
+
+
+<div class="safety-section reverse">
+  <div class="safety-img" style="background-image:url('images/pexels-rfstudio-4177563.jpg');">
+    
+  </div>
+  <div class="safety-text">
+    <h2>Your Safety is our top priority</h2>
+    <p>The safety of our members, customers, and partners is of upmost importance to us.</p>
+    <p>We are aware that the COVID-19 pandemic was a hard time for all of us and these past two years have been filled with great uncertainty. As conditions are getting better and the future starts to show more promise, we are happy to announce that AIESEC will support you with your plans to travel and further develop your leadership through our numerous cross-cultural opportunities. When making travel plans with AIESEC, we advise you to ensure you are aware of the latest information available on the WHO website, Global Affairs Canada Travel Advisories, and airline safety guidelines.</p>
+    <a href="https://www.who.int" target="_blank">WHO website</a>
+    <a href="https://www.international.gc.ca" target="_blank">Global Affairs Canada Travel Advisories</a>
+  </div>
+</div>
+
+
+<div class="safety-section">
+  <div class="safety-img" style="background-image:url('images/pexels-stefan-stefancik-127905.jpg');">
+    
+  </div>
+  <div class="safety-text">
+    <h2>Preparing for Takeoff</h2>
+    <p>When preparing for your travel with AIESEC, we always recommend you to visit the airline you plan to travel with for their safety guidelines and procedures.</p>
+    <p>You can visit the following links for more information:</p>
+    <a href="https://time-to-travel.ca/where-canadians-can-travel-now" target="_blank">Where Canadians can travel now</a>
+    <a href="https://www.aircanada.com/ca/en/aco/home/book/travel-news-and-updates/2020/covid-19.html" target="_blank">Air Canada Safety measures</a>
+  </div>
+</div>
+
+
+<div class="safety-section reverse">
+  <div class="safety-img" style="background-image:url('images/pexels-ankiyay-2664046.jpg');">
+    
+  </div>
+  <div class="safety-text">
+    <h2>Outgoing Exchange Policy</h2>
+    <p>Covid-19 Policy for Outgoing Exchange - AIESEC in Canada - version 4.0</p>
+    <p><strong><em>Last updated: March 10th, 2021</em></strong></p>
+    <p>FIND THE POLICY HERE IN <a href="https://drive.google.com/file/d/1RegjdGbNOSkFvZny786QUfO3EOnANZlZ/view" target="_blank">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Igz8p3iRKlInetZxHDeRQA2-vhB-7MeO/view?usp=sharing" target="_blank">FRENCH</a></p>
+    <p>For any questions regarding the Outgoing Exchange Policy, please review the FAQs</p>
+    <p>FIND THE FAQs HERE IN <a href="https://drive.google.com/file/d/1ltNUAY4IpoUyVZs_HYTJOQiHk-TFh0c7/view?usp=sharing" target="_blank">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Koe5h6puoy0Jjjiy-GAgcjqd3sp7vxU3/view?usp=sharing" target="_blank">FRENCH</a></p>
+    <p>If you still have further questions after reviewing the FAQs, please reach out to us at <a href="mailto:support@aiesec.ca">support@aiesec.ca</a></p>
+  </div>
+</div>
+
+
+<div class="safety-section">
+  <div class="safety-img" style="background-image:url('images/PXL_20220709_163207843.jpg');">
+    
+  </div>
+  <div class="safety-text">
+    <h2>Local Membership Safety in Canada</h2>
+    <p>We ensure that our membership strictly adheres to provincial and Federal public health authorities' protocols regarding the COVID-19 Pandemic.</p>
+    <p>All AIESEC related activities since the start of the pandemic have been virtual, however, after extensive consideration and input from our communities we have decided to go forward with allowing more in-person operations and activities for our local chapters, following their universities' instructions as well as provincial and federal public health guidelines.</p>
+    <p>Please ensure that you are prioritizing your own health and wellbeing by:</p>
+    <ul>
+      <li>Following any local community or university guidelines if you feel unwell</li>
+      <li>Implementing self-imposed quarantine related to travel and/or potential exposure to COVID-19</li>
+      <li>Taking normal health precautions such as washing and sanitizing your hands often and avoiding touching your eyes/nose/mouth</li>
+    </ul>
+    <p>We acknowledge that these are unprecedented times for all of us. AIESEC is here, as always, as a platform for you to develop your leadership and make a positive impact on your community.</p>
+  </div>
+</div>
+
+
+  </main>
+
+  
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/this-is-aiesec.html">About AIESEC</a>
+        <a href="/our-mission.html">Our Mission</a>
+        <a href="/meet-the-team.html">Meet the Team</a>
+        <a href="/support-us.html">Support Us</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Exchange</h4>
+        <a href="/exchange.html">Learn about Exchange</a>
+        <a href="/global-volunteer.html">Global Volunteer</a>
+        <a href="/global-teacher.html">Global Teacher</a>
+        <a href="/global-talent.html">Global Talent</a>
+        <a href="/exchange-signup.html">Go on Exchange</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <a href="/membership.html">Learn about Membership</a>
+        <a href="/join-us.html">Join AIESEC</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="/about-partnerships.html">Learn about Partnerships</a>
+        <a href="/y2b.html">Youth 2 Business</a>
+        <a href="/exchange-for-organizations.html">Exchange for Companies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alumni</h4>
+        <a href="/alumni.html">For Alumni</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>General</h4>
+        <a href="/annual-reports.html">Annual Reports</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/safety-policy.html">Safety Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer">
+        AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.
+      </p>
+      
+      <div class="footer-copyright">
+        <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
+        <div class="footer-socials">
+             </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni — AIESEC in Canada | AIESEC in Canada</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="site-wrapper">
+  
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/aiesec-logo.png" alt="AIESEC in Canada">
+    </a>
+
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">About Us</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/this-is-aiesec.html">This is AIESEC</a></li>
+            <li><a href="/our-mission.html">Our Mission</a></li>
+            <li><a href="/meet-the-team.html">Our Team</a></li>
+            <li><a href="/our-partners.html">Meet Our Partners</a></li>
+            <li><a href="/alumni.html">For Alumni</a></li>
+            <li><a href="/support-us.html">Support Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Youth</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/exchange.html">Learn about Exchange</a></li>
+            <li><a href="/exchange-signup.html">Go on Exchange</a></li>
+            <li><a href="/membership.html">Learn about Membership</a></li>
+            <li><a href="/join-us.html">Become a Member</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-trigger">For Companies</a>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu">
+            <li><a href="/about-partnerships.html">Why Partner with AIESEC</a></li>
+            <li><a href="/y2b.html">Youth-2-Business Series</a></li>
+            <li><a href="/exchange-for-organizations.html">Hire through AIESEC</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">English</a>
+        <div class="dropdown-content mini">
+          <ul class="dropdown-menu">
+            <li><a href="#">Français</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/exchange-signup.html" class="nav-cta">Sign Up for Exchange</a></li>
+    </ul>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-section-title">About Us</div>
+    <a href="/this-is-aiesec.html">This is AIESEC</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/meet-the-team.html">Our Team</a>
+    <a href="/our-partners.html">Meet Our Partners</a>
+    <a href="/alumni.html">For Alumni</a>
+    <a href="/support-us.html">Support Us</a>
+    
+    <div class="mobile-section-title">For Youth</div>
+    <a href="/exchange.html">Learn about Exchange</a>
+    <a href="/exchange-signup.html">Go on Exchange</a>
+    <a href="/membership.html">Learn about Membership</a>
+    <a href="/join-us.html">Become a Member</a>
+    
+    <div class="mobile-section-title">For Companies</div>
+    <a href="/about-partnerships.html">Why Partner with AIESEC</a>
+    <a href="/y2b.html">Youth-2-Business Series</a>
+    <a href="/exchange-for-organizations.html">Hire through AIESEC</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+
+  <main class="main-content">
+    
+
+<style>
+  .alumni-hero { position:relative; min-height:420px; display:flex; align-items:center; overflow:hidden; }
+  .alumni-hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,#0a0a2e 0%,var(--blue) 100%); background-size:cover; background-position:center; }
+  .alumni-hero-bg::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.3); }
+  .alumni-hero-content { position:relative; z-index:1; padding:80px 60px; color:white; }
+  .alumni-hero-content .eyebrow { font-size:clamp(20px,3vw,32px); font-weight:700; line-height:1.4; }
+  .alumni-hero-content .eyebrow .blue-years { color:#1E90FF; font-weight:900; }
+  .alumni-intro { padding:70px 24px; max-width:860px; margin:0 auto; text-align:center; }
+  .alumni-intro h2 { font-size:clamp(28px,4vw,44px); font-weight:900; line-height:1.15; margin-bottom:24px; color:var(--text); }
+  .alumni-intro h2 .purple { color:#7B4FD4; }
+  .alumni-intro p { font-size:16px; color:var(--text-light); line-height:1.8; }
+  .get-involved-label { background:var(--blue); color:white; text-align:center; padding:18px 24px; font-size:20px; font-weight:700; }
+  .cards-slider-section { position:relative; overflow:hidden; }
+  .cards-slider { display:flex; transition:transform 0.5s ease; }
+  .alumni-card { min-width:100%; position:relative; min-height:500px; display:flex; align-items:center; }
+  .alumni-card-bg { position:absolute; inset:0; background-size:cover; background-position:center; }
+  .alumni-card-bg::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.45); }
+  .alumni-card-content { position:relative; z-index:1; color:white; padding:60px 100px 60px 80px; max-width:680px; }
+  .alumni-card-content h2 { font-size:clamp(28px,4vw,44px); font-weight:900; margin-bottom:20px; }
+  .alumni-card-content p { font-size:17px; line-height:1.8; margin-bottom:32px; }
+  .alumni-card-btn { display:inline-block; border:2px solid white; color:white; padding:14px 36px; border-radius:40px; font-weight:700; font-size:15px; transition:all 0.2s; text-decoration:none; }
+  .alumni-card-btn:hover { background:white; color:var(--text); }
+  .slider-arrow { position:absolute; top:50%; transform:translateY(-50%); z-index:10; width:52px; height:52px; border-radius:50%; background:rgba(30,30,30,0.6); border:none; color:white; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
+  .slider-arrow:hover { background:rgba(0,0,0,0.8); }
+  .slider-arrow.left { left:24px; }
+  .slider-arrow.right { right:24px; }
+  .share-leadership { position:relative; min-height:320px; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
+  .share-leadership-bg { position:absolute; inset:0; background:linear-gradient(135deg,#1a0050 0%,#7B4FD4 100%); background-size:cover; background-position:center; }
+  .share-leadership-bg::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.25); }
+  .share-leadership-content { position:relative; z-index:1; color:white; padding:60px 24px; }
+  .share-leadership-content h2 { font-size:clamp(28px,4vw,48px); font-weight:900; margin-bottom:28px; }
+  .want-involved { background:#7B4FD4; padding:80px 60px; }
+  .want-involved-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+  .want-involved-left { color:white; }
+  .want-involved-left h2 { font-size:clamp(36px,5vw,58px); font-weight:900; line-height:1.1; margin-bottom:32px; }
+  .want-involved-left p { font-size:17px; margin-bottom:8px; opacity:0.95; }
+  .want-involved-left .note { font-size:12px; opacity:0.75; margin-bottom:20px; }
+  .want-involved-left .address { font-size:16px; margin-top:20px; line-height:1.8; }
+  .want-involved-left a { color:white; }
+  .purple-form label { display:block; font-size:18px; font-weight:400; color:white; margin-bottom:6px; }
+  .purple-form label .req { font-size:13px; opacity:0.75; }
+  .purple-form .form-section-title { font-size:18px; color:white; font-weight:500; margin-bottom:14px; }
+  .purple-form input, .purple-form textarea { width:100%; padding:14px; border:none; border-radius:4px; background:#c9b8f0; font-family:inherit; font-size:15px; outline:none; margin-bottom:22px; color:#1a1a2e; }
+  .purple-form textarea { resize:vertical; min-height:120px; }
+  .purple-form .name-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:22px; }
+  .purple-form .name-row input { margin-bottom:0; }
+  .purple-form .send-btn { background:#1a1a2e; color:white; border:none; padding:16px 48px; border-radius:40px; font-family:inherit; font-size:16px; font-weight:700; cursor:pointer; transition:opacity 0.2s; }
+  .purple-form .send-btn:hover { opacity:0.82; }
+  @media (max-width:768px) {
+    .alumni-hero-content { padding:60px 24px; }
+    .alumni-card-content { padding:40px 24px; }
+    .want-involved { padding:60px 24px; }
+    .want-involved-inner { grid-template-columns:1fr; gap:40px; }
+    .purple-form .name-row { grid-template-columns:1fr; }
+  }
+</style>
+
+
+<section class="alumni-hero">
+  <div class="alumni-hero-bg"></div>
+  
+  <div class="alumni-hero-content">
+    <p class="eyebrow">fulfilling humankind's potential for <span class="blue-years">64 years!</span></p>
+  </div>
+</section>
+
+
+<section style="background:#fff;">
+  <div class="alumni-intro">
+    <h2>once an <span class="purple">AIESECer</span><br>always an <span class="purple">AIESECer</span></h2>
+    <p>We hope you didn't forget, but hey there fellow AIESECer, it's been a while! Don't worry, there are still plenty of ways you can continue to help us develop and deliver the best leadership experiences to young people across Canada and around the world. Just take a look below to see how you can continue building life-lasting connections and impact.</p>
+  </div>
+</section>
+
+
+<div class="get-involved-label">Get Involved</div>
+
+
+<section class="cards-slider-section">
+  <div class="cards-slider" id="alumniSlider">
+
+    <div class="alumni-card">
+      <div class="alumni-card-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/6283ea60183691041842ecd8/1658512246185-8GX7ZG7QS2F6I258M294/Screenshot%2B2022-07-07%2B180032.jpg');"></div>
+      
+      <div class="alumni-card-content">
+        <h2>Pass on the Leadership</h2>
+        <p>The best way for the next generation to learn and grow, is to take a look into the past, and what better way than for them to learn from our alumni! Whether you want to mentor an AIESECer or join a Board of Advisors, there are plenty of opportunities to share the knowledge and help empower more future leaders!</p>
+        <a href="mailto:info@aiesec.ca?subject=Mentor / BOA Inquiry" class="alumni-card-btn">Let's share the knowledge!</a>
+      </div>
+    </div>
+
+    <div class="alumni-card">
+      <div class="alumni-card-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/6283ea60183691041842ecd8/1658512315138-5MA2LDDTZRAPKYF9FMSJ/Be%2Bour%2BGuest.jpg');"></div>
+      
+      <div class="alumni-card-content">
+        <h2>Be our Guest</h2>
+        <p>As we start to host more and more events, the entity is always on the lookout for more alumni to join us at our events and workshops to shed more light on leadership and the impact AIESEC can make on everyday life. Of course, who better to speak on leadership than the experts who have been through all kinds of experiences (that's you ;))</p>
+        <a href="https://form.typeform.com/to/stvCjtCX" target="_blank" class="alumni-card-btn">I want to be a guest speaker!</a>
+      </div>
+    </div>
+
+    <div class="alumni-card">
+      <div class="alumni-card-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/6283ea60183691041842ecd8/1658512337547-WV6AFQ6SG953BGD7XTPH/pexels-kampus-production-5940707%252B%2525281%252529.jpg');"></div>
+      
+      <div class="alumni-card-content">
+        <h2>Hire International Talent</h2>
+        <p>At the heart of everything we do, there is one thing we aim to do best.. exchange of course. Think your company could use some fresh skill from all around the world with expedited VISA processing? You know exactly who to go to!</p>
+        <a href="exchange-for-organizations.html" class="alumni-card-btn">I want international talent!</a>
+      </div>
+    </div>
+
+    <div class="alumni-card">
+      <div class="alumni-card-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/6283ea60183691041842ecd8/1658512360036-OQBZXS4NTDKD87P06OUV/Screenshot%2B2022-07-08%2B101538.jpg');"></div>
+      
+      <div class="alumni-card-content">
+        <h2>Support our Programs</h2>
+        <p>We are always trying to create new opportunities and experiences for both our AIESECers and all our other stakeholders, and many are not possible without the help and support of our partners and network. Donate to the future of leadership today to keep the leadership growing and evolving for generations to come!</p>
+        <a href="support-us.html" class="alumni-card-btn">I want to donate!</a>
+      </div>
+    </div>
+
+  </div>
+  <button class="slider-arrow left" onclick="slideAlumni(-1)">&#8592;</button>
+  <button class="slider-arrow right" onclick="slideAlumni(1)">&#8594;</button>
+</section>
+
+
+<section class="share-leadership">
+  <div class="share-leadership-bg"></div>
+  
+  <div class="share-leadership-content">
+    <h2>share your leadership story</h2>
+    <a href="https://bit.ly/AIESECCANtestimonials" target="_blank" style="display:inline-block;border:2px solid white;color:white;padding:14px 40px;border-radius:40px;font-weight:700;font-size:16px;">Let's Go!</a>
+  </div>
+</section>
+
+
+<section class="want-involved">
+  <div class="want-involved-inner">
+    <div class="want-involved-left">
+      <h2>want to get involved?</h2>
+      <p><a href="mailto:info@aiesec.ca">info@aiesec.ca</a></p>
+      <p>(416) 368-1001**</p>
+      <p class="note">**We are in the office Monday & Wednesday — we may not always answer the phone immediately.</p>
+      <div class="address">
+        <p>164 Eglinton Ave E suite 208</p>
+        <p>Toronto, ON M4P 1G4</p>
+      </div>
+    </div>
+    <div class="purple-form">
+      <p class="form-section-title">Name</p>
+      <div class="name-row">
+        <div>
+          <label>First Name <span class="req">(required)</span></label>
+          <input type="text" required>
+        </div>
+        <div>
+          <label>Last Name <span class="req">(required)</span></label>
+          <input type="text" required>
+        </div>
+      </div>
+      <label>Email <span class="req">(required)</span></label>
+      <input type="email" required>
+      <label>What LC were you with? <span class="req">(required)</span></label>
+      <input type="text" required>
+      <label>What was your last year in AIESEC? <span class="req">(required)</span></label>
+      <input type="text" required>
+      <label>Message <span class="req">(required)</span></label>
+      <textarea required></textarea>
+      <button type="submit" class="send-btn">Send</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = document.querySelectorAll('.alumni-card').length;
+
+  function slideAlumni(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    document.getElementById('alumniSlider').style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+</script>
+
+
+  </main>
+
+  
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/this-is-aiesec.html">About AIESEC</a>
+        <a href="/our-mission.html">Our Mission</a>
+        <a href="/meet-the-team.html">Meet the Team</a>
+        <a href="/support-us.html">Support Us</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Exchange</h4>
+        <a href="/exchange.html">Learn about Exchange</a>
+        <a href="/global-volunteer.html">Global Volunteer</a>
+        <a href="/global-teacher.html">Global Teacher</a>
+        <a href="/global-talent.html">Global Talent</a>
+        <a href="/exchange-signup.html">Go on Exchange</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <a href="/membership.html">Learn about Membership</a>
+        <a href="/join-us.html">Join AIESEC</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="/about-partnerships.html">Learn about Partnerships</a>
+        <a href="/y2b.html">Youth 2 Business</a>
+        <a href="/exchange-for-organizations.html">Exchange for Companies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alumni</h4>
+        <a href="/alumni.html">For Alumni</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>General</h4>
+        <a href="/annual-reports.html">Annual Reports</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/safety-policy.html">Safety Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer">
+        AIESEC is a non-governmental not-for-profit organization in consultative status with the United Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and is recognized by UNESCO. AIESEC Canada Inc. is registered as a not-for-profit Organization under the Canadian not-for-profit Corporations Act. Charity Number: 129835872RR0001 in Toronto, Ontario, Canada.
+      </p>
+      
+      <div class="footer-copyright">
+        <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
+        <div class="footer-socials">
+             </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+{{define "content"}}
+<style>
+.ar-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.ar-wrapper h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 50px;
+}
+
+.ar-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 60px 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 80px;
+    align-items: start;
+}
+
+.ar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ar-spacer {
+    /* empty middle column as gap between EN and FR */
+}
+
+.ar-btn {
+    display: block;
+    padding: 18px 24px;
+    background: transparent;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.ar-btn.en {
+    border: 2px solid #037EF3;
+    color: #037EF3;
+}
+
+.ar-btn.en:hover {
+    background: #037EF3;
+    color: white;
+}
+
+.ar-btn.fr {
+    border: 2px solid #27d896;
+    color: #27d896;
+}
+
+.ar-btn.fr:hover {
+    background: #27d896;
+    color: white;
+}
+
+.ar-btn.disabled {
+    border: 2px solid #ccc;
+    color: #ccc;
+    cursor: default;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .ar-section {
+        grid-template-columns: 1fr 1fr;
+    }
+    .ar-spacer {
+        display: none;
+    }
+}
+</style>
+
+<div class="ar-wrapper">
+
+    <h1>Annual Reports</h1>
+    <div class="ar-section">
+        <!-- EN col 1 -->
+        <div class="ar-col">
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/eng_-_aiesec_canada_annual_report_21-22" target="_blank">21-22 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_canada_inc._annual_report_2019-2020_eng" target="_blank">19-20 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/annual_report_18_aiesec_canada_engl" target="_blank">17-18 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_canada_annual_report_2015-16" target="_blank">15-16 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_canada_annual_report_2013-14" target="_blank">13-14 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/ac_annualreport2011-2012_v13__1_" target="_blank">11-12 EN</a>
+        </div>
+        <!-- EN col 2 -->
+        <div class="ar-col">
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/eng_-_aiesec_canada_annual_report_20-21" target="_blank">20-21 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/issuu_-_eng_-_aiesec_canada_annual_report_2019" target="_blank">18-19 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_in_canada_annual_report_2016" target="_blank">16-17 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_canada_annual_report_2014-15" target="_blank">14-15 EN</a>
+            <span class="ar-btn disabled">12-13 EN</span>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_2010-2011_annual_report__en_" target="_blank">10-11 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/09-10_annual_report" target="_blank">09-10 EN</a>
+        </div>
+
+        <!-- SPACER -->
+        <div class="ar-spacer"></div>
+
+        <!-- FR col 1 -->
+        <div class="ar-col">
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/fr_-_aiesec_canada_annual_report_21-22" target="_blank">21-22 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/aiesec_canada_inc._annual_report_2019-2020_french" target="_blank">19-20 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/issuu_-_fr_-_aiesec_canada_annual_report_2019" target="_blank">18-19 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/aiesec_in_canada_annual_report_2016_941956832925c0" target="_blank">16-17 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/annual_report_french" target="_blank">12-13 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/aiesec_canada_rapport_annuel-09-10" target="_blank">09-10 FR</a>
+        </div>
+        <!-- FR col 2 -->
+        <div class="ar-col">
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/fr_-_aiesec_canada_annual_report_20-21" target="_blank">20-21 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/annual_report_18_aiesec_canada_fren" target="_blank">17-18 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/annual_report_18_aiesec_canada_fren" target="_blank">17-16 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/ac_annualreport2011-2012_final_french_version" target="_blank">11-12 FR</a>
+        </div>
+    </div>
+
+    <h1>Y2B Reports</h1>
+    <div class="ar-section">
+        <!-- EN col 1 -->
+        <div class="ar-col">
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/general_y2b_2021_impact_report" target="_blank">2021 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_canada_y2b_partner_report__1" target="_blank">2018 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/y2b_report_15-16" target="_blank">2016 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/canada_youth_to_business_report_201" target="_blank">2014 EN</a>
+        </div>
+        <!-- EN col 2 -->
+        <div class="ar-col">
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/eng_-_y2b_annual_report_2019_-_fina" target="_blank">2019 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/aiesec_in_canada_y2b_2017_report_-_" target="_blank">2017 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/canada_youth_to_business_report_201_1f138e888ea36f" target="_blank">2015 EN</a>
+            <a class="ar-btn en" href="https://issuu.com/aieseccanada/docs/y2b_report" target="_blank">2013 EN</a>
+        </div>
+
+        <!-- SPACER -->
+        <div class="ar-spacer"></div>
+
+        <!-- FR col 1 -->
+        <div class="ar-col">
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/fr_-_y2b_annual_report_2019" target="_blank">2019 FR</a>
+            <a class="ar-btn fr" href="https://issuu.com/aieseccanada/docs/y2b_report_french" target="_blank">2013 FR</a>
+        </div>
+        <!-- FR col 2 empty for Y2B -->
+        <div class="ar-col"></div>
+    </div>
+
+</div>
+{{end}}

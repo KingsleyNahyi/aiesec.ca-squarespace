@@ -1,0 +1,383 @@
+{{define "content"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+  /* --- HERO SECTION --- */
+.hero-viewport {
+    height: 100vh !important;
+    width: 100%;
+    min-height: 100vh !important; 
+    position: relative;
+    background: url('/static/images/background-for-AIESEC.webp') no-repeat center center/cover fixed !important;
+    margin-top: 0px; 
+    margin-bottom: 0 !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-moving-text {
+  font-size: 48px;
+  opacity: 0.8;
+  font-weight: 800;
+  color: white;
+  text-transform: lowercase;
+}
+
+.hero-static-text {
+  font-size: 70px;
+  margin-top: -10px;
+  color: #037EF3;
+}
+
+.hero-viewport::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.marquee-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    white-space: nowrap;
+}
+
+.moving-track {
+    display: flex;
+    animation: scroll-text 25s linear infinite;
+}
+
+@keyframes scroll-text {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.hero-static-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: -20px;
+}
+
+/* --- EXPERIENCE ARCHES --- */
+.experience-section {
+    margin-top: 0 !important; 
+    border: none; 
+    padding: 80px 5%;
+    text-align: center;
+    background: var(--white);
+    z-index: 5; 
+}
+
+.arch-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.arch-card {
+    flex: 1;
+    min-width: 300px;
+    height: 600px;
+    position: relative;
+    border-radius: 180px 180px 20px 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.arch-card:hover { transform: translateY(-10px); }
+
+.arch-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arch-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 60px 20px 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+    color: var(--white);
+}
+
+.arch-label h3 {
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+/* --- PARTNERS BANNER --- */
+.partners-banner {
+    background: var(--blue);
+    padding: 60px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+}
+
+.partners-banner h2 { font-size: 40px; font-weight: 900; line-height: 1.1; }
+
+.btn-outline-white {
+    border: 3px solid var(--white);
+    padding: 12px 35px;
+    border-radius: 50px;
+    color: var(--white);
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline-white:hover {
+    background: var(--white);
+    color: var(--blue);
+}
+
+/* --- TESTIMONIALS --- */
+.testimonial-section {
+    padding: 100px 5%;
+    background: url('/static/images/background.webp') no-repeat center center/cover;
+    text-align: center;
+}
+
+.t-grid {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.t-card {
+    background: rgba(200, 225, 255, 0.75);
+    width: 300px;
+    flex: 0 0 300px;
+    padding: 40px 25px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.t-card.tall {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.t-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    object-fit: cover;
+    display: block;
+}
+
+.t-card h3 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.t-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.t-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.t-nav.left { left: -25px; }
+.t-nav.right { right: -25px; }
+
+/* --- SOCIAL SECTION --- */
+.social-section { padding: 80px 5%; text-align: center; }
+
+.social-icons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 25px; 
+    margin: 20px 0 40px; 
+}
+
+.social-icons a { font-size: 30px; color: var(--blue); transition: 0.3s; }
+.social-icons a:hover { transform: scale(1.2); }
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.social-post {
+    aspect-ratio: 1/1;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+
+.social-post img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: 0.5s; 
+}
+
+.social-post:hover img { transform: scale(1.05); }
+
+.play-overlay {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.15); color: white; font-size: 40px;
+}
+</style>
+
+<!-- HERO -->
+<section class="hero-viewport">
+  <div class="marquee-container">
+    <div class="moving-track">
+      <h1 class="hero-moving-text">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
+      <h1 class="hero-moving-text">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
+    </div>
+  </div>
+  <div class="hero-static-container">
+    <h2 class="hero-static-text">with aiesec.</h2>
+  </div>
+</section>
+
+<!-- CHOOSE YOUR EXPERIENCE -->
+<section class="experience-section">
+  <h1>Choose Your Experience</h1>
+  <div class="arch-grid">
+    <div class="arch-card">
+      <img src="/static/images/card 3.webp" alt="Become a Member">
+      <div class="arch-label"><h3>Become a Member</h3></div>
+    </div>
+    <div class="arch-card">
+      <img src="/static/images/card 1.webp" alt="Go on Exchange">
+      <div class="arch-label"><h3>Go on Exchange</h3></div>
+    </div>
+    <div class="arch-card">
+      <img src="/static/images/card 2.webp" alt="Connect with Youth">
+      <div class="arch-label"><h3>Connect with Youth</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS BANNER -->
+<section class="partners-banner">
+  <h2>meet our <br><span style="color:#000;">corporate partners</span></h2>
+  <a href="/our-partners.html" class="btn-outline-white">Let's Go!</a>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-section">
+  <h2 style="font-size:36px; font-weight:800; margin-bottom: 20px;">so what kind of leader will you choose to be <span style="color:var(--blue)">today?</span></h2>
+  <div style="position:relative; max-width:1100px; margin:0 auto;">
+    <button class="t-nav left" onclick="slideTestimonial(-1)"><i class="fa-solid fa-arrow-left"></i></button>
+    <div class="t-grid" id="tGrid">
+      <div class="t-card tall">
+        <img src="/static/images/alice shi.webp">
+        <h3>Alice Shi</h3>
+        <p>It is really hard to give it justice just in few sentences but I will admit that AIESEC makes me a better team player and a better employee and a self-motivated person in life who always drives for bigger purpose — and not everyone in the workplace is like that.</p>
+      </div>
+      <div class="t-card">
+        <img src="/static/images/ChrisGreenough.webp">
+        <h3>Chris Greenough</h3>
+        <p>AIESEC connected me with my future. The people who hired me (for my exchange) ultimately became my partners and I entered an industry that I hadn't considered in University.</p>
+      </div>
+      <div class="t-card tall">
+        <img src="/static/images/Katherine.webp">
+        <h3>Katharine Sliwinski</h3>
+        <p>Developed me to be a better leader and with my exchange to Belgium I really had a chance to work in an international environment and improve my French. This opened the door to many job opportunities.</p>
+      </div>
+    </div>
+    <button class="t-nav right" onclick="slideTestimonial(1)"><i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</section>
+
+<!-- SOCIAL SECTION -->
+<section class="social-section">
+  <h2>Follow Us!</h2>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/aieseccanada"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.facebook.com/AIESECCanada"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/company/aiesec-in-canada"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+  <div class="social-grid">
+    <a href="https://www.instagram.com/p/DVHvNbREdNC/" target="_blank" class="social-post">
+      <img src="/static/images/post2.jpg">
+    </a>
+    <a href="https://www.instagram.com/reel/DQpuqNfEps3/" target="_blank" class="social-post">
+      <img src="/static/images/post1.jpg">
+      <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+    </a>
+    <a href="https://www.instagram.com/reel/DQaKvS0kgDW/" target="_blank" class="social-post">
+      <img src="/static/images/post3.webp">
+      <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+    </a>
+    <a href="https://www.instagram.com/p/DQR1pKXjKlF/" target="_blank" class="social-post">
+      <img src="/static/images/post4.webp">
+    </a>
+  </div>
+</section>
+
+<script>
+const testimonials = [
+  { img: '/static/images/alice shi.webp', name: 'Alice Shi', quote: 'It is really hard to give it justice just in few sentences but I will admit that AIESEC makes me a better team player and a better employee and a self-motivated person in life who always drives for bigger purpose — and not everyone in the workplace is like that.' },
+  { img: '/static/images/ChrisGreenough.webp', name: 'Chris Greenough', quote: 'AIESEC connected me with my future. The people who hired me (for my exchange) ultimately became my partners and I entered an industry that I hadn\'t considered in University.' },
+  { img: '/static/images/Katherine.webp', name: 'Katharine Sliwinski', quote: 'Developed me to be a better leader and with my exchange to Belgium I really had a chance to work in an international environment and improve my French. This opened the door to many job opportunities.' },
+  { img: '/static/images/OliviaMullins.webp', name: 'Olivia Mullins', quote: 'AIESEC has shaped my path to consider the impact that I leave on the world. I want to choose a career that creates positive things.' }
+];
+
+let tIndex = 0;
+
+function slideTestimonial(dir) {
+  tIndex = (tIndex + dir + testimonials.length) % testimonials.length;
+  const grid = document.getElementById('tGrid');
+  const cards = [
+    testimonials[(tIndex) % testimonials.length],
+    testimonials[(tIndex + 1) % testimonials.length],
+    testimonials[(tIndex + 2) % testimonials.length]
+  ];
+  grid.innerHTML = cards.map((t, i) => `
+    <div class="t-card ${i !== 1 ? 'tall' : ''}">
+      <img src="${t.img}">
+      <h3>${t.name}</h3>
+      <p>${t.quote}</p>
+    </div>
+  `).join('');
+}
+</script>
+
+{{end}}

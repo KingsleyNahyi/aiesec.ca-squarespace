@@ -1,0 +1,194 @@
+{{define "content"}}
+<style>
+    /* Hero & Values */
+.mission-hero { background-color: #037EF3; padding: 150px 0 80px; text-align: center; color: white; }
+.mission-hero h1 { font-size: 5rem; font-weight: 800; }
+.philosophy-section { padding: 60px 5%; text-align: center; }
+.full-width-graphic { width: 100%; max-width: 1100px; }
+.values-section { padding: 60px 5%; text-align: center; }
+.values-img { width: 100%; max-width: 1000px; }
+
+/* History Section with Curve */
+.history-curved-container {
+    background-image: url('/static/images/bluewrapper.webp');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #037EF3; /* Fills below the curve */
+    padding: 250px 10% 100px;
+    color: white;
+}
+
+.history-row { display: flex; align-items: center; gap: 60px; margin-bottom: 150px; }
+.history-row.row-reverse { flex-direction: row-reverse; }
+.history-content { flex: 1.2; }
+.history-visual { flex: 1; }
+
+.text-outline, .year-label { font-size: 2.5rem; font-weight: 800; color: transparent; -webkit-text-stroke: 1.2px white; }
+.text-solid, .year-title { font-size: 6rem; font-weight: 800; margin-top: -20px; text-transform: uppercase; }
+
+/* Photo Offsets (The Black Blocks) */
+.photo-offset-block { position: relative; }
+.photo-offset-block::before {
+    content: ""; position: absolute; top: 20px; left: 20px; width: 100%; height: 100%;
+    background: #1a1a1a; z-index: 1;
+}
+.row-reverse .photo-offset-block::before { left: -20px; }
+.photo-offset-block img { position: relative; z-index: 2; width: 100%; display: block; }
+.img-arch { border-radius: 500px 500px 0 0; }
+
+/* Today Sparkle Section */
+.today-special-section {
+    background-image: url('/static/images/testimonial-background.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 10%;
+}
+
+.today-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- 1948 Image Length --- */
+.img-long {
+    height: 550px; /* Increased height to make it look longer */
+    object-fit: cover; /* Prevents the people in the photo from stretching */
+    object-position: top; /* Keeps the faces visible */
+}
+
+/* --- Today Section Proportions --- */
+.today-image-container {
+    flex: 2; /* Makes the image take up much more space */
+    z-index: 1;
+}
+
+.today-card.small-block {
+    flex: 0.7; /* Makes the text block significantly smaller/narrower */
+    margin-left: -120px; /* Deeper overlap into the big image */
+    padding: 40px; /* Tighter padding for the smaller block */
+    min-width: 350px; /* Ensures it doesn't get too squished */
+}
+
+.today-card-title {
+    font-size: 3.5rem; /* Slightly smaller title to fit the smaller block */
+}
+
+/* --- Standalone Fix --- */
+.standalone-img {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+.today-hero-img { width: 100%; box-shadow: 15px 15px 0px rgba(0,0,0,0.3); }
+
+.today-card {
+    flex: 1;
+    background: white;
+    padding: 50px;
+    margin-left: -80px; /* The overlap effect */
+    z-index: 2;
+    color: #1a1a1a;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+}
+
+
+.today-question { margin-top: 25px; font-style: italic; }
+.today-cta { font-size: 1.8rem; font-weight: 800; margin-top: 10px; }
+.standalone-img {
+    width: 100%;
+    display: block;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1); /* Optional: adds a soft depth without the black block */
+    position: relative;
+    z-index: 2;
+}
+</style>
+<section class="mission-hero">
+    <h1>The AIESEC Way</h1>
+</section>
+
+<section class="philosophy-section">
+    <div class="container">
+        <img src="/static/images/firstpicture.webp" alt="AIESEC Philosophy" class="full-width-graphic">
+    </div>
+</section>
+
+<section class="values-section">
+    <h2 class="section-title">The AIESEC Values</h2>
+    <div class="values-wrapper">
+        <img src="/static/images/aiesec-values.webp" alt="AIESEC Core Values" class="values-img">
+    </div>
+</section>
+
+<section class="history-curved-container">
+<div class="history-row">
+        <div class="history-content">
+            <h3 class="text-outline">OUR</h3>
+            <h2 class="text-solid">HISTORY</h2>
+            <p>AIESEC was established in 1948 after the Second World War, where a group of young people determined that cross-cultural understanding was essential to prevent similar conflicts.</p>
+        </div>
+        <div class="history-visual">
+            <img src="/static/images/AIESEChistory.webp" alt="1948" class="img-arch img-long standalone-img">
+        </div>
+    </div>
+    <div class="history-row row-reverse">
+        <div class="history-content">
+            <h3 class="year-label">IN</h3>
+            <h2 class="year-title">1977</h2>
+            <p>AIESEC was present in 50 countries across six continents! To this date, over 40,000 young people around the world had participated in a leadership development experience.</p>
+        </div>
+        <div class="history-visual">
+            <div class="photo-offset-block">
+                <img src="/static/images/old-people.webp" alt="1977" class="img-rect">
+            </div>
+        </div>
+    </div>
+
+<div class="history-row">
+        <div class="history-content">
+            <h3 class="year-label">IN</h3>
+            <h2 class="year-title">2010</h2>
+            <p>AIESEC crosses 10,000 experiences delivered in one year alone for the first time. By now, over 230,000 experiences have been provided, all facilitated by youth for youth.</p>
+        </div>
+        <div class="history-visual">
+            <div class="photo-offset-block">
+                <img src="/static/images/social-media.webp" alt="2010" class="img-rect">
+            </div>
+        </div>
+    </div>
+
+    <div class="history-row row-reverse">
+        <div class="history-content">
+            <h3 class="year-label">IN</h3>
+            <h2 class="year-title">2015</h2>
+            <p>AIESEC's youth leaders from 126 countries and territories in collaboration with the Office of the Secretary-General's Envoy on Youth gathered at the United Nations Headquarters to promote and drive youth participation in implementing the Sustainable Development Goals (SDGs). The relevance and contribution of AIESEC IS clearer than ever.</p>
+        </div>
+        <div class="history-visual">
+            <div class="photo-offset-block">
+                <img src="/static/images/woman-speaks.webp" alt="2015" class="img-rect">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="today-special-section">
+    <div class="today-wrapper">
+        <div class="today-image-container">
+            <img src="/static/images/today.webp" alt="AIESEC Today" class="today-hero-img">
+        </div>
+        <div class="today-card small-block">
+            <h2 class="today-card-title">today</h2>
+            <p>AIESEC has become a global network of young people that simply believe that youth leadership is not an option, but our responsibility.</p>
+            <p class="today-question">Now the question is:</p>
+            <h3 class="today-cta">Will you join us?</h3>
+        </div>
+    </div>
+
+</section>
+
+{{end}}
