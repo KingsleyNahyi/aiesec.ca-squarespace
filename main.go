@@ -117,6 +117,9 @@ func main() {
 
 		renderPage(w, "annual-reports.html", nil)
 	})
-	println("Server running at http://localhost:8081")
-	http.ListenAndServe(":8081", nil)
+port := os.Getenv("PORT")
+if port == "" {
+    port = "8080"
+}
+log.Fatal(http.ListenAndServe(":"+port, nil))
 }
