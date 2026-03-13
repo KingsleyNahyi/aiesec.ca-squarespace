@@ -4,6 +4,8 @@ import (
 	"html/template"
 	"net/http"
 	"path/filepath"
+	"os"
+	"log"
 )
 
 func renderPage(w http.ResponseWriter, tmpl string, data interface{}) {
