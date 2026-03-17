@@ -1,59 +1,122 @@
 {{define "content"}}
+<style>
+/* --- HERO --- */
+.su-hero {
+    background: #ffffff;
+    padding: 120px 5% 100px;
+    text-align: center;
+}
 
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-bg" style="background:var(--blue);"></div>
-  <div class="hero-content">
+.su-hero h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: #000;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.su-hero h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    color: #037EF3;
+    margin: 10px 0;
+    line-height: 1.1;
+}
+
+/* --- CARDS SECTION --- */
+.su-cards {
+    background: #037EF3;
+    padding: 60px 5% 100px;
+}
+
+.su-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.su-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.su-card h3 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.su-card p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* --- DONATION SECTION --- */
+.su-donate {
+    background: #ffffff;
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.su-donate iframe {
+    width: 100%;
+    max-width: 860px;
+    min-height: 900px;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .su-cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- HERO -->
+<section class="su-hero">
     <h2>help us</h2>
     <h1>Develop Leadership</h1>
     <h2>in Canada</h2>
-    <a href="mailto:info@aiesec.ca?subject=Donation Inquiry" class="btn btn-white" style="margin-top:24px;">Donate Today</a>
-  </div>
 </section>
 
-<!-- 3 pillars -->
-<section class="section">
-  <div class="section-inner">
-    <div class="card-grid">
-
-      <div class="card">
-        <!-- TODO: Replace with MC Jersey.png from Squarespace CDN -->
-        <div class="card-img-placeholder">Leadership Opportunities</div>
-        <div class="card-body">
-          <h3>Create Leadership Opportunities</h3>
-          <p>We are always trying to provide new and better opportunities for our leaders to engage and develop themselves in. With your donations, we can support more full-time leadership positions for our membership to take on and put back into the entity.</p>
+<!-- CARDS -->
+<section class="su-cards">
+    <div class="su-cards-grid">
+        <div class="su-card">
+            <img src="/static/images/mc-jersey.webp" alt="Create Leadership Opportunities">
+            <h3>Create Leadership Opportunities</h3>
+            <p>We are always trying to provide new and better opportunities for our leaders to engage and develop themselves in. With your donations, we can support more full-time leadership positions for our membership to take on and put back into the entity.</p>
         </div>
-      </div>
-
-      <div class="card">
-        <!-- TODO: Replace with GV.png from Squarespace CDN -->
-        <div class="card-img-placeholder">Enhance Programs</div>
-        <div class="card-body">
-          <h3>Enhance Our Programs</h3>
-          <p>As we adapt to the future and needs of the new market, we also want to stay ahead of the industries and introduce new and useful platforms and partnerships that can help improve and support the delivery of all our experiences, from exchange to membership.</p>
+        <div class="su-card">
+            <img src="/static/images/gv.webp" alt="Enhance Our Programs">
+            <h3>Enhance Our Programs</h3>
+            <p>As we adapt to the future and needs of the new market, we also want to stay ahead of the industries and introduce new and useful platforms and partnerships that can help improve and support the delivery of all our experiences, from exchange to membership.</p>
         </div>
-      </div>
-
-      <div class="card">
-        <!-- TODO: Replace with Picsart_22-07-20_13-53-31-437.jpg from Squarespace CDN -->
-        <div class="card-img-placeholder">Cultivate Culture</div>
-        <div class="card-body">
-          <h3>Cultivate Stronger Culture</h3>
-          <p>As a youth-led organization for youth, we want to ensure we offer the best experience to our members and ensure they get as many benefits, opportunities, and perks, especially when they come to events like our conferences. Donations help us deliver even better experiences for our delegates.</p>
+        <div class="su-card">
+            <img src="/static/images/cultivate.webp" alt="Cultivate Stronger Culture">
+            <h3>Cultivate Stronger Culture</h3>
+            <p>As a youth-led organization for youth, we want to ensure we offer the best experience to our members and ensure they get as many benefits, opportunities, and perks, especially when they come to events like our conferences. Donations help us deliver even better experiences for our delegates to engage in and connect to the AIESEC mission so that they can bring that impact back to their local communities.</p>
         </div>
-      </div>
-
     </div>
-  </div>
 </section>
 
-<!-- CTA -->
-<section class="section-blue section text-center">
-  <div class="section-inner">
-    <h2 class="section-title">Ready to make an impact?</h2>
-    <p class="section-subtitle" style="margin:0 auto 32px;">Your donation goes directly toward developing the next generation of leaders across Canada.</p>
-    <a href="mailto:info@aiesec.ca?subject=Donation Inquiry" class="btn btn-white">Get in Touch</a>
-  </div>
+<!-- DONATION EMBED -->
+<section class="su-donate">
+    <iframe
+        src="https://www.canadahelps.org/en/dn/47781?v2=true"
+        allowtransparency="true"
+        allowpaymentrequest>
+    </iframe>
 </section>
 
 {{end}}

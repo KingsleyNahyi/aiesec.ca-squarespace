@@ -119,6 +119,11 @@ func main() {
 
 		renderPage(w, "annual-reports.html", nil)
 	})
+
+	http.HandleFunc("/support-us.html", func(w http.ResponseWriter, r *http.Request){
+
+		renderPage(w, "support-us.html", nil)
+	})
 port := os.Getenv("PORT")
 if port == "" {
     port = "8080"
