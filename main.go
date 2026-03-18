@@ -95,35 +95,44 @@ func main() {
 	renderPage(w, "exchange-for-organizations.html", nil)
 	})
 
-	http.HandleFunc("/global-volunteer.html", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/global-volunteer", func(w http.ResponseWriter, r *http.Request){
 
 		renderPage(w, "global-volunteer.html", nil)
 	})
 
-	http.HandleFunc("/global-teacher.html", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/global-teacher", func(w http.ResponseWriter, r *http.Request){
 
 		renderPage(w, "global-teacher.html", nil)
 	})
 
-	http.HandleFunc("/global-talent.html", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/global-talent", func(w http.ResponseWriter, r *http.Request){
 
 		renderPage(w, "global-talent.html", nil)
 	})
 
-	http.HandleFunc("/privacy-policy.html", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/privacy-policy", func(w http.ResponseWriter, r *http.Request){
 
 		renderPage(w, "privacy-policy.html", nil)
 	})
 
-	http.HandleFunc("/annual-reports.html", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/annual-reports", func(w http.ResponseWriter, r *http.Request){
 
 		renderPage(w, "annual-reports.html", nil)
 	})
 
-	http.HandleFunc("/support-us.html", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/support-us", func(w http.ResponseWriter, r *http.Request){
 
 		renderPage(w, "support-us.html", nil)
 	})
+
+
+	http.HandleFunc("/exchange-signup", func(w http.ResponseWriter, r *http.Request){
+    renderPage(w, "exchange-signup.html", nil)
+})
+
+http.HandleFunc("/safety-policy", func(w http.ResponseWriter, r *http.Request){
+    renderPage(w, "safety-policy.html", nil)
+})
 port := os.Getenv("PORT")
 if port == "" {
     port = "8080"
