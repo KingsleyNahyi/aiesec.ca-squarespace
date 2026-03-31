@@ -130,6 +130,7 @@ func main() {
     renderPage(w, "exchange-signup.html", nil)
 })
 
+
 http.HandleFunc("/safety-policy", func(w http.ResponseWriter, r *http.Request){
     renderPage(w, "safety-policy.html", nil)
 })

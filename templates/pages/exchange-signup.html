@@ -2,20 +2,143 @@
 
 <!-- Hero -->
 <section class="hero" style="min-height:420px;">
-  <div class="hero-bg">
-    <!-- TODO: Replace with pexels-francesco-ungaro-2325446.jpg from Squarespace CDN -->
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,var(--blue),#0a2a6b);"></div>
-  </div>
+  <div class="hero-bg" style="background:linear-gradient(135deg,var(--blue),#0a2a6b);"></div>
   <div class="hero-content">
     <h1>Hi there!</h1>
     <p style="font-size:22px;font-weight:600;">Are you ready for the experience of a lifetime?</p>
   </div>
 </section>
 
+<style>
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* dark overlay so text stays readable */
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 60px 24px;
+    max-width: 800px;
+  }
+
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  .hero-content p {
+    margin-top: 16px;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+
+  /* ── Signup section ── */
+  .signup-banner {
+    background: #f26522;
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+
+  .signup-banner h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 700;
+    color: white;
+    margin: 0 0 32px;
+  }
+
+  .signup-form-wrap {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .signup-form-wrap label {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #222;
+  }
+
+  .signup-form-wrap input,
+  .signup-form-wrap select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: white;
+  }
+
+  .signup-form-wrap input:focus,
+  .signup-form-wrap select:focus {
+    border-color: var(--blue, #037EF3);
+  }
+
+  .signup-form-wrap button {
+    background: var(--blue, #037EF3);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .signup-form-wrap button:hover {
+    background: #0262c2;
+  }
+</style>
+
 <!-- Signup form -->
 <section class="section">
   <div class="section-inner text-center" style="max-width:700px;">
-    <!-- TODO: Insert Website Elements (9) (1).png from Squarespace CDN -->
     <h2 class="section-title" style="margin-bottom:32px;">Signup for Exchange!</h2>
     <p style="color:var(--text-light);margin-bottom:40px;">Fill out the form below and a local AIESEC representative will contact you within 2–3 business days to discuss your leadership journey.</p>
 
