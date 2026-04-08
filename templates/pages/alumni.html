@@ -4,8 +4,30 @@
 /* --- HERO --- */
 .alumni-hero {
     height: 90vh;
-    background: url('/static/images/fulfilling.webp') no-repeat center top/cover;
+    background: url('/static/images/Alumni.webp') no-repeat center top/cover;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text-overlay {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-headline {
+    font-size: 5.5rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    margin: 0;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.4);
+}
+
+.hero-blue {
+    color: #037EF3;
 }
 
 /* --- ONCE AN AIESECER --- */
@@ -319,7 +341,14 @@
 </style>
 
 <!-- HERO -->
-<section class="alumni-hero"></section>
+<section class="alumni-hero">
+    <div class="hero-text-overlay">
+        <h1 class="hero-headline">
+            fulfilling humankinds<br>
+            potential for <span class="hero-blue">64 years</span>!
+        </h1>
+    </div>
+</section>
 
 <!-- ONCE AN AIESECER -->
 <section class="once-aiesecer">
