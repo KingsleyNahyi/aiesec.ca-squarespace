@@ -263,63 +263,66 @@
 </style>
 
 <!-- HERO -->
+<!-- HERO -->
 <section class="hero-viewport">
   <div class="marquee-container">
     <div class="moving-track">
-      <h1 class="hero-moving-text">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
-      <h1 class="hero-moving-text">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
+      <h1 class="hero-moving-text" data-i18n="home_hero_marquee">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
+      <h1 class="hero-moving-text" data-i18n="home_hero_marquee">volunteer &nbsp; lead &nbsp; intern &nbsp; travel &nbsp;</h1>
     </div>
   </div>
   <div class="hero-static-container">
-    <h2 class="hero-static-text">with aiesec.</h2>
+    <h2 class="hero-static-text" data-i18n="home_hero_static">with aiesec.</h2>
   </div>
 </section>
 
 <!-- CHOOSE YOUR EXPERIENCE -->
 <section class="experience-section">
-  <h1>Choose Your Experience</h1>
+  <h1 data-i18n="home_experience_title">Choose Your Experience</h1>
   <div class="arch-grid">
     <div class="arch-card">
       <img src="/static/images/card 3.webp" alt="Become a Member">
-      <div class="arch-label"><h3>Become a Member</h3></div>
+      <div class="arch-label"><h3 data-i18n="home_experience_member">Become a Member</h3></div>
     </div>
     <div class="arch-card">
       <img src="/static/images/card 1.webp" alt="Go on Exchange">
-      <div class="arch-label"><h3>Go on Exchange</h3></div>
+      <div class="arch-label"><h3 data-i18n="home_experience_exchange">Go on Exchange</h3></div>
     </div>
     <div class="arch-card">
       <img src="/static/images/card 2.webp" alt="Connect with Youth">
-      <div class="arch-label"><h3>Connect with Youth</h3></div>
+      <div class="arch-label"><h3 data-i18n="home_experience_connect">Connect with Youth</h3></div>
     </div>
   </div>
 </section>
 
 <!-- PARTNERS BANNER -->
 <section class="partners-banner">
-  <h2>meet our <br><span style="color:#000;">corporate partners</span></h2>
-  <a href="/our-partners.html" class="btn-outline-white">Let's Go!</a>
+  <h2 data-i18n="home_partners_title">meet our <br><span style="color:#000;">corporate partners</span></h2>
+  <a href="/our-partners.html" class="btn-outline-white" data-i18n="home_partners_btn">Let's Go!</a>
 </section>
 
 <!-- TESTIMONIALS -->
 <section class="testimonial-section">
-  <h2 style="font-size:36px; font-weight:800; margin-bottom: 20px;">so what kind of leader will you choose to be <span style="color:var(--blue)">today?</span></h2>
+  <h2 style="font-size:36px; font-weight:800; margin-bottom: 20px;" data-i18n="home_testimonial_title">
+    so what kind of leader will you choose to be <span style="color:var(--blue)">today?</span>
+  </h2>
   <div style="position:relative; max-width:1100px; margin:0 auto;">
     <button class="t-nav left" onclick="slideTestimonial(-1)"><i class="fa-solid fa-arrow-left"></i></button>
     <div class="t-grid" id="tGrid">
       <div class="t-card tall">
         <img src="/static/images/alice shi.webp">
-        <h3>Alice Shi</h3>
-        <p>It is really hard to give it justice just in few sentences but I will admit that AIESEC makes me a better team player and a better employee and a self-motivated person in life who always drives for bigger purpose — and not everyone in the workplace is like that.</p>
+        <h3 data-i18n="home_testimonial_alice_name">Alice Shi</h3>
+        <p data-i18n="home_testimonial_alice_text">It is really hard to give it justice just in few sentences but I will admit that AIESEC makes me a better team player and a better employee and a self-motivated person in life who always drives for bigger purpose — and not everyone in the workplace is like that.</p>
       </div>
       <div class="t-card">
         <img src="/static/images/ChrisGreenough.webp">
-        <h3>Chris Greenough</h3>
-        <p>AIESEC connected me with my future. The people who hired me (for my exchange) ultimately became my partners and I entered an industry that I hadn't considered in University.</p>
+        <h3 data-i18n="home_testimonial_chris_name">Chris Greenough</h3>
+        <p data-i18n="home_testimonial_chris_text">AIESEC connected me with my future. The people who hired me (for my exchange) ultimately became my partners and I entered an industry that I hadn't considered in University.</p>
       </div>
       <div class="t-card tall">
         <img src="/static/images/Katherine.webp">
-        <h3>Katharine Sliwinski</h3>
-        <p>Developed me to be a better leader and with my exchange to Belgium I really had a chance to work in an international environment and improve my French. This opened the door to many job opportunities.</p>
+        <h3 data-i18n="home_testimonial_katharine_name">Katharine Sliwinski</h3>
+        <p data-i18n="home_testimonial_katharine_text">Developed me to be a better leader and with my exchange to Belgium I really had a chance to work in an international environment and improve my French. This opened the door to many job opportunities.</p>
       </div>
     </div>
     <button class="t-nav right" onclick="slideTestimonial(1)"><i class="fa-solid fa-arrow-right"></i></button>
@@ -328,7 +331,7 @@
 
 <!-- SOCIAL SECTION -->
 <section class="social-section">
-  <h2>Follow Us!</h2>
+  <h2 data-i18n="home_social_title">Follow Us!</h2>
   <div class="social-icons">
     <a href="https://www.instagram.com/aieseccanada"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://www.facebook.com/AIESECCanada"><i class="fa-brands fa-facebook"></i></a>
@@ -351,6 +354,7 @@
     </a>
   </div>
 </section>
+
 
 <script>
 const testimonials = [

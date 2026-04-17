@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-/* --- BRANDING --- */
 :root {
     --aiesec-blue: #037EF3;
     --aiesec-purple: #7754B6;
@@ -10,7 +9,7 @@
 
 body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; overflow-x: hidden; }
 
-/* --- 1. HERO SECTION (RAW IMAGE) --- */
+/* --- 1. HERO SECTION --- */
 .hero-join {
     height: 85vh;
     background: url('/static/images/becomeanaisecr.webp') no-repeat center center;
@@ -30,7 +29,7 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; ove
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
-/* --- 2. LOCAL CHAPTER (SOLID BLUE) --- */
+/* --- 2. LOCAL CHAPTER --- */
 .map-section { 
     padding: 80px 10%; 
     text-align: center; 
@@ -50,7 +49,7 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; ove
     border-radius: 4px; 
 }
 
-/* --- 3. SIGNUP SECTION (BLUE TO PURPLE FADE) --- */
+/* --- 3. SIGNUP SECTION --- */
 .form-outer-wrapper {
     background: linear-gradient(to bottom, var(--aiesec-blue), var(--aiesec-purple));
     padding: 80px 5% 120px 5%;
@@ -67,68 +66,23 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; ove
     text-align: center; 
 }
 
-.registration-card {
-    background: #fff;
+.signup-iframe-wrap {
     width: 100%;
     max-width: 750px;
-    padding: 50px;
     border-radius: 4px;
+    overflow: hidden;
     box-shadow: 0 30px 60px rgba(0,0,0,0.3);
 }
 
-/* --- STRICT VERTICAL STACK --- */
-.form-stack { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 25px; 
-}
-
-.field label { 
-    display: block; 
-    font-weight: 700; 
-    margin-bottom: 10px; 
-    color: #222; 
-    font-size: 0.95rem; 
-}
-
-.field label span { color: #e74c3c; }
-
-.field input, .field select {
-    width: 100%; 
-    padding: 15px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 1rem; 
-    box-sizing: border-box;
-}
-
-.captcha-placeholder {
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px dashed #ccc;
-    text-align: center;
-    color: #888;
-    font-style: italic;
-    border-radius: 4px;
-}
-
-.submit-btn {
-    background: var(--aiesec-blue);
-    color: #fff; 
-    border: none; 
-    padding: 20px 0; 
-    font-size: 1.5rem; 
-    font-weight: 1000;
-    border-radius: 50px; 
-    cursor: pointer; 
-    transition: 0.3s ease; 
+.signup-iframe-wrap iframe {
     width: 100%;
+    min-height: 1400px;
+    border: none;
+    display: block;
+    background: white;
 }
-
-.submit-btn:hover { background: #000; transform: translateY(-3px); }
 
 @media (max-width: 768px) {
-    .registration-card { padding: 25px; }
     .hero-join h1, .map-section h2, .form-header-text { font-size: 2rem; }
 }
 </style>
@@ -146,163 +100,16 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #333; ove
 
 <section class="form-outer-wrapper">
     <h2 class="form-header-text">2. Signup for Membership!</h2>
-    <div class="registration-card">
-        <form action="/join-us" method="POST" class="form-stack">
-            
-            <div class="field">
-                <label>First Name / Prénom <span>*</span></label>
-                <input type="text" name="first_name" required>
-            </div>
-
-            <div class="field">
-                <label>Last Name / Nom de famille <span>*</span></label>
-                <input type="text" name="last_name" required>
-            </div>
-
-            <div class="field">
-                <label>Gender / Sexe <span>*</span></label>
-                <select name="gender" required>
-                    <option value="">Please select / Veuillez choisir</option>
-                    <option>Female / Femme</option>
-                    <option>Male / Homme</option>
-                    <option>Other / Autre</option>
-                    <option>I prefer not to say / Je préfère ne pas répondre</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label>Date of birth / Date de naissance <span>*</span></label>
-                <input type="date" name="dob" required>
-            </div>
-
-            <div class="field">
-                <label>Email / Courriel <span>*</span></label>
-                <input type="email" name="email" required>
-            </div>
-
-            <div class="field">
-                <label>Phone Number / Numéro de téléphone <span>*</span></label>
-                <input type="tel" name="phone" placeholder="+1XXXXXXXXXX" required>
-            </div>
-
-            <div class="field">
-                <label>Link to your Facebook profile / Lien de ton profil Facebook <span>*</span></label>
-                <input type="url" name="facebook" required>
-            </div>
-
-            <div class="field">
-                <label>Local Office / Branche Locale <span>*</span></label>
-                <select name="local_office" required>
-                    <option value="">Please select / Veuillez choisir</option>
-                    <option>AIESEC Canada</option>
-                    <option>Bishop's University / Champlain College</option>
-                    <option>Brock University</option>
-                    <option>Carleton University</option>
-                    <option>Concordia University</option>
-                    <option>Dalhousie University</option>
-                    <option>École Polytechnique de Montréal</option>
-                    <option>HEC Montréal</option>
-                    <option>Kwantlen Polytechnic University</option>
-                    <option>MacEwan University</option>
-                    <option>McMaster University</option>
-                    <option>McGill University</option>
-                    <option>Memorial University</option>
-                    <option>Mount Royal University</option>
-                    <option>Ontario Tech University</option>
-                    <option>Queen's University</option>
-                    <option>Saint Mary's University</option>
-                    <option>Simon Fraser University</option>
-                    <option>Sir Wilfred Laurier University</option>
-                    <option>Toronto Metropolitan University</option>
-                    <option>Université de Moncton</option>
-                    <option>Université de Montréal</option>
-                    <option>Université de Sherbrooke</option>
-                    <option>Université du Québec à Montréal</option>
-                    <option>Université Laval</option>
-                    <option>University of Alberta</option>
-                    <option>University of British Columbia</option>
-                    <option>University of Calgary</option>
-                    <option>University of Guelph</option>
-                    <option>University of Manitoba</option>
-                    <option>University of Ottawa / Université d'Ottawa</option>
-                    <option>University of Saskatchewan</option>
-                    <option>University of Toronto Mississauga</option>
-                    <option>University of Toronto Scarborough</option>
-                    <option>University of Toronto St George</option>
-                    <option>University of Victoria</option>
-                    <option>University of Waterloo</option>
-                    <option>University of Western Ontario</option>
-                    <option>University of Windsor</option>
-                    <option>York University</option>
-                    <option>My University is not listed</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label>Area of the study / Domaine d'étude <span>*</span></label>
-                <select name="study_area" required>
-                    <option value="">Please select / Veuillez choisir</option>
-                    <option>Architecture / Architecture</option>
-                    <option>Business/Economics / Business/Économie</option>
-                    <option>Computer Sciences / Informatique</option>
-                    <option>Engineering / Ingénierie</option>
-                    <option>Humanities / Sciences humaines</option>
-                    <option>Law / Droit</option>
-                    <option>Life Sciences / Sciences de la vie</option>
-                    <option>Mathematics/Statistics / Mathématiques/Statistiques</option>
-                    <option>Music / Musique</option>
-                    <option>Physics/Chemistry / Physique/Chimie</option>
-                    <option>Social Sciences / Sciences sociales</option>
-                    <option>Other / Autre</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label>Year of Study / Année d'étude <span>*</span></label>
-                <select name="study_year" required>
-                    <option value="">Please select / Veuillez choisir</option>
-                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5 or more / 5 ou plus</option><option>Graduated / Gradué</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label>Have you ever done an exchange with AIESEC? / Avez-vous fait un échange AIESEC dans le passé? <span>*</span></label>
-                <select name="past_exchange" required>
-                    <option value="">Please select / Veuillez choisir</option>
-                    <option>Yes, I went on a Global Volunteer / Oui, j'ai fait un Global Volunteer</option>
-                    <option>Yes, I went on a Global Entrepreneur / Oui, j'ai fait un Global Entrepreneur</option>
-                    <option>Yes, I went on a Global Talent / Oui, j'ai fait un Global Talent</option>
-                    <option>No, but I'm approved to go on a Global Volunteer / Non, mais je suis en procéssus</option>
-                    <option>No, but I'm approved to go on a Global Entrepreneur / Non, mais je suis en procéssus</option>
-                    <option>No, but I'm approved to go on a Global Talent / Non, mais je suis en procéssus</option>
-                    <option>No / Non</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label>How did you hear about AIESEC / Comment avez-vous entendu parler d'AIESEC? <span>*</span></label>
-                <select name="referral_source" required>
-                    <option value="">Please select / Veuillez choisir</option>
-                    <option>Friend / Amis</option><option>Posters / Brochures</option><option>Booth / Kiosque</option>
-                    <option>Classroom / Tournée de classe</option><option>Event / Événement</option><option>E-mail</option>
-                    <option>Facebook</option><option>Twitter</option><option>Instagram</option>
-                    <option>LinkedIn</option><option>Google</option><option>Other / Autre</option>
-                </select>
-            </div>
-
-            <div class="field" style="display:flex; align-items:flex-start; gap:12px;">
-                <input type="checkbox" style="width:20px; height:20px; margin-top:3px;" required>
-                <label style="margin:0; font-weight:400; font-size:0.85rem;">
-                    I authorize AIESEC in Canada to deliver information to me via email or SMS / J'autorise AIESEC Canada à me fournir des informations par courriel ou par SMS <span>*</span>
-                </label>
-            </div>
-
-            <div class="captcha-placeholder">
-                [CAPTCHA Integration Placeholder]
-            </div>
-
-            <button type="submit" class="submit-btn">Let's Begin!</button>
-        </form>
+    <div class="signup-iframe-wrap">
+        <iframe
+            id="signup_iframe"
+            width="100%"
+            height="1400px"
+            style="border:0; box-shadow:0px 0px 16px 2px rgba(0,0,0,0.32);"
+            src="https://aieseccanada.my.salesforce-sites.com/siteforms/Webform_MBRegister?invalidate=v2&utm_source=&utm_medium=&utm_campaign=&utm_term=&utm_content="
+            title="AIESEC Membership Signup"
+            scrolling="no"
+        ></iframe>
     </div>
 </section>
 

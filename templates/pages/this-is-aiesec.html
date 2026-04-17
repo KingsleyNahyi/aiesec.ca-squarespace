@@ -240,8 +240,8 @@
             <iframe src="https://www.youtube.com/embed/1u-74sc4IIs" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="mission-statement">
-            <h1>we are leadership.</h1>
-            <p>It’s a concept that has been taken and transformed into a meaning bigger than what it truly is, because at the end of the day, leadership is everywhere and in everyone. We just want to be the ones to ignite it.</p>
+            <h1 data-i18n="thisis_hero_title">we are leadership.</h1>
+            <p data-i18n="thisis_hero_desc">It’s a concept that has been taken and transformed into a meaning bigger than what it truly is, because at the end of the day, leadership is everywhere and in everyone. We just want to be the ones to ignite it.</p>
         </div>
     </div>
 </section>
@@ -253,45 +253,48 @@
                 <img src="/static/images/school.gif" alt="Universities Icon">
             </div>
             <h2 class="stat-value">24+</h2>
-            <p class="stat-label">Universities & <br>Colleges</p>
+            <p class="stat-label" data-i18n="thisis_stat_unis">Universities & <br>Colleges</p>
         </div>
         <div class="stat-box">
             <div class="stat-icon">
                 <img src="/static/images/people.gif" alt="Members Icon">
             </div>
             <h2 class="stat-value">650+</h2>
-            <p class="stat-label">Members <br>across Canada</p>
+            <p class="stat-label" data-i18n="thisis_stat_members">Members <br>across Canada</p>
         </div>
         <div class="stat-box">
             <div class="stat-icon">
                 <img src="/static/images/globe.gif" alt="Countries Icon">
             </div>
             <h2 class="stat-value">146+</h2>
-            <p class="stat-label">Countries running <br>AIESEC experiences</p>
+            <p class="stat-label" data-i18n="thisis_stat_countries">Countries running <br>AIESEC experiences</p>
         </div>
         <div class="stat-box">
             <div class="stat-icon">
                 <img src="/static/images/confetti.gif" alt="Opportunities Icon">
             </div>
             <h2 class="stat-value">2000+</h2>
-            <p class="stat-label">Exchange <br>Opportunities fulfilled</p>
+            <p class="stat-label" data-i18n="thisis_stat_exchange">Exchange <br>Opportunities fulfilled</p>
         </div>
     </div>
 </section>
 
 <section class="belief-headline">
-    <p class="upper-label">IN AIESEC, WE BELIEVE THAT</p>
-    <h2 class="main-belief">leadership can be developed in<br><span class="highlight-blue">anyone, anywhere</span></h2>
+    <p class="upper-label" data-i18n="thisis_belief_label">IN AIESEC, WE BELIEVE THAT</p>
+    <h2 class="main-belief">
+        <span data-i18n="thisis_belief_title1">leadership can be developed in</span><br>
+        <span class="highlight-blue" data-i18n="thisis_belief_title2">anyone, anywhere</span>
+    </h2>
 </section>
 
 <section class="philosophy-text">
-    <p>
+    <p data-i18n="thisis_philosophy_desc">
         We aim to engage and develop every <strong>young person</strong> in Canada through a <strong>leadership experience</strong>, regardless of background, identity, and ability. This means ensuring that every young person can <strong>fulfill their potential</strong>, become a <strong>value-driven</strong> leader, and find <strong>community</strong> within AIESEC.
     </p>
 </section>
 
 <section class="discover-more-section">
-    <h3 class="discover-title">Discover more AIESEC</h3>
+    <h3 class="discover-title" data-i18n="thisis_discover_title">Discover more AIESEC</h3>
     <div class="video-grid">
         <div class="video-card">
             <iframe src="https://www.youtube.com/embed/JtfpuAmgSy8" frameborder="0" allowfullscreen></iframe>
@@ -310,11 +313,11 @@
 <section class="contact-footer-blue">
     <div class="contact-split-wrapper">
         <div class="info-column">
-            <h2 class="contact-header">contact us.</h2>
+            <h2 class="contact-header" data-i18n="thisis_contact_title">contact us.</h2>
             <div class="contact-methods">
                 <p>info@aiesec.ca</p>
                 <p>(416) 368-1001</p>
-                <p class="pandemic-note">Please note that due to changes from the pandemic, we are not always in the office to answer the phone.</p>
+                <p class="pandemic-note" data-i18n="thisis_contact_note">Please note that due to changes from the pandemic, we are not always in the office to answer the phone.</p>
             </div>
             <div class="social-row">
                 <a href="#" class="social-link">Instagram</a>
@@ -329,32 +332,32 @@
             <form class="contact-form-layout">
                 <div class="flex-row">
                     <div class="input-group">
-                        <label>First Name <span>(required)</span></label>
+                        <label><span data-i18n="form_first_name">First Name</span> <span>(required)</span></label>
                         <input type="text" required>
                     </div>
                     <div class="input-group">
-                        <label>Last Name <span>(required)</span></label>
+                        <label><span data-i18n="form_last_name">Last Name</span> <span>(required)</span></label>
                         <input type="text" required>
                     </div>
                 </div>
                 <div class="input-group">
-                    <label>Email <span>(required)</span></label>
+                    <label><span data-i18n="form_email">Email</span> <span>(required)</span></label>
                     <input type="email" required>
                 </div>
                 <div class="input-group">
-                    <label>How did you hear about us? <span>(required)</span></label>
+                    <label data-i18n="form_referral_label">How did you hear about us? <span>(required)</span></label>
                     <select required>
-                        <option value="" disabled selected>Select an option</option>
+                        <option value="" disabled selected data-i18n="form_select_option">Select an option</option>
                         <option value="social">Social Media</option>
                         <option value="campus">Campus Presentation</option>
                         <option value="friend">Friend/Word of Mouth</option>
                     </select>
                 </div>
                 <div class="input-group">
-                    <label>Message <span>(required)</span></label>
+                    <label><span data-i18n="form_message">Message</span> <span>(required)</span></label>
                     <textarea rows="6" required></textarea>
                 </div>
-                <button type="submit" class="submit-button">Send</button>
+                <button type="submit" class="submit-button" data-i18n="form_send">Send</button>
             </form>
         </div>
     </div>

@@ -1,0 +1,354 @@
+{{define "content"}}
+<style>
+.sp-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Hero Banner */
+.sp-hero {
+    background: #037EF3;
+    color: #fff;
+    text-align: center;
+    padding: 60px 40px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.sp-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    color: #fff;
+}
+
+/* Section blocks */
+.sp-section {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 72px;
+}
+
+.sp-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.sp-section-text {
+    flex: 1;
+}
+
+.sp-section-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 420px;
+}
+
+.sp-section-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Typography */
+.sp-wrapper h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #037EF3;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.sp-wrapper p {
+    margin-bottom: 16px;
+    color: #444;
+}
+
+.sp-wrapper ul {
+    padding-left: 24px;
+    margin-bottom: 20px;
+}
+
+.sp-wrapper ul li {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.sp-wrapper a {
+    color: #037EF3;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.sp-wrapper a:hover {
+    opacity: 0.8;
+}
+
+/* Info highlight box */
+.sp-highlight-box {
+    background: #f5f6fa;
+    border-left: 4px solid #037EF3;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    border-radius: 0 8px 8px 0;
+}
+
+.sp-highlight-box p {
+    margin: 0 0 8px;
+}
+
+.sp-highlight-box p:last-child {
+    margin: 0;
+}
+
+/* Outgoing exchange policy block */
+.sp-policy-block {
+    background: #f5f6fa;
+    border-radius: 8px;
+    padding: 32px 36px;
+    margin-bottom: 0;
+}
+
+.sp-policy-block h2 {
+    margin-bottom: 8px;
+}
+
+.sp-policy-block .sp-policy-version {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.sp-policy-block .sp-policy-updated {
+    font-style: italic;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sp-policy-block .sp-policy-links {
+    margin-bottom: 16px;
+}
+
+.sp-policy-block .sp-policy-links p {
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    color: #555;
+    font-weight: 600;
+}
+
+/* Full-width intro section */
+.sp-intro-section {
+    display: flex;
+    gap: 48px;
+    align-items: stretch;
+    margin-bottom: 72px;
+}
+
+.sp-intro-section .sp-intro-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sp-intro-section .sp-intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    min-height: 280px;
+}
+
+.sp-intro-section .sp-intro-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Divider */
+.sp-divider {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 48px 0;
+}
+
+/* Membership safety checklist */
+.sp-checklist {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.sp-checklist li {
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.sp-checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #037EF3;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .sp-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .sp-section,
+    .sp-section.reverse,
+    .sp-intro-section {
+        flex-direction: column;
+    }
+
+    .sp-section-image,
+    .sp-intro-section .sp-intro-image {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .sp-wrapper {
+        padding: 60px 20px;
+    }
+}
+</style>
+
+<div class="sp-hero">
+    <h1 data-i18n="safety_title">Safety and Covid Policies</h1>
+</div>
+
+<div class="sp-wrapper">
+
+    <!-- Plan Your Future intro -->
+    <div class="sp-intro-section">
+        <div class="sp-intro-image">
+            <img
+                src="/static/images/safety-plan-your-future.webp"
+                alt="Plan Your Future"
+            />
+        </div>
+        <div class="sp-intro-text">
+            <h2 data-i18n="safety_plan_title">Plan Your Future</h2>
+            <p data-i18n="safety_plan_text1">We believe that youth are the key to unlocking a better future. As we continue to adapt to this new normal, we need a strong community of young leaders more than ever.</p>
+            <p data-i18n="safety_plan_text2">Our organization will always strive to provide youth with the opportunities they need to develop their leadership skills. We hope to be accessible to you as you make plans to shape your future and the world around you.</p>
+            <p data-i18n="safety_plan_text3">Learn more about our adaptation to keep you safe on your journey with AIESEC.</p>
+        </div>
+    </div>
+
+    <hr class="sp-divider" />
+
+    <!-- Your Safety is our top priority -->
+    <div class="sp-section">
+        <div class="sp-section-text">
+            <h2 data-i18n="safety_priority_title">Your Safety is our top priority</h2>
+            <p data-i18n="safety_priority_text1">The safety of our members, customers, and partners is of upmost importance to us.</p>
+            <p data-i18n="safety_priority_text2">We are aware that the COVID-19 pandemic was a hard time for all of us and these past two years have been filled with great uncertainty. As conditions are getting better and the future starts to show more promise, we are happy to announce that AIESEC will support you with your plans to travel and further develop your leadership through our numerous cross-cultural opportunities.</p>
+            <p data-i18n="safety_priority_text3">When making travel plans with AIESEC, we advise you to ensure you are aware of the latest information available on the WHO website, Global Affairs Canada Travel Advisories, and airline safety guidelines. Click Stay Updated to learn more.</p>
+            <p>
+                <a href="https://www.who.int" target="_blank" data-i18n="safety_priority_link_who">WHO website</a><br />
+                <a href="https://www.international.gc.ca" target="_blank" data-i18n="safety_priority_link_gc">Global Affairs Canada Travel Advisories</a>
+            </p>
+        </div>
+        <div class="sp-section-image">
+            <img
+                src="/static/images/safety-your-safety-priority.webp"
+                alt="Safety is our top priority"
+            />
+        </div>
+    </div>
+
+    <hr class="sp-divider" />
+
+    <!-- Preparing for Takeoff -->
+    <div class="sp-section reverse">
+        <div class="sp-section-text">
+            <h2 data-i18n="safety_takeoff_title">Preparing for Takeoff</h2>
+            <p data-i18n="safety_takeoff_text">When preparing for your travel with AIESEC, we always recommend you to visit the airline you plan to travel with for their safety guidelines and procedures.</p>
+            <p data-i18n="safety_takeoff_links_intro">You can visit the following links for more information:</p>
+            <p>
+                <a href="https://time-to-travel.ca/where-canadians-can-travel-now" target="_blank" data-i18n="safety_takeoff_link_travel">Where Canadians can travel now</a><br />
+                <a href="https://www.aircanada.com/ca/en/aco/home/book/travel-news-and-updates/2020/covid-19.html" target="_blank" data-i18n="safety_takeoff_link_aircanada">Air Canada Safety measures</a>
+            </p>
+        </div>
+        <div class="sp-section-image">
+            <img
+                src="/static/images/safety-preparing-for-takeoff.webp"
+                alt="Preparing for Takeoff"
+            />
+        </div>
+    </div>
+
+    <hr class="sp-divider" />
+
+    <!-- Outgoing Exchange Policy -->
+    <div class="sp-section">
+        <div class="sp-section-text">
+            <div class="sp-policy-block">
+                <h2 data-i18n="safety_policy_title">Outgoing Exchange Policy</h2>
+                <p class="sp-policy-version" data-i18n="safety_policy_version">Covid-19 Policy for Outgoing Exchange - AIESEC in Canada - version 4.0</p>
+                <p class="sp-policy-updated" data-i18n="safety_policy_updated">Last updated: March 10th, 2021</p>
+
+                <div class="sp-policy-links">
+                    <p data-i18n="safety_policy_find">FIND THE POLICY HERE IN <a href="https://drive.google.com/file/d/1RegjdGbNOSkFvZny786QUfO3EOnANZlZ/view" target="_blank" data-i18n="safety_policy_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Igz8p3iRKlInetZxHDeRQA2-vhB-7MeO/view?usp=sharing" target="_blank" data-i18n="safety_policy_french">FRENCH</a></p>
+                </div>
+
+                <p data-i18n="safety_policy_faq_intro">For any questions regarding the Outgoing Exchange Policy, please review the FAQs</p>
+
+                <div class="sp-policy-links">
+                    <p data-i18n="safety_policy_faq_find">FIND THE FAQs HERE IN <a href="https://drive.google.com/file/d/1ltNUAY4IpoUyVZs_HYTJOQiHk-TFh0c7/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Koe5h6puoy0Jjjiy-GAgcjqd3sp7vxU3/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_french">FRENCH</a></p>
+                </div>
+
+                <p data-i18n="safety_policy_contact">If you still have further questions after reviewing the FAQs, please reach out to us at <a href="mailto:support@aiesec.ca">support@aiesec.ca</a></p>
+            </div>
+        </div>
+        <div class="sp-section-image">
+            <img
+                src="/static/images/safety-outgoing-exchange.webp"
+                alt="Outgoing Exchange Policy"
+            />
+        </div>
+    </div>
+
+    <hr class="sp-divider" />
+
+    <!-- Local Membership Safety in Canada -->
+    <div class="sp-section">
+        <div class="sp-section-text">
+            <h2 data-i18n="safety_membership_title">Local Membership Safety in Canada</h2>
+            <p data-i18n="safety_membership_text1">We ensure that our membership strictly adheres to provincial and Federal public health authorities' protocols regarding the COVID-19 Pandemic.</p>
+            <p data-i18n="safety_membership_text2">All AIESEC related activities since the start of the pandemic have been virtual, however, after extensive consideration and input from our communities we have decided to go forward with allowing more in-person operations and activities for our local chapters, following their universities' instructions as well as provincial and federal public health guidelines.</p>
+            <p data-i18n="safety_membership_wellbeing">Please ensure that you are prioritizing your own health and wellbeing by:</p>
+            <ul class="sp-checklist">
+                <li data-i18n="safety_membership_item1">Following any local community or university guidelines if you feel unwell</li>
+                <li data-i18n="safety_membership_item2">Implementing self-imposed quarantine related to travel and/or potential exposure to COVID-19</li>
+                <li data-i18n="safety_membership_item3">Taking normal health precautions such as washing and sanitizing your hands often and avoiding touching your eyes/nose/mouth</li>
+            </ul>
+            <p data-i18n="safety_membership_closing">We acknowledge that these are unprecedented times for all of us. AIESEC is here, as always, as a platform for you to develop your leadership and make a positive impact on your community.</p>
+        </div>
+        <div class="sp-section-image">
+            <img
+                src="/static/images/safety-local-membership.webp"
+                alt="Local Membership Safety in Canada"
+            />
+        </div>
+    </div>
+
+</div>
+
+{{end}}
