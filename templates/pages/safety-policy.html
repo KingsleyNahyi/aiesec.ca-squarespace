@@ -1,21 +1,11 @@
 {{define "content"}}
 <style>
-.sp-wrapper {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 100px 40px;
-    color: #333;
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-/* Hero Banner */
+/* ─── HERO ─────────────────────────────────── */
 .sp-hero {
     background: #037EF3;
     color: #fff;
     text-align: center;
     padding: 60px 40px;
-    margin-bottom: 0;
     width: 100%;
 }
 
@@ -26,38 +16,13 @@
     color: #fff;
 }
 
-/* Section blocks */
-.sp-section {
-    display: flex;
-    align-items: center;
-    gap: 48px;
-    margin-bottom: 72px;
+/* ─── SHARED TYPOGRAPHY ─────────────────────── */
+.sp-wrapper {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
-.sp-section.reverse {
-    flex-direction: row-reverse;
-}
-
-.sp-section-text {
-    flex: 1;
-}
-
-.sp-section-image {
-    flex: 1;
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 420px;
-}
-
-.sp-section-image img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-}
-
-/* Typography */
 .sp-wrapper h2 {
     font-size: 1.8rem;
     font-weight: 900;
@@ -71,16 +36,6 @@
     color: #444;
 }
 
-.sp-wrapper ul {
-    padding-left: 24px;
-    margin-bottom: 20px;
-}
-
-.sp-wrapper ul li {
-    margin-bottom: 10px;
-    color: #444;
-}
-
 .sp-wrapper a {
     color: #037EF3;
     text-decoration: underline;
@@ -91,99 +46,17 @@
     opacity: 0.8;
 }
 
-/* Info highlight box */
-.sp-highlight-box {
-    background: #f5f6fa;
-    border-left: 4px solid #037EF3;
-    padding: 24px 28px;
-    margin-bottom: 32px;
-    border-radius: 0 8px 8px 0;
-}
-
-.sp-highlight-box p {
-    margin: 0 0 8px;
-}
-
-.sp-highlight-box p:last-child {
-    margin: 0;
-}
-
-/* Outgoing exchange policy block */
-.sp-policy-block {
-    background: #f5f6fa;
-    border-radius: 8px;
-    padding: 32px 36px;
-    margin-bottom: 0;
-}
-
-.sp-policy-block h2 {
-    margin-bottom: 8px;
-}
-
-.sp-policy-block .sp-policy-version {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 4px;
-}
-
-.sp-policy-block .sp-policy-updated {
-    font-style: italic;
-    font-weight: 700;
-    color: #333;
+.sp-wrapper ul {
+    padding-left: 24px;
     margin-bottom: 20px;
 }
 
-.sp-policy-block .sp-policy-links {
-    margin-bottom: 16px;
+.sp-wrapper ul li {
+    margin-bottom: 10px;
+    color: #444;
 }
 
-.sp-policy-block .sp-policy-links p {
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    color: #555;
-    font-weight: 600;
-}
-
-/* Full-width intro section */
-.sp-intro-section {
-    display: flex;
-    gap: 48px;
-    align-items: stretch;
-    margin-bottom: 72px;
-}
-
-.sp-intro-section .sp-intro-image {
-    flex: 1;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.sp-intro-section .sp-intro-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    min-height: 280px;
-}
-
-.sp-intro-section .sp-intro-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Divider */
-.sp-divider {
-    border: none;
-    border-top: 1px solid #e8e8e8;
-    margin: 48px 0;
-}
-
-/* Membership safety checklist */
+/* ─── CHECKLIST ─────────────────────────────── */
 .sp-checklist {
     list-style: none;
     padding: 0;
@@ -205,26 +78,240 @@
     font-weight: 700;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-    .sp-hero h1 {
-        font-size: 1.8rem;
-    }
+/* ─── SECTION 1: PLAN YOUR FUTURE ──────────────
+   Image left ~60%, text card slides over from
+   the right and overlaps image by ~48px          */
+.sp-plan {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    min-height: 500px;
+    overflow: hidden;
+}
 
-    .sp-section,
-    .sp-section.reverse,
-    .sp-intro-section {
+.sp-plan-image {
+    width: 62%;
+    flex-shrink: 0;
+}
+
+.sp-plan-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 500px;
+}
+
+.sp-plan-text {
+    background: #f5f6fa;
+    padding: 52px 44px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -48px;
+    z-index: 1;
+    position: relative;
+}
+
+/* ─── SECTION 2: YOUR SAFETY IS TOP PRIORITY ───
+   Text left ~55%, image right ~45%
+   Both top-aligned, image is tall, no overlap    */
+.sp-priority {
+    display: flex;
+    align-items: flex-start;
+    min-height: 500px;
+}
+
+.sp-priority-text {
+    flex: 0 0 55%;
+    padding: 60px 48px 60px 60px;
+}
+
+.sp-priority-image {
+    flex: 0 0 45%;
+    align-self: stretch;
+}
+
+.sp-priority-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 500px;
+}
+
+/* ─── SECTION 3: PREPARING FOR TAKEOFF ─────────
+   Image left large ~60%, text card overlaps
+   from the right just like section 1             */
+.sp-takeoff {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.sp-takeoff-image {
+    width: 60%;
+    flex-shrink: 0;
+}
+
+.sp-takeoff-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 500px;
+}
+
+.sp-takeoff-text {
+    background: #f5f6fa;
+    padding: 52px 44px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -48px;
+    z-index: 1;
+    position: relative;
+}
+
+/* ─── SECTION 4: OUTGOING EXCHANGE POLICY ──────
+   Text left ~58%, portrait image right ~42%
+   image fills full height of section             */
+.sp-exchange {
+    display: flex;
+    align-items: stretch;
+    min-height: 480px;
+}
+
+.sp-exchange-text {
+    flex: 0 0 58%;
+    padding: 60px 48px 60px 60px;
+}
+
+.sp-exchange-image {
+    flex: 0 0 42%;
+    align-self: stretch;
+}
+
+.sp-exchange-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 480px;
+}
+
+.sp-policy-version {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.sp-policy-updated {
+    font-style: italic;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sp-policy-links {
+    margin-bottom: 16px;
+}
+
+.sp-policy-links p {
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    color: #555;
+    font-weight: 600;
+}
+
+/* ─── SECTION 5: LOCAL MEMBERSHIP ──────────────
+   Image left ~42%, tall, bleeds beyond text
+   Text right, vertically centered               */
+.sp-membership {
+    display: flex;
+    align-items: stretch;
+    min-height: 580px;
+}
+
+.sp-membership-image {
+    flex: 0 0 42%;
+    align-self: stretch;
+}
+
+.sp-membership-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 580px;
+}
+
+.sp-membership-text {
+    flex: 1;
+    padding: 60px 60px 60px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+@media (max-width: 768px) {
+    .sp-hero h1 { font-size: 1.8rem; }
+
+    /* stack image above text for overlap sections */
+    .sp-plan,
+    .sp-takeoff {
         flex-direction: column;
     }
 
-    .sp-section-image,
-    .sp-intro-section .sp-intro-image {
-        max-width: 100%;
+    .sp-plan-image,
+    .sp-takeoff-image {
         width: 100%;
     }
 
-    .sp-wrapper {
-        padding: 60px 20px;
+    .sp-plan-image img,
+    .sp-takeoff-image img {
+        min-height: 240px;
+    }
+
+    .sp-plan-text,
+    .sp-takeoff-text {
+        margin-left: 0;
+        padding: 36px 24px;
+    }
+
+    /* stack all side-by-side sections */
+    .sp-priority,
+    .sp-exchange,
+    .sp-membership {
+        flex-direction: column;
+    }
+
+    .sp-priority-text,
+    .sp-exchange-text,
+    .sp-membership-text {
+        flex: unset;
+        width: 100%;
+        padding: 36px 24px;
+    }
+
+    .sp-priority-image,
+    .sp-exchange-image,
+    .sp-membership-image {
+        flex: unset;
+        width: 100%;
+    }
+
+    .sp-priority-image img,
+    .sp-exchange-image img,
+    .sp-membership-image img {
+        min-height: 240px;
     }
 }
 </style>
@@ -235,15 +322,16 @@
 
 <div class="sp-wrapper">
 
-    <!-- Plan Your Future intro -->
-    <div class="sp-intro-section">
-        <div class="sp-intro-image">
+    <!-- ① PLAN YOUR FUTURE
+         Image left ~62%, text card overlaps from right -->
+    <div class="sp-plan">
+        <div class="sp-plan-image">
             <img
                 src="/static/images/safety-plan-your-future.webp"
                 alt="Plan Your Future"
             />
         </div>
-        <div class="sp-intro-text">
+        <div class="sp-plan-text">
             <h2 data-i18n="safety_plan_title">Plan Your Future</h2>
             <p data-i18n="safety_plan_text1">We believe that youth are the key to unlocking a better future. As we continue to adapt to this new normal, we need a strong community of young leaders more than ever.</p>
             <p data-i18n="safety_plan_text2">Our organization will always strive to provide youth with the opportunities they need to develop their leadership skills. We hope to be accessible to you as you make plans to shape your future and the world around you.</p>
@@ -251,11 +339,10 @@
         </div>
     </div>
 
-    <hr class="sp-divider" />
-
-    <!-- Your Safety is our top priority -->
-    <div class="sp-section">
-        <div class="sp-section-text">
+    <!-- ② YOUR SAFETY IS TOP PRIORITY
+         Text left ~55%, image right ~45%, both top-aligned, image tall -->
+    <div class="sp-priority">
+        <div class="sp-priority-text">
             <h2 data-i18n="safety_priority_title">Your Safety is our top priority</h2>
             <p data-i18n="safety_priority_text1">The safety of our members, customers, and partners is of upmost importance to us.</p>
             <p data-i18n="safety_priority_text2">We are aware that the COVID-19 pandemic was a hard time for all of us and these past two years have been filled with great uncertainty. As conditions are getting better and the future starts to show more promise, we are happy to announce that AIESEC will support you with your plans to travel and further develop your leadership through our numerous cross-cultural opportunities.</p>
@@ -265,19 +352,24 @@
                 <a href="https://www.international.gc.ca" target="_blank" data-i18n="safety_priority_link_gc">Global Affairs Canada Travel Advisories</a>
             </p>
         </div>
-        <div class="sp-section-image">
+        <div class="sp-priority-image">
             <img
                 src="/static/images/safety-your-safety-priority.webp"
-                alt="Safety is our top priority"
+                alt="Your safety is our top priority"
             />
         </div>
     </div>
 
-    <hr class="sp-divider" />
-
-    <!-- Preparing for Takeoff -->
-    <div class="sp-section reverse">
-        <div class="sp-section-text">
+    <!-- ③ PREPARING FOR TAKEOFF
+         Image left ~60% large, text card overlaps from right -->
+    <div class="sp-takeoff">
+        <div class="sp-takeoff-image">
+            <img
+                src="/static/images/safety-preparing-for-takeoff.webp"
+                alt="Preparing for Takeoff"
+            />
+        </div>
+        <div class="sp-takeoff-text">
             <h2 data-i18n="safety_takeoff_title">Preparing for Takeoff</h2>
             <p data-i18n="safety_takeoff_text">When preparing for your travel with AIESEC, we always recommend you to visit the airline you plan to travel with for their safety guidelines and procedures.</p>
             <p data-i18n="safety_takeoff_links_intro">You can visit the following links for more information:</p>
@@ -286,38 +378,29 @@
                 <a href="https://www.aircanada.com/ca/en/aco/home/book/travel-news-and-updates/2020/covid-19.html" target="_blank" data-i18n="safety_takeoff_link_aircanada">Air Canada Safety measures</a>
             </p>
         </div>
-        <div class="sp-section-image">
-            <img
-                src="/static/images/safety-preparing-for-takeoff.webp"
-                alt="Preparing for Takeoff"
-            />
-        </div>
     </div>
 
-    <hr class="sp-divider" />
+    <!-- ④ OUTGOING EXCHANGE POLICY
+         Text left ~58%, portrait image right ~42%, image fills full height -->
+    <div class="sp-exchange">
+        <div class="sp-exchange-text">
+            <h2 data-i18n="safety_policy_title">Outgoing Exchange Policy</h2>
+            <p class="sp-policy-version" data-i18n="safety_policy_version">Covid-19 Policy for Outgoing Exchange - AIESEC in Canada - version 4.0</p>
+            <p class="sp-policy-updated" data-i18n="safety_policy_updated">Last updated: March 10th, 2021</p>
 
-    <!-- Outgoing Exchange Policy -->
-    <div class="sp-section">
-        <div class="sp-section-text">
-            <div class="sp-policy-block">
-                <h2 data-i18n="safety_policy_title">Outgoing Exchange Policy</h2>
-                <p class="sp-policy-version" data-i18n="safety_policy_version">Covid-19 Policy for Outgoing Exchange - AIESEC in Canada - version 4.0</p>
-                <p class="sp-policy-updated" data-i18n="safety_policy_updated">Last updated: March 10th, 2021</p>
-
-                <div class="sp-policy-links">
-                    <p data-i18n="safety_policy_find">FIND THE POLICY HERE IN <a href="https://drive.google.com/file/d/1RegjdGbNOSkFvZny786QUfO3EOnANZlZ/view" target="_blank" data-i18n="safety_policy_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Igz8p3iRKlInetZxHDeRQA2-vhB-7MeO/view?usp=sharing" target="_blank" data-i18n="safety_policy_french">FRENCH</a></p>
-                </div>
-
-                <p data-i18n="safety_policy_faq_intro">For any questions regarding the Outgoing Exchange Policy, please review the FAQs</p>
-
-                <div class="sp-policy-links">
-                    <p data-i18n="safety_policy_faq_find">FIND THE FAQs HERE IN <a href="https://drive.google.com/file/d/1ltNUAY4IpoUyVZs_HYTJOQiHk-TFh0c7/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Koe5h6puoy0Jjjiy-GAgcjqd3sp7vxU3/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_french">FRENCH</a></p>
-                </div>
-
-                <p data-i18n="safety_policy_contact">If you still have further questions after reviewing the FAQs, please reach out to us at <a href="mailto:support@aiesec.ca">support@aiesec.ca</a></p>
+            <div class="sp-policy-links">
+                <p data-i18n="safety_policy_find">FIND THE POLICY HERE IN <a href="https://drive.google.com/file/d/1RegjdGbNOSkFvZny786QUfO3EOnANZlZ/view" target="_blank" data-i18n="safety_policy_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Igz8p3iRKlInetZxHDeRQA2-vhB-7MeO/view?usp=sharing" target="_blank" data-i18n="safety_policy_french">FRENCH</a></p>
             </div>
+
+            <p data-i18n="safety_policy_faq_intro">For any questions regarding the Outgoing Exchange Policy, please review the FAQs</p>
+
+            <div class="sp-policy-links">
+                <p data-i18n="safety_policy_faq_find">FIND THE FAQs HERE IN <a href="https://drive.google.com/file/d/1ltNUAY4IpoUyVZs_HYTJOQiHk-TFh0c7/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Koe5h6puoy0Jjjiy-GAgcjqd3sp7vxU3/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_french">FRENCH</a></p>
+            </div>
+
+            <p data-i18n="safety_policy_contact">If you still have further questions after reviewing the FAQs, please reach out to us at <a href="mailto:support@aiesec.ca">support@aiesec.ca</a></p>
         </div>
-        <div class="sp-section-image">
+        <div class="sp-exchange-image">
             <img
                 src="/static/images/safety-outgoing-exchange.webp"
                 alt="Outgoing Exchange Policy"
@@ -325,11 +408,16 @@
         </div>
     </div>
 
-    <hr class="sp-divider" />
-
-    <!-- Local Membership Safety in Canada -->
-    <div class="sp-section">
-        <div class="sp-section-text">
+    <!-- ⑤ LOCAL MEMBERSHIP SAFETY
+         Image left ~42% tall bleeds beyond text, text right vertically centered -->
+    <div class="sp-membership">
+        <div class="sp-membership-image">
+            <img
+                src="/static/images/safety-local-membership.webp"
+                alt="Local Membership Safety in Canada"
+            />
+        </div>
+        <div class="sp-membership-text">
             <h2 data-i18n="safety_membership_title">Local Membership Safety in Canada</h2>
             <p data-i18n="safety_membership_text1">We ensure that our membership strictly adheres to provincial and Federal public health authorities' protocols regarding the COVID-19 Pandemic.</p>
             <p data-i18n="safety_membership_text2">All AIESEC related activities since the start of the pandemic have been virtual, however, after extensive consideration and input from our communities we have decided to go forward with allowing more in-person operations and activities for our local chapters, following their universities' instructions as well as provincial and federal public health guidelines.</p>
@@ -340,12 +428,6 @@
                 <li data-i18n="safety_membership_item3">Taking normal health precautions such as washing and sanitizing your hands often and avoiding touching your eyes/nose/mouth</li>
             </ul>
             <p data-i18n="safety_membership_closing">We acknowledge that these are unprecedented times for all of us. AIESEC is here, as always, as a platform for you to develop your leadership and make a positive impact on your community.</p>
-        </div>
-        <div class="sp-section-image">
-            <img
-                src="/static/images/safety-local-membership.webp"
-                alt="Local Membership Safety in Canada"
-            />
         </div>
     </div>
 
