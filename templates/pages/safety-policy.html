@@ -8,7 +8,6 @@
     padding: 60px 40px;
     width: 100%;
 }
-
 .sp-hero h1 {
     font-size: 2.8rem;
     font-weight: 900;
@@ -22,7 +21,6 @@
     font-size: 1rem;
     line-height: 1.8;
 }
-
 .sp-wrapper h2 {
     font-size: 1.8rem;
     font-weight: 900;
@@ -30,31 +28,16 @@
     margin-top: 0;
     margin-bottom: 16px;
 }
-
 .sp-wrapper p {
     margin-bottom: 16px;
     color: #444;
 }
-
 .sp-wrapper a {
     color: #037EF3;
     text-decoration: underline;
     font-weight: 700;
 }
-
-.sp-wrapper a:hover {
-    opacity: 0.8;
-}
-
-.sp-wrapper ul {
-    padding-left: 24px;
-    margin-bottom: 20px;
-}
-
-.sp-wrapper ul li {
-    margin-bottom: 10px;
-    color: #444;
-}
+.sp-wrapper a:hover { opacity: 0.8; }
 
 /* ─── CHECKLIST ─────────────────────────────── */
 .sp-checklist {
@@ -62,14 +45,12 @@
     padding: 0;
     margin-bottom: 20px;
 }
-
 .sp-checklist li {
     padding-left: 28px;
     position: relative;
     margin-bottom: 12px;
     color: #444;
 }
-
 .sp-checklist li::before {
     content: "✓";
     position: absolute;
@@ -78,130 +59,123 @@
     font-weight: 700;
 }
 
-/* ─── SECTION 1: PLAN YOUR FUTURE ──────────────
-   Image left ~60%, text card slides over from
-   the right and overlaps image by ~48px          */
+/* ════════════════════════════════════════════
+   SECTION 1 — PLAN YOUR FUTURE
+   Image is large and full-width (~70% of page).
+   Text card is compact, floats absolute over
+   the bottom-right corner of the image.
+   Section gets generous bottom margin.
+   ════════════════════════════════════════════ */
 .sp-plan {
     position: relative;
-    display: flex;
-    align-items: stretch;
-    min-height: 500px;
-    overflow: hidden;
+    width: 100%;
+    margin-bottom: 100px;
 }
-
-.sp-plan-image {
-    width: 62%;
-    flex-shrink: 0;
-}
-
 .sp-plan-image img {
     width: 100%;
-    height: 100%;
+    height: 600px;
     object-fit: cover;
     display: block;
-    min-height: 500px;
 }
-
 .sp-plan-text {
-    background: #f5f6fa;
-    padding: 52px 44px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: -48px;
-    z-index: 1;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36%;              /* noticeably smaller than the image */
+    background: rgba(245, 246, 250, 0.97);
+    padding: 36px 40px;
 }
 
-/* ─── SECTION 2: YOUR SAFETY IS TOP PRIORITY ───
-   Text left ~55%, image right ~45%
-   Both top-aligned, image is tall, no overlap    */
+/* ════════════════════════════════════════════
+   SECTION 2 — YOUR SAFETY IS TOP PRIORITY
+   Clean side-by-side, no overlap.
+   Image is tall and dominates the right side.
+   Text is comfortable but clearly narrower.
+   Generous top/bottom padding for breathing room.
+   ════════════════════════════════════════════ */
 .sp-priority {
     display: flex;
     align-items: flex-start;
-    min-height: 500px;
+    margin-bottom: 100px;
 }
-
 .sp-priority-text {
-    flex: 0 0 55%;
-    padding: 60px 48px 60px 60px;
+    flex: 0 0 52%;
+    padding: 72px 52px 72px 64px;
 }
-
 .sp-priority-image {
-    flex: 0 0 45%;
-    align-self: stretch;
+    flex: 0 0 48%;           /* image takes nearly half, feels bigger */
 }
-
 .sp-priority-image img {
     width: 100%;
-    height: 100%;
+    height: 580px;           /* tall image, clearly larger than the text block */
     object-fit: cover;
+    object-position: center top;
     display: block;
-    min-height: 500px;
 }
 
-/* ─── SECTION 3: PREPARING FOR TAKEOFF ─────────
-   Image left large ~60%, text card overlaps
-   from the right just like section 1             */
+/* ════════════════════════════════════════════
+   SECTION 3 — PREPARING FOR TAKEOFF
+   Image is wide and dominant on the left.
+   Text card is compact, drops down mid-image,
+   overlapping the image — box on box.
+   ════════════════════════════════════════════ */
 .sp-takeoff {
-    position: relative;
     display: flex;
-    align-items: stretch;
-    min-height: 500px;
-    overflow: hidden;
+    align-items: flex-start;
+    margin-bottom: 140px;    /* extra bottom margin — image card overlaps below */
 }
-
 .sp-takeoff-image {
-    width: 60%;
-    flex-shrink: 0;
+    flex: 0 0 65%;           /* image is clearly the bigger element */
 }
-
 .sp-takeoff-image img {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
     display: block;
-    min-height: 500px;
 }
-
 .sp-takeoff-text {
+    flex: 0 0 40%;           /* compact card, clearly smaller than image */
     background: #f5f6fa;
-    padding: 52px 44px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: -48px;
-    z-index: 1;
+    padding: 40px 40px;
+    margin-left: -5%;        /* overlaps image edge */
+    margin-top: 80px;        /* drops card down to sit mid-image */
     position: relative;
+    z-index: 1;
+    box-shadow: -4px 4px 24px rgba(0,0,0,0.09);
+    align-self: flex-start;
 }
 
-/* ─── SECTION 4: OUTGOING EXCHANGE POLICY ──────
-   Text left ~58%, portrait image right ~42%
-   image fills full height of section             */
+/* ════════════════════════════════════════════
+   SECTION 4 — OUTGOING EXCHANGE POLICY
+   Text box is the bigger/taller element on left.
+   Portrait image is narrower and drops lower
+   on the right — stepped card-on-card effect.
+   ════════════════════════════════════════════ */
 .sp-exchange {
     display: flex;
-    align-items: stretch;
-    min-height: 480px;
+    align-items: flex-start;
+    padding: 0 64px;
+    margin-bottom: 120px;    /* room for image card hanging below */
 }
-
 .sp-exchange-text {
-    flex: 0 0 58%;
-    padding: 60px 48px 60px 60px;
+    flex: 0 0 58%;           /* text is the dominant/taller box */
+    background: #f5f6fa;
+    padding: 52px 48px;
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
 }
-
 .sp-exchange-image {
-    flex: 0 0 42%;
-    align-self: stretch;
+    flex: 0 0 44%;           /* narrower portrait image */
+    margin-left: -2%;
+    margin-top: 80px;        /* drops clearly lower than text box */
+    align-self: flex-start;
 }
-
 .sp-exchange-image img {
     width: 100%;
-    height: 100%;
+    height: 420px;           /* portrait-ish, shorter than text box */
     object-fit: cover;
     display: block;
-    min-height: 480px;
 }
 
 .sp-policy-version {
@@ -209,18 +183,15 @@
     color: #777;
     margin-bottom: 4px;
 }
-
 .sp-policy-updated {
     font-style: italic;
     font-weight: 700;
     color: #333;
     margin-bottom: 20px;
 }
-
 .sp-policy-links {
     margin-bottom: 16px;
 }
-
 .sp-policy-links p {
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -230,89 +201,80 @@
     font-weight: 600;
 }
 
-/* ─── SECTION 5: LOCAL MEMBERSHIP ──────────────
-   Image left ~42%, tall, bleeds beyond text
-   Text right, vertically centered               */
+/* ════════════════════════════════════════════
+   SECTION 5 — LOCAL MEMBERSHIP SAFETY
+   Two cards side by side.
+   Image card on left is significantly taller
+   than the text card — they're clearly different
+   sizes, not equal. Text card has top margin
+   so it starts a bit lower.
+   ════════════════════════════════════════════ */
 .sp-membership {
     display: flex;
-    align-items: stretch;
-    min-height: 580px;
+    align-items: flex-start;
+    margin-bottom: 100px;
 }
-
 .sp-membership-image {
-    flex: 0 0 42%;
-    align-self: stretch;
+    flex: 0 0 45%;
 }
-
 .sp-membership-image img {
     width: 100%;
-    height: 100%;
+    height: 700px;           /* noticeably taller than text card */
     object-fit: cover;
     display: block;
-    min-height: 580px;
 }
-
 .sp-membership-text {
     flex: 1;
-    padding: 60px 60px 60px 52px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background: #f5f6fa;
+    padding: 48px 52px 48px 44px;
+    align-self: flex-start;
+    margin-top: 60px;        /* text card starts lower, image bleeds past bottom */
 }
 
 /* ─── RESPONSIVE ────────────────────────────── */
 @media (max-width: 768px) {
     .sp-hero h1 { font-size: 1.8rem; }
 
-    /* stack image above text for overlap sections */
-    .sp-plan,
-    .sp-takeoff {
-        flex-direction: column;
-    }
-
-    .sp-plan-image,
-    .sp-takeoff-image {
+    /* Plan — stack, text card goes static below image */
+    .sp-plan { margin-bottom: 48px; }
+    .sp-plan-image img { height: 280px; }
+    .sp-plan-text {
+        position: static;
         width: 100%;
+        box-sizing: border-box;
     }
 
-    .sp-plan-image img,
-    .sp-takeoff-image img {
-        min-height: 240px;
-    }
+    /* Priority — stack */
+    .sp-priority { flex-direction: column; margin-bottom: 48px; }
+    .sp-priority-text { flex: unset; width: 100%; padding: 36px 24px; }
+    .sp-priority-image { flex: unset; width: 100%; }
+    .sp-priority-image img { height: 280px; }
 
-    .sp-plan-text,
+    /* Takeoff — stack, drop overlap */
+    .sp-takeoff { flex-direction: column; margin-bottom: 48px; }
+    .sp-takeoff-image { flex: unset; width: 100%; }
+    .sp-takeoff-image img { height: 260px; }
     .sp-takeoff-text {
+        flex: unset;
+        width: 100%;
         margin-left: 0;
+        margin-top: 0;
+        box-shadow: none;
         padding: 36px 24px;
+        box-sizing: border-box;
     }
 
-    /* stack all side-by-side sections */
-    .sp-priority,
-    .sp-exchange,
-    .sp-membership {
-        flex-direction: column;
-    }
+    /* Exchange — stack */
+    .sp-exchange { flex-direction: column; padding: 0 24px; margin-bottom: 48px; }
+    .sp-exchange-text { flex: unset; width: 100%; }
+    .sp-exchange-image { flex: unset; width: 100%; margin-left: 0; margin-top: 0; }
+    .sp-exchange-image img { height: 260px; }
 
-    .sp-priority-text,
-    .sp-exchange-text,
-    .sp-membership-text {
-        flex: unset;
-        width: 100%;
-        padding: 36px 24px;
-    }
-
-    .sp-priority-image,
-    .sp-exchange-image,
-    .sp-membership-image {
-        flex: unset;
-        width: 100%;
-    }
-
-    .sp-priority-image img,
-    .sp-exchange-image img,
-    .sp-membership-image img {
-        min-height: 240px;
-    }
+    /* Membership — stack */
+    .sp-membership { flex-direction: column; margin-bottom: 48px; }
+    .sp-membership-image { flex: unset; width: 100%; }
+    .sp-membership-image img { height: 280px; }
+    .sp-membership-text { flex: unset; width: 100%; margin-top: 0; padding: 36px 24px; box-sizing: border-box; }
 }
 </style>
 
@@ -323,7 +285,7 @@
 <div class="sp-wrapper">
 
     <!-- ① PLAN YOUR FUTURE
-         Image left ~62%, text card overlaps from right -->
+         Full-width image. Grey text card sits over bottom-right of image. -->
     <div class="sp-plan">
         <div class="sp-plan-image">
             <img
@@ -340,7 +302,7 @@
     </div>
 
     <!-- ② YOUR SAFETY IS TOP PRIORITY
-         Text left ~55%, image right ~45%, both top-aligned, image tall -->
+         Clean side by side. Text left, image right. No overlap. -->
     <div class="sp-priority">
         <div class="sp-priority-text">
             <h2 data-i18n="safety_priority_title">Your Safety is our top priority</h2>
@@ -361,7 +323,7 @@
     </div>
 
     <!-- ③ PREPARING FOR TAKEOFF
-         Image left ~60% large, text card overlaps from right -->
+         Big plane image left. Text card drops mid-image from the right, box-on-box. -->
     <div class="sp-takeoff">
         <div class="sp-takeoff-image">
             <img
@@ -381,23 +343,19 @@
     </div>
 
     <!-- ④ OUTGOING EXCHANGE POLICY
-         Text left ~58%, portrait image right ~42%, image fills full height -->
+         Stepped card-on-card. Text box left sits higher, image box right drops lower. -->
     <div class="sp-exchange">
         <div class="sp-exchange-text">
             <h2 data-i18n="safety_policy_title">Outgoing Exchange Policy</h2>
             <p class="sp-policy-version" data-i18n="safety_policy_version">Covid-19 Policy for Outgoing Exchange - AIESEC in Canada - version 4.0</p>
             <p class="sp-policy-updated" data-i18n="safety_policy_updated">Last updated: March 10th, 2021</p>
-
             <div class="sp-policy-links">
                 <p data-i18n="safety_policy_find">FIND THE POLICY HERE IN <a href="https://drive.google.com/file/d/1RegjdGbNOSkFvZny786QUfO3EOnANZlZ/view" target="_blank" data-i18n="safety_policy_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Igz8p3iRKlInetZxHDeRQA2-vhB-7MeO/view?usp=sharing" target="_blank" data-i18n="safety_policy_french">FRENCH</a></p>
             </div>
-
             <p data-i18n="safety_policy_faq_intro">For any questions regarding the Outgoing Exchange Policy, please review the FAQs</p>
-
             <div class="sp-policy-links">
                 <p data-i18n="safety_policy_faq_find">FIND THE FAQs HERE IN <a href="https://drive.google.com/file/d/1ltNUAY4IpoUyVZs_HYTJOQiHk-TFh0c7/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_english">ENGLISH</a> OR IN <a href="https://drive.google.com/file/d/1Koe5h6puoy0Jjjiy-GAgcjqd3sp7vxU3/view?usp=sharing" target="_blank" data-i18n="safety_policy_faq_french">FRENCH</a></p>
             </div>
-
             <p data-i18n="safety_policy_contact">If you still have further questions after reviewing the FAQs, please reach out to us at <a href="mailto:support@aiesec.ca">support@aiesec.ca</a></p>
         </div>
         <div class="sp-exchange-image">
@@ -409,7 +367,7 @@
     </div>
 
     <!-- ⑤ LOCAL MEMBERSHIP SAFETY
-         Image left ~42% tall bleeds beyond text, text right vertically centered -->
+         Two cards side by side. Image card left is taller, text card right starts slightly lower. -->
     <div class="sp-membership">
         <div class="sp-membership-image">
             <img
