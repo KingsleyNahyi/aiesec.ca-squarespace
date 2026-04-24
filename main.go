@@ -9,42 +9,48 @@ import (
 	"strings"
 )
 func renderPage(w http.ResponseWriter, tmpl string, data interface{}) {
-	var tmplFiles []string
+    var tmplFiles []string
 
-	// detect if hub page
-	if strings.HasPrefix(tmpl, "hub/") {
-		tmplFiles = []string{
-			"templates/base.html",
+    if strings.HasPrefix(tmpl, "hub/") {
+        hubNav := "templates/partials/hub/nav.html"
+        hubFooter := "templates/partials/hub/footer.html"
 
-			// hub-specific partials (optional but future-proof)
-			"templates/partials/hub/nav.html",
-			"templates/partials/hub/footer.html",
+        navFile := "templates/partials/nav.html"
+        footerFile := "templates/partials/footer.html"
 
-			// fallback to main partials if hub ones don't exist
-			"templates/partials/nav.html",
-			"templates/partials/footer.html",
+        // Use hub-specific partials if they exist, otherwise fall back
+        if _, err := os.Stat(hubNav); err == nil {
+            navFile = hubNav
+        }
+        if _, err := os.Stat(hubFooter); err == nil {
+            footerFile = hubFooter
+        }
 
-			filepath.Join("templates/pages", tmpl),
-		}
-	} else {
-		tmplFiles = []string{
-			"templates/base.html",
-			"templates/partials/nav.html",
-			"templates/partials/footer.html",
-			filepath.Join("templates/pages", tmpl),
-		}
-	}
+        tmplFiles = []string{
+            "templates/base.html",
+            navFile,
+            footerFile,
+            filepath.Join("templates/pages", tmpl),
+        }
+    } else {
+        tmplFiles = []string{
+            "templates/base.html",
+            "templates/partials/nav.html",
+            "templates/partials/footer.html",
+            filepath.Join("templates/pages", tmpl),
+        }
+    }
 
-	t, err := template.ParseFiles(tmplFiles...)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
+    t, err := template.ParseFiles(tmplFiles...)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+        return
+    }
 
-	err = t.ExecuteTemplate(w, "base", data)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
+    err = t.ExecuteTemplate(w, "base", data)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+    }
 }
 
 func main() {
