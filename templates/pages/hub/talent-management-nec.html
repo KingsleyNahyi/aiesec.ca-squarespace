@@ -1,0 +1,328 @@
+{{define "content"}}
+  <title>Talent Management — AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 110px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 52px 80px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-pill {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      background: #e8503a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+
+    .btn-pill-blue {
+      display: inline-block;
+      padding: 18px 52px;
+      border-radius: 50px;
+      background: #1a73e8;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-pill-blue:hover { filter: brightness(0.88); transform: translateY(-2px); }
+
+    /* ── PAGE TITLE / INTRO ── */
+    .page-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .intro-text {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 680px;
+    }
+
+    /* ── SECTION 1: TM Overview — image left, button right ── */
+    .overview-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+
+    .overview-row .section-img {
+      flex-shrink: 0;
+      width: 360px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .overview-row .section-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── SECTION 2: MXP in Canada — full-width centered image ── */
+    .mxp-wide {
+      width: 100%;
+      max-width: 860px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 0 auto 48px;
+    }
+
+    .mxp-wide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── SECTION 3: Two clickable image cards ── */
+    .card-row {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    .card {
+      flex: 1;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      transition: opacity 0.2s;
+    }
+
+    .card:hover img { opacity: 0.88; }
+
+    .card-caption {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* ── TM BASICS section title ── */
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    /* ── PDP: centered image + button below ── */
+    .pdp-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 52px;
+    }
+
+    .pdp-wrap .pdp-img {
+      width: 480px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .pdp-wrap .pdp-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Bottom two columns: 1-1 Meetings + NMS Data ── */
+    .tools-row {
+      display: flex;
+      gap: 60px;
+      justify-content: center;
+      margin-bottom: 52px;
+    }
+
+    .tool-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tool-col .tool-img {
+      width: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tool-col .tool-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Drive button ── */
+    .drive-wrap {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">National Educational Cycle (NEC)</div>
+    <ul class="sidebar-nav">
+      <li><a href="/nec-quizzes">NEC Quizzes</a></li>
+      <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
+      <li><a href="/incoming-global-talent-1">Incoming Global Talent</a></li>
+      <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
+      <li><a href="/b2c-1">Business to Customer</a></li>
+      <li class="active"><span>Talent Management</span></li>
+      <li><a href="/finance-1">Finance</a></li>
+      <li><a href="/local-committee-president">Local Committee President</a></li>
+      <li><a href="/leaders-101-1">Leaders 101</a></li>
+      <li><a href="/data-management">Data Management</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <h1 class="page-title">National Education Cycle - TM</h1>
+
+    <p class="intro-text">
+      Hello to our TM people! Welcome to videos regarding Talent Management in AIESEC. This portfolio has many aspects to it and can be unique to each Local Committee, so keep that in mind as you are browsing through material.
+    </p>
+
+    <!-- TM Overview: image left, Watch Here button right -->
+    <div class="overview-row">
+      <div class="section-img">
+        <img src="/static/images/tm-overview.webp" alt="TM Overview">
+      </div>
+      <a href="https://youtu.be/-vR3WQ5oa48" target="_blank" class="btn-pill">Watch Here</a>
+    </div>
+
+    <!-- MXP in Canada: wide centered image -->
+    <div class="mxp-wide">
+      <img src="/static/images/tm-mxp-canada.webp" alt="MXP in Canada">
+    </div>
+
+    <!-- Two clickable image cards: MXP Process + MXP Standards -->
+    <div class="card-row">
+      <a href="https://drive.google.com/file/d/1tpu3pTkpeZJ2UqAVDDHVyX-I3CGCzFBE/view?usp=share_link" target="_blank" class="card">
+        <img src="/static/images/tm-mxp-process.webp" alt="MXP Process">
+        <p class="card-caption">Click here to learn about the MXP Process, the journey of a member in AIESEC!</p>
+      </a>
+      <a href="https://drive.google.com/file/d/1OlZ2ajSHwOexuheCIm98XfK_J2WWSb2f/view?usp=share_link" target="_blank" class="card">
+        <img src="/static/images/tm-mxp-standards.webp" alt="MXP Standards">
+        <p class="card-caption">Click here to learn about the new MXP Standards!</p>
+      </a>
+    </div>
+
+    <!-- TM Basics -->
+    <h2 class="section-title">TM Basics</h2>
+
+    <!-- PDP: centered image + button -->
+    <div class="pdp-wrap">
+      <div class="pdp-img">
+        <img src="/static/images/tm-pdp.webp" alt="Talent Management Personal Development Plan">
+      </div>
+      <a href="https://youtu.be/mizETSuaSFw" target="_blank" class="btn-pill">PDP</a>
+    </div>
+
+    <!-- 1-1 Meetings + NMS Data side by side -->
+    <div class="tools-row">
+      <div class="tool-col">
+        <div class="tool-img">
+          <img src="/static/images/tm-1-1-meetings.webp" alt="Talent Management 1-1 Meetings">
+        </div>
+        <a href="https://youtu.be/yUVY8huCSSM" target="_blank" class="btn-pill">Calibration</a>
+      </div>
+      <div class="tool-col">
+        <div class="tool-img">
+          <img src="/static/images/tm-nms-data.webp" alt="Using NMS Data">
+        </div>
+        <a href="https://youtu.be/2f4jr9MGnlQ" target="_blank" class="btn-pill">NMS Data</a>
+      </div>
+    </div>
+
+    <!-- Materials drive button -->
+    <div class="drive-wrap">
+      <a href="https://drive.google.com/drive/folders/11oytyUN2T6NYOkUojkGnICPEi80Sydu3?usp=sharing" target="_blank" class="btn-pill-blue">Click here to access all the materials!</a>
+    </div>
+
+  </main>
+</div>
+
+{{end}}

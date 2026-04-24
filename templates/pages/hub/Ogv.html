@@ -18,7 +18,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/drive/folders/1O5EZir8_tgvipgpDIa4QWslz1nFMwM37?usp=sharing" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="Attraction" class="hub-card__img" />
+        <img src="/static/images/Screen+Shot+2019-01-08+at+3.08.55+PM.webp" alt="Attraction" class="hub-card__img" />
         <span class="hub-card__label">ATTRACTION</span>
       </a>
       <p class="hub-card__desc">FIND ALL RESOURCES RELATED TO PHYSICAL MARKETING HERE</p>
@@ -27,7 +27,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/open?id=1wW7EOAFRx43ms-dim0dV6azg0VCgFJB-" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="Consideration" class="hub-card__img" />
+        <img src="/static/images/Screen+Shot+2019-01-08+at+3.08.27+PM.webp" alt="Consideration" class="hub-card__img" />
         <span class="hub-card__label">CONSIDERATION</span>
       </a>
       <p class="hub-card__desc">BE THE SALES EXPERT IN YOUR LOCAL COMMITTEE</p>
@@ -36,7 +36,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/open?id=1s5aV9mXSHPKUMw9OVqy6eneH3YaVaXsE" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="Preparation" class="hub-card__img" />
+        <img src="/static/images/Screen+Shot+2019-01-08+at+3.11.34+PM.webp" alt="Preparation" class="hub-card__img" />
         <span class="hub-card__label">PREPARATION</span>
       </a>
       <p class="hub-card__desc">UNDERSTAND HOW TO PREPARE YOUR EXCHANGE PARTICIPANT</p>
@@ -45,7 +45,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/open?id=1w-SfQCbNUuXcrTBz6VJbSMNVMOd12gbw" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="International Relations" class="hub-card__img" />
+        <img src="/static/images/image-asset.webp" alt="International Relations" class="hub-card__img" />
         <span class="hub-card__label">INTERNATIONAL RELATIONS</span>
       </a>
       <p class="hub-card__desc">KNOW OUR NATIONAL PARTNERS &amp; HOW TO CREATE YOUR OWN</p>
@@ -54,7 +54,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/open?id=1QezBgBPqEfOMiAM1_4j1_gj-HHzyfDlM" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="Member Training" class="hub-card__img" />
+        <img src="/static/images/Screen+Shot+2019-01-08+at+3.27.39+PM.webp" alt="Member Training" class="hub-card__img" />
         <span class="hub-card__label">MEMBER TRAINING</span>
       </a>
       <p class="hub-card__desc">EVERYTHING YOU NEED TO TRAIN YOUR MEMBERS</p>
@@ -63,7 +63,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/open?id=1D6PKVmuFs3C9ZvDk_ByUQeYIJvtoGSkV" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="Tracker Templates" class="hub-card__img" />
+        <img src="/static/images/image-asset-2.webp" alt="Tracker Templates" class="hub-card__img" />
         <span class="hub-card__label">TRACKER TEMPLATES</span>
       </a>
       <p class="hub-card__desc">SAMPLE TRACKERS FOR YOUR TEAM AND STANDARDS</p>
@@ -72,7 +72,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/open?id=1nxc4Z_BarnqSNsb6H1C3W5yrDlwVVnN2" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="EXPA/Salesforce Videos" class="hub-card__img" />
+        <img src="/static/images/image-asset-3.webp" alt="EXPA/Salesforce Videos" class="hub-card__img" />
         <span class="hub-card__label">EXPA/SALESFORCE VIDEOS</span>
       </a>
       <p class="hub-card__desc">WATCH VIDEOS ON EXPA, CORE AND THE NEW PAYMENT SYSTEM</p>
@@ -81,7 +81,7 @@
 
     <div class="hub-card">
       <a href="https://drive.google.com/file/d/1HK3XGPUvTSZUKQUooaxoClZEMPBxcrqU/view?usp=sharing" target="_blank" rel="noopener" class="hub-card__img-wrap">
-        <img src="/static/images/hub/placeholder.jpg" alt="Withdrawal Form" class="hub-card__img" />
+        <img src="/static/images/Screen+Shot+2019-01-08+at+3.23.01+PM.webp" alt="Withdrawal Form" class="hub-card__img" />
         <span class="hub-card__label">WITHDRAWAL FORM</span>
       </a>
       <p class="hub-card__desc">WITHDRAWAL FORM NEEDED TO BREAK AN APPROVAL</p>
@@ -99,13 +99,15 @@
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 6rem 2rem 4rem; /* top padding clears fixed nav */
+    padding: 6rem 2rem 6rem; /* generous bottom padding before footer */
   }
 
   /* ── Sidebar ── */
   .hub-sidebar {
     flex: 0 0 220px;
+    width: 220px;
     padding-top: 1rem;
+    align-self: flex-start; /* only as tall as its own content — does NOT stretch */
   }
 
   .hub-sidebar__section {
@@ -151,6 +153,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem 2rem;
+    align-content: start; /* grid rows stack from top, no vertical stretching */
   }
 
   /* ── Individual card ── */

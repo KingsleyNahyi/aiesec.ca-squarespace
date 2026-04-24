@@ -1,0 +1,239 @@
+{{define "content"}}
+  <title>Incoming Global Talent — AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 110px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 52px 80px;
+    }
+
+    .page-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .intro-text {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.65;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    /* ── HERO IMAGE + BUTTONS ── */
+    .hero-section {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin: 40px 0 56px;
+    }
+
+    .hero-img {
+      flex-shrink: 0;
+      width: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    /* ── BOTTOM TWO-COLUMN ── */
+    .tools-section {
+      display: flex;
+      gap: 60px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .tool-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tool-img {
+      width: 280px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tool-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── IGT DRIVE BUTTON ── */
+    .drive-btn-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-pill {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      background: #e8503a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+      text-align: center;
+    }
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+
+    .btn-pill-blue {
+      display: inline-block;
+      padding: 16px 48px;
+      border-radius: 50px;
+      background: #1a73e8;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-pill-blue:hover { filter: brightness(0.88); transform: translateY(-2px); }
+  </style>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">National Educational Cycle (NEC)</div>
+    <ul class="sidebar-nav">
+      <li><a href="/nec-quizzes">NEC Quizzes</a></li>
+      <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
+      <li class="active"><span>Incoming Global Talent</span></li>
+      <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
+      <li><a href="/b2c-1">Business to Customer</a></li>
+      <li><a href="/talent-management-1">Talent Management</a></li>
+      <li><a href="/finance-1">Finance</a></li>
+      <li><a href="/local-committee-president">Local Committee President</a></li>
+      <li><a href="/leaders-101-1">Leaders 101</a></li>
+      <li><a href="/data-management">Data Management</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <h1 class="page-title">National Education Cycle - iGTa</h1>
+
+    <p class="intro-text">Hello iGT! Welcome to our NEC!</p>
+    <p class="intro-text">Here you will learn the basics of your portfolio to start performing!</p>
+    <p class="intro-text" style="margin-bottom: 0;">
+      Our NEC is renewed and how it will be delivered will be different. Talk to your VP to know how your team will be completing it and complete the quiz at the end.
+    </p>
+
+    <!-- Hero: image left, buttons right -->
+    <div class="hero-section">
+      <div class="hero-img">
+        <img src="/static/images/igt-cover.webp" alt="Incoming Global Talent">
+      </div>
+      <div class="hero-buttons">
+        <a href="https://docs.google.com/presentation/d/13x45rM2EGIJkhuGZLXsxem-fcLCawp0p-nbG_0nx2lw/edit?usp=share_link" target="_blank" class="btn-pill">NEC Instructions</a>
+        <a href="https://docs.google.com/spreadsheets/d/1dnP3zXVLOkBkUKG3sbZgfbJACLnpKn3-_eLauSjRS9U/edit?usp=share_link" target="_blank" class="btn-pill">NEC Agenda</a>
+        <a href="https://drive.google.com/drive/folders/18ObClywhZy-m61jv6n9hTcJewLoAy2OX" target="_blank" class="btn-pill">NEC Materials</a>
+        <a href="https://forms.gle/QuN6YnmUd94nHcao9" target="_blank" class="btn-pill">NEC Quiz</a>
+      </div>
+    </div>
+
+    <!-- Two tool columns -->
+    <div class="tools-section">
+      <div class="tool-col">
+        <div class="tool-img">
+          <img src="/static/images/igta-salesforce.webp" alt="IGTa Salesforce Lightning">
+        </div>
+        <a href="https://youtu.be/oA8EsfFAo2U" target="_blank" class="btn-pill">Salesforce Video</a>
+      </div>
+      <div class="tool-col">
+        <div class="tool-img">
+          <img src="/static/images/igta-expa.webp" alt="IGTa EXPA How">
+        </div>
+        <a href="https://youtu.be/U188etMGtbg" target="_blank" class="btn-pill">EXPA Video</a>
+      </div>
+    </div>
+
+    <!-- IGT Drive -->
+    <div class="drive-btn-wrap">
+      <a href="https://bit.ly/IGTHUB" target="_blank" class="btn-pill-blue">Click here to access the IGT Drive!</a>
+    </div>
+
+  </main>
+</div>
+
+{{end}}

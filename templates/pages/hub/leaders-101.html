@@ -1,5 +1,5 @@
 {{define "content"}}
-  <title>Data Management — AIESEC Canada Hub</title>
+  <title>Leaders 101 — AIESEC Canada Hub</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -67,36 +67,21 @@
       font-weight: 800;
       color: #222;
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
 
     .intro-text {
       font-size: 17px;
       color: #555;
       line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 820px;
-    }
-
-    /* ── CENTERED IMAGE ── */
-    .hero-img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 44px;
-    }
-
-    .hero-img img {
-      width: 100%;
-      height: auto;
-      display: block;
+      margin-bottom: 32px;
+      max-width: 760px;
     }
 
     /* ── BUTTONS ── */
     .btn-pill {
       display: inline-block;
-      padding: 14px 32px;
+      padding: 14px 36px;
       border-radius: 50px;
       background: #e8503a;
       color: #fff;
@@ -111,7 +96,7 @@
 
     .btn-pill-blue {
       display: inline-block;
-      padding: 18px 52px;
+      padding: 16px 48px;
       border-radius: 50px;
       background: #1a73e8;
       color: #fff;
@@ -124,25 +109,52 @@
     }
     .btn-pill-blue:hover { filter: brightness(0.88); transform: translateY(-2px); }
 
-    /* ── BUTTON ROWS matching screenshot layout ── */
-    /* Row 1: "What is it?" left-center, "iGT Prospecting" right */
-    .btn-row-1 {
-      display: flex;
-      justify-content: center;
-      gap: 200px;
+    .btn-dark {
+      display: inline-block;
+      padding: 20px 60px;
+      border-radius: 4px;
+      background: #222;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s;
+    }
+    .btn-dark:hover { filter: brightness(1.2); }
+
+    /* ── WIDE IMAGE (clickable) ── */
+    .wide-img-link {
+      display: block;
       width: 100%;
-      max-width: 820px;
-      margin-bottom: 20px;
+      max-width: 860px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      transition: opacity 0.2s;
+    }
+    .wide-img-link:hover { opacity: 0.9; }
+    .wide-img-link img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    /* Row 2: three evenly spaced */
-    .btn-row-2 {
+    /* ── TWO BUTTONS SIDE BY SIDE ── */
+    .btn-row {
       display: flex;
-      justify-content: center;
       gap: 40px;
-      width: 100%;
-      max-width: 820px;
-      margin-bottom: 36px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    /* ── CAPTION BELOW IMAGE ── */
+    .img-caption {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 32px;
+      text-align: center;
     }
   </style>
 
@@ -160,39 +172,43 @@
       <li><a href="/talent-management-1">Talent Management</a></li>
       <li><a href="/finance-1">Finance</a></li>
       <li><a href="/local-committee-president">Local Committee President</a></li>
-      <li><a href="/leaders-101-1">Leaders 101</a></li>
-      <li class="active"><span>Data Management</span></li>
+      <li class="active"><span>Leaders 101</span></li>
+      <li><a href="/data-management">Data Management</a></li>
     </ul>
   </aside>
 
   <!-- MAIN -->
   <main class="main-content">
 
-    <h1 class="page-title">National Education Cycle - Data Management</h1>
+    <h1 class="page-title">Welcome to Leaders 101!</h1>
 
     <p class="intro-text">
-      This page is all about how to ensure you are recording your activity properly. An important skill in any industry! Click below to learn more. Currently, this page is mainly for members in the Incoming Global Talent portfolio.
+      Learn more about the basics of leading a team. If you want more resources on how to deliver a great team experience, please reach out to your local VP TM or the MCVP MXP.
     </p>
 
-    <div class="hero-img">
-      <img src="/static/images/data-management.webp" alt="Data Management">
+    <!-- Team Leader Guidelines blue button -->
+    <a href="https://docs.google.com/presentation/d/1SbzK7ivIzUYkN7khtOGJ684kURqyarBpv4bZhQ_44jE/edit#slide=id.g1195e3402e8_2_22" target="_blank" class="btn-pill-blue" style="margin-bottom: 40px;">Team Leader Guidelines</a>
+
+    <!-- Blue Code image (clickable) -->
+    <a href="https://docs.google.com/presentation/d/1Tzj1vQuAsJ3zdnWzHE9zOwqB4wdZPBHNjOm-rUO72bA/edit#slide=id.g12018b44a82_0_45" target="_blank" class="wide-img-link">
+      <img src="/static/images/leaders101-blue-code.webp" alt="The Blue Code — A Guide for Team Leaders">
+    </a>
+
+    <!-- English + French buttons -->
+    <div class="btn-row">
+      <a href="https://bit.ly/bluecodecanada" target="_blank" class="btn-pill">English Version</a>
+      <a href="https://bit.ly/bluecodecanadafr" target="_blank" class="btn-pill">French Version</a>
     </div>
 
-    <!-- Row 1: What is it? + iGT Prospecting -->
-    <div class="btn-row-1">
-      <a href="https://youtu.be/FpHU0c7xRtE" target="_blank" class="btn-pill">What is it?</a>
-      <a href="https://youtu.be/YhcEjtczAXQ" target="_blank" class="btn-pill">iGT Prospecting</a>
-    </div>
+    <!-- MXP Standards image (clickable) -->
+    <a href="https://drive.google.com/file/d/1OlZ2ajSHwOexuheCIm98XfK_J2WWSb2f/view?usp=share_link" target="_blank" class="wide-img-link">
+      <img src="/static/images/leaders101-mxp-standards.webp" alt="MXP Standards">
+    </a>
 
-    <!-- Row 2: iGT Funnel Recording + Creating a Report + Importance of it all -->
-    <div class="btn-row-2">
-      <a href="https://youtu.be/gihgzfYeI50" target="_blank" class="btn-pill">iGT Funnel Recording</a>
-      <a href="https://youtu.be/AJtWyTrBNLg" target="_blank" class="btn-pill">Creating a Report</a>
-      <a href="https://youtu.be/vRYpYt5m7Ws" target="_blank" class="btn-pill">Importance of it all</a>
-    </div>
+    <p class="img-caption">Click here to learn more about MXP Standards.</p>
 
-    <!-- Materials blue button -->
-    <a href="https://docs.google.com/presentation/d/1Iqgl_7hn_z6f4jDpIeyO_CqfCPVTr76-oSoIHkhJOIA/edit?usp=sharing" target="_blank" class="btn-pill-blue">Click Here to access all the materials</a>
+    <!-- More Books dark button -->
+    <a href="https://drive.google.com/drive/folders/1n19q4rGC_4r2QZyTRgpNdJrT94DUh7WK?usp=sharing" target="_blank" class="btn-dark">More Books and Resources Here</a>
 
   </main>
 </div>

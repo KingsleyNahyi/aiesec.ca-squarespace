@@ -1,0 +1,225 @@
+{{define "content"}}
+  <title>Youth Leadership Launch Content — AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 110px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 40px 60px;
+    }
+
+    /* ── HERO IMAGE ── */
+    .hero-img {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── INTRO TEXT ── */
+    .intro-text {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 44px;
+    }
+
+    /* ── 3-COL VIDEO GRID ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 36px;
+      margin-bottom: 40px;
+    }
+
+    .video-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .video-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+
+    /* ── LAST ROW: LCP card + blurb side by side ── */
+    .last-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .last-row .video-card {
+      align-items: center;
+    }
+
+    .output-blurb {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 8px;
+    }
+
+    .output-blurb p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.75;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-pill {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      background: #e8503a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+  </style>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Conference Output</div>
+    <ul class="sidebar-nav">
+      <li><a href="/conference-overview">Conference Overview</a></li>
+      <li><a href="https://drive.google.com/drive/u/1/folders/1SXtMlCwpY0UsrYav7s-p4HyCsRQcZe0f" target="_blank">NC 2024 Output</a></li>
+      <li><a href="https://drive.google.com/drive/u/1/folders/1J_-g2low-x29n7-o7JIaSbi1LGhBphSK" target="_blank">ORC 2023</a></li>
+      <li><a href="https://drive.google.com/drive/u/0/folders/1cVuaIvssdJBGlNsacJped34eTZAbmVYQ" target="_blank">NLDC 2023 Output</a></li>
+      <li><a href="https://drive.google.com/drive/u/0/folders/1IxxfsZ-5ct2QekyIgOHfm-K9XUEG9IV4" target="_blank">NC 2023 Output</a></li>
+      <li><a href="https://drive.google.com/drive/u/0/folders/1myb5Z21xj6jgu0uTi7hZipFWSMG0mo-A" target="_blank">Summer Leadership Camp Output</a></li>
+      <li><a href="https://drive.google.com/drive/u/0/folders/1RDzHyrzSV6_YAFQ69ssXzfeVfG5-eMFU" target="_blank">NSDC 2022 Output</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1S4mSKvsUpBS9GiEd-CCCWLMcKUc173yG?usp=sharing" target="_blank">NC 2022 Output</a></li>
+      <li class="active"><span>Youth Leadership Launch Content</span></li>
+      <li><a href="https://drive.google.com/drive/u/0/folders/1z7--jX1BNBOwLfW3ow2mtwRxTsBVM8RV" target="_blank">Historical Conference Output</a></li>
+      <li><a href="https://drive.google.com/drive/u/0/folders/16ujeFpVnjaBw36ylD-T154iqO_kZcSAR" target="_blank">August NPM 2024</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- Hero banner -->
+    <div class="hero-img">
+      <img src="/static/images/yll-banner.jpg" alt="Youth Leadership Launch 2020">
+    </div>
+
+    <!-- Intro -->
+    <p class="intro-text">
+      Welcome to the YLL Conference Output page! Hope you all enjoyed AIESEC in Canada's first ever virtual National conference. On this page you will find the output of the live sessions. <strong>But more importantly, you will have access to the On-Demand sessions too!</strong> On-Demand sessions are additional sessions that we could not fit in the Live Agenda time, but are just as important to watch. <strong>The functionals here are part of NEC for Fall 2020, make sure to complete this <em>with</em> the NEC</strong>
+    </p>
+
+    <!-- 6 video cards in 3-col grid (first 6) -->
+    <div class="video-grid">
+      <div class="video-card">
+        <img src="/static/images/yll-ogx.webo" alt="OGX">
+        <a href="https://www.youtube.com/playlist?list=PL0cvLRvD33GbH10838u3P2o1KtCO_p-QL" target="_blank" class="btn-pill">Watch Now</a>
+      </div>
+      <div class="video-card">
+        <img src="/static/images/yll-igt.webp" alt="IGT">
+        <a href="https://www.youtube.com/playlist?list=PL0cvLRvD33GaBAPGSxwywasrlsVAKkc2e" target="_blank" class="btn-pill">Watch Now</a>
+      </div>
+      <div class="video-card">
+        <img src="/static/images/yll-b2c.webp" alt="B2C">
+        <a href="https://www.youtube.com/playlist?list=PL0cvLRvD33GY2Y5M9LDajZaKXc_13uBi9" target="_blank" class="btn-pill">Watch Now</a>
+      </div>
+      <div class="video-card">
+        <img src="/static/images/yll-tm.webp" alt="TM">
+        <a href="https://www.youtube.com/playlist?list=PL0cvLRvD33GarHQnV8BssV91qCZXaNu3y" target="_blank" class="btn-pill">Watch Now</a>
+      </div>
+      <div class="video-card">
+        <img src="/static/images/yll-fin.webp" alt="FIN">
+        <a href="https://www.youtube.com/playlist?list=PL0cvLRvD33GbbgPsUfzuRGxE0cY1Hq1HJ" target="_blank" class="btn-pill">Watch Now</a>
+      </div>
+      <div class="video-card">
+        <img src="/static/images/yll-ewa.webp" alt="EWA">
+        <a href="https://www.youtube.com/playlist?list=PL0cvLRvD33GbP2oP1ccgjok2oES46eVpk" target="_blank" class="btn-pill">Watch Now</a>
+      </div>
+    </div>
+
+    <!-- Last row: LCP card + output blurb -->
+    <div class="last-row">
+      <div class="video-card">
+        <img src="/static/images/yll-lcp.webp" alt="LCP">
+        <a href="https://www.youtube.com/playlist?list=PL0cvLRvD33GbCdWBnbPlxnXurk1RW3DxW" target="_blank" class="btn-pill">Watch Now</a>
+      </div>
+      <div class="output-blurb">
+        <img src="/static/images/yll-leadership-we-develop.webp" alt="Youth Leadership Launch — Leadership We Develop" style="border-radius:6px;">
+        <p>Please click the link below for the complete conference output. Make sure to share with the rest of your LC, <strong>especially those that missed the conference.</strong></p>
+        <a href="http://bit.ly/YLLoutput" target="_blank" class="btn-pill">Conference Output Link</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{{end}}

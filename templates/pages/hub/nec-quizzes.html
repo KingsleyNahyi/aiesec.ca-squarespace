@@ -1,277 +1,215 @@
 {{define "content"}}
-  <title>NEC Quizzes — AIESEC Canada Hub</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+        /* ── Page layout ── */
+        .nec-page {
+            display: flex;
+            min-height: calc(100vh - 80px);
+            margin-top: 80px; /* offset fixed header */
+        }
 
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-    }
+        /* ── Left sidebar ── */
+        .nec-sidebar {
+            width: 220px;
+            flex-shrink: 0;
+            padding: 40px 24px 40px 32px;
+            border-right: 1px solid #e8e8e8;
+        }
 
-    .page-wrapper {
-      display: flex;
-      min-height: 100vh;
-      padding-top: 70px;
-    }
+        .nec-sidebar .sidebar-section-title {
+            color: #2196f3;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
 
-    /* ── SIDEBAR ── */
-    .sidebar {
-      width: 240px;
-      flex-shrink: 0;
-      padding: 48px 28px;
-      background: #fff;
-      border-right: 1px solid #e8e8e8;
-    }
+        .nec-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .sidebar-title {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      color: #1a73e8;
-      margin-bottom: 20px;
-      line-height: 1.4;
-    }
+        .nec-sidebar ul li {
+            margin-bottom: 10px;
+        }
 
-    .sidebar-nav {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+        .nec-sidebar ul li a {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-    .sidebar-nav li a,
-    .sidebar-nav li span {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #aaa;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+        .nec-sidebar ul li a:hover {
+            color: #333;
+        }
 
-    .sidebar-nav li a:hover { color: #555; }
+        .nec-sidebar ul li a.active {
+            color: #333;
+        }
 
-    .sidebar-nav li.active span {
-      color: #111;
-      font-weight: 800;
-    }
+        /* ── Main content ── */
+        .nec-main {
+            flex: 1;
+            padding: 48px 60px;
+        }
 
-    /* ── MAIN ── */
-    .main-content {
-      flex: 1;
-      padding: 52px 80px;
-    }
+        .nec-main h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 36px;
+            color: #111;
+        }
 
-    /* ── HERO ROW: blob + description side by side ── */
-    .hero-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
+        .nec-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
 
-    /* Left: blob + walker */
-    .hero-left {
-      flex-shrink: 0;
-      position: relative;
-      width: 210px;
-    }
+        .nec-hero img {
+            width: 220px;
+            height: auto;
+            object-fit: contain;
+        }
 
-    .blob-shape {
-      width: 185px;
-      height: 200px;
-      background: linear-gradient(150deg, #3ecfbe, #1a8fd1);
-      border-radius: 58% 42% 60% 40% / 50% 55% 45% 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 28px 22px;
-    }
+        .nec-hero-text {
+            max-width: 400px;
+            font-size: 1.05rem;
+            text-align: center;
+            color: #333;
+            line-height: 1.7;
+        }
 
-    .blob-shape span {
-      color: #fff;
-      font-size: 17px;
-      font-weight: 800;
-      text-align: center;
-      text-transform: uppercase;
-      line-height: 1.25;
-      letter-spacing: 0.02em;
-    }
+        .nec-cta {
+            text-align: center;
+            margin-bottom: 12px;
+        }
 
-    .walker {
-      position: absolute;
-      right: -10px;
-      bottom: 10px;
-    }
+        .nec-cta p {
+            font-style: italic;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
 
-    .walker svg {
-      width: 36px;
-      height: 55px;
-      fill: #1a73e8;
-    }
+        .nec-coming-soon {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: #555;
+            margin-bottom: 36px;
+        }
 
-    /* Right: title + description */
-    .hero-right {
-      flex: 1;
-      padding-top: 8px;
-    }
+        /* ── Quiz button grid ── */
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
 
-    .page-title {
-      font-size: 36px;
-      font-weight: 800;
-      color: #222;
-      margin-bottom: 24px;
-      text-align: center;
-    }
+        .quiz-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 28px 20px;
+            transition: background-color 0.2s, transform 0.1s;
+            border-radius: 2px;
+        }
 
-    .description {
-      font-size: 18px;
-      color: #555;
-      line-height: 1.65;
-      text-align: center;
-    }
+        .quiz-btn:hover {
+            background-color: #333;
+            transform: translateY(-1px);
+        }
 
-    /* ── CTA italic text ── */
-    .cta-italic {
-      text-align: center;
-      font-size: 18px;
-      font-style: italic;
-      color: #555;
-      margin-bottom: 10px;
-    }
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .nec-page {
+                flex-direction: column;
+            }
+            .nec-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e8e8e8;
+                padding: 24px;
+            }
+            .nec-main {
+                padding: 32px 24px;
+            }
+            .nec-hero {
+                flex-direction: column;
+            }
+            .quiz-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
-    .coming-soon {
-      text-align: center;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 36px;
-    }
+<div class="nec-page">
 
-    /* ── QUIZ GRID ── */
-    .quiz-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 760px;
-      margin: 0 auto;
-    }
+        <!-- Sidebar -->
+        <aside class="nec-sidebar">
+            <div class="sidebar-section-title">National Educational Cycle (NEC)</div>
+            <ul>
+                <li><a href="/nec-quizzes" class="active">NEC Quizzes</a></li>
+                <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
+                <li><a href="/incoming-global-talent-1">Incoming Global Talent</a></li>
+                <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTA and GTE)</a></li>
+                <li><a href="/b2c-1">Business to Customer</a></li>
+                <li><a href="/talent-management-1">Talent Management</a></li>
+                <li><a href="/finance-1">Finance</a></li>
+                <li><a href="/local-committee-president">Local Committee President</a></li>
+                <li><a href="/leaders-101-1">Leaders 101</a></li>
+                <li><a href="/data-management">Data Management</a></li>
+            </ul>
+        </aside>
 
-    .quiz-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 90px;
-      background: #222;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background 0.2s, transform 0.15s;
-    }
+        <!-- Main content -->
+        <main class="nec-main">
+            <h1>NEC Quizzes</h1>
 
-    .quiz-btn:hover {
-      background: #444;
-      transform: translateY(-2px);
-    }
+            <div class="nec-hero">
+                <img src="/static/images/nec-title-page.webp
+                " alt="National Education Cycle (NEC)">
+                <div class="nec-hero-text">
+                    Welcome to the short quizzes we have to check your understanding! This is a simple way to test your knowledge and see what areas you may need more help on. Contact your LC's VP Talent Management if you run into any issues!
+                </div>
+            </div>
 
-    /* LCP gets the slightly lighter dark shade like in the screenshot */
-    .quiz-btn.light { background: #555; }
-    .quiz-btn.light:hover { background: #666; }
-  </style>
+            <div class="nec-cta">
+                <p>Click below to take the quiz for your portfolio!</p>
+            </div>
 
-<body>
+            <div class="nec-coming-soon">COMING SOON LC TRACKER!</div>
 
-<div class="page-wrapper">
+            <div class="quiz-grid">
+                <a class="quiz-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhwH7oDPD3YQ2bPBs-rc9FEGIYyzdpHR4kZBpkjHuLMcUUGA/viewform?usp=sf_link" target="_blank" rel="noopener">LCP Quiz</a>
+                <a class="quiz-btn" href="https://forms.gle/VEu3YWoJt7mY6nmw5" target="_blank" rel="noopener">Fin Quiz</a>
+                <a class="quiz-btn" href="https://forms.gle/3YLkyx7kMdvH6zfv5" target="_blank" rel="noopener">OGX Quiz</a>
+                <a class="quiz-btn" href="https://forms.gle/YLf4HYqUVe7GK6sZ8" target="_blank" rel="noopener">TM Quiz</a>
+                <a class="quiz-btn" href="https://forms.gle/whAWvPzvVVeSEc1dA" target="_blank" rel="noopener">IGT Quiz</a>
+                <a class="quiz-btn" href="https://forms.gle/WXkH1zoC9kYDPxpf9" target="_blank" rel="noopener">B2C Quiz</a>
+            </div>
+        </main>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-title">National Educational Cycle (NEC)</div>
-    <ul class="sidebar-nav">
-      <li class="active"><span>NEC Quizzes</span></li>
-      <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
-      <li><a href="/incoming-global-talent-1">Incoming Global Talent</a></li>
-      <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
-      <li><a href="/b2c-1">Business to Customer</a></li>
-      <li><a href="/talent-management-1">Talent Management</a></li>
-      <li><a href="/finance-1">Finance</a></li>
-      <li><a href="/local-committee-president">Local Committee President</a></li>
-      <li><a href="/leaders-101-1">Leaders 101</a></li>
-      <li><a href="/data-management">Data Management</a></li>
-    </ul>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main-content">
-
-    <!-- Page title -->
-    <h1 class="page-title">NEC Quizzes</h1>
-
-    <!-- Hero row: NEC blob left, description right -->
-    <div class="hero-row">
-      <div class="hero-left">
-        <div class="blob-shape">
-          <span>National<br>Education<br>Cycle (NEC)</span>
-        </div>
-        <div class="walker">
-          <svg viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="7" r="6"/>
-            <line x1="20" y1="13" x2="20" y2="38" stroke="#1a73e8" stroke-width="4" stroke-linecap="round"/>
-            <line x1="20" y1="20" x2="7"  y2="30" stroke="#1a73e8" stroke-width="3.5" stroke-linecap="round"/>
-            <line x1="20" y1="20" x2="33" y2="26" stroke="#1a73e8" stroke-width="3.5" stroke-linecap="round"/>
-            <line x1="20" y1="38" x2="10" y2="58" stroke="#1a73e8" stroke-width="3.5" stroke-linecap="round"/>
-            <line x1="20" y1="38" x2="30" y2="55" stroke="#1a73e8" stroke-width="3.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <p class="description">
-          Welcome to the short quizzes we have to check your understanding! This is a simple way to test your knowledge and see what areas you may need more help on. Contact your LC's VP Talent Management if you run into any issues!
-        </p>
-      </div>
     </div>
-
-    <!-- CTA + coming soon -->
-    <p class="cta-italic">Click below to take the quiz for your portfolio!</p>
-    <p class="coming-soon">Coming Soon LC Tracker!</p>
-
-    <!-- Quiz buttons grid -->
-    <div class="quiz-grid">
-      <a class="quiz-btn light"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSfhwH7oDPD3YQ2bPBs-rc9FEGIYyzdpHR4kZBpkjHuLMcUUGA/viewform?usp=sf_link"
-         target="_blank">LCP Quiz</a>
-
-      <a class="quiz-btn"
-         href="https://forms.gle/VEu3YWoJt7mY6nmw5"
-         target="_blank">Fin Quiz</a>
-
-      <a class="quiz-btn"
-         href="https://forms.gle/3YLkyx7kMdvH6zfv5"
-         target="_blank">OGX Quiz</a>
-
-      <a class="quiz-btn"
-         href="https://forms.gle/YLf4HYqUVe7GK6sZ8"
-         target="_blank">TM Quiz</a>
-
-      <a class="quiz-btn"
-         href="https://forms.gle/whAWvPzvVVeSEc1dA"
-         target="_blank">IGT Quiz</a>
-
-      <a class="quiz-btn"
-         href="https://forms.gle/WXkH1zoC9kYDPxpf9"
-         target="_blank">B2C Quiz</a>
-    </div>
-
-  </main>
-</div>
-
-</body>
 
 {{end}}
