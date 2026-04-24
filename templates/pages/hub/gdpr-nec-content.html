@@ -1,0 +1,267 @@
+{{define "content"}}
+  <title>GDPR & ECB — AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 52px 80px;
+      max-width: 960px;
+    }
+
+    /* shared button */
+    .btn-pill {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      background: #e8503a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+
+    /* ── WELCOME SECTION ── */
+    .page-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .intro-text {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.65;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .btn-center {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .section-desc {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.65;
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    /* ── CONTENT SECTIONS ── */
+    .content-section {
+      margin-bottom: 56px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 28px;
+    }
+
+    /* Two-column: image left, buttons right */
+    .section-body {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .section-img {
+      flex-shrink: 0;
+      width: 420px;
+      height: 240px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #c8d8e8;
+    }
+
+    .section-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* placeholder for image when it won't load */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2c3e6e, #4a6fa5);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-align: center;
+      padding: 20px;
+      line-height: 1.5;
+    }
+
+    .section-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ECB section description */
+    .ecb-desc {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">National Educational Cycle (NEC)</div>
+    <ul class="sidebar-nav">
+      <li><a href="/nec-quizzes">NEC Quizzes</a></li>
+      <li class="active"><span>GDPR &amp; ECB</span></li>
+      <li><a href="/incoming-global-talent-1">Incoming Global Talent</a></li>
+      <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
+      <li><a href="/b2c-1">Business to Customer</a></li>
+      <li><a href="/talent-management-1">Talent Management</a></li>
+      <li><a href="/finance-1">Finance</a></li>
+      <li><a href="/local-committee-president">Local Committee President</a></li>
+      <li><a href="/leaders-101-1">Leaders 101</a></li>
+      <li><a href="/data-management">Data Management</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- Welcome -->
+    <h1 class="page-title">Welcome to some of the Basics</h1>
+
+    <p class="intro-text">
+      If you are completely new to AIESEC and want a quick refresh on the organization, click the button below for a quick AIESEC Overview!
+    </p>
+
+    <div class="btn-center">
+      <a href="https://youtu.be/1cWXoUse-uQ" target="_blank" class="btn-pill">AIESEC Basics</a>
+    </div>
+
+    <p class="section-desc">
+      This section has information that protects the safety of ourselves and the people we work with. This consists of an overview of GDPR (General Data Protection Regulation), which is for all AIESECers to watch and thoroughly understand. The second half is ECB (Entity Control Board) information which is to audit our operational programs. This is mandatory for LCPs and VPs to watch to understand how their operational portfolios are audited. We recommend that members watch it too!
+    </p>
+
+    <!-- GDPR Section -->
+    <div class="content-section">
+      <h2 class="section-title">GDPR (For Everyone)</h2>
+      <div class="section-body">
+        <div class="section-img">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/58ecccb72e69cffbfbfbd68b/1600987396048-4YUIOHXGGUTV0IA324B7/Screen+Shot+2020-09-24+at+6.42.49+PM.png"
+            alt="NEC General Data Protection Regulation"
+            onerror="this.style.display='none'; this.parentElement.querySelector('.img-placeholder').style.display='flex';"
+          />
+          <div class="img-placeholder" style="display:none;">
+            NEC<br>General Data Protection<br>Regulation
+          </div>
+        </div>
+        <div class="section-buttons">
+          <a href="https://youtu.be/T4j-hGi-650" target="_blank" class="btn-pill">GDPR Summary</a>
+          <a href="https://www.youtube.com/watch?ab_channel=MCCanada&v=VqASlR3q6jU" target="_blank" class="btn-pill">In-Depth Video</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECB Section -->
+    <div class="content-section">
+      <h2 class="section-title">ECB Academy (Mandatory for LCPs and VPs)</h2>
+      <p class="ecb-desc">
+        Hey AIESEC! It's time to understand all the basics about our Entity Control Board. Go through the booklets and answer the quiz at the end. If you have any questions, contact our ECB Chair.
+      </p>
+      <div class="section-body">
+        <div class="section-img">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/58ecccb72e69cffbfbfbd68b/4f8fd135-a1f7-493b-a713-d3024fcd6ec7/Screen+Shot+2023-02-01+at+12.21.51+PM.png"
+            alt="ECB Academy"
+            onerror="this.style.display='none'; this.parentElement.querySelector('.img-placeholder').style.display='flex';"
+          />
+          <div class="img-placeholder" style="display:none;">
+            ECB Academy
+          </div>
+        </div>
+        <div class="section-buttons">
+          <a href="https://drive.google.com/drive/folders/1RzaQETJimOctSDqYK5BTQAzEQpO-CBqt" target="_blank" class="btn-pill">Materials</a>
+          <a href="https://forms.gle/j7HccthZmcxbbJud6" target="_blank" class="btn-pill">Quiz</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+{{template "hub-styles" .}}
+{{end}}

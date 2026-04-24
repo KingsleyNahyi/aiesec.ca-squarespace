@@ -2,23 +2,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{.Title}} | AIESEC in Canada</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="/static/css/style.css?v=1.1">
+
+  {{block "head" .}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} | AIESEC in Canada</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1.1">
+  {{end}}
+
 </head>
+
 <body class="site-wrapper">
-  
-  {{template "nav" .}}
+
+  {{block "nav" .}}
+    {{template "nav" .}}
+  {{end}}
 
   <main class="main-content">
     {{block "content" .}}{{end}}
   </main>
 
-  {{template "footer" .}}
+  {{block "footer" .}}
+    {{template "footer" .}}
+  {{end}}
 
   <script>
     function toggleMenu() {

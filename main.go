@@ -8,13 +8,31 @@ import (
 	"log"
 	"strings"
 )
-
 func renderPage(w http.ResponseWriter, tmpl string, data interface{}) {
-	tmplFiles := []string{
-		"templates/base.html",
-		"templates/partials/nav.html",
-		"templates/partials/footer.html",	
-		filepath.Join("templates/pages", tmpl),
+	var tmplFiles []string
+
+	// detect if hub page
+	if strings.HasPrefix(tmpl, "hub/") {
+		tmplFiles = []string{
+			"templates/base.html",
+
+			// hub-specific partials (optional but future-proof)
+			"templates/partials/hub/nav.html",
+			"templates/partials/hub/footer.html",
+
+			// fallback to main partials if hub ones don't exist
+			"templates/partials/nav.html",
+			"templates/partials/footer.html",
+
+			filepath.Join("templates/pages", tmpl),
+		}
+	} else {
+		tmplFiles = []string{
+			"templates/base.html",
+			"templates/partials/nav.html",
+			"templates/partials/footer.html",
+			filepath.Join("templates/pages", tmpl),
+		}
 	}
 
 	t, err := template.ParseFiles(tmplFiles...)
@@ -22,7 +40,7 @@ func renderPage(w http.ResponseWriter, tmpl string, data interface{}) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	
+
 	err = t.ExecuteTemplate(w, "base", data)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -120,6 +138,18 @@ func main() {
 		renderPage(w, "safety-policy.html", nil)
 	})
 
+//http.HandleFunc("/hub", func(w http.ResponseWriter, r *http.Request) {
+//	renderPage(w, "hub/index.html", map[string]interface{}{
+// 		"Title": "Hub",
+// 	})
+// })
+
+// http.HandleFunc("/hub/", func(w http.ResponseWriter, r *http.Request) {
+// 	page := strings.TrimPrefix(r.URL.Path, "/hub/")
+// 	renderPage(w, "hub/"+page+".html", map[string]interface{}{
+// 		"Title": "Hub",
+// 	})
+// })
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"

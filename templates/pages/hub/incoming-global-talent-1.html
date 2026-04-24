@@ -1,0 +1,367 @@
+{{define "content"}}
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 52px 60px;
+      overflow: hidden;
+    }
+
+    /* ── PAGE TITLE & INTRO ── */
+    .page-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .page-intro {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.75;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* ── HERO SECTION ── */
+    .hero-section {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 64px;
+      position: relative;
+      min-height: 340px;
+    }
+
+    /* Left: big teal "Incoming Talent" text */
+    .hero-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner-text {
+      font-size: 76px;
+      font-weight: 800;
+      color: #00bcd4;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    .illuminate-label {
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    /* Teal blob — top right of hero, partially off-screen right */
+    .hero-blob {
+      position: absolute;
+      top: -10px;
+      right: -60px;
+      width: 260px;
+      height: 300px;
+      background: linear-gradient(145deg, #3ecfbe 0%, #1a8fd1 60%, #0d6ebd 100%);
+      border-radius: 50% 40% 55% 42% / 48% 52% 44% 56%;
+      z-index: 0;
+    }
+
+    /* Right: NEC buttons stacked */
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding-top: 180px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── SHARED BUTTONS ── */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 38px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+    .btn-red  { background: #e8503a; color: #fff; }
+    .btn-blue { background: #1a73e8; color: #fff; }
+
+    /* ── BLOB CARDS ROW ── */
+    .blob-row {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      margin-bottom: 48px;
+    }
+
+    .blob-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .blob-thumb {
+      position: relative;
+      width: 230px;
+      height: 210px;
+    }
+
+    /* back blob (dark blue) */
+    .blob-back {
+      position: absolute;
+      bottom: 0;
+      right: 8px;
+      width: 188px;
+      height: 170px;
+      background: #1a3fd4;
+      border-radius: 55% 45% 60% 40% / 50% 55% 45% 50%;
+    }
+
+    /* front blob (teal gradient) */
+    .blob-front {
+      position: absolute;
+      top: 14px;
+      left: 0;
+      width: 190px;
+      height: 168px;
+      background: linear-gradient(135deg, #3ecfbe 0%, #1a8fd1 55%, #1a4ecc 100%);
+      border-radius: 50% 45% 55% 42% / 52% 48% 56% 44%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+    }
+
+    .blob-front span {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .blob-front span strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    /* dashed outline */
+    .blob-dashed {
+      position: absolute;
+      top: 2px;
+      left: 14px;
+      width: 192px;
+      height: 192px;
+      border: 2px dashed rgba(0,0,0,0.18);
+      border-radius: 50% 45% 55% 42% / 52% 48% 56% 44%;
+      pointer-events: none;
+    }
+
+    /* compass badge */
+    .compass-logo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 9px;
+      font-weight: 800;
+      color: #444;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* decorative elements */
+    .deco { position: absolute; }
+    .deco.plus-tl  { top: 6px;  left: 6px;  font-size: 18px; color: #999; font-weight: 300; }
+    .deco.plus-br  { bottom: 18px; right: 0; font-size: 20px; color: #999; font-weight: 300; }
+    .deco.dot      { bottom: 36px; right: 14px; width: 7px; height: 7px; background: #333; border-radius: 50%; }
+    .deco.circle   { bottom: 10px; right: 8px;  width: 16px; height: 16px; border: 2px solid #aaa; border-radius: 50%; }
+
+    /* ── IGT DRIVE BUTTON ── */
+    .drive-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-drive {
+      padding: 18px 56px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">National Educational Cycle (NEC)</div>
+    <ul class="sidebar-nav">
+      <li><a href="/nec-quizzes">NEC Quizzes</a></li>
+      <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
+      <li class="active"><span>Incoming Global Talent</span></li>
+      <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
+      <li><a href="/b2c-1">Business to Customer</a></li>
+      <li><a href="/talent-management-1">Talent Management</a></li>
+      <li><a href="/finance-1">Finance</a></li>
+      <li><a href="/local-committee-president">Local Committee President</a></li>
+      <li><a href="/leaders-101-1">Leaders 101</a></li>
+      <li><a href="/data-management">Data Management</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- Title + intro -->
+    <h1 class="page-title">National Education Cycle - iGTa</h1>
+    <p class="page-intro">
+      Hello iGT! Welcome to our NEC!<br><br>
+      Here you will learn the basics of your portfolio to start performing!<br><br>
+      Our NEC is renewed and how it will be delivered will be different. Talk to your VP to know how your team will be completing it and complete the quiz at the end.
+    </p>
+
+    <!-- Hero: "Incoming Talent" big text left + blob top-right + NEC buttons right -->
+    <div class="hero-section">
+      <div class="hero-left">
+        <div class="banner-text">Incoming<br>Talent</div>
+        <div class="illuminate-label">Illuminate</div>
+      </div>
+
+      <!-- Teal blob floating top-right -->
+      <div class="hero-blob"></div>
+
+      <!-- NEC buttons -->
+      <div class="hero-buttons">
+        <a href="https://docs.google.com/presentation/d/13x45rM2EGIJkhuGZLXsxem-fcLCawp0p-nbG_0nx2lw/edit?usp=share_link"
+           target="_blank" class="btn-pill btn-red">NEC Instructions</a>
+        <a href="https://docs.google.com/spreadsheets/d/1dnP3zXVLOkBkUKG3sbZgfbJACLnpKn3-_eLauSjRS9U/edit?usp=share_link"
+           target="_blank" class="btn-pill btn-red">NEC Agenda</a>
+        <a href="https://drive.google.com/drive/folders/18ObClywhZy-m61jv6n9hTcJewLoAy2OX"
+           target="_blank" class="btn-pill btn-red">NEC Materials</a>
+        <a href="https://forms.gle/QuN6YnmUd94nHcao9"
+           target="_blank" class="btn-pill btn-red">NEC Quiz</a>
+      </div>
+    </div>
+
+    <!-- Blob cards: Salesforce + EXPA -->
+    <div class="blob-row">
+
+      <div class="blob-card">
+        <div class="blob-thumb">
+          <div class="blob-back"></div>
+          <div class="blob-dashed"></div>
+          <div class="blob-front">
+            <span>IGTa<br><strong>Salesforce Lightning</strong></span>
+          </div>
+          <span class="compass-logo">⊕ COMPASS</span>
+          <span class="deco plus-tl">+</span>
+          <span class="deco plus-br">+</span>
+          <span class="deco dot"></span>
+          <span class="deco circle"></span>
+        </div>
+        <a href="https://youtu.be/oA8EsfFAo2U" target="_blank" class="btn-pill btn-red">Salesforce Video</a>
+      </div>
+
+      <div class="blob-card">
+        <div class="blob-thumb">
+          <div class="blob-back"></div>
+          <div class="blob-dashed"></div>
+          <div class="blob-front">
+            <span>IGTa<br><strong>EXPA How</strong></span>
+          </div>
+          <span class="compass-logo">⊕ COMPASS</span>
+          <span class="deco plus-tl">+</span>
+          <span class="deco plus-br">+</span>
+          <span class="deco dot"></span>
+          <span class="deco circle"></span>
+        </div>
+        <a href="https://youtu.be/U188etMGtbg" target="_blank" class="btn-pill btn-red">EXPA Video</a>
+      </div>
+
+    </div>
+
+    <!-- IGT Drive button -->
+    <div class="drive-row">
+      <a href="https://bit.ly/IGTHUB" target="_blank"
+         class="btn-pill btn-blue btn-drive">Click Here to Access the iGT Drive!</a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+{{end}}

@@ -1,0 +1,569 @@
+{{define "content"}}
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 52px 60px;
+      overflow: hidden;
+    }
+
+    /* ── SHARED BUTTONS ── */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 38px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+    .btn-red  { background: #e8503a; color: #fff; }
+    .btn-blue { background: #1a73e8; color: #fff; }
+
+    /* ── PAGE TITLE & INTRO ── */
+    .page-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .page-intro {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.75;
+      margin-bottom: 52px;
+    }
+
+    /* ── HERO: MXP in Canada banner + watch button ── */
+    .hero-section {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      margin-bottom: 52px;
+    }
+
+    /* gradient thumbnail card */
+    .video-thumb {
+      position: relative;
+      width: 340px;
+      height: 195px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #00C9A7 0%, #037EF3 55%, #7B2FF7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vthumb-bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.13);
+    }
+
+    .vthumb-badge {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 4px;
+      line-height: 1.5;
+    }
+
+    .vthumb-label {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .vthumb-member {
+      position: absolute;
+      bottom: 8px; right: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 7px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── MXP in Canada big banner ── */
+    .mxp-banner {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00C9A7 0%, #037EF3 55%, #7B2FF7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .mxp-banner-bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.13);
+    }
+
+    .mxp-glass {
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
+      border-radius: 14px;
+      padding: 18px 24px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mxp-right {
+      color: #fff;
+      font-size: 40px;
+      font-weight: 900;
+      text-align: right;
+      line-height: 1.05;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── MXP two link cards ── */
+    .mxp-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 60px;
+    }
+
+    .mxp-card {
+      border-radius: 10px;
+      background: linear-gradient(135deg, #037EF3 0%, #7B2FF7 100%);
+      padding: 34px 20px 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      text-decoration: none;
+      overflow: hidden;
+      transition: filter 0.2s, transform 0.15s;
+      min-height: 120px;
+    }
+    .mxp-card:hover { filter: brightness(0.9); transform: translateY(-2px); }
+
+    .mxp-card-badge {
+      position: absolute;
+      top: 9px; left: 10px;
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+
+    .mxp-card-title {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .mxp-card-desc {
+      color: rgba(255,255,255,0.78);
+      font-size: 11px;
+      margin-top: 7px;
+      line-height: 1.5;
+      max-width: 190px;
+    }
+
+    .mxp-card-bubble {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 36px;
+    }
+
+    /* ── BLOB + BUTTONS ROW ── */
+    .blob-section {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .blob-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .blob-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      flex-shrink: 0;
+    }
+
+    /* blob card */
+    .blob-card {
+      position: relative;
+      width: 280px;
+      height: 260px;
+      flex-shrink: 0;
+    }
+
+    .blob-back {
+      position: absolute;
+      border-radius: 55% 45% 60% 40% / 50% 55% 45% 50%;
+    }
+
+    /* blue-teal back for MXP / TM Basics */
+    .blob-card.tm-mxp .blob-back {
+      bottom: 0; right: 8px;
+      width: 220px; height: 200px;
+      background: #1a3fd4;
+    }
+
+    .blob-card.tm-basics .blob-back {
+      bottom: 0; right: 8px;
+      width: 220px; height: 200px;
+      background: #0a7a60;
+    }
+
+    .blob-card.tm-nms .blob-back {
+      bottom: 0; right: 8px;
+      width: 220px; height: 200px;
+      background: #0a7a60;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    .blob-front {
+      position: absolute;
+      top: 14px; left: 0;
+      width: 220px; height: 195px;
+      border-radius: 50% 45% 55% 42% / 52% 48% 56% 44%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .blob-card.tm-mxp .blob-front {
+      background: linear-gradient(135deg, #00C9A7 0%, #037EF3 55%, #7B2FF7 100%);
+    }
+
+    .blob-card.tm-basics .blob-front {
+      background: linear-gradient(135deg, #00C9A7 0%, #037EF3 80%);
+    }
+
+    .blob-card.tm-nms .blob-front {
+      width: 210px; height: 190px;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      background: linear-gradient(135deg, #00C9A7 0%, #037EF3 80%);
+    }
+
+    .blob-front span {
+      color: #fff;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .blob-front span .light {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .blob-front span .bold {
+      display: block;
+      font-size: 18px;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .blob-dashed {
+      position: absolute;
+      top: 2px; left: 14px;
+      width: 224px; height: 224px;
+      border: 2px dashed rgba(0,0,0,0.15);
+      border-radius: 50% 45% 55% 42% / 52% 48% 56% 44%;
+      pointer-events: none;
+    }
+
+    .deco { position: absolute; }
+    .deco.plus-tl  { top: 4px;  left: 6px;  font-size: 20px; color: #999; font-weight: 300; }
+    .deco.plus-br  { bottom: 20px; right: 0; font-size: 22px; color: #999; font-weight: 300; }
+    .deco.dot      { bottom: 38px; right: 14px; width: 7px; height: 7px; background: #333; border-radius: 50%; }
+    .deco.circle   { bottom: 10px; right: 8px;  width: 16px; height: 16px; border: 2px solid #999; border-radius: 50%; }
+
+    .blob-caption {
+      position: absolute;
+      bottom: -50px; left: 0;
+      width: 240px;
+    }
+
+    .blob-caption .cap-main {
+      font-size: 16px;
+      font-weight: 800;
+      color: #222;
+      line-height: 1.3;
+    }
+
+    .blob-caption .cap-sub {
+      font-size: 13px;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 52px 0;
+    }
+
+    /* ── DRIVE BUTTON ── */
+    .drive-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+  </style>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">National Educational Cycle (NEC)</div>
+    <ul class="sidebar-nav">
+      <li><a href="/nec-quizzes">NEC Quizzes</a></li>
+      <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
+      <li><a href="/incoming-global-talent-1">Incoming Global Talent</a></li>
+      <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
+      <li><a href="/b2c-1">Business to Customer</a></li>
+      <li class="active"><span>Talent Management</span></li>
+      <li><a href="/finance-1">Finance</a></li>
+      <li><a href="/local-committee-president">Local Committee President</a></li>
+      <li><a href="/leaders-101-1">Leaders 101</a></li>
+      <li><a href="/data-management">Data Management</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <h1 class="page-title">National Education Cycle - TM</h1>
+    <p class="page-intro">
+      Hello to our TM people! Welcome to videos regarding Talent Management in AIESEC.
+      This portfolio has many aspects to it and can be unique to each Local Committee,
+      so keep that in mind as you are browsing through material.
+    </p>
+
+    <!-- TM Overview video row -->
+    <div class="hero-section">
+      <div class="video-thumb">
+        <div class="vthumb-bubble" style="width:86px;height:86px;top:-22px;left:-22px;"></div>
+        <div class="vthumb-bubble" style="width:54px;height:54px;bottom:12px;left:80px;"></div>
+        <div class="vthumb-bubble" style="width:38px;height:38px;bottom:22px;right:42px;background:rgba(255,155,70,0.45);"></div>
+        <div class="vthumb-badge">Member Experience Program<br><span style="font-style:italic;font-weight:400;letter-spacing:0.3px;">AIESEC in Canada</span></div>
+        <div class="vthumb-label">TM Overview</div>
+        <div class="vthumb-member">AIESEC<br>Member</div>
+      </div>
+      <a href="https://youtu.be/-vR3WQ5oa48" target="_blank" class="btn-pill btn-red">Watch Here</a>
+    </div>
+
+    <!-- MXP in Canada big banner -->
+    <div class="mxp-banner">
+      <div class="mxp-banner-bubble" style="width:140px;height:140px;top:-44px;left:-44px;"></div>
+      <div class="mxp-banner-bubble" style="width:66px;height:66px;bottom:14px;left:168px;"></div>
+      <div class="mxp-banner-bubble" style="width:48px;height:48px;bottom:28px;left:236px;background:rgba(255,150,70,0.42);"></div>
+      <div class="mxp-glass">
+        Member Experience<br>Program<br>
+        <span style="font-size:10px;opacity:0.75;font-weight:400;letter-spacing:1px;">──────  🚶</span><br>
+        <span style="font-size:10px;font-style:italic;font-weight:400;letter-spacing:0.3px;text-transform:none;">AIESEC in Canada</span>
+      </div>
+      <div class="mxp-right">MXP<br>in<br>Canada</div>
+      <div class="vthumb-member" style="position:absolute;bottom:10px;right:14px;">AIESEC<br>Member</div>
+    </div>
+
+    <!-- MXP Process + Standards cards -->
+    <div class="mxp-cards">
+      <a href="https://drive.google.com/file/d/1tpu3pTkpeZJ2UqAVDDHVyX-I3CGCzFBE/view" target="_blank" class="mxp-card">
+        <div class="mxp-card-badge">Member Experience Program</div>
+        <div>
+          <div class="mxp-card-title">MXP<br>Process</div>
+          <div class="mxp-card-desc">Click here to learn about the MXP Process, the journey of a member in AIESEC!</div>
+        </div>
+        <div class="mxp-card-bubble"></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1OlZ2ajSHwOexuheCIm98XfK_J2WWSb2f/view" target="_blank" class="mxp-card">
+        <div class="mxp-card-badge">Member Experience Program</div>
+        <div>
+          <div class="mxp-card-title">MXP<br>Standards</div>
+          <div class="mxp-card-desc">Click here to learn about the new MXP Standards!</div>
+        </div>
+        <div class="mxp-card-bubble"></div>
+      </a>
+    </div>
+
+    <hr class="divider">
+
+    <!-- TM Basics: blob LEFT, buttons RIGHT -->
+    <h2 class="section-title">TM Basics</h2>
+    <div class="blob-section">
+      <div style="position:relative; padding-bottom:60px;">
+        <div class="blob-card tm-basics">
+          <div class="blob-back"></div>
+          <div class="blob-dashed"></div>
+          <div class="blob-front">
+            <span>
+              <span class="light">Talent Management</span>
+              <span class="bold">Personal<br>Development<br>Plan</span>
+            </span>
+          </div>
+          <span class="deco plus-tl">+</span>
+          <span class="deco plus-br">+</span>
+          <span class="deco dot"></span>
+          <span class="deco circle"></span>
+        </div>
+        <div class="blob-caption">
+          <div class="cap-main">Member Growth &amp; Development</div>
+          <div class="cap-sub">Unique to each Local Committee</div>
+        </div>
+      </div>
+
+      <div class="blob-buttons">
+        <a href="https://youtu.be/mizETSuaSFw" target="_blank" class="btn-pill btn-red">PDP</a>
+        <a href="https://youtu.be/yUVY8huCSSM" target="_blank" class="btn-pill btn-red">Calibration</a>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Using NMS Data: buttons LEFT, teal blob RIGHT -->
+    <h2 class="section-title">Using NMS Data</h2>
+    <div class="blob-section reverse">
+      <div style="position:relative; padding-bottom:60px;">
+        <div class="blob-card tm-nms">
+          <div class="blob-back"></div>
+          <div class="blob-front">
+            <span>
+              <span class="light">Talent Management</span>
+              <span class="bold">Using<br>NMS Data</span>
+            </span>
+          </div>
+          <span class="deco plus-tl">+</span>
+          <span class="deco plus-br">+</span>
+          <span class="deco dot"></span>
+          <span class="deco circle"></span>
+        </div>
+        <div class="blob-caption">
+          <div class="cap-main">Data-Driven TM Decisions</div>
+          <div class="cap-sub">Track and measure member performance</div>
+        </div>
+      </div>
+
+      <div class="blob-buttons">
+        <a href="https://youtu.be/2f4jr9MGnlQ" target="_blank" class="btn-pill btn-red">NMS Data</a>
+      </div>
+    </div>
+
+    <!-- All Materials drive button -->
+    <div class="drive-row">
+      <a href="https://drive.google.com/drive/folders/11oytyUN2T6NYOkUojkGnICPEi80Sydu3?usp=sharing"
+         target="_blank" class="btn-pill btn-blue" style="padding:18px 60px; font-size:11px; letter-spacing:0.14em;">
+        Click Here to Access All the Materials!
+      </a>
+    </div>
+
+  </main>
+</div>
+
+{{end}}

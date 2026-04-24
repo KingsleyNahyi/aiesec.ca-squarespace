@@ -1,0 +1,347 @@
+{{define "content"}}
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 52px 60px;
+      overflow: hidden;
+    }
+
+    /* ── SHARED BUTTONS ── */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 44px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+    .btn-red  { background: #e8503a; color: #fff; }
+    .btn-blue { background: #1a73e8; color: #fff; }
+
+    /* ── PAGE TITLE & INTRO ── */
+    .page-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .page-intro {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.75;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* ── HERO: big text left, teal blob top-right ── */
+    .hero-section {
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+
+    .hero-text-wrap {
+      flex: 1;
+      z-index: 1;
+    }
+
+    .banner-line-light {
+      font-size: 72px;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.05;
+      display: block;
+    }
+
+    .banner-line-teal {
+      font-size: 72px;
+      font-weight: 800;
+      color: #00bcd4;
+      line-height: 1.05;
+      display: block;
+    }
+
+    .illuminate-label {
+      margin-top: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    /* Teal blob top-right */
+    .hero-blob {
+      position: absolute;
+      top: -40px;
+      right: -60px;
+      width: 320px;
+      height: 420px;
+      background: linear-gradient(145deg, #3ecfbe 0%, #1a8fd1 55%, #0d6ebd 100%);
+      border-radius: 40% 55% 50% 45% / 45% 40% 60% 55%;
+      z-index: 0;
+    }
+
+    /* Study illustration overlapping blob */
+    .hero-illus {
+      position: absolute;
+      right: 20px;
+      bottom: -10px;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+    }
+
+    /* Simple SVG-style people + book using CSS */
+    .book-stack {
+      position: relative;
+      width: 160px;
+      height: 120px;
+    }
+
+    .book {
+      position: absolute;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .book-main {
+      bottom: 0; left: 10px;
+      width: 130px; height: 85px;
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    .book-main::after {
+      content: '';
+      position: absolute;
+      top: 6px; left: 50%;
+      transform: translateX(-50%);
+      width: 2px; height: 78%;
+      background: rgba(255,255,255,0.35);
+    }
+
+    .book-small {
+      bottom: 80px; left: 0;
+      width: 55px; height: 14px;
+      background: #e74c3c;
+      transform: rotate(-8deg);
+    }
+
+    .book-small2 {
+      bottom: 92px; left: 6px;
+      width: 50px; height: 12px;
+      background: #3498db;
+      transform: rotate(-5deg);
+    }
+
+    /* person figures */
+    .person {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .p-head {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: #f4a261;
+    }
+
+    .p-body {
+      width: 24px; height: 32px;
+      border-radius: 4px 4px 0 0;
+      margin-top: 2px;
+    }
+
+    .person-a { bottom: 85px; left: -10px; }
+    .person-a .p-body { background: #1a73e8; }
+
+    .person-b { bottom: 75px; right: -10px; }
+    .person-b .p-head { background: #2980b9; }
+    .person-b .p-body { background: #2980b9; }
+
+    /* floating icons */
+    .float-icon {
+      position: absolute;
+      font-size: 18px;
+    }
+
+    .fi-wifi { top: 0; left: 60px; color: #e8503a; }
+    .fi-box  { top: -10px; left: 100px;
+               width: 22px; height: 22px;
+               background: #e74c3c; border-radius: 4px;
+               display: flex; align-items: center; justify-content: center;
+               color: #fff; font-size: 11px; font-weight: 700; }
+
+    /* ── BUTTONS — centered column ── */
+    .buttons-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 56px;
+    }
+
+    .drive-row {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">National Educational Cycle (NEC)</div>
+    <ul class="sidebar-nav">
+      <li><a href="/nec-quizzes">NEC Quizzes</a></li>
+      <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
+      <li><a href="/incoming-global-talent-1">Incoming Global Talent</a></li>
+      <li><a href="/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
+      <li class="active"><span>Business to Customer</span></li>
+      <li><a href="/talent-management-1">Talent Management</a></li>
+      <li><a href="/finance-1">Finance</a></li>
+      <li><a href="/local-committee-president">Local Committee President</a></li>
+      <li><a href="/leaders-101-1">Leaders 101</a></li>
+      <li><a href="/data-management">Data Management</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <h1 class="page-title">National Education Cycle - B2C</h1>
+    <p class="page-intro">
+      Hello B2C! Welcome to our NEC!<br><br>
+      Here you will find what you need to know for our Business to Customer portfolio! Learning about what the portfolio is about, our brand, and general information on activities.<br><br>
+      Our NEC is renewed and how it will be delivered will be different. Talk to your VP to know how your team will be completing it and complete the quiz at the end.
+    </p>
+
+    <!-- Hero -->
+    <div class="hero-section">
+      <div class="hero-text-wrap">
+        <span class="banner-line-light">Business</span>
+        <span class="banner-line-light">to</span>
+        <span class="banner-line-teal">Costumer</span>
+        <div class="illuminate-label">MC Illuminate</div>
+      </div>
+
+      <!-- Teal blob -->
+      <div class="hero-blob"></div>
+
+      <!-- Illustration -->
+      <div class="hero-illus">
+        <div class="book-stack" style="position:relative;">
+          <!-- floating icons -->
+          <span class="float-icon fi-wifi">📶</span>
+          <div class="float-icon fi-box">▪</div>
+          <!-- persons -->
+          <div class="person person-a">
+            <div class="p-head"></div>
+            <div class="p-body"></div>
+          </div>
+          <div class="person person-b">
+            <div class="p-head"></div>
+            <div class="p-body"></div>
+          </div>
+          <!-- books -->
+          <div class="book book-small2"></div>
+          <div class="book book-small"></div>
+          <div class="book book-main"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEC buttons — centered -->
+    <div class="buttons-section">
+      <a href="https://docs.google.com/presentation/d/1paYwUlerOri8hqZ09nebSpyVst0KMvt6q6apnk5FELc/edit?usp=share_link"
+         target="_blank" class="btn-pill btn-red">NEC Instructions</a>
+      <a href="https://docs.google.com/spreadsheets/d/17m6np6utmVRmzKuhBnJWlA6MCEbrcrOKZC8GZ0P3QKQ/edit?usp=share_link"
+         target="_blank" class="btn-pill btn-red">NEC Agenda</a>
+      <a href="https://drive.google.com/drive/folders/1BYrXPgHzK4XZeB-Qq4ZjSUbr3Vwrgpdb"
+         target="_blank" class="btn-pill btn-red">NEC Materials</a>
+      <a href="https://forms.gle/kCpnkyQLR6qxzHrg8"
+         target="_blank" class="btn-pill btn-red">NEC Quiz</a>
+    </div>
+
+    <!-- B2C Drive -->
+    <div class="drive-row">
+      <a href="https://docs.google.com/presentation/d/1QSKhec68OTmsIdpTxEx6yTUWS4bUTM2ueij7mcZpPWA/edit#slide=id.g1c2336d5088_0_272"
+         target="_blank" class="btn-pill btn-blue" style="padding:18px 60px; font-size:11px; letter-spacing:0.14em;">
+        Click Here to Access the B2C Drive!
+      </a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+{{end}}

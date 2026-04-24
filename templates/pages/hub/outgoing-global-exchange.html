@@ -1,0 +1,459 @@
+{{define "content"}}
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      padding: 48px 28px;
+      background: #fff;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #1a73e8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-nav li a,
+    .sidebar-nav li span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    /* ── MAIN ── */
+    .main-content {
+      flex: 1;
+      padding: 52px 60px;
+      overflow: hidden;
+    }
+
+    /* ── SHARED BUTTONS ── */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 38px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-pill:hover { filter: brightness(0.88); transform: translateY(-2px); }
+    .btn-red  { background: #e8503a; color: #fff; }
+    .btn-blue { background: #1a73e8; color: #fff; }
+
+    /* ── PAGE TITLE & INTRO ── */
+    .page-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #222;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .page-intro {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.75;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* ── HERO: big "Outgoing" text left, teal blob top-right, NEC buttons right ── */
+    .hero-section {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 64px;
+      position: relative;
+      min-height: 340px;
+    }
+
+    .hero-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner-text {
+      font-size: 76px;
+      font-weight: 800;
+      color: #00bcd4;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    .illuminate-label {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    .illuminate-label .lighthouse {
+      font-size: 22px;
+    }
+
+    /* Teal blob top-right */
+    .hero-blob {
+      position: absolute;
+      top: -10px;
+      right: -60px;
+      width: 260px;
+      height: 300px;
+      background: linear-gradient(145deg, #3ecfbe 0%, #1a8fd1 60%, #0d6ebd 100%);
+      border-radius: 50% 40% 55% 42% / 48% 52% 44% 56%;
+      z-index: 0;
+    }
+
+    /* NEC buttons right column */
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding-top: 180px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 36px;
+    }
+
+    /* ── BLOB + BUTTONS ROW ── */
+    /* buttons LEFT, blob RIGHT (Leading OGX) */
+    .blob-section {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .blob-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .blob-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      flex-shrink: 0;
+    }
+
+    /* blob card */
+    .blob-card {
+      position: relative;
+      width: 280px;
+      height: 260px;
+      flex-shrink: 0;
+    }
+
+    /* back blob */
+    .blob-back {
+      position: absolute;
+      border-radius: 55% 45% 60% 40% / 50% 55% 45% 50%;
+    }
+
+    /* blue-teal back for Leading OGX */
+    .blob-card.ogx-leading .blob-back {
+      bottom: 0;
+      right: 8px;
+      width: 220px;
+      height: 200px;
+      background: #1a3fd4;
+    }
+
+    /* orange-red back for Policies */
+    .blob-card.ogx-policy .blob-back {
+      bottom: 0;
+      right: 16px;
+      width: 200px;
+      height: 185px;
+      background: #e04020;
+      border-radius: 50% 45% 55% 42% / 48% 52% 44% 56%;
+    }
+
+    /* front blob */
+    .blob-front {
+      position: absolute;
+      border-radius: 50% 45% 55% 42% / 52% 48% 56% 44%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .blob-card.ogx-leading .blob-front {
+      top: 14px;
+      left: 0;
+      width: 220px;
+      height: 195px;
+      background: linear-gradient(135deg, #3ecfbe 0%, #1a8fd1 55%, #1a4ecc 100%);
+    }
+
+    .blob-card.ogx-policy .blob-front {
+      top: 14px;
+      left: 0;
+      width: 205px;
+      height: 185px;
+      background: linear-gradient(135deg, #f5a623 0%, #e8503a 50%, #c0392b 100%);
+      border-radius: 50% 48% 52% 44% / 50% 50% 50% 50%;
+    }
+
+    .blob-front span {
+      color: #fff;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .blob-front span .light {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .blob-front span .bold {
+      display: block;
+      font-size: 18px;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    /* dashed border */
+    .blob-dashed {
+      position: absolute;
+      top: 2px;
+      left: 14px;
+      width: 224px;
+      height: 224px;
+      border: 2px dashed rgba(0,0,0,0.15);
+      border-radius: 50% 45% 55% 42% / 52% 48% 56% 44%;
+      pointer-events: none;
+    }
+
+    /* decorative elements */
+    .deco { position: absolute; }
+    .deco.plus-tl  { top: 4px;  left: 6px;  font-size: 20px; color: #999; font-weight: 300; }
+    .deco.plus-br  { bottom: 20px; right: 0; font-size: 22px; color: #999; font-weight: 300; }
+    .deco.dot      { bottom: 38px; right: 14px; width: 7px; height: 7px; background: #333; border-radius: 50%; }
+    .deco.circle   { bottom: 10px; right: 8px;  width: 16px; height: 16px; border: 2px solid #999; border-radius: 50%; }
+
+    /* caption below blob */
+    .blob-caption {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 230px;
+    }
+
+    .blob-caption .cap-main {
+      font-size: 16px;
+      font-weight: 800;
+      color: #222;
+      line-height: 1.3;
+    }
+
+    .blob-caption .cap-sub {
+      font-size: 13px;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    /* ── DRIVE BUTTON ── */
+    .drive-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 52px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">National Educational Cycle (NEC)</div>
+    <ul class="sidebar-nav">
+      <li><a href="/nec-quizzes">NEC Quizzes</a></li>
+      <li><a href="/gdpr-nec-content">GDPR &amp; ECB</a></li>
+      <li><a href="/incoming-global-talent-1">Incoming Global Talent</a></li>
+      <li class="active"><span>Outgoing Global Exchange (GV, GTa and GTe)</span></li>
+      <li><a href="/b2c-1">Business to Customer</a></li>
+      <li><a href="/talent-management-1">Talent Management</a></li>
+      <li><a href="/finance-1">Finance</a></li>
+      <li><a href="/local-committee-president">Local Committee President</a></li>
+      <li><a href="/leaders-101-1">Leaders 101</a></li>
+      <li><a href="/data-management">Data Management</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <h1 class="page-title">National Education Cycle - oGX</h1>
+    <p class="page-intro">
+      Hello oGX! Welcome to our NEC!<br><br>
+      Here you will learn the basics of your portfolio to start performing! You will check content for oGX, oGV and/or oGT.<br><br>
+      Our NEC is renewed and how it will be delivered will be different. Talk to your VP to know how your team will be completing it and complete the quiz at the end.<br><br>
+      At the end, you will see sessions for oGX policies. Make sure you go through them as they are still applicable for our EPs.
+    </p>
+
+    <!-- HERO: "Outgoing" big text + teal blob top right + NEC buttons -->
+    <div class="hero-section">
+      <div class="hero-left">
+        <div class="banner-text">Outgoing</div>
+        <div class="illuminate-label">
+          <span class="lighthouse">🏛</span> MC Illuminate
+        </div>
+      </div>
+
+      <div class="hero-blob"></div>
+
+      <div class="hero-buttons">
+        <a href="https://docs.google.com/presentation/d/1jePKw3fYplVC3omIB_hvZyPYO0ViAlgdDNdnrFQTwY8/edit?usp=share_link"
+           target="_blank" class="btn-pill btn-red">NEC Instructions</a>
+        <a href="https://docs.google.com/spreadsheets/d/1fj8CLL9YiyMnshZTcYLsRdS0mENRKj8WxfyzJ_swuAM/edit?usp=share_link"
+           target="_blank" class="btn-pill btn-red">NEC Agenda</a>
+        <a href="https://drive.google.com/drive/folders/1k7SeZKjFDoWNPPnIqCM46K4N3COeBNQD"
+           target="_blank" class="btn-pill btn-red">NEC Materials</a>
+        <a href="https://forms.gle/n1zKbn2eiLtdkB3Z7"
+           target="_blank" class="btn-pill btn-red">NEC Quiz</a>
+      </div>
+    </div>
+
+    <!-- Leading OGX Basics: buttons LEFT, blob RIGHT -->
+    <h2 class="section-title">Leading OGX Basics (for TLs/VPs)</h2>
+    <div class="blob-section">
+      <div class="blob-buttons">
+        <a href="https://youtu.be/KDDkfO2UrcA" target="_blank" class="btn-pill btn-red">Performance Management</a>
+        <a href="https://youtu.be/2BMQCNKOf4c" target="_blank" class="btn-pill btn-red">EXPA Analytics</a>
+        <a href="https://youtu.be/anDTP_fSOAQ" target="_blank" class="btn-pill btn-red">LC2LC IR Basics</a>
+      </div>
+
+      <div style="position:relative; padding-bottom: 60px;">
+        <div class="blob-card ogx-leading">
+          <div class="blob-back"></div>
+          <div class="blob-dashed"></div>
+          <div class="blob-front">
+            <span>
+              <span class="light">Leading</span>
+              <span class="bold">OGX Basics</span>
+            </span>
+          </div>
+          <span class="deco plus-tl">+</span>
+          <span class="deco plus-br">+</span>
+          <span class="deco dot"></span>
+          <span class="deco circle"></span>
+        </div>
+        <div class="blob-caption">
+          <div class="cap-main">Basics to Lead an OGX Portfolio</div>
+          <div class="cap-sub">Applicable to all of OGX</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- OGX Policies: blob LEFT, buttons RIGHT -->
+    <h2 class="section-title">OGX Policies</h2>
+    <div class="blob-section">
+      <div style="position:relative; padding-bottom: 60px;">
+        <div class="blob-card ogx-policy">
+          <div class="blob-back"></div>
+          <div class="blob-dashed"></div>
+          <div class="blob-front">
+            <span>
+              <span class="light">Global Volunteer</span>
+              <span class="bold">Program Policy</span>
+            </span>
+          </div>
+          <span class="deco plus-tl">+</span>
+          <span class="deco plus-br">+</span>
+          <span class="deco dot"></span>
+          <span class="deco circle"></span>
+        </div>
+        <div class="blob-caption">
+          <div class="cap-main">Policies and Procedures to Keep Our EPs Safe</div>
+        </div>
+      </div>
+
+      <div class="blob-buttons">
+        <a href="https://www.youtube.com/watch?feature=youtu.be&v=earyZvfrVDU" target="_blank" class="btn-pill btn-red">EP Contracts</a>
+        <a href="https://youtu.be/v_IHpP1Tavk" target="_blank" class="btn-pill btn-red">COVID-19 Guidelines</a>
+        <a href="https://youtu.be/PnmkUMg9wf8" target="_blank" class="btn-pill btn-red">GV Minimums</a>
+      </div>
+    </div>
+
+    <!-- oGX Drive -->
+    <div class="drive-row">
+      <a href="https://drive.google.com/drive/u/0/folders/1NQ40M1_26ub6KbruJDmjyquhgaVECoKT"
+         target="_blank" class="btn-pill btn-blue" style="padding: 18px 60px; font-size: 11px; letter-spacing: 0.14em;">
+        Click Here to Access All the oGX Drive
+      </a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+
+{{end}}

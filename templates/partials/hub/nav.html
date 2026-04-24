@@ -1,0 +1,273 @@
+{{define "nav"}}
+<header class="hub-header" id="hubHeader">
+  <nav class="hub-nav">
+
+    <a href="/hub" class="hub-nav__logo">
+      <img src="/static/images/aiesec-logo.png" alt="AIESEC Canada" />
+    </a>
+
+    <button class="hub-nav__burger" onclick="toggleHubMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="hub-nav__links" id="hubMobileMenu">
+
+      <li class="hub-nav__item">
+        <a href="/hub" class="hub-nav__link {{if .NavActive}}{{if eq .NavActive "home"}}hub-nav__link--active{{end}}{{end}}">HOME</a>
+      </li>
+
+      <li class="hub-nav__item hub-nav__item--dropdown">
+        <span class="hub-nav__link {{if .NavActive}}{{if eq .NavActive "resources"}}hub-nav__link--active{{end}}{{end}}">
+          RESOURCES <span class="hub-nav__caret">&#9660;</span>
+        </span>
+        <ul class="hub-nav__dropdown">
+          <li><a href="/hub/ogv">Outgoing Global Volunteer</a></li>
+          <li><a href="/hub/ogt">Outgoing Global Talent</a></li>
+          <li><a href="/hub/incoming-global-talent">Incoming Global Talent</a></li>
+          <li><a href="/hub/talentmanagement">Talent Management</a></li>
+          <li><a href="/hub/organizingcommittee">Organizing Committee</a></li>
+        </ul>
+      </li>
+
+      <li class="hub-nav__item hub-nav__item--dropdown">
+        <span class="hub-nav__link {{if .NavActive}}{{if eq .NavActive "nec"}}hub-nav__link--active{{end}}{{end}}">
+          NATIONAL EDUCATIONAL CYCLE <span class="hub-nav__caret">&#9660;</span>
+        </span>
+        <ul class="hub-nav__dropdown">
+          <li><a href="/hub/nec-quizzes">NEC Quizzes</a></li>
+          <li><a href="/hub/gdpr-nec-content">GDPR &amp; ECB</a></li>
+          <li><a href="/hub/incoming-global-talent-nec">Incoming Global Talent</a></li>
+          <li><a href="/hub/outgoing-global-exchange">Outgoing Global Exchange (GV, GTa and GTe)</a></li>
+          <li><a href="/hub/b2c">Business to Customer</a></li>
+          <li><a href="/hub/talent-management-nec">Talent Management</a></li>
+          <li><a href="/hub/finance">Finance</a></li>
+          <li><a href="/hub/local-committee-president">Local Committee President</a></li>
+          <li><a href="/hub/leaders-101">Leaders 101</a></li>
+          <li><a href="/hub/data-management">Data Management</a></li>
+        </ul>
+      </li>
+
+      <li class="hub-nav__item hub-nav__item--dropdown">
+        <span class="hub-nav__link {{if .NavActive}}{{if eq .NavActive "hubs"}}hub-nav__link--active{{end}}{{end}}">
+          HUBS <span class="hub-nav__caret">&#9660;</span>
+        </span>
+        <ul class="hub-nav__dropdown">
+          <li><a href="/hub/lcp-hub">CEO Hub</a></li>
+          <li><a href="http://www.aies.ec/" target="_blank" rel="noopener">Global Hub</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1MGt3oGXqzh9hJ-A2ngHev6V0lZ9I6Q8r?usp=sharing" target="_blank" rel="noopener">Conference Hub</a></li>
+        </ul>
+      </li>
+
+      <li class="hub-nav__item hub-nav__item--dropdown">
+        <span class="hub-nav__link {{if .NavActive}}{{if eq .NavActive "conference"}}hub-nav__link--active{{end}}{{end}}">
+          CONFERENCE OUTPUT <span class="hub-nav__caret">&#9660;</span>
+        </span>
+        <ul class="hub-nav__dropdown">
+          <li><a href="/hub/conference-overview">Conference Overview</a></li>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1SXtMlCwpY0UsrYav7s-p4HyCsRQcZe0f" target="_blank" rel="noopener">NC 2024 Output</a></li>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1J_-g2low-x29n7-o7JIaSbi1LGhBphSK" target="_blank" rel="noopener">ORC 2023</a></li>
+          <li><a href="https://drive.google.com/drive/u/0/folders/1cVuaIvssdJBGlNsacJped34eTZAbmVYQ" target="_blank" rel="noopener">NLDC 2023 Output</a></li>
+          <li><a href="https://drive.google.com/drive/u/0/folders/1IxxfsZ-5ct2QekyIgOHfm-K9XUEG9IV4" target="_blank" rel="noopener">NC 2023 Output</a></li>
+          <li><a href="https://drive.google.com/drive/u/0/folders/1myb5Z21xj6jgu0uTi7hZipFWSMG0mo-A" target="_blank" rel="noopener">Summer Leadership Camp Output</a></li>
+          <li><a href="https://drive.google.com/drive/u/0/folders/1RDzHyrzSV6_YAFQ69ssXzfeVfG5-eMFU" target="_blank" rel="noopener">NSDC 2022 Output</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1S4mSKvsUpBS9GiEd-CCCWLMcKUc173yG?usp=sharing" target="_blank" rel="noopener">NC 2022 Output</a></li>
+          <li><a href="/hub/youth-leadership-launch">Youth Leadership Launch Content</a></li>
+          <li><a href="https://drive.google.com/drive/u/0/folders/1z7--jX1BNBOwLfW3ow2mtwRxTsBVM8RV" target="_blank" rel="noopener">Historical Conference Output</a></li>
+          <li><a href="https://drive.google.com/drive/u/0/folders/16ujeFpVnjaBw36ylD-T154iqO_kZcSAR" target="_blank" rel="noopener">August NPM 2024</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .hub-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #2e2e2e;
+  }
+
+  .hub-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+  }
+
+  .hub-nav__logo img {
+    height: 40px;
+    display: block;
+  }
+
+  .hub-nav__links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hub-nav__item {
+    position: relative;
+  }
+
+  .hub-nav__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.5rem 0.8rem;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    transition: color 0.2s;
+  }
+
+  .hub-nav__link--active {
+    color: #e85d26;
+  }
+
+  .hub-nav__link:hover {
+    color: #e85d26;
+  }
+
+  .hub-nav__caret {
+    font-size: 0.5rem;
+    opacity: 0.6;
+    margin-left: 2px;
+  }
+
+  /* Dropdown */
+  .hub-nav__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a1a;
+    min-width: 260px;
+    list-style: none;
+    margin: 0;
+    padding: 0.4rem 0;
+    border-top: 2px solid #e85d26;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index: 200;
+  }
+
+  .hub-nav__item--dropdown:hover .hub-nav__dropdown {
+    display: block;
+  }
+
+  .hub-nav__dropdown li a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    color: #bbb;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .hub-nav__dropdown li a:hover {
+    background: #242424;
+    color: #fff;
+  }
+
+  /* Burger */
+  .hub-nav__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .hub-nav__burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 960px) {
+    .hub-nav__burger {
+      display: flex;
+    }
+
+    .hub-nav__links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      background: #2e2e2e;
+      padding: 0.5rem 0 1rem;
+    }
+
+    .hub-nav__links.open {
+      display: flex;
+    }
+
+    .hub-nav__item {
+      width: 100%;
+    }
+
+    .hub-nav__link {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.7rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .hub-nav__dropdown {
+      position: static;
+      display: none;
+      border-top: none;
+      border-left: 2px solid #e85d26;
+      margin-left: 1.5rem;
+      box-shadow: none;
+      background: #222;
+      min-width: unset;
+    }
+
+    .hub-nav__item--dropdown.open .hub-nav__dropdown {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  function toggleHubMenu() {
+    var menu = document.getElementById('hubMobileMenu');
+    if (menu) menu.classList.toggle('open');
+  }
+
+  // Mobile: tap dropdown parents to toggle
+  document.querySelectorAll('.hub-nav__item--dropdown > .hub-nav__link').forEach(function (el) {
+    el.addEventListener('click', function () {
+      if (window.innerWidth <= 960) {
+        var parent = el.parentElement;
+        document.querySelectorAll('.hub-nav__item--dropdown').forEach(function (item) {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      }
+    });
+  });
+</script>
+{{end}}
