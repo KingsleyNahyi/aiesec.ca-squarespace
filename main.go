@@ -138,18 +138,19 @@ func main() {
 		renderPage(w, "safety-policy.html", nil)
 	})
 
-//http.HandleFunc("/hub", func(w http.ResponseWriter, r *http.Request) {
-//	renderPage(w, "hub/index.html", map[string]interface{}{
-// 		"Title": "Hub",
-// 	})
-// })
+http.HandleFunc("/hub", func(w http.ResponseWriter, r *http.Request) {
+	renderPage(w, "hub/index.html", map[string]interface{}{
+		"Title": "Hub",
+	})
+ })
 
-// http.HandleFunc("/hub/", func(w http.ResponseWriter, r *http.Request) {
-// 	page := strings.TrimPrefix(r.URL.Path, "/hub/")
-// 	renderPage(w, "hub/"+page+".html", map[string]interface{}{
-// 		"Title": "Hub",
-// 	})
-// })
+http.HandleFunc("/hub/", func(w http.ResponseWriter, r *http.Request) {
+	page := strings.TrimPrefix(r.URL.Path, "/hub/")
+	renderPage(w, "hub/" +page+".html", map[string]interface{}{
+	"Title": "Hub",
+	})
+})
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
