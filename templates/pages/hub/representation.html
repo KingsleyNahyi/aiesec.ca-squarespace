@@ -1,0 +1,52 @@
+{{define "content"}}
+  <title>Representation — AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; }
+
+    .page-wrapper { display: flex; min-height: 100vh; padding-top: 110px; }
+
+    .sidebar { width: 240px; flex-shrink: 0; padding: 48px 28px; background: #fff; }
+    .sidebar-title { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; color: #1a73e8; margin-bottom: 20px; line-height: 1.4; }
+    .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .sidebar-nav li a, .sidebar-nav li span { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; text-decoration: none; transition: color 0.2s; }
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    .main-content { flex: 1; padding: 52px 80px; }
+
+    .hub-row { display: flex; gap: 60px; align-items: flex-start; }
+    .hub-left { flex: 1; }
+    .hub-left h1 { font-size: 28px; font-weight: 800; color: #222; margin-bottom: 20px; }
+    .hub-left p { font-size: 16px; color: #555; line-height: 1.7; }
+
+    .hub-right { flex-shrink: 0; width: 420px; display: flex; flex-direction: column; gap: 16px; }
+    .hub-right img { width: 100%; height: auto; display: block; border-radius: 6px; }
+  </style>
+
+<div class="page-wrapper">
+  <aside class="sidebar">
+    <div class="sidebar-title">CEO Hub</div>
+    <ul class="sidebar-nav">
+      <li><a href="/hub/leadership">Leadership</a></li>
+      <li><a href="/hub/management">Management</a></li>
+      <li class="active"><span>Representation</span></li>
+      <li><a href="/hub/get-inspired">Get Inspired</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <div class="hub-row">
+      <div class="hub-left">
+        <h1>Representation</h1>
+        <p>First, in order to maintain AIESEC's brand we need to ensure that all entities are following the Blue Book. Second, that all entities are aligning operations with the A2025 roadmap. Third, national legislation is the way that we move our entity forward. And fourth, the best way to stay up to date on the global direction is to attend conferences.</p>
+      </div>
+      <div class="hub-right">
+        <img src="/static/images/representation-1.webp" alt="Representation slide 1">
+        <img src="/static/images/representation-2.webp" alt="Representation slide 2">
+        <img src="/static/images/representation-3.webo" alt="Representation slide 3">
+      </div>
+    </div>
+  </main>
+</div>
+{{end}}

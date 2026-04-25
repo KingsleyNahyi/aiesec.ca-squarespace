@@ -1,5 +1,5 @@
 {{define "nav"}}
-<header class="hub-header" id="hubHeader">
+<header class="hub-header {{if .TransparentNav}}hub-header--transparent{{end}}" id="hubHeader">
   <nav class="hub-nav">
 
     <a href="/hub" class="hub-nav__logo">
@@ -89,6 +89,18 @@
     width: 100%;
     z-index: 100;
     background: #2e2e2e;
+    transition: background 0.3s;
+  }
+
+  /* ── Transparent variant for home page ── */
+  .hub-header--transparent {
+    background: transparent;
+  }
+
+  /* When transparent, burger bars stay white (they already are) */
+  /* When transparent and dropdown opens on mobile, give it a background */
+  .hub-header--transparent .hub-nav__links.open {
+    background: rgba(0, 0, 0, 0.85);
   }
 
   .hub-nav {

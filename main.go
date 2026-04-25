@@ -145,10 +145,12 @@ func main() {
 	})
 
 http.HandleFunc("/hub", func(w http.ResponseWriter, r *http.Request) {
-	renderPage(w, "hub/index.html", map[string]interface{}{
-		"Title": "Hub",
-	})
- })
+    renderPage(w, "hub/index.html", map[string]interface{}{
+        "Title":          "Hub",
+        "TransparentNav": true,
+        "NavActive":      "home",
+    })
+})
 
 http.HandleFunc("/hub/", func(w http.ResponseWriter, r *http.Request) {
 	page := strings.TrimPrefix(r.URL.Path, "/hub/")

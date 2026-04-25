@@ -1,0 +1,230 @@
+{{define "content"}}
+  <title>AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    /* ── TRANSPARENT NAV OVERRIDE ── */
+    /* This page needs the fixed nav to be transparent over the hero.
+       Add class="nav-transparent" to your <nav> in base.html when
+       {{.TransparentNav}} is true, then style it here. */
+    nav.nav-transparent {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    nav.nav-transparent a,
+    nav.nav-transparent .nav-link {
+      color: #fff !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      /* darken the photo so white text is legible */
+      filter: brightness(0.55);
+    }
+
+    .hero-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .hero-text h1 {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .hero-text p {
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    /* ── BELOW HERO ── */
+    .below-hero {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* ── SEARCH BAR ── */
+    .search-wrap {
+      position: relative;
+      margin-bottom: 60px;
+    }
+
+    .search-wrap input {
+      width: 100%;
+      padding: 18px 20px 18px 52px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 17px;
+      color: #555;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-wrap input:focus { border-color: #999; }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ── INTERNAL USE ROW ── */
+    .internal-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .internal-text {
+      flex: 1;
+      text-align: center;
+    }
+
+    .internal-text p {
+      font-size: 22px;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .internal-text p em {
+      font-style: italic;
+    }
+
+    .aiesec-preview {
+      flex-shrink: 0;
+      width: 480px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+
+    .aiesec-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── SHOW ME BUTTON ── */
+    .btn-blue {
+      display: inline-block;
+      padding: 14px 40px;
+      border-radius: 50px;
+      background: #1a73e8;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-blue:hover { filter: brightness(0.88); transform: translateY(-2px); }
+
+    /* ── 3 BIG DARK BUTTONS ── */
+    .nav-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .nav-btn:hover { background: #333; }
+
+    /* Conference Output spans full width */
+    .nav-btn.full-width {
+      grid-column: 1 / -1;
+    }
+  </style>
+
+  <!-- Hero: full-bleed image with text overlay -->
+  <div class="hero">
+    <img src="/static/images/homepage-banner.webp" alt="AIESEC Canada group photo">
+    <div class="hero-text">
+      <h1>AIESEC Canada</h1>
+      <p>Resources Hub</p>
+    </div>
+  </div>
+
+  <!-- Below hero -->
+  <div class="below-hero">
+
+    <!-- Search bar -->
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+      </svg>
+      <input type="text" placeholder="Search">
+    </div>
+
+    <!-- Internal use blurb + aiesec.ca preview -->
+    <div class="internal-row">
+      <div class="internal-text">
+        <p>This site is for <em>internal use</em> only. If you want to learn more about our products and services, refer to our website:</p>
+        <a href="https://www.aiesec.ca/" target="_blank" class="btn-blue">Show Me</a>
+      </div>
+      <div class="aiesec-preview">
+        <img src="/static/images/homepagewebp.webp" alt="We are AIESEC in Canada">
+      </div>
+    </div>
+
+    <!-- 3 nav buttons -->
+    <div class="nav-buttons">
+      <a href="/nec-quizzes" class="nav-btn">NEC Quizzes</a>
+      <a href="/resources" class="nav-btn">Resources</a>
+      <a href="/conference-overview" class="nav-btn full-width">Conference Output</a>
+    </div>
+
+  </div>
+
+{{end}}

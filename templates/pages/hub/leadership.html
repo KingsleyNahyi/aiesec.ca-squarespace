@@ -1,0 +1,65 @@
+{{define "content"}}
+  <title>Leadership — AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; }
+
+    .page-wrapper { display: flex; min-height: 100vh; padding-top: 110px; }
+
+    .sidebar { width: 240px; flex-shrink: 0; padding: 48px 28px; background: #fff; }
+    .sidebar-title { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; color: #1a73e8; margin-bottom: 20px; line-height: 1.4; }
+    .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .sidebar-nav li a,
+    .sidebar-nav li span { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; text-decoration: none; transition: color 0.2s; }
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    .main-content { flex: 1; padding: 40px 60px; }
+
+    .hero-img { width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 20px; }
+    .hero-img img { width: 100%; height: auto; display: block; }
+
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 48px; }
+    .img-pair img { width: 100%; height: auto; display: block; border-radius: 6px; }
+
+    .section-title { font-size: 26px; font-weight: 800; color: #222; margin-bottom: 24px; }
+
+    .resource-card { display: block; text-decoration: none; color: #333; }
+    .resource-card img { width: 100%; height: auto; display: block; border-radius: 6px; margin-bottom: 16px; transition: opacity 0.2s; }
+    .resource-card:hover img { opacity: 0.88; }
+    .resource-card p { font-size: 16px; color: #555; line-height: 1.7; }
+    .resource-card strong { color: #222; }
+  </style>
+
+<div class="page-wrapper">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">CEO Hub</div>
+    <ul class="sidebar-nav">
+      <li class="active"><span>Leadership</span></li>
+      <li><a href="/hub/management">Management</a></li>
+      <li><a href="/hub/representation">Representation</a></li>
+      <li><a href="/hub/get-inspired">Get Inspired</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+
+    <div class="hero-img">
+      <img src="/static/images/leadership-image-1.webp" alt="Leadership">
+    </div>
+
+    <div class="img-pair">
+      <img src="/static/images/leadership-image-2.webp" alt="Leadership — How do you do it?">
+      <img src="/static/images/leadership-image-3.webp" alt="Leadership Checklist">
+    </div>
+
+    <h2 class="section-title">Leadership Resources:</h2>
+    <a href="/static/files/Team-Onboarding.pdf" target="_blank" class="resource-card">
+      <img src="/static/images/leadership-image-4.webp" alt="Team Onboarding">
+      <p><strong>Did you know? 22% of turnover happens within the first 45 days.</strong> In order to ensure that the transition process is smooth in the first 90 days of your new VP's experience use external tools &amp; resources to better understand your team. The forming stage is crucial so ensure you're doing a lot of planning!</p>
+    </a>
+
+  </main>
+</div>
+{{end}}

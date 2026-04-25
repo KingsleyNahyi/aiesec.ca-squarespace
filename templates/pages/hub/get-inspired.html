@@ -1,0 +1,63 @@
+{{define "content"}}
+  <title>Get Inspired — AIESEC Canada Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; }
+
+    .page-wrapper { display: flex; min-height: 100vh; padding-top: 110px; }
+
+    .sidebar { width: 240px; flex-shrink: 0; padding: 48px 28px; background: #fff; }
+    .sidebar-title { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; color: #1a73e8; margin-bottom: 20px; line-height: 1.4; }
+    .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .sidebar-nav li a,
+    .sidebar-nav li span { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; text-decoration: none; transition: color 0.2s; }
+    .sidebar-nav li a:hover { color: #555; }
+    .sidebar-nav li.active span { color: #111; font-weight: 800; }
+
+    .main-content { flex: 1; padding: 40px 60px; display: flex; flex-direction: column; gap: 20px; }
+
+    /* Full-width images */
+    .full-img img { width: 100%; height: auto; display: block; border-radius: 6px; }
+
+    /* Last two side by side */
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .img-pair img { width: 100%; height: auto; display: block; border-radius: 6px; }
+
+    /* YouTube embeds */
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  </style>
+
+<div class="page-wrapper">
+
+  <aside class="sidebar">
+    <div class="sidebar-title">CEO Hub</div>
+    <ul class="sidebar-nav">
+      <li><a href="/hub/leadership">Leadership</a></li>
+      <li><a href="/hub/management">Management</a></li>
+      <li><a href="/hub/representation">Representation</a></li>
+      <li class="active"><span>Get Inspired</span></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- 4 full-width images stacked -->
+    <div class="full-img"><img src="/static/images/get-inspired.webp" alt="Get Inspired"></div>
+    <div class="full-img"><img src="/static/images/get-inspired-2.webp" alt="Get Inspired"></div>
+    <div class="full-img"><img src="/static/images/get-inspired-3.webp" alt="Get Inspired"></div>
+    <div class="full-img"><img src="/static/images/get-inspired-4.webp" alt="Get Inspired"></div>
+
+    <!-- 2 YouTube iframes side by side -->
+    <div class="img-pair">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/PY_kd46RfVE" title="Dare to disagree | Margaret Heffernan" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/GXy__kBVq1M" title="TEDxBloomington - Shawn Achor" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </main>
+</div>
+{{end}}
