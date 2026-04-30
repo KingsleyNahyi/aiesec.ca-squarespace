@@ -9,10 +9,6 @@
       color: #333;
     }
 
-    /* ── TRANSPARENT NAV OVERRIDE ── */
-    /* This page needs the fixed nav to be transparent over the hero.
-       Add class="nav-transparent" to your <nav> in base.html when
-       {{.TransparentNav}} is true, then style it here. */
     nav.nav-transparent {
       background: transparent !important;
       box-shadow: none !important;
@@ -37,7 +33,6 @@
       object-fit: cover;
       object-position: center;
       display: block;
-      /* darken the photo so white text is legible */
       filter: brightness(0.55);
     }
 
@@ -85,6 +80,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 17px;
+      font-family: inherit;
       color: #555;
       outline: none;
       transition: border-color 0.2s;
@@ -100,6 +96,87 @@
       color: #999;
       width: 20px;
       height: 20px;
+      pointer-events: none;
+    }
+
+    /* ── SEARCH DROPDOWN ── */
+    .hub-search-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0; right: 0;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      z-index: 999;
+      overflow: hidden;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+
+    .hub-search-dropdown.open { display: block; }
+
+    .hub-search-result {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      border-bottom: 1px solid #f5f5f5;
+      transition: background 0.12s;
+    }
+
+    .hub-search-result:last-child { border-bottom: none; }
+
+    .hub-search-result:hover,
+    .hub-search-result:focus { background: #f5f9ff; outline: none; }
+
+    .hub-result-section {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a73e8;
+      margin-bottom: 3px;
+    }
+
+    .hub-result-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 3px;
+    }
+
+    .hub-result-desc {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.45;
+    }
+
+    .hub-search-empty {
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .hub-search-footer {
+      padding: 8px 20px;
+      border-top: 1px solid #f0f0f0;
+      font-size: 10px;
+      color: #bbb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hub-search-footer kbd {
+      background: #f0f0f0;
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-size: 10px;
+      color: #666;
+      font-family: inherit;
+      margin: 0 1px;
     }
 
     /* ── INTERNAL USE ROW ── */
@@ -122,9 +199,7 @@
       margin-bottom: 28px;
     }
 
-    .internal-text p em {
-      font-style: italic;
-    }
+    .internal-text p em { font-style: italic; }
 
     .aiesec-preview {
       flex-shrink: 0;
@@ -156,7 +231,7 @@
     }
     .btn-blue:hover { filter: brightness(0.88); transform: translateY(-2px); }
 
-    /* ── 3 BIG DARK BUTTONS ── */
+    /* ── NAV BUTTONS ── */
     .nav-buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -181,13 +256,10 @@
 
     .nav-btn:hover { background: #333; }
 
-    /* Conference Output spans full width */
-    .nav-btn.full-width {
-      grid-column: 1 / -1;
-    }
+    .nav-btn.full-width { grid-column: 1 / -1; }
   </style>
 
-  <!-- Hero: full-bleed image with text overlay -->
+  <!-- Hero -->
   <div class="hero">
     <img src="/static/images/homepage-banner.webp" alt="AIESEC Canada group photo">
     <div class="hero-text">
@@ -200,11 +272,18 @@
   <div class="below-hero">
 
     <!-- Search bar -->
-    <div class="search-wrap">
+    <div class="search-wrap" id="hubSearchWrap">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
       </svg>
-      <input type="text" placeholder="Search">
+      <input
+        type="text"
+        id="hubSearchInput"
+        placeholder="Anything you need is just one search away!"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div id="hubSearchDropdown" class="hub-search-dropdown"></div>
     </div>
 
     <!-- Internal use blurb + aiesec.ca preview -->
@@ -218,7 +297,7 @@
       </div>
     </div>
 
-    <!-- 3 nav buttons -->
+    <!-- Nav buttons -->
     <div class="nav-buttons">
       <a href="/nec-quizzes" class="nav-btn">NEC Quizzes</a>
       <a href="/resources" class="nav-btn">Resources</a>
@@ -226,5 +305,81 @@
     </div>
 
   </div>
+
+<script src="/static/search-data.js"></script>
+<script src="/static/search-engine.js"></script>
+<script>
+(function () {
+  const input    = document.getElementById('hubSearchInput');
+  const dropdown = document.getElementById('hubSearchDropdown');
+
+  function esc(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function render(query) {
+    const q = query.trim();
+    if (q.length < 2) {
+      dropdown.classList.remove('open');
+      dropdown.innerHTML = '';
+      return;
+    }
+
+    const results = SearchEngine.search(q, 8);
+
+    if (results.length === 0) {
+      dropdown.innerHTML = `
+        <div class="hub-search-empty">
+          No results for "<strong>${esc(q)}</strong>" — try "OGX", "finance", "talent management"
+        </div>`;
+    } else {
+      dropdown.innerHTML =
+        results.map(({ page }) => `
+          <a href="${esc(page.url)}" class="hub-search-result">
+            <div class="hub-result-section">${esc(page.section)}</div>
+            <div class="hub-result-title">${esc(page.title)}</div>
+            <div class="hub-result-desc">${esc(page.description)}</div>
+          </a>
+        `).join('') +
+        `<div class="hub-search-footer">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate &nbsp;<kbd>Esc</kbd> close</span>
+          <span>${results.length} result${results.length !== 1 ? 's' : ''}</span>
+        </div>`;
+    }
+
+    dropdown.classList.add('open');
+  }
+
+  let timer;
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => render(input.value), 120);
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { dropdown.classList.remove('open'); input.blur(); }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const first = dropdown.querySelector('.hub-search-result');
+      if (first) first.focus();
+    }
+  });
+
+  dropdown.addEventListener('keydown', e => {
+    const items = [...dropdown.querySelectorAll('.hub-search-result')];
+    const idx   = items.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); if (idx < items.length - 1) items[idx+1].focus(); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); idx > 0 ? items[idx-1].focus() : input.focus(); }
+    if (e.key === 'Escape')    { dropdown.classList.remove('open'); input.focus(); }
+    if (e.key === 'Enter' && document.activeElement.classList.contains('hub-search-result')) {
+      document.activeElement.click();
+    }
+  });
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#hubSearchWrap')) dropdown.classList.remove('open');
+  });
+})();
+</script>
 
 {{end}}
