@@ -8,49 +8,51 @@ import (
 	"log"
 	"strings"
 )
+
 func renderPage(w http.ResponseWriter, tmpl string, data interface{}) {
-    var tmplFiles []string
+	var tmplFiles []string
 
-    if strings.HasPrefix(tmpl, "hub/") {
-        hubNav := "templates/partials/hub/nav.html"
-        hubFooter := "templates/partials/hub/footer.html"
+	if strings.HasPrefix(tmpl, "hub/") {
+		hubNav    := "templates/partials/hub/nav.html"
+		hubFooter := "templates/partials/hub/footer.html"
+		hubSearch := "templates/partials/hub/search.html"
 
-        navFile := "templates/partials/nav.html"
-        footerFile := "templates/partials/footer.html"
+		navFile    := "templates/partials/nav.html"
+		footerFile := "templates/partials/footer.html"
 
-        // Use hub-specific partials if they exist, otherwise fall back
-        if _, err := os.Stat(hubNav); err == nil {
-            navFile = hubNav
-        }
-        if _, err := os.Stat(hubFooter); err == nil {
-            footerFile = hubFooter
-        }
+		if _, err := os.Stat(hubNav); err == nil {
+			navFile = hubNav
+		}
+		if _, err := os.Stat(hubFooter); err == nil {
+			footerFile = hubFooter
+		}
 
-        tmplFiles = []string{
-            "templates/base.html",
-            navFile,
-            footerFile,
-            filepath.Join("templates/pages", tmpl),
-        }
-    } else {
-        tmplFiles = []string{
-            "templates/base.html",
-            "templates/partials/nav.html",
-            "templates/partials/footer.html",
-            filepath.Join("templates/pages", tmpl),
-        }
-    }
+		tmplFiles = []string{
+			"templates/base.html",
+			navFile,
+			footerFile,
+			hubSearch, // search partial always included for hub pages
+			filepath.Join("templates/pages", tmpl),
+		}
+	} else {
+		tmplFiles = []string{
+			"templates/base.html",
+			"templates/partials/nav.html",
+			"templates/partials/footer.html",
+			filepath.Join("templates/pages", tmpl),
+		}
+	}
 
-    t, err := template.ParseFiles(tmplFiles...)
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-        return
-    }
+	t, err := template.ParseFiles(tmplFiles...)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
-    err = t.ExecuteTemplate(w, "base", data)
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-    }
+	err = t.ExecuteTemplate(w, "base", data)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
 
 func main() {
@@ -144,20 +146,20 @@ func main() {
 		renderPage(w, "safety-policy.html", nil)
 	})
 
-http.HandleFunc("/hub", func(w http.ResponseWriter, r *http.Request) {
-    renderPage(w, "hub/index.html", map[string]interface{}{
-        "Title":          "Hub",
-        "TransparentNav": true,
-        "NavActive":      "home",
-    })
-})
-
-http.HandleFunc("/hub/", func(w http.ResponseWriter, r *http.Request) {
-	page := strings.TrimPrefix(r.URL.Path, "/hub/")
-	renderPage(w, "hub/" +page+".html", map[string]interface{}{
-	"Title": "Hub",
+	http.HandleFunc("/hub", func(w http.ResponseWriter, r *http.Request) {
+		renderPage(w, "hub/index.html", map[string]interface{}{
+			"Title":          "Hub",
+			"TransparentNav": true,
+			"NavActive":      "home",
+		})
 	})
-})
+
+	http.HandleFunc("/hub/", func(w http.ResponseWriter, r *http.Request) {
+		page := strings.TrimPrefix(r.URL.Path, "/hub/")
+		renderPage(w, "hub/"+page+".html", map[string]interface{}{
+			"Title": "Hub",
+		})
+	})
 
 	port := os.Getenv("PORT")
 	if port == "" {

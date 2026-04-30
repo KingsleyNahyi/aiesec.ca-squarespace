@@ -1,0 +1,425 @@
+{{define "search"}}
+
+<style>
+  /* ── SEARCH WRAPPER ── */
+  .search-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  /* ── INPUT ROW ── */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0f4f8;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 8px 14px;
+    width: 260px;
+    transition: background 0.2s, border-color 0.2s, width 0.3s ease;
+  }
+
+  .search-bar:focus-within {
+    background: #fff;
+    border-color: #037EF3;
+    width: 300px;
+    box-shadow: 0 0 0 3px rgba(3,126,243,0.1);
+  }
+
+  .search-bar svg {
+    flex-shrink: 0;
+    color: #999;
+    transition: color 0.2s;
+  }
+
+  .search-bar:focus-within svg { color: #037EF3; }
+
+  #siteSearchInput {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13px;
+    font-family: inherit;
+    color: #222;
+    width: 100%;
+    min-width: 0;
+  }
+
+  #siteSearchInput::placeholder { color: #aaa; }
+
+  .search-clear-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1;
+    display: none;
+    flex-shrink: 0;
+    transition: color 0.15s;
+  }
+  .search-clear-btn:hover { color: #555; }
+  .search-clear-btn.visible { display: block; }
+
+  /* ── RESULTS DROPDOWN ── */
+  #searchDropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 380px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.06);
+    z-index: 9999;
+    overflow: hidden;
+    border: 1px solid #eee;
+  }
+
+  #searchDropdown.open { display: block; }
+
+  /* ── RESULTS HEADER ── */
+  .search-dropdown-header {
+    padding: 10px 16px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  /* ── RESULT ITEMS ── */
+  .search-results-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .search-result-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.12s;
+    cursor: pointer;
+  }
+
+  .search-result-item:last-child { border-bottom: none; }
+
+  .search-result-item:hover,
+  .search-result-item:focus {
+    background: #f5f9ff;
+    outline: none;
+  }
+
+  /* Section colour dot */
+  .search-result-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .dot-about      { background: #037EF3; }
+  .dot-youth      { background: #00C9A7; }
+  .dot-companies  { background: #F3A603; }
+  .dot-general    { background: #aaa; }
+  .dot-hub        { background: #7B2FF7; }
+  .dot-nec        { background: #e8503a; }
+  .dot-conference { background: #1a3fd4; }
+
+  .search-result-body { flex: 1; min-width: 0; }
+
+  .search-result-section {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 2px;
+  }
+
+  .search-result-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .search-result-desc {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Score bar (subtle) */
+  .search-result-score-bar {
+    width: 3px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: #eee;
+    align-self: stretch;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .search-result-score-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #037EF3;
+    border-radius: 2px;
+    transition: height 0.3s;
+  }
+
+  /* ── EMPTY STATE ── */
+  .search-empty {
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .search-empty-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .search-empty-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  .search-empty-sub {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  .search-dropdown-footer {
+    padding: 8px 16px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-footer-hint {
+    font-size: 10px;
+    color: #bbb;
+  }
+
+  .search-footer-hint kbd {
+    display: inline-block;
+    background: #f0f0f0;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 10px;
+    font-family: inherit;
+    color: #666;
+    margin: 0 1px;
+  }
+
+  .search-result-count {
+    font-size: 10px;
+    color: #bbb;
+  }
+</style>
+
+<div class="search-wrapper" id="searchWrapper">
+  <div class="search-bar">
+    <!-- magnifier icon -->
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+
+    <input
+      type="text"
+      id="siteSearchInput"
+      placeholder="Search pages, resources..."
+      autocomplete="off"
+      spellcheck="false"
+      aria-label="Search"
+      aria-autocomplete="list"
+      aria-controls="searchDropdown"
+      role="combobox"
+      aria-expanded="false"
+    />
+
+    <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search">✕</button>
+  </div>
+
+  <div id="searchDropdown" role="listbox" aria-label="Search results">
+    <!-- populated by JS -->
+  </div>
+</div>
+
+<!-- Load data + engine before this partial renders -->
+<script src="/static/search-data.js"></script>
+<script src="/static/search-engine.js"></script>
+
+<script>
+(function () {
+  const input    = document.getElementById('siteSearchInput');
+  const dropdown = document.getElementById('searchDropdown');
+  const clearBtn = document.getElementById('searchClearBtn');
+
+  // Map section names → dot CSS class
+  const DOT_CLASS = {
+    'About Us':                    'dot-about',
+    'AIESEC in Canada':            'dot-about',
+    'For Youth':                   'dot-youth',
+    'For Companies':               'dot-companies',
+    'General':                     'dot-general',
+    'AIESEC Canada Hub':           'dot-hub',
+    'National Educational Cycle':  'dot-nec',
+    'Conference Output':           'dot-conference',
+  };
+
+  function esc(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function open()  {
+    dropdown.classList.add('open');
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function close() {
+    dropdown.classList.remove('open');
+    input.setAttribute('aria-expanded', 'false');
+  }
+
+  function renderResults(query) {
+    const q = query.trim();
+
+    if (q.length < 2) {
+      close();
+      dropdown.innerHTML = '';
+      clearBtn.classList.remove('visible');
+      return;
+    }
+
+    clearBtn.classList.add('visible');
+
+    const results = SearchEngine.search(q, 8);
+    const maxScore = results.length > 0 ? results[0].score : 1;
+
+    if (results.length === 0) {
+      dropdown.innerHTML = `
+        <div class="search-empty">
+          <div class="search-empty-icon">🔍</div>
+          <div class="search-empty-title">No results for "${esc(q)}"</div>
+          <div class="search-empty-sub">Try different keywords — e.g. "OGX", "finance NEC", "volunteer"</div>
+        </div>`;
+      open();
+      return;
+    }
+
+    const itemsHTML = results.map(({ page, score }) => {
+      const dot      = DOT_CLASS[page.section] || 'dot-general';
+      const fillPct  = Math.round((score / maxScore) * 100);
+
+      return `
+        <a href="${esc(page.url)}" class="search-result-item" role="option" tabindex="-1">
+          <div class="search-result-dot ${dot}"></div>
+          <div class="search-result-body">
+            <div class="search-result-section">${esc(page.section)}</div>
+            <div class="search-result-title">${esc(page.title)}</div>
+            <div class="search-result-desc">${esc(page.description)}</div>
+          </div>
+          <div class="search-result-score-bar">
+            <div class="search-result-score-fill" style="height:${fillPct}%"></div>
+          </div>
+        </a>`;
+    }).join('');
+
+    dropdown.innerHTML = `
+      <div class="search-dropdown-header">Results</div>
+      <div class="search-results-list" id="searchResultsList">
+        ${itemsHTML}
+      </div>
+      <div class="search-dropdown-footer">
+        <span class="search-footer-hint">
+          <kbd>↑</kbd><kbd>↓</kbd> navigate &nbsp; <kbd>Enter</kbd> open &nbsp; <kbd>Esc</kbd> close
+        </span>
+        <span class="search-result-count">${results.length} result${results.length !== 1 ? 's' : ''}</span>
+      </div>`;
+
+    open();
+  }
+
+  // ── EVENT LISTENERS ─────────────────────────────────────────────
+
+  // Debounced input
+  let debounceTimer;
+  input.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => renderResults(input.value), 120);
+  });
+
+  // Clear button
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    close();
+    dropdown.innerHTML = '';
+    clearBtn.classList.remove('visible');
+    input.focus();
+  });
+
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#searchWrapper')) close();
+  });
+
+  // Keyboard navigation
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { close(); input.blur(); return; }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const first = dropdown.querySelector('.search-result-item');
+      if (first) first.focus();
+    }
+  });
+
+  dropdown.addEventListener('keydown', (e) => {
+    const items = [...dropdown.querySelectorAll('.search-result-item')];
+    const idx   = items.indexOf(document.activeElement);
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (idx < items.length - 1) items[idx + 1].focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      idx > 0 ? items[idx - 1].focus() : input.focus();
+    } else if (e.key === 'Escape') {
+      close();
+      input.focus();
+    } else if (e.key === 'Enter') {
+      if (document.activeElement.classList.contains('search-result-item')) {
+        document.activeElement.click();
+      }
+    }
+  });
+
+})();
+</script>
+
+{{end}}
