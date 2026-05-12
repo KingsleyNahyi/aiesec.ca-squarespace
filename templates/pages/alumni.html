@@ -1,5 +1,6 @@
 {{define "content"}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 /* --- HERO --- */
 .alumni-hero {
@@ -39,17 +40,13 @@
 
 .split-heading-box {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto 40px;
 }
 
-.left-head, .right-head {
-    flex: 1;
-}
-
-.once-aiesecer h2 {
+.combined-alumni-heading {
     font-size: 5.5rem;
     font-weight: 900;
     margin: 0;
@@ -78,7 +75,7 @@
     text-align: center;
 }
 
-.get-involved-blue h1 {
+.get-involved-blue h2 {
     font-size: 5rem;
     font-weight: 900;
     margin: 0;
@@ -183,15 +180,24 @@
     justify-content: space-between;
 }
 
-.label-main { font-weight: 700; color: #333; }
-.label-req { color: #999; font-size: 0.9rem; }
+.label-main { 
+    font-weight: 700; 
+    color: #333; 
+}
 
-.form-right input, .form-right textarea {
+.label-req { 
+    color: #999; 
+    font-size: 0.9rem; 
+}
+
+.form-right input, 
+.form-right textarea {
     width: 100%;
     padding: 14px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 .send-pill-btn {
@@ -206,109 +212,225 @@
 }
 </style>
 
+<!-- HERO -->
 <section class="alumni-hero">
     <div class="hero-text-overlay">
         <h1 class="hero-headline">
-            <span data-i18n="alumni_hero_title">fulfilling humankinds potential for</span><br>
-            <span class="hero-blue" data-i18n="alumni_hero_blue">64 years!</span>
+            <span data-i18n="alumni_hero_title">
+                fulfilling humankinds potential for
+            </span>
+            <br>
+
+            <span class="hero-blue" data-i18n="alumni_hero_blue">
+                64 years!
+            </span>
         </h1>
     </div>
 </section>
 
+<!-- ONCE AN AIESECER -->
 <section class="once-aiesecer">
     <div class="split-heading-box">
-        <div class="left-head">
-            <h2 data-i18n="alumni_once">once an</h2>
-            <h2 class="purple-brand" data-i18n="alumni_once_brand">AIESECer</h2>
-        </div>
-        <div class="right-head">
-            <h2 data-i18n="alumni_always">always an</h2>
-            <h2 class="purple-brand" data-i18n="alumni_always_brand">AIESECer</h2>
-        </div>
+        <h2 class="combined-alumni-heading">
+            <span data-i18n="alumni_once">
+                once an
+            </span>
+
+            <span class="purple-brand" data-i18n="alumni_once_brand">
+                AIESECer
+            </span>,
+
+            <span data-i18n="alumni_always">
+                always an
+            </span>
+
+            <span class="purple-brand" data-i18n="alumni_always_brand">
+                AIESECer
+            </span>
+        </h2>
     </div>
+
     <p class="alumni-sub-description" data-i18n="alumni_desc">
         We hope you didn't forget the times where you've danced jiggles, or your first lead experience, or your exchange! AIESEC Canada has been around for over 64 years, and we wouldn't be here without you.
     </p>
 </section>
 
+<!-- GET INVOLVED -->
 <section class="get-involved-blue">
-    <h1 data-i18n="alumni_get_involved">get involved.</h1>
+    <h2 data-i18n="alumni_get_involved">
+        get involved.
+    </h2>
 </section>
 
+<!-- SLIDER -->
 <section class="alumni-slider-area">
     <div class="slider-container">
-        <button class="nav-arrow prev-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-        <button class="nav-arrow next-btn" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+
+        <button class="nav-arrow prev-btn" onclick="moveSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <button class="nav-arrow next-btn" onclick="moveSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
         
         <div class="slider-window" id="sliderWindow">
+
             <div class="slide-unit">
-                <h3 data-i18n="alumni_slide1_title">Pass on the Leadership</h3>
-                <p data-i18n="alumni_slide1_desc">The best way for the next generation of AIESECers to learn is to listen to the advice and experiences of those that came before them.</p>
-                <button class="slide-cta" data-i18n="alumni_slide1_btn">Let's share the knowledge!</button>
+                <h3 data-i18n="alumni_slide1_title">
+                    Pass on the Leadership
+                </h3>
+
+                <p data-i18n="alumni_slide1_desc">
+                    The best way for the next generation of AIESECers to learn is to listen to the advice and experiences of those that came before them.
+                </p>
+
+                <button class="slide-cta" data-i18n="alumni_slide1_btn">
+                    Let's share the knowledge!
+                </button>
             </div>
+
             <div class="slide-unit">
-                <h3 data-i18n="alumni_slide2_title">The Alumni Network</h3>
-                <p data-i18n="alumni_slide2_desc">Connect with other AIESEC alumni across Canada and the world. Your journey doesn't end when you leave the LC.</p>
-                <button class="slide-cta" data-i18n="alumni_slide2_btn">Join the network!</button>
+                <h3 data-i18n="alumni_slide2_title">
+                    The Alumni Network
+                </h3>
+
+                <p data-i18n="alumni_slide2_desc">
+                    Connect with other AIESEC alumni across Canada and the world. Your journey doesn't end when you leave the LC.
+                </p>
+
+                <button class="slide-cta" data-i18n="alumni_slide2_btn">
+                    Join the network!
+                </button>
             </div>
+
         </div>
     </div>
 </section>
 
+<!-- CONTACT FORM -->
 <section class="alumni-contact-form">
     <div class="form-layout">
+
         <div class="form-left">
-            <h2 data-i18n="alumni_form_title">we'd love to hear from you.</h2>
+            <h2 data-i18n="alumni_form_title">
+                we'd love to hear from you.
+            </h2>
         </div>
+
         <div class="form-right">
             <form>
+
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+
                     <div>
                         <div class="form-field-label">
-                            <span class="label-main" data-i18n="alumni_form_name">Name</span>
-                            <span class="label-req" data-i18n="alumni_form_req">(required)</span>
+                            <span class="label-main" data-i18n="alumni_form_name">
+                                Name
+                            </span>
+
+                            <span class="label-req" data-i18n="alumni_form_req">
+                                (required)
+                            </span>
                         </div>
-                        <input type="text" placeholder="First Name" data-i18n="alumni_form_first" required>
+
+                        <input 
+                            type="text" 
+                            placeholder="First Name" 
+                            data-i18n="alumni_form_first" 
+                            required
+                        >
                     </div>
+
                     <div>
-                        <div class="form-field-label" style="visibility:hidden;" data-i18n="alumni_form_last">Last Name</div>
-                        <input type="text" placeholder="Last Name" data-i18n="alumni_form_last" required>
+                        <div 
+                            class="form-field-label" 
+                            style="visibility:hidden;" 
+                            data-i18n="alumni_form_last">
+                            Last Name
+                        </div>
+
+                        <input 
+                            type="text" 
+                            placeholder="Last Name" 
+                            data-i18n="alumni_form_last" 
+                            required
+                        >
                     </div>
+
                 </div>
 
                 <div>
                     <div class="form-field-label">
-                        <span class="label-main" data-i18n="alumni_form_email">Email</span>
-                        <span class="label-req" data-i18n="alumni_form_req">(required)</span>
+
+                        <span class="label-main" data-i18n="alumni_form_email">
+                            Email
+                        </span>
+
+                        <span class="label-req" data-i18n="alumni_form_req">
+                            (required)
+                        </span>
+
                     </div>
+
                     <input type="email" required>
                 </div>
 
                 <div>
                     <div class="form-field-label">
-                        <span class="label-main" data-i18n="alumni_form_lc">What LC were you with?</span>
-                        <span class="label-req" data-i18n="alumni_form_req">(required)</span>
+
+                        <span class="label-main" data-i18n="alumni_form_lc">
+                            What LC were you with?
+                        </span>
+
+                        <span class="label-req" data-i18n="alumni_form_req">
+                            (required)
+                        </span>
+
                     </div>
+
                     <input type="text" required>
                 </div>
 
                 <div>
                     <div class="form-field-label">
-                        <span class="label-main" data-i18n="alumni_form_year">What was your last year in AIESEC?</span>
-                        <span class="label-req" data-i18n="alumni_form_req">(required)</span>
+
+                        <span class="label-main" data-i18n="alumni_form_year">
+                            What was your last year in AIESEC?
+                        </span>
+
+                        <span class="label-req" data-i18n="alumni_form_req">
+                            (required)
+                        </span>
+
                     </div>
+
                     <input type="text" required>
                 </div>
 
                 <div>
                     <div class="form-field-label">
-                        <span class="label-main" data-i18n="alumni_form_msg">Message</span>
-                        <span class="label-req" data-i18n="alumni_form_req">(required)</span>
+
+                        <span class="label-main" data-i18n="alumni_form_msg">
+                            Message
+                        </span>
+
+                        <span class="label-req" data-i18n="alumni_form_req">
+                            (required)
+                        </span>
+
                     </div>
+
                     <textarea rows="5" required></textarea>
                 </div>
 
-                <button type="submit" class="send-pill-btn" data-i18n="alumni_form_send">send</button>
+                <button 
+                    type="submit" 
+                    class="send-pill-btn" 
+                    data-i18n="alumni_form_send">
+                    send
+                </button>
+
             </form>
         </div>
     </div>
@@ -316,11 +438,17 @@
 
 <script>
 let currentIdx = 0;
+
 function moveSlide(n) {
     const slides = document.querySelectorAll('.slide-unit');
-    if(slides.length === 0) return;
+
+    if (slides.length === 0) return;
+
     currentIdx = (currentIdx + n + slides.length) % slides.length;
-    document.getElementById('sliderWindow').style.transform = `translateX(-${currentIdx * 100}%)`;
+
+    document.getElementById('sliderWindow').style.transform =
+        `translateX(-${currentIdx * 100}%)`;
 }
 </script>
+
 {{end}}

@@ -10,7 +10,24 @@
     --text-dark: #222;
 }
 
-body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text-dark); }
+body { 
+    font-family: 'Inter', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    color: var(--text-dark); 
+}
+
+/* --- ACCESSIBILITY --- */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
 
 /* --- 1. HERO --- */
 .hero-wrapper {
@@ -18,6 +35,39 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     height: 100vh;
     background: url('/static/images/partnerwithaiesec.webp') no-repeat center center;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.35);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+
+.hero-overlay h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 20px 0;
+    letter-spacing: -1px;
+}
+
+.hero-overlay p {
+    font-size: 1.4rem;
+    color: #fff;
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* --- 2. HEADER --- */
@@ -26,6 +76,7 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     background: #fff;
     text-align: center;
 }
+
 .why-header h1 {
     font-size: 3.8rem;
     font-weight: 800;
@@ -40,6 +91,7 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     color: #fff;
     text-align: center;
 }
+
 .section-tag-centered {
     font-size: 2.2rem;
     font-weight: 800;
@@ -47,6 +99,7 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     margin-bottom: 50px;
     display: block;
 }
+
 .perks-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -54,16 +107,33 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     text-align: left;
     margin-bottom: 50px;
 }
-.perk-item h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; text-transform: lowercase; }
+
+.perk-item h3 { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    margin-bottom: 20px; 
+    text-transform: lowercase; 
+}
 
 /* --- 4. BUTTONS & BRIDGES --- */
-.bridge-blue { background-color: var(--aiesec-blue); padding-bottom: 80px; text-align: center; }
-.bridge-green { background-color: var(--aiesec-exchange-green); padding-bottom: 80px; text-align: center; }
+.bridge-blue { 
+    background-color: var(--aiesec-blue); 
+    padding-bottom: 80px; 
+    text-align: center; 
+}
+
+.bridge-green { 
+    background-color: var(--aiesec-exchange-green); 
+    padding-bottom: 80px; 
+    text-align: center; 
+}
+
 .bridge-gradient {
     background: linear-gradient(to bottom, var(--aiesec-blue) 0%, var(--aiesec-exchange-green) 100%);
     padding: 80px 12%;
     text-align: center;
 }
+
 .btn-round-white {
     display: inline-block;
     padding: 15px 45px;
@@ -74,9 +144,21 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     border-radius: 50px;
     transition: 0.3s;
 }
-.bridge-blue .btn-round-white:hover { background: #fff; color: var(--aiesec-blue); }
-.bridge-green .btn-round-white:hover { background: #fff; color: var(--aiesec-exchange-green); }
-.bridge-gradient .btn-round-white:hover { background: #fff; color: var(--aiesec-blue); }
+
+.bridge-blue .btn-round-white:hover { 
+    background: #fff; 
+    color: var(--aiesec-blue); 
+}
+
+.bridge-green .btn-round-white:hover { 
+    background: #fff; 
+    color: var(--aiesec-exchange-green); 
+}
+
+.bridge-gradient .btn-round-white:hover { 
+    background: #fff; 
+    color: var(--aiesec-blue); 
+}
 
 /* --- 5. EXCHANGE PARTNERS --- */
 .exchange-section {
@@ -94,8 +176,17 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     justify-content: space-between;
     align-items: center;
 }
-.corporate-strip h2 { font-size: 2.5rem; font-weight: 800; margin: 0; }
-.teal-text { color: var(--aiesec-teal); }
+
+.corporate-strip h2 { 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    margin: 0; 
+}
+
+.teal-text { 
+    color: var(--aiesec-teal); 
+}
+
 .btn-black-outline {
     background: transparent;
     color: #000;
@@ -106,7 +197,11 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     border-radius: 50px;
     transition: 0.3s;
 }
-.btn-black-outline:hover { background: #000; color: #fff; }
+
+.btn-black-outline:hover { 
+    background: #000; 
+    color: #fff; 
+}
 
 /* --- 7. Y2B SECTION --- */
 .y2b-wrap {
@@ -122,8 +217,19 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     color: #fff;
     text-align: center;
 }
-.y2b-wrap p { font-size: 1.8rem; margin-bottom: 30px; font-weight: 500; }
-.y2b-wrap h2 { font-size: 4.5rem; font-weight: 900; margin-bottom: 60px; }
+
+.y2b-wrap p { 
+    font-size: 1.8rem; 
+    margin-bottom: 30px; 
+    font-weight: 500; 
+}
+
+.y2b-wrap h2 { 
+    font-size: 4.5rem; 
+    font-weight: 900; 
+    margin-bottom: 60px; 
+}
+
 .btn-y2b {
     border: 2px solid #fff;
     color: #fff;
@@ -133,9 +239,13 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     border-radius: 50px;
     transition: 0.3s;
 }
-.btn-y2b:hover { background: #fff; color: #000; }
 
-/* --- 8. TESTIMONIAL CARDS (RE-FIXED) --- */
+.btn-y2b:hover { 
+    background: #fff; 
+    color: #000; 
+}
+
+/* --- 8. TESTIMONIAL CARDS --- */
 .testimonial-section {
     padding: 120px 8%;
     background: url('/static/images/testimonialbackground.webp') no-repeat center center;
@@ -143,10 +253,12 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     display: flex;
     justify-content: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
+
 .card-box {
     background: #fff;
-    width: 500px; /* Slightly wider for the full text */
+    width: 500px;
     min-height: 400px;
     padding: 60px 50px;
     text-align: center;
@@ -156,6 +268,7 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     flex-direction: column;
     align-items: center;
 }
+
 .card-logo { 
     height: 80px; 
     width: auto;
@@ -163,18 +276,20 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     margin-bottom: 40px;
     object-fit: contain; 
 }
-.card-box h4 { 
+
+.card-box h3 { 
     font-size: 1.4rem; 
     font-weight: 800; 
     margin-bottom: 25px; 
     line-height: 1.3;
 }
+
 .card-box p { 
     font-size: 1.05rem; 
     line-height: 1.7; 
     color: #333; 
     margin: 0;
-    font-style: normal; /* Straight text */
+    font-style: normal;
 }
 
 /* --- 9. FOOTER --- */
@@ -183,74 +298,269 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--tex
     padding: 100px 12%;
     color: #fff;
 }
-.footer-content-left { max-width: 500px; text-align: left; }
-.footer-content-left h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 25px; }
-.footer-info { font-size: 1rem; line-height: 1.8; text-align: justify; }
-.q-socials-left { margin-top: 35px; display: flex; gap: 25px; font-size: 2rem; }
+
+.footer-content-left { 
+    max-width: 500px; 
+    text-align: left; 
+}
+
+.footer-content-left h2 { 
+    font-size: 3.5rem; 
+    font-weight: 900; 
+    margin-bottom: 25px; 
+}
+
+.footer-info { 
+    font-size: 1rem; 
+    line-height: 1.8; 
+    text-align: justify; 
+}
+
+.q-socials-left { 
+    margin-top: 35px; 
+    display: flex; 
+    gap: 25px; 
+    font-size: 2rem; 
+}
+
+.q-socials-left a {
+    color: #fff;
+    text-decoration: none;
+}
 
 @media (max-width: 1100px) {
-    .testimonial-section { flex-direction: column; align-items: center; }
-    .card-box { width: 90%; max-width: 500px; }
+    .testimonial-section { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .card-box { 
+        width: 90%; 
+        max-width: 500px; 
+    }
+
+    .perks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .corporate-strip {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-overlay h1 {
+        font-size: 3rem;
+    }
+
+    .y2b-wrap h2 {
+        font-size: 3rem;
+    }
 }
 </style>
 
-<div class="hero-wrapper"></div>
-<section class="why-header"><h1 datai18n="why_header_title">So Why AIESEC?</h1></section>
+<!-- HERO -->
+<section class="hero-wrapper">
+    <div class="hero-overlay">
+        <h1 datai18n="why_header_title">So Why AIESEC?</h1>
+        <p>
+            Empowering organizations through leadership development, global talent, and meaningful partnerships.
+        </p>
+    </div>
+</section>
 
+<!-- NATIONAL PARTNERS -->
 <section class="national-section">
-    <span class="section-tag-centered" datai18n="national_section_tag">for national partners</span>
+    <h2 class="section-tag-centered" datai18n="national_section_tag">
+        for national partners
+    </h2>
+
     <div class="perks-grid">
-        <div class="perk-item"><h3 datai18n="perk1_title">access to young value-driven leaders</h3><p datai18n="perk1_desc">We aim to create passionate and driven young people instilled with the leadership skills and values.</p></div>
-        <div class="perk-item"><h3 datai18n="perk2_title">gain insight and solutions into organizational bottlenecks</h3><p datai18n="perk2_desc">We aim to connect our partners with our youth audience so that we can bridge the understanding.</p></div>
-        <div class="perk-item"><h3 datai18n="perk3_title">fullfill organizational CSR commitments</h3><p datai18n="perk3_desc">We believe in empowering young people to achieve their full potential and give back to the community.</p></div>
+        <div class="perk-item">
+            <h3 datai18n="perk1_title">
+                access to young value-driven leaders
+            </h3>
+
+            <p datai18n="perk1_desc">
+                We aim to create passionate and driven young people instilled with the leadership skills and values.
+            </p>
+        </div>
+
+        <div class="perk-item">
+            <h3 datai18n="perk2_title">
+                gain insight and solutions into organizational bottlenecks
+            </h3>
+
+            <p datai18n="perk2_desc">
+                We aim to connect our partners with our youth audience so that we can bridge the understanding.
+            </p>
+        </div>
+
+        <div class="perk-item">
+            <h3 datai18n="perk3_title">
+                fullfill organizational CSR commitments
+            </h3>
+
+            <p datai18n="perk3_desc">
+                We believe in empowering young people to achieve their full potential and give back to the community.
+            </p>
+        </div>
     </div>
 </section>
 
-<section class="bridge-gradient"><a href="#" class="btn-round-white" datai18n="partner_cta">Partner With Us</a></section>
+<section class="bridge-gradient">
+    <a href="/partner-with-us" class="btn-round-white" datai18n="partner_cta">
+        Partner With Us
+    </a>
+</section>
 
+<!-- EXCHANGE PARTNERS -->
 <section class="exchange-section">
-    <span class="section-tag-centered" datai18n="exchange_section_tag">for exchange partners</span>
+    <h2 class="section-tag-centered" datai18n="exchange_section_tag">
+        for exchange partners
+    </h2>
+
     <div class="perks-grid">
-        <div class="perk-item"><h3 datai18n="exchange_perk1_title">work permit and visa guidance</h3><p datai18n="exchange_perk1_desc">AIESEC supports your international interns throughout their pre-arrival process.</p></div>
-        <div class="perk-item"><h3 datai18n="exchange_perk2_title">you choose. we take care of the rest.</h3><p datai18n="exchange_perk2_desc">We promote your opportunity, screen candidates, and handle all communication.</p></div>
-        <div class="perk-item"><h3 datai18n="exchange_perk3_title">global talent pipeline from 100+ countries.</h3><p datai18n="exchange_perk3_desc">Tap into a diverse pool of motivated international talent who bring global perspectives.</p></div>
+        <div class="perk-item">
+            <h3 datai18n="exchange_perk1_title">
+                work permit and visa guidance
+            </h3>
+
+            <p datai18n="exchange_perk1_desc">
+                AIESEC supports your international interns throughout their pre-arrival process.
+            </p>
+        </div>
+
+        <div class="perk-item">
+            <h3 datai18n="exchange_perk2_title">
+                you choose. we take care of the rest.
+            </h3>
+
+            <p datai18n="exchange_perk2_desc">
+                We promote your opportunity, screen candidates, and handle all communication.
+            </p>
+        </div>
+
+        <div class="perk-item">
+            <h3 datai18n="exchange_perk3_title">
+                global talent pipeline from 100+ countries.
+            </h3>
+
+            <p datai18n="exchange_perk3_desc">
+                Tap into a diverse pool of motivated international talent who bring global perspectives.
+            </p>
+        </div>
     </div>
 </section>
-<div class="bridge-green"><a href="/exchange-for-organizations" class="btn-round-white" datai18n="exchange_cta">Learn more</a></div>
 
+<div class="bridge-green">
+    <a href="/exchange-for-organizations" class="btn-round-white" datai18n="exchange_cta">
+        Learn About Exchange Partnerships
+    </a>
+</div>
+
+<!-- CORPORATE PARTNERS -->
 <section class="corporate-strip">
-    <h2 datai18n="corporate_strip_title">check out our <span class="teal-text" datai18n="corporate_strip_highlight">corporate partners</span></h2>
-    <a href="/our-partners" class="btn-black-outline" datai18n="corporate_strip_cta">Let’s Go!</a>
+    <h2 datai18n="corporate_strip_title">
+        check out our 
+        <span class="teal-text" datai18n="corporate_strip_highlight">
+            corporate partners
+        </span>
+    </h2>
+
+    <a href="/our-partners" class="btn-black-outline" datai18n="corporate_strip_cta">
+        View Our Corporate Partners
+    </a>
 </section>
 
+<!-- Y2B -->
 <section class="y2b-wrap">
-    <p datai18n="y2b_intro">What do you get when you put a group of passionate value-driven young people in a room with the brightest industry minds in Canada?</p>
-    <h2 datai18n="y2b_title">potential, but we call it Y2B.</h2>
-    <a href="#" class="btn-y2b" datai18n="y2b_cta">Learn more</a>
+    <p datai18n="y2b_intro">
+        What do you get when you put a group of passionate value-driven young people in a room with the brightest industry minds in Canada?
+    </p>
+
+    <h2 datai18n="y2b_title">
+        potential, but we call it Y2B.
+    </h2>
+
+    <a href="/y2b" class="btn-y2b" datai18n="y2b_cta">
+        Learn More About Y2B
+    </a>
 </section>
 
+<!-- TESTIMONIALS -->
 <section class="testimonial-section">
+    <h2 class="visually-hidden">
+        Partner Testimonials
+    </h2>
+
     <div class="card-box">
-        <img src="/static/images/capp.webp" class="card-logo" alt="CAPP">
-        <h4 datai18n="testimonial1_title">Canadian Association of Petroleum Producers</h4>
-        <p datai18n="testimonial1_desc">Partnering with AIESEC is not only an enjoyable and fulfilling experience, but it enables industry representatives to improve on the work that they do. When you engage with students in meaningful conversations, you are engaging with the future leadership.</p>
+        <img 
+            src="/static/images/capp.webp" 
+            class="card-logo" 
+            alt="Canadian Association of Petroleum Producers logo"
+        >
+
+        <h3 datai18n="testimonial1_title">
+            Canadian Association of Petroleum Producers
+        </h3>
+
+        <p datai18n="testimonial1_desc">
+            Partnering with AIESEC is not only an enjoyable and fulfilling experience, but it enables industry representatives to improve on the work that they do. When you engage with students in meaningful conversations, you are engaging with the future leadership.
+        </p>
     </div>
+
     <div class="card-box">
-        <img src="/static/images/incite.webp" class="card-logo" alt="Incite">
-        <h4 datai18n="testimonial2_title">Incite</h4>
-        <p datai18n="testimonial2_desc">AIESEC is a dynamic organization led by emerging youth leaders. Their passion and drive is contagious, and they always see opportunities that in turn help our organization explore new possibilities.</p>
+        <img 
+            src="/static/images/incite.webp" 
+            class="card-logo" 
+            alt="Incite logo"
+        >
+
+        <h3 datai18n="testimonial2_title">
+            Incite
+        </h3>
+
+        <p datai18n="testimonial2_desc">
+            AIESEC is a dynamic organization led by emerging youth leaders. Their passion and drive is contagious, and they always see opportunities that in turn help our organization explore new possibilities.
+        </p>
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="questions-footer">
     <div class="footer-content-left">
-        <h2 datai18n="footer_title">partner with us.</h2>
+        <h2 datai18n="footer_title">
+            partner with us.
+        </h2>
+
         <div class="footer-info">
-            <p datai18n="footer_email">info@aiesec.ca</p>
-            <p datai18n="footer_phone">(416) 368-1001</p>
-            <p datai18n="footer_address">164 Eglinton Ave E suite 102, Toronto, ON M4P 1G4</p>
+            <p datai18n="footer_email">
+                info@aiesec.ca
+            </p>
+
+            <p datai18n="footer_phone">
+                (416) 368-1001
+            </p>
+
+            <p datai18n="footer_address">
+                164 Eglinton Ave E suite 102, Toronto, ON M4P 1G4
+            </p>
         </div>
-        <div class="q-socials-left"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-linkedin"></i></div>
+
+        <div class="q-socials-left">
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
     </div>
 </footer>
 

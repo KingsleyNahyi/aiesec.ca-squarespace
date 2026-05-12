@@ -11,6 +11,7 @@
 
   /* --- DISCOVER HEADER --- */
   .discover-header-section { padding: 100px 5% 40px; text-align: center; }
+
   .discover-title { 
     font-size: 3.5rem; 
     font-weight: 950; 
@@ -20,65 +21,240 @@
 
   /* --- PROGRAM SLIDER --- */
   .program-slider-area { padding-bottom: 100px; }
-  .program-slider-container { max-width: 1100px; margin: 0 auto; overflow: hidden; position: relative; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-  .program-slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-  .program-slide { min-width: 100%; text-align: center; }
-  .program-slide img { width: 100%; height: auto; display: block; }
-  .program-footer { padding: 40px; background: #fff; }
+
+  .program-slider-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  }
+
+  .program-slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .program-slide {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .program-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .program-footer {
+    padding: 40px;
+    background: #fff;
+  }
 
   .program-cta-btn { 
-    display: inline-block; padding: 18px 45px; border: 4px solid #000; 
-    font-weight: 900; text-decoration: none; color: #000; border-radius: 50px; 
-    text-transform: uppercase; font-size: 1.2rem; transition: 0.3s; 
+    display: inline-block;
+    padding: 18px 45px;
+    border: 4px solid #000; 
+    font-weight: 900;
+    text-decoration: none;
+    color: #000;
+    border-radius: 50px; 
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: 0.3s; 
   }
-  .program-cta-btn:hover { background: #000; color: #fff; }
+
+  .program-cta-btn:hover {
+    background: #000;
+    color: #fff;
+  }
 
   .prog-nav-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(0,0,0,0.5); color: white; border: none; padding: 25px; 
-    cursor: pointer; font-size: 2rem; z-index: 10; transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 25px; 
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+    transition: 0.3s;
   }
-  .prog-nav-btn.prev { left: 0; border-radius: 0 10px 10px 0; }
-  .prog-nav-btn.next { right: 0; border-radius: 10px 0 0 10px; }
+
+  .prog-nav-btn.prev {
+    left: 0;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .prog-nav-btn.next {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+  }
 
   /* --- HOW IT WORKS --- */
-  .how-it-works-section { padding: 100px 10%; text-align: center; background: #fff; }
-  .how-it-works-grid { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 60px; }
-  .step-item { flex: 1; padding: 20px; }
-  .step-icon { width: 80px; margin-bottom: 25px; }
-  .step-title { font-weight: 900; font-size: 1.6rem; margin-bottom: 15px; }
-  .lets-begin-btn { 
-    display: inline-block; padding: 15px 65px; border: 4px solid #000; 
-    border-radius: 50px; font-weight: 900; font-size: 1.6rem; 
-    text-decoration: none; color: #000; transition: 0.3s; 
+  .how-it-works-section {
+    padding: 100px 10%;
+    text-align: center;
+    background: #fff;
   }
-  .lets-begin-btn:hover { background: #000; color: #fff; }
+
+  .how-it-works-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .step-item {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .step-icon {
+    width: 80px;
+    margin-bottom: 25px;
+  }
+
+  .step-title {
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .lets-begin-btn { 
+    display: inline-block;
+    padding: 15px 65px;
+    border: 4px solid #000; 
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.6rem; 
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s; 
+  }
+
+  .lets-begin-btn:hover {
+    background: #000;
+    color: #fff;
+  }
 
   /* --- TESTIMONIALS --- */
-  .testimonial-section { padding: 120px 0; background-size: cover; background-position: center; }
-  .testimonial-container { position: relative; overflow: hidden; }
-  .testimonial-track { display: flex; justify-content: center; align-items: center; padding: 60px 0; }
-  .testimonial-card { 
-    min-width: 350px; background: rgba(255,255,255,0.9); padding: 50px; 
-    border-radius: 25px; transform: scale(0.8); opacity: 0.5; transition: 0.5s; 
-    text-align: center; margin: 0 -30px; 
+  .testimonial-section {
+    padding: 120px 0;
+    background-size: cover;
+    background-position: center;
   }
-  .testimonial-card.active { transform: scale(1.1); opacity: 1; z-index: 5; background: #fff; box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
-  .profile-circle { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto 25px; border: 6px solid #fff; }
-  .profile-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-  .test-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: #000; color: #fff; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 10; }
-  .left-arr { left: 8%; } .right-arr { right: 8%; }
+  .testimonial-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+  }
+
+  .testimonial-card { 
+    min-width: 350px;
+    background: rgba(255,255,255,0.9);
+    padding: 50px; 
+    border-radius: 25px;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: 0.5s; 
+    text-align: center;
+    margin: 0 -30px; 
+  }
+
+  .testimonial-card.active {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 5;
+    background: #fff;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  }
+
+  .profile-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px;
+    border: 6px solid #fff;
+  }
+
+  .profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .test-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .left-arr { left: 8%; }
+  .right-arr { right: 8%; }
 
   /* --- FAQ --- */
   .faq-section { padding: 100px 10%; }
-  .faq-container { display: flex; gap: 80px; }
-  .faq-title { font-size: 5.5rem; color: #F8BC24; font-weight: 900; flex: 1; }
+
+  .faq-container {
+    display: flex;
+    gap: 80px;
+  }
+
+  .faq-title {
+    font-size: 5.5rem;
+    color: #F8BC24;
+    font-weight: 900;
+    flex: 1;
+  }
+
   .faq-right { flex: 2; }
-  .faq-item { border-bottom: 2px solid #000; padding: 30px 0; }
-  .faq-item summary { font-size: 1.6rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; list-style: none; }
-  .faq-item summary::before { content: '+'; color: #F8BC24; font-size: 2.5rem; margin-right: 25px; width: 30px; font-weight: 900; }
-  .faq-item[open] summary::before { content: '—'; }
+
+  .faq-item {
+    border-bottom: 2px solid #000;
+    padding: 30px 0;
+  }
+
+  .faq-item summary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  .faq-item summary::before {
+    content: '+';
+    color: #F8BC24;
+    font-size: 2.5rem;
+    margin-right: 25px;
+    width: 30px;
+    font-weight: 900;
+  }
+
+  .faq-item[open] summary::before {
+    content: '—';
+  }
 
   /* --- FOOTER --- */
   .exchange-footer {
@@ -131,171 +307,321 @@
     .footer-title { font-size: 4rem; }
   }
 </style>
+
+<!-- HERO -->
 <section class="exchange-hero" style="background-image: url('/static/images/exchange.webp');">
     <div class="exchange-hero-overlay"></div>
 </section>
 
+<!-- MAIN PAGE TITLE -->
 <section class="discover-header-section">
-    <h2 class="discover-title" data-i18n="exchange_discover_title">Discover our Programs</h2>
+    <h1 class="discover-title" data-i18n="exchange_discover_title">
+        Discover our Programs
+    </h1>
 </section>
 
+<!-- PROGRAMS -->
 <section class="program-slider-area">
     <div class="program-slider-container">
+
         <div class="program-slider-track" id="programTrack">
+
             <div class="program-slide">
-                <img src="/static/images/globalvolunteer.webp" alt="Global Volunteer">
+                <img 
+                    src="/static/images/globalvolunteer.webp"
+                    alt="Global Volunteer program"
+                >
+
                 <div class="program-footer">
-                    <a href="#" class="program-cta-btn" data-i18n="exchange_program_volunteer_cta">Sign Up for $620 CAD</a>
+                    <a href="#" class="program-cta-btn" data-i18n="exchange_program_volunteer_cta">
+                        Sign Up for $620 CAD
+                    </a>
                 </div>
             </div>
+
             <div class="program-slide">
-                <img src="/static/images/globaltalent.webp" alt="Global Talent">
+                <img 
+                    src="/static/images/globaltalent.webp"
+                    alt="Global Talent program"
+                >
+
                 <div class="program-footer">
-                    <a href="#" class="program-cta-btn" data-i18n="exchange_program_talent_cta">Sign Up for $670-770 CAD</a>
+                    <a href="#" class="program-cta-btn" data-i18n="exchange_program_talent_cta">
+                        Sign Up for $670-770 CAD
+                    </a>
                 </div>
             </div>
+
             <div class="program-slide">
-                <img src="/static/images/globalteacher.webp" alt="Global Teacher">
+                <img 
+                    src="/static/images/globalteacher.webp"
+                    alt="Global Teacher program"
+                >
+
                 <div class="program-footer">
-                    <a href="#" class="program-cta-btn" data-i18n="exchange_program_teacher_cta">Sign Up for $770 CAD</a>
+                    <a href="#" class="program-cta-btn" data-i18n="exchange_program_teacher_cta">
+                        Sign Up for $770 CAD
+                    </a>
                 </div>
             </div>
+
         </div>
-        <button class="prog-nav-btn prev" onclick="movePrograms(-1)">&#10094;</button>
-        <button class="prog-nav-btn next" onclick="movePrograms(1)">&#10095;</button>
+
+        <button class="prog-nav-btn prev" onclick="movePrograms(-1)">
+            &#10094;
+        </button>
+
+        <button class="prog-nav-btn next" onclick="movePrograms(1)">
+            &#10095;
+        </button>
+
     </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section class="how-it-works-section">
+
+    <h2>
+        How It Works
+    </h2>
+
     <div class="how-it-works-grid">
+
         <div class="step-item">
-            <img src="/static/images/1.webp" alt="1" class="step-icon">
-            <h3 class="step-title" data-i18n="exchange_step1_title">Signup on aiesec.ca</h3>
-            <p data-i18n="exchange_step1_desc">Click the button below to signup and be contacted by a local AIESEC representative within 2-3 business days.</p>
+            <img src="/static/images/1.webp" alt="Signup step" class="step-icon">
+
+            <h3 class="step-title" data-i18n="exchange_step1_title">
+                Signup on aiesec.ca
+            </h3>
+
+            <p data-i18n="exchange_step1_desc">
+                Click the button below to signup and be contacted by a local AIESEC representative within 2-3 business days.
+            </p>
         </div>
+
         <div class="step-item">
-            <img src="/static/images/2.webp" alt="2" class="step-icon">
-            <h3 class="step-title" data-i18n="exchange_step2_title">Book a Consultation</h3>
-            <p data-i18n="exchange_step2_desc">Our representatives will meet with you to better understand your goals and help you find the perfect opportunity!</p>
+            <img src="/static/images/2.webp" alt="Consultation step" class="step-icon">
+
+            <h3 class="step-title" data-i18n="exchange_step2_title">
+                Book a Consultation
+            </h3>
+
+            <p data-i18n="exchange_step2_desc">
+                Our representatives will meet with you to better understand your goals and help you find the perfect opportunity!
+            </p>
         </div>
+
         <div class="step-item">
-            <img src="/static/images/3.webp" alt="3" class="step-icon">
-            <h3 class="step-title" data-i18n="exchange_step3_title">Apply & Interview</h3>
-            <p data-i18n="exchange_step3_desc">Fill out the application form and the project hosts will contact you for an interview with the organization.</p>
+            <img src="/static/images/3.webp" alt="Application and interview step" class="step-icon">
+
+            <h3 class="step-title" data-i18n="exchange_step3_title">
+                Apply & Interview
+            </h3>
+
+            <p data-i18n="exchange_step3_desc">
+                Fill out the application form and the project hosts will contact you for an interview with the organization.
+            </p>
         </div>
+
         <div class="step-item">
-            <img src="/static/images/4.webp" alt="4" class="step-icon">
-            <h3 class="step-title" data-i18n="exchange_step4_title">Get approved and go!</h3>
-            <p data-i18n="exchange_step4_desc">Once approved, pay the exchange fee and start prepping for your experience.</p>
+            <img src="/static/images/4.webp" alt="Approval and travel step" class="step-icon">
+
+            <h3 class="step-title" data-i18n="exchange_step4_title">
+                Get approved and go!
+            </h3>
+
+            <p data-i18n="exchange_step4_desc">
+                Once approved, pay the exchange fee and start prepping for your experience.
+            </p>
         </div>
+
     </div>
+
     <div class="lets-begin-container">
-        <a href="#" class="lets-begin-btn" data-i18n="exchange_lets_begin_btn">Let's Begin!</a>
+        <a href="#" class="lets-begin-btn" data-i18n="exchange_lets_begin_btn">
+            Let's Begin!
+        </a>
     </div>
+
 </section>
 
+<!-- TESTIMONIALS -->
 <section class="testimonial-section" style="background-image: url('/static/images/backgoundfortestimonial.webp');">
+
     <div class="testimonial-container">
+
         <div class="testimonial-track" id="testimonialTrack">
+
             <div class="testimonial-card" id="test-0">
-                <div class="profile-circle"><img src="/static/images/rotimi.webp" alt="Rotimi"></div>
-                <h3 class="member-name" data-i18n="testimonial_rotimi_name">Rotimi Ajasa</h3>
-                <p class="member-text" data-i18n="testimonial_rotimi_text">"Do it! I had amazing experiences in both my exchanges and they were honestly the highlight of my university career."</p>
+                <div class="profile-circle">
+                    <img src="/static/images/rotimi.webp" alt="Rotimi Ajasa">
+                </div>
+
+                <h3 class="member-name" data-i18n="testimonial_rotimi_name">
+                    Rotimi Ajasa
+                </h3>
+
+                <p class="member-text" data-i18n="testimonial_rotimi_text">
+                    "Do it! I had amazing experiences in both my exchanges and they were honestly the highlight of my university career."
+                </p>
             </div>
+
             <div class="testimonial-card active" id="test-1">
-                <div class="profile-circle"><img src="/static/images/Wesley.webp" alt="Wesley"></div>
-                <h3 class="member-name" data-i18n="testimonial_wesley_name">Wesley Gee</h3>
-                <p class="member-text" data-i18n="testimonial_wesley_text">"If you are thinking about exchange, just do it."</p>
+                <div class="profile-circle">
+                    <img src="/static/images/Wesley.webp" alt="Wesley Gee">
+                </div>
+
+                <h3 class="member-name" data-i18n="testimonial_wesley_name">
+                    Wesley Gee
+                </h3>
+
+                <p class="member-text" data-i18n="testimonial_wesley_text">
+                    "If you are thinking about exchange, just do it."
+                </p>
             </div>
+
             <div class="testimonial-card" id="test-2">
-                <div class="profile-circle"><img src="/static/images/Yulin.webp" alt="Yulin"></div>
-                <h3 class="member-name" data-i18n="testimonial_yulin_name">Yulin Luo</h3>
-                <p class="member-text" data-i18n="testimonial_yulin_text">"The people I interacted with in India surprised me because of how welcoming everyone was."</p>
+                <div class="profile-circle">
+                    <img src="/static/images/Yulin.webp" alt="Yulin Luo">
+                </div>
+
+                <h3 class="member-name" data-i18n="testimonial_yulin_name">
+                    Yulin Luo
+                </h3>
+
+                <p class="member-text" data-i18n="testimonial_yulin_text">
+                    "The people I interacted with in India surprised me because of how welcoming everyone was."
+                </p>
             </div>
+
         </div>
-        <button class="test-arrow left-arr" onclick="changeFocus(-1)">&#10094;</button>
-        <button class="test-arrow right-arr" onclick="changeFocus(1)">&#10095;</button>
+
+        <button class="test-arrow left-arr" onclick="changeFocus(-1)">
+            &#10094;
+        </button>
+
+        <button class="test-arrow right-arr" onclick="changeFocus(1)">
+            &#10095;
+        </button>
+
     </div>
+
 </section>
 
+<!-- FAQ -->
 <section class="faq-section">
+
     <div class="faq-container">
+
         <div class="faq-left">
-            <h2 class="faq-title" data-i18n="faq_title">FAQs</h2>
+            <h2 class="faq-title" data-i18n="faq_title">
+                FAQs
+            </h2>
         </div>
+
         <div class="faq-right">
+
             <details class="faq-item" name="faq-group">
-                <summary data-i18n="faq_q1">Do you provide assistance with work permit and travel documentation?</summary>
+                <summary data-i18n="faq_q1">
+                    Do you provide assistance with work permit and travel documentation?
+                </summary>
+
                 <div class="faq-answer">
-                    <p data-i18n="faq_a1">Yes. While AIESEC does not issue or process work permits or visas, we support you throughout your exchange by helping you understand the requirements for the country you are going to.</p>
+                    <p data-i18n="faq_a1">
+                        Yes. While AIESEC does not issue or process work permits or visas, we support you throughout your exchange by helping you understand the requirements for the country you are going to.
+                    </p>
                 </div>
             </details>
+
             <details class="faq-item" name="faq-group">
-                <summary data-i18n="faq_q2">Is there an age limit for this program?</summary>
+                <summary data-i18n="faq_q2">
+                    Is there an age limit for this program?
+                </summary>
+
                 <div class="faq-answer">
-                    <p data-i18n="faq_a2">As an international youth-led organization, our mission is to empower and create opportunities for individuals between the ages of 18-30 years old.</p>
+                    <p data-i18n="faq_a2">
+                        As an international youth-led organization, our mission is to empower and create opportunities for individuals between the ages of 18-30 years old.
+                    </p>
                 </div>
             </details>
+
             <details class="faq-item" name="faq-group">
-                <summary data-i18n="faq_q3">Are there any academic or experience requirements for the exchange opportunities?</summary>
+                <summary data-i18n="faq_q3">
+                    Are there any academic or experience requirements for the exchange opportunities?
+                </summary>
+
                 <div class="faq-answer">
-                    <p data-i18n="faq_a3">Requirements vary based on each opportunity. AIESEC itself has no specific requirements to sign up; we do our best to help find projects that meet your experience level.</p>
+                    <p data-i18n="faq_a3">
+                        Requirements vary based on each opportunity. AIESEC itself has no specific requirements to sign up; we do our best to help find projects that meet your experience level.
+                    </p>
                 </div>
             </details>
-            <details class="faq-item" name="faq-group">
-                <summary data-i18n="faq_q4">What is the selection process like?</summary>
-                <div class="faq-answer">
-                    <p data-i18n="faq_a4">Once you apply, the project hosts will contact you for an interview. If successful, you will receive an acceptance note to move forward with the program.</p>
-                </div>
-            </details>
-            <details class="faq-item" name="faq-group">
-                <summary data-i18n="faq_q5">What countries can I go to?</summary>
-                <div class="faq-answer">
-                    <p data-i18n="faq_a5">AIESEC is present in over 100 countries. Focus countries include Spain, Germany, Hong Kong, Mexico, The Netherlands, and Italy.</p>
-                </div>
-            </details>
+
         </div>
     </div>
 </section>
 
 <footer class="exchange-footer">
+
     <div class="footer-container">
+
         <div class="footer-top">
-            <h2 class="footer-title" data-i18n="exchange_footer_title">Questions?</h2>
-            <p class="footer-phone" data-i18n="exchange_footer_phone">(416) 368-1001</p>
+            <h2 class="footer-title" data-i18n="exchange_footer_title">
+                Questions?
+            </h2>
+
+            <p class="footer-phone" data-i18n="exchange_footer_phone">
+                (416) 368-1001
+            </p>
         </div>
+
         <div class="footer-mid">
-            <p class="footer-address" data-i18n="exchange_footer_address">164 Eglinton Ave E suite 102 | Toronto, ON M4P 1G4</p>
+            <p class="footer-address" data-i18n="exchange_footer_address">
+                164 Eglinton Ave E suite 102 | Toronto, ON M4P 1G4
+            </p>
         </div>
+
         <div class="footer-socials">
             <a href="https://www.instagram.com/aiesecincanada/" target="_blank" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
             </a>
+
             <a href="https://web.facebook.com/AIESECinCanada?_rdc=1&_rdr#" target="_blank" aria-label="Facebook">
                 <i class="fa-brands fa-facebook-f"></i>
             </a>
+
             <a href="https://www.linkedin.com/company/aiesec-canada/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
         </div>
+
     </div>
+
 </footer>
 
 <script>
     let progIndex = 0;
+
     function movePrograms(dir) {
         const track = document.getElementById('programTrack');
         const slides = document.querySelectorAll('.program-slide');
+
         progIndex = (progIndex + dir + slides.length) % slides.length;
+
         track.style.transform = `translateX(-${progIndex * 100}%)`;
     }
 
     let currentFocus = 1;
+
     function changeFocus(dir) {
         const cards = document.querySelectorAll('.testimonial-card');
+
         cards[currentFocus].classList.remove('active');
+
         currentFocus = Math.max(0, Math.min(cards.length - 1, currentFocus + dir));
+
         cards[currentFocus].classList.add('active');
     }
 </script>
+
 {{end}}
