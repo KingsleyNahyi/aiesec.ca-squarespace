@@ -127,7 +127,7 @@ func main() {
 			"/hub/outgoing-global-exchange",
 			"/hub/talent-management-nec",
 			"/hub/talentmanagement",
-			"/hub/youth-leadership-launch"
+			"/hub/youth-leadership-launch",
 		}
 		fmt.Fprint(w, `<?xml version="1.0" encoding="UTF-8"?>`)
 		fmt.Fprint(w, "\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n")
