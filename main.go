@@ -12,11 +12,12 @@ import (
 
 // PageData holds all data passed to every template
 type PageData struct {
-	Title           string
-	MetaDescription string
-	CanonicalPath   string
-	TransparentNav  bool
-	NavActive       string
+	Title            string
+	MetaDescription  string
+	CanonicalPath    string
+	TransparentNav   bool
+	NavActive        string
+	SubmittedSuccess bool
 }
 
 func renderPage(w http.ResponseWriter, tmpl string, data interface{}) {
@@ -66,6 +67,10 @@ func renderPage(w http.ResponseWriter, tmpl string, data interface{}) {
 }
 
 func main() {
+	// Connect to Turso before registering any routes
+	initDB()
+	defer db.Close()
+
 	// Static files
 	staticFS := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -148,10 +153,44 @@ func main() {
 
 	http.HandleFunc("/this-is-aiesec", func(w http.ResponseWriter, r *http.Request) {
 		renderPage(w, "this-is-aiesec.html", PageData{
-			Title:           "This is AIESEC",
-			MetaDescription: "Learn about AIESEC — the world's largest youth-run organization empowering young people through leadership and exchange.",
-			CanonicalPath:   "/this-is-aiesec",
+			Title:            "This is AIESEC",
+			MetaDescription:  "Learn about AIESEC — the world's largest youth-run organization empowering young people through leadership and exchange.",
+			CanonicalPath:    "/this-is-aiesec",
+			SubmittedSuccess: r.URL.Query().Get("submitted") == "true",
 		})
+	})
+
+	// Handles the "This is AIESEC" contact form, saving submissions to Turso
+	http.HandleFunc("/submit/contact", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+
+		if err := r.ParseForm(); err != nil {
+			http.Error(w, "Invalid form submission", http.StatusBadRequest)
+			return
+		}
+
+		firstName := strings.TrimSpace(r.FormValue("first_name"))
+		lastName := strings.TrimSpace(r.FormValue("last_name"))
+		email := strings.TrimSpace(r.FormValue("email"))
+		referral := strings.TrimSpace(r.FormValue("referral_source"))
+		message := strings.TrimSpace(r.FormValue("message"))
+		fullName := strings.TrimSpace(firstName + " " + lastName)
+
+		_, err := db.Exec(
+			`INSERT INTO contact_submissions (submitted_at, email, referral_source, message, name, accepts_marketing)
+			 VALUES (datetime('now'), ?, ?, ?, ?, '')`,
+			email, referral, message, fullName,
+		)
+		if err != nil {
+			log.Printf("contact form insert failed: %v", err)
+			http.Error(w, "Something went wrong. Please try again.", http.StatusInternalServerError)
+			return
+		}
+
+		http.Redirect(w, r, "/this-is-aiesec?submitted=true", http.StatusSeeOther)
 	})
 
 	http.HandleFunc("/our-mission", func(w http.ResponseWriter, r *http.Request) {
@@ -172,10 +211,45 @@ func main() {
 
 	http.HandleFunc("/alumni", func(w http.ResponseWriter, r *http.Request) {
 		renderPage(w, "alumni.html", PageData{
-			Title:           "Alumni",
-			MetaDescription: "Join the AIESEC Canada alumni network and stay connected with thousands of global leaders who shaped their futures through AIESEC.",
-			CanonicalPath:   "/alumni",
+			Title:            "Alumni",
+			MetaDescription:  "Join the AIESEC Canada alumni network and stay connected with thousands of global leaders who shaped their futures through AIESEC.",
+			CanonicalPath:    "/alumni",
+			SubmittedSuccess: r.URL.Query().Get("submitted") == "true",
 		})
+	})
+
+	// Handles the alumni page's "we'd love to hear from you" form
+	http.HandleFunc("/submit/alumni", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+
+		if err := r.ParseForm(); err != nil {
+			http.Error(w, "Invalid form submission", http.StatusBadRequest)
+			return
+		}
+
+		firstName := strings.TrimSpace(r.FormValue("first_name"))
+		lastName := strings.TrimSpace(r.FormValue("last_name"))
+		email := strings.TrimSpace(r.FormValue("email"))
+		lc := strings.TrimSpace(r.FormValue("local_committee"))
+		lastYear := strings.TrimSpace(r.FormValue("last_year"))
+		message := strings.TrimSpace(r.FormValue("message"))
+		fullName := strings.TrimSpace(firstName + " " + lastName)
+
+		_, err := db.Exec(
+			`INSERT INTO alumni_submissions (submitted_at, name, email, local_committee, last_year, message)
+			 VALUES (datetime('now'), ?, ?, ?, ?, ?)`,
+			fullName, email, lc, lastYear, message,
+		)
+		if err != nil {
+			log.Printf("alumni form insert failed: %v", err)
+			http.Error(w, "Something went wrong. Please try again.", http.StatusInternalServerError)
+			return
+		}
+
+		http.Redirect(w, r, "/alumni?submitted=true", http.StatusSeeOther)
 	})
 
 	http.HandleFunc("/our-partners", func(w http.ResponseWriter, r *http.Request) {
