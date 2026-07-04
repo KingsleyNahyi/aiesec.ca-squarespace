@@ -210,6 +210,35 @@
     font-weight: 800;
     cursor: pointer;
 }
+
+/* ─── RESPONSIVE OVERRIDES ─── */
+@media (max-width: 1024px) {
+    .hero-headline, .combined-alumni-heading { font-size: 3.8rem; }
+    .get-involved-blue h2 { font-size: 3.2rem; }
+    .form-layout { grid-template-columns: 1fr; gap: 40px; }
+    .form-left h2 { font-size: 2.6rem; }
+}
+
+@media (max-width: 768px) {
+    .alumni-hero { height: 70vh; }
+    .hero-headline, .combined-alumni-heading { font-size: 2.6rem; letter-spacing: -1px; }
+    .once-aiesecer, .alumni-contact-form { padding: 60px 6%; }
+    .get-involved-blue h2 { font-size: 2.2rem; }
+    .slide-unit { padding: 24px; }
+    .slide-unit h3 { font-size: 1.8rem; }
+    .slide-unit p { font-size: 1rem; }
+    .nav-arrow { width: 40px; height: 40px; font-size: 1.1rem; }
+    .prev-btn { left: 8px; }
+    .next-btn { right: 8px; }
+    .form-left h2 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-headline, .combined-alumni-heading { font-size: 2rem; }
+    .alumni-sub-description { font-size: 1rem; }
+    .get-involved-blue h2 { font-size: 1.7rem; }
+    .send-pill-btn { align-self: stretch; text-align: center; }
+}
 </style>
 
 <!-- HERO -->

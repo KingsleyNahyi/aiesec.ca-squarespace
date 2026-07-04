@@ -260,6 +260,35 @@
     position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
     background: rgba(0,0,0,0.15); color: white; font-size: 40px;
 }
+
+/* ─── RESPONSIVE OVERRIDES ─── */
+@media (max-width: 1024px) {
+    .social-grid { grid-template-columns: repeat(3, 1fr); }
+    .arch-card { height: 480px; }
+}
+
+@media (max-width: 768px) {
+    .hero-static-text { font-size: 42px; }
+    .hero-moving-text { font-size: 32px; }
+    .arch-grid { gap: 15px; }
+    .arch-card { height: 380px; min-width: 100%; }
+    .partners-banner { flex-direction: column; gap: 25px; text-align: center; padding: 50px 8%; }
+    .partners-banner h2 { font-size: 28px; }
+    .t-grid { flex-wrap: nowrap; overflow-x: hidden; }
+    .t-card { width: 240px; flex: 0 0 240px; padding: 30px 18px; }
+    .t-nav { display: none; }
+    .social-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+}
+
+@media (max-width: 480px) {
+    .hero-static-text { font-size: 32px; }
+    .hero-moving-text { font-size: 22px; }
+    .experience-section { padding: 50px 5%; }
+    .arch-card { height: 300px; }
+    .testimonial-section { padding: 60px 5%; }
+    .t-card { width: 200px; flex: 0 0 200px; }
+    .social-section { padding: 50px 5%; }
+}
 </style>
 
 <!-- HERO -->

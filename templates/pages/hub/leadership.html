@@ -29,7 +29,19 @@
     .resource-card:hover img { opacity: 0.88; }
     .resource-card p { font-size: 16px; color: #555; line-height: 1.7; }
     .resource-card strong { color: #222; }
-  </style>
+  
+    /* ─── RESPONSIVE OVERRIDES ─── */
+    @media (max-width: 900px) {
+      .page-wrapper { flex-direction: column; padding-top: 90px; }
+      .sidebar { width: 100%; padding: 24px 24px 8px; }
+      .sidebar-nav { flex-direction: row; flex-wrap: wrap; gap: 10px 20px; }
+      .main-content { padding: 32px 24px; }
+      .img-pair { grid-template-columns: 1fr; margin-bottom: 32px; }
+    }
+    @media (max-width: 480px) {
+      .main-content { padding: 24px 16px; }
+    }
+</style>
 
 <div class="page-wrapper">
 

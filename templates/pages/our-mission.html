@@ -106,6 +106,36 @@
     position: relative;
     z-index: 2;
 }
+
+/* ─── RESPONSIVE OVERRIDES ─── */
+@media (max-width: 1024px) {
+    .mission-hero h1 { font-size: 3.5rem; }
+    .text-solid, .year-title { font-size: 4rem; }
+    .today-card.small-block { margin-left: -60px; min-width: 280px; padding: 30px; }
+    .today-card-title { font-size: 2.6rem; }
+}
+
+@media (max-width: 768px) {
+    .mission-hero { padding: 110px 0 60px; }
+    .mission-hero h1 { font-size: 2.6rem; }
+    .history-curved-container { padding: 180px 6% 60px; }
+    .history-row, .history-row.row-reverse { flex-direction: column; gap: 30px; margin-bottom: 80px; }
+    .text-outline, .year-label { font-size: 1.8rem; }
+    .text-solid, .year-title { font-size: 2.6rem; }
+    .photo-offset-block::before, .row-reverse .photo-offset-block::before { left: 12px; top: 12px; }
+    .today-special-section { padding: 60px 6%; }
+    .today-wrapper { flex-direction: column; }
+    .today-card.small-block { margin-left: 0; margin-top: -40px; min-width: unset; width: 90%; padding: 24px; }
+    .today-card-title { font-size: 2rem; }
+    .img-long { height: 320px; }
+    .today-card { margin-left: 0; padding: 30px; }
+}
+
+@media (max-width: 480px) {
+    .mission-hero h1 { font-size: 2rem; }
+    .today-cta { font-size: 1.3rem; }
+    .today-card.small-block { width: 100%; margin-top: -20px; }
+}
 </style>
 <!-- HERO -->
 <section class="mission-hero">

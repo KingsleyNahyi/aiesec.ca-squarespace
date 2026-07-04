@@ -26,7 +26,19 @@
     /* YouTube embeds */
     .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-  </style>
+  
+    /* ─── RESPONSIVE OVERRIDES ─── */
+    @media (max-width: 900px) {
+      .page-wrapper { flex-direction: column; padding-top: 90px; }
+      .sidebar { width: 100%; padding: 24px 24px 8px; }
+      .sidebar-nav { flex-direction: row; flex-wrap: wrap; gap: 10px 20px; }
+      .main-content { padding: 32px 24px; }
+      .img-pair { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .main-content { padding: 24px 16px; }
+    }
+</style>
 
 <div class="page-wrapper">
 

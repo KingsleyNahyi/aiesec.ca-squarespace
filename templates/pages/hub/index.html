@@ -257,6 +257,26 @@
     .nav-btn:hover { background: #333; }
 
     .nav-btn.full-width { grid-column: 1 / -1; }
+
+    /* ─── RESPONSIVE OVERRIDES ─── */
+    @media (max-width: 900px) {
+      .hero { height: 300px; }
+      .hero-text h1 { font-size: 36px; }
+      .hero-text p { font-size: 20px; }
+      .below-hero { padding: 40px 24px; }
+      .internal-row { flex-direction: column; gap: 30px; }
+      .aiesec-preview { width: 100%; }
+      .internal-text p { font-size: 18px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { height: 220px; }
+      .hero-text h1 { font-size: 26px; }
+      .hero-text p { font-size: 15px; }
+      .below-hero { padding: 30px 16px; }
+      .nav-buttons { grid-template-columns: 1fr; }
+      .search-wrap input { font-size: 15px; padding: 14px 16px 14px 44px; }
+    }
   </style>
 
   <!-- Hero -->
