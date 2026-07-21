@@ -82,13 +82,13 @@
 }
 
 .alumni-slider-area {
-    background: #037EF3;
-    padding-bottom: 100px;
+    position: relative;
+    overflow: hidden;
 }
 
 .slider-container {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     overflow: hidden;
     position: relative;
 }
@@ -100,45 +100,74 @@
 
 .slide-unit {
     min-width: 100%;
-    padding: 40px;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
     box-sizing: border-box;
     color: white;
-    text-align: center;
+    text-align: left;
+}
+
+.slide-unit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 45%, rgba(3,126,243,0.25) 100%);
+}
+
+.slide-content {
+    position: relative;
+    max-width: 700px;
+    padding: 0 8% 90px;
 }
 
 .slide-unit h3 {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 3.2rem;
+    font-weight: 900;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.4);
 }
 
 .slide-unit p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 40px;
+    font-size: 1.15rem;
     line-height: 1.6;
+    margin: 0 0 30px;
+    max-width: 650px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
 }
 
 .slide-cta {
-    background: white;
-    color: #037EF3;
+    display: inline-block;
+    background: transparent;
+    color: white;
     padding: 16px 40px;
+    border: 2px solid white;
     border-radius: 50px;
     font-weight: 800;
-    border: none;
     cursor: pointer;
     font-size: 1.1rem;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+}
+
+.slide-cta:hover {
+    background: white;
+    color: #037EF3;
 }
 
 .nav-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.35);
     color: white;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.5rem;
@@ -224,7 +253,8 @@
     .hero-headline, .combined-alumni-heading { font-size: 2.6rem; letter-spacing: -1px; }
     .once-aiesecer, .alumni-contact-form { padding: 60px 6%; }
     .get-involved-blue h2 { font-size: 2.2rem; }
-    .slide-unit { padding: 24px; }
+    .slide-unit { height: 80vh; }
+    .slide-content { padding: 0 6% 50px; }
     .slide-unit h3 { font-size: 1.8rem; }
     .slide-unit p { font-size: 1rem; }
     .nav-arrow { width: 40px; height: 40px; font-size: 1.1rem; }
@@ -305,7 +335,8 @@
         
         <div class="slider-window" id="sliderWindow">
 
-            <div class="slide-unit">
+            <div class="slide-unit" style="background-image:url('/static/images/pass-on-leadership.webp');">
+                <div class="slide-content">
                 <h3 data-i18n="alumni_slide1_title">
                     Pass on the Leadership
                 </h3>
@@ -314,23 +345,58 @@
                     The best way for the next generation of AIESECers to learn is to listen to the advice and experiences of those that came before them.
                 </p>
 
-                <button class="slide-cta" data-i18n="alumni_slide1_btn">
+                <a href="mailto:info@aiesec.ca?subject=Sharing%20the%20Knowledge" class="slide-cta" data-i18n="alumni_slide1_btn">
                     Let's share the knowledge!
-                </button>
+                </a>
+                </div>
             </div>
 
-            <div class="slide-unit">
+            <div class="slide-unit" style="background-image:url('/static/images/Be+our+Guest.webp');">
+                <div class="slide-content">
                 <h3 data-i18n="alumni_slide2_title">
-                    The Alumni Network
+                    Be our Guest
                 </h3>
 
                 <p data-i18n="alumni_slide2_desc">
-                    Connect with other AIESEC alumni across Canada and the world. Your journey doesn't end when you leave the LC.
+                    As we start to host more and more events, the entity is always on the lookout for more alumni to join us at our events and workshops to shed more light on leadership and the impact AIESEC can make on everyday life. Of course, who better to speak on leadership than the experts who have been through all kinds of experiences (that's you ;))
                 </p>
 
-                <button class="slide-cta" data-i18n="alumni_slide2_btn">
-                    Join the network!
-                </button>
+                <a href="https://form.typeform.com/to/stvCjtCX?typeform-source=www.aiesec.ca" target="_blank" class="slide-cta" data-i18n="alumni_slide2_btn">
+                    I want to be a guest speaker!
+                </a>
+                </div>
+            </div>
+
+            <div class="slide-unit" style="background-image:url('/static/images/hire.webp');">
+                <div class="slide-content">
+                <h3 data-i18n="alumni_slide3_title">
+                    Hire International Talent
+                </h3>
+
+                <p data-i18n="alumni_slide3_desc">
+                    At the heart of everything we do, there is one thing we aim to do best.. exchange of course. Think your company could use some fresh skill from all around the world with expedited VISA processing? You know exactly who to go to!
+                </p>
+
+                <a href="/exchange-for-organizations" class="slide-cta" data-i18n="alumni_slide3_btn">
+                    I want international talent!
+                </a>
+                </div>
+            </div>
+
+            <div class="slide-unit" style="background-image:url('/static/images/supportprograms.webp');">
+                <div class="slide-content">
+                <h3 data-i18n="alumni_slide4_title">
+                    Support our Programs
+                </h3>
+
+                <p data-i18n="alumni_slide4_desc">
+                    We are always trying to create new opportunities and experiences for both our AIESECers and all our other stakeholders, and many are not possible without the help and support of our partners and network. Donate to the future of leadership today to keep the leadership growing and evolving for generations to come!
+                </p>
+
+                <a href="/support-us" class="slide-cta" data-i18n="alumni_slide4_btn">
+                    I want to donate!
+                </a>
+                </div>
             </div>
 
         </div>
