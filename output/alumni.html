@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,7 +119,20 @@
   .alumni-intro h2 { font-size:clamp(28px,4vw,44px); font-weight:900; line-height:1.15; margin-bottom:24px; color:var(--text); }
   .alumni-intro h2 .purple { color:#7B4FD4; }
   .alumni-intro p { font-size:16px; color:var(--text-light); line-height:1.8; }
-  .get-involved-label { background:var(--blue); color:white; text-align:center; padding:18px 24px; font-size:20px; font-weight:700; }
+
+  /* CORRECTED: Get Involved section separated from slider */
+  .get-involved-label { 
+    position:relative; 
+    z-index:2; 
+    background:var(--blue); 
+    color:white; 
+    text-align:center; 
+    padding:18px 24px; 
+    font-size:20px; 
+    font-weight:700; 
+    clear:both; 
+  }
+
   .cards-slider-section { position:relative; overflow:hidden; }
   .cards-slider { display:flex; transition:transform 0.5s ease; }
   .alumni-card { min-width:100%; position:relative; min-height:500px; display:flex; align-items:center; }
@@ -352,7 +364,7 @@
       <div class="footer-copyright">
         <span>© 2024 AIESEC Canada Inc. All rights reserved.</span>
         <div class="footer-socials">
-             </div>
+        </div>
       </div>
     </div>
 
@@ -360,11 +372,11 @@
 </footer>
 
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      if(menu) menu.classList.toggle('open');
-    }
-  </script>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if(menu) menu.classList.toggle('open');
+  }
+</script>
 </body>
 </html>
