@@ -130,21 +130,31 @@
     box-sizing: border-box;
     color: white;
     text-align: left;
+    overflow: hidden;
 }
 
 .slide-unit::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 45%, rgba(3,126,243,0.25) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.6) 0%,
+        rgba(0,0,0,0.2) 45%,
+        rgba(3,126,243,0.25) 100%
+    );
 }
 
 .slide-content {
-    position: relative;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     max-width: 700px;
     padding: 0 8% 90px;
+    box-sizing: border-box;
+    z-index: 2;
 }
-
 .slide-unit h3 {
     font-size: 3.2rem;
     font-weight: 900;
